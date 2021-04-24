@@ -13,7 +13,7 @@
     "pretty-quick": "^3.1.0"
   },
   "dependencies": {
-    "@aiou/eslint-config": "^0.0.3",
+    "@aiou/eslint-config": "^0.0.7",
     "eslint": "^7.25.0",
     "typescript": "^4.2.4"
   },

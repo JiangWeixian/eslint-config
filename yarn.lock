@@ -20,21 +20,21 @@
     jsonc-eslint-parser "^1.0.1"
     yaml-eslint-parser "^0.3.2"
 
-"@aiou/eslint-config-ts@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.npmjs.org/@aiou/eslint-config-ts/-/eslint-config-ts-0.0.2.tgz#4a16e2945e2d49cbf56ba20494883256896b068b"
-  integrity sha512-C/duymkxkCbaJgCwxIrNjYyBr50QoRoWL898l3FApvFfBOuMtM9bpZe5r4et0qeXUN0Xee7WIn+PHaTppg8lIA==
+"@aiou/eslint-config-ts@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.npmjs.org/@aiou/eslint-config-ts/-/eslint-config-ts-0.0.6.tgz#cc8c8e9f342be5b36fab0193b5fa53c428423443"
+  integrity sha512-JZwFRk6jokchXoYm/KnfEGJ5g8JmjRYeYGdg8xOLFtWTaNtbDB9KxhnrbOJ6gwY+P1jad5L5ar5xoWHUSipBvg==
   dependencies:
     "@aiou/eslint-config-basic" latest
     "@typescript-eslint/eslint-plugin" "^4.17.0"
     "@typescript-eslint/parser" "^4.17.0"
 
-"@aiou/eslint-config@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.npmjs.org/@aiou/eslint-config/-/eslint-config-0.0.3.tgz#6619e7c79a353c4caeb1a245eef1ed6c2f3c610e"
-  integrity sha512-wNJR5hdxkgRcaOaWbXs3Huq14cUh0sDDO6ThdsZ34hgei9OZp8IINV69OUuLKU4SezwlMcGAgXOCobVBhUHtZQ==
+"@aiou/eslint-config@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.npmjs.org/@aiou/eslint-config/-/eslint-config-0.0.7.tgz#ce5ca4b71543ab7f42e37d7c957e3c5906ef097f"
+  integrity sha512-fvdsfc78anFB3Fx3ow2jWsduFvYhY0DROYWaArEDK6rFSWIyPro+2nlIQSVDBDg9IXUWkKW1+OqtbGjo5JHOfg==
   dependencies:
-    "@aiou/eslint-config-ts" "^0.0.2"
+    "@aiou/eslint-config-ts" "^0.0.6"
 
 "@babel/code-frame@7.12.11":
   version "7.12.11"
