@@ -1,6 +1,6 @@
 {
   "name": "@aiou/eslint-config",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "eslint config for aiou template",
   "keywords": [],
   "license": "MIT",
@@ -19,7 +19,7 @@
     "eslint": "^7.22.0"
   },
   "dependencies": {
-    "@aiou/eslint-config-ts": "^0.0.8"
+    "@aiou/eslint-config-ts": "^0.0.9"
   },
   "gitHead": "49436ccd156b84086192d6d9da72e8d0d642d7d3"
 }
