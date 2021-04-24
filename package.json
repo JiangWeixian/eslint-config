@@ -3,10 +3,18 @@
   "description": "monorepo for aiou templates",
   "private": true,
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "husky": "3.x",
+    "lerna": "^4.0.0",
+    "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0"
   },
   "dependencies": {
     "eslint": "^7.25.0",
     "typescript": "^4.2.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }
