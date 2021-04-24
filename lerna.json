@@ -1,4 +1,5 @@
 {
+  "client": "yarn",
   "packages": [
     "packages/*"
   ],
