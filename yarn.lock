@@ -3,10 +3,11 @@
 
 
 "@aiou/eslint-config-basic@latest":
-  version "0.0.3"
-  resolved "https://registry.npmjs.org/@aiou/eslint-config-basic/-/eslint-config-basic-0.0.3.tgz#1bc3f098cce1d96cb90d368270f1ebfbfe178397"
-  integrity sha512-bmAtX4EsKBmKHZziwrgqU0n3unjwvYC6fJkkLjw8QpYYPdV3UFfWUAU9stdFNFOi+QtxvLXZVGCQFHNt7Yp+/g==
+  version "0.0.10"
+  resolved "https://registry.npmjs.org/@aiou/eslint-config-basic/-/eslint-config-basic-0.0.10.tgz#b5c8bc0623cb0921e41318ed8bcda9c04469c6ed"
+  integrity sha512-vEcIDmj+urtDRabkPapgyCnvmu/gMKlJPhLnYzQ8t1Yu5zov7wkIn0qgtoVB4w40gfJNCmAAUFTsLi4f3N9RMA==
   dependencies:
+    eslint-config-prettier "^8.2.0"
     eslint-config-standard "^16.0.2"
     eslint-plugin-eslint-comments "^3.2.0"
     eslint-plugin-html "^6.1.2"
@@ -20,21 +21,21 @@
     jsonc-eslint-parser "^1.0.1"
     yaml-eslint-parser "^0.3.2"
 
-"@aiou/eslint-config-ts@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.npmjs.org/@aiou/eslint-config-ts/-/eslint-config-ts-0.0.6.tgz#cc8c8e9f342be5b36fab0193b5fa53c428423443"
-  integrity sha512-JZwFRk6jokchXoYm/KnfEGJ5g8JmjRYeYGdg8xOLFtWTaNtbDB9KxhnrbOJ6gwY+P1jad5L5ar5xoWHUSipBvg==
+"@aiou/eslint-config-ts@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.npmjs.org/@aiou/eslint-config-ts/-/eslint-config-ts-0.0.8.tgz#164df5da382b5b54b227154983942d556a04096f"
+  integrity sha512-RTrmU9mTAxQvKVQZkW/6j9LIBP3yXc0zRCTG197RKd+k0zo1KoQ5nh6HeGO3GeDq4wFSaxB3nYXPEPEPmqTalQ==
   dependencies:
     "@aiou/eslint-config-basic" latest
     "@typescript-eslint/eslint-plugin" "^4.17.0"
     "@typescript-eslint/parser" "^4.17.0"
 
-"@aiou/eslint-config@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.npmjs.org/@aiou/eslint-config/-/eslint-config-0.0.7.tgz#ce5ca4b71543ab7f42e37d7c957e3c5906ef097f"
-  integrity sha512-fvdsfc78anFB3Fx3ow2jWsduFvYhY0DROYWaArEDK6rFSWIyPro+2nlIQSVDBDg9IXUWkKW1+OqtbGjo5JHOfg==
+"@aiou/eslint-config@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.npmjs.org/@aiou/eslint-config/-/eslint-config-0.0.9.tgz#f5febc9ce1fb959908a6a3f6842952232ffdaf14"
+  integrity sha512-e4U62+ZH7/UP+WIz0HbqmdIh/Md0GXEGn1JiGXpk8y9+8RVnnTKeUn6CGkmmd5U1yYJEXmQ0iFsth1lK2SJwRA==
   dependencies:
-    "@aiou/eslint-config-ts" "^0.0.6"
+    "@aiou/eslint-config-ts" "^0.0.8"
 
 "@babel/code-frame@7.12.11":
   version "7.12.11"
@@ -2231,6 +2232,11 @@ escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
+
+eslint-config-prettier@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.npmjs.org/eslint-config-prettier/-/eslint-config-prettier-8.2.0.tgz#78de77d63bca8e9e59dae75a614b5299925bb7b3"
+  integrity sha512-dWV9EVeSo2qodOPi1iBYU/x6F6diHv8uujxbxr77xExs3zTAlNXvVZKiyLsQGNz7yPV2K49JY5WjPzNIuDc2Bw==
 
 eslint-config-standard@^16.0.2:
   version "16.0.2"
