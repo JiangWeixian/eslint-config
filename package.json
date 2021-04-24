@@ -1,5 +1,6 @@
 {
-  "name": "@jiangweixian/eslint-config-monorepo",
+  "name": "@aiou/eslint-config-monorepo",
+  "description": "monorepo for aiou templates",
   "private": true,
   "devDependencies": {
     "lerna": "^4.0.0"

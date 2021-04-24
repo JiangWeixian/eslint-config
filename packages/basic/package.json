@@ -1,7 +1,7 @@
 {
-  "name": "@jiangweixian/eslint-config-basic",
+  "name": "@aiou/eslint-config-basic",
   "version": "0.0.1",
-  "description": "",
+  "description": "eslint config basic for aiou template",
   "keywords": [],
   "license": "MIT",
   "author": "JW <jiangweixian1994@gmail.com> (https://github.com/jiangweixian/)",
@@ -25,6 +25,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsonc": "^1.2.1",
     "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-promise": "^4.3.1",
     "eslint-plugin-unicorn": "^28.0.2",
     "eslint-plugin-yml": "^0.8.1",
@@ -33,5 +34,6 @@
   },
   "devDependencies": {
     "eslint": "^7.22.0"
-  }
+  },
+  "publisher": ""
 }

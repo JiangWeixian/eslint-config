@@ -11,6 +11,8 @@ module.exports = {
     'plugin:eslint-comments/recommended',
     'plugin:jsonc/recommended-with-jsonc',
     'plugin:yml/standard',
+    'prettier',
+    'prettier/@typescript-eslint',
   ],
   plugins: ['html', 'unicorn'],
   settings: {
