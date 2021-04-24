@@ -3,9 +3,9 @@
 
 
 "@aiou/eslint-config-basic@latest":
-  version "0.0.10"
-  resolved "https://registry.npmjs.org/@aiou/eslint-config-basic/-/eslint-config-basic-0.0.10.tgz#b5c8bc0623cb0921e41318ed8bcda9c04469c6ed"
-  integrity sha512-vEcIDmj+urtDRabkPapgyCnvmu/gMKlJPhLnYzQ8t1Yu5zov7wkIn0qgtoVB4w40gfJNCmAAUFTsLi4f3N9RMA==
+  version "0.0.11"
+  resolved "https://registry.npmjs.org/@aiou/eslint-config-basic/-/eslint-config-basic-0.0.11.tgz#38552b7c8b6a6f7231b45736c2c9bcbbd9c942ba"
+  integrity sha512-cGxhrB/ct0mpqZ1qKG6RqA+VOPcvzumnhAL2NcM113S+osn9uJRgpEDRtrGIrbkvuYZakZ1pq3bJe1EU0EH5lw==
   dependencies:
     eslint-config-prettier "^8.2.0"
     eslint-config-standard "^16.0.2"
@@ -21,21 +21,21 @@
     jsonc-eslint-parser "^1.0.1"
     yaml-eslint-parser "^0.3.2"
 
-"@aiou/eslint-config-ts@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.npmjs.org/@aiou/eslint-config-ts/-/eslint-config-ts-0.0.8.tgz#164df5da382b5b54b227154983942d556a04096f"
-  integrity sha512-RTrmU9mTAxQvKVQZkW/6j9LIBP3yXc0zRCTG197RKd+k0zo1KoQ5nh6HeGO3GeDq4wFSaxB3nYXPEPEPmqTalQ==
+"@aiou/eslint-config-ts@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.npmjs.org/@aiou/eslint-config-ts/-/eslint-config-ts-0.0.9.tgz#4dc7e592bba89248d15fedbf0cf66442d405e1ba"
+  integrity sha512-0xwzSjzU53VtAb1yIRouII4IvIcyfyuRrA0vd/VXNmrgGg3SVokWhAecoUypmJ3N0UA41Tp/LrPOKa7tOx5+hQ==
   dependencies:
     "@aiou/eslint-config-basic" latest
     "@typescript-eslint/eslint-plugin" "^4.17.0"
     "@typescript-eslint/parser" "^4.17.0"
 
-"@aiou/eslint-config@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.npmjs.org/@aiou/eslint-config/-/eslint-config-0.0.9.tgz#f5febc9ce1fb959908a6a3f6842952232ffdaf14"
-  integrity sha512-e4U62+ZH7/UP+WIz0HbqmdIh/Md0GXEGn1JiGXpk8y9+8RVnnTKeUn6CGkmmd5U1yYJEXmQ0iFsth1lK2SJwRA==
+"@aiou/eslint-config@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.npmjs.org/@aiou/eslint-config/-/eslint-config-0.0.10.tgz#9050a8882c05ee6c797048abd1e1bfaaed65035c"
+  integrity sha512-gSiU1cvZnMRIv3JCzRjWqrR/xmitvqnRxkV+Ob784FRvSRiwO0G6kJZLIFQ4K7PoHt0G+3w3l+kjeiJSxAAjRA==
   dependencies:
-    "@aiou/eslint-config-ts" "^0.0.8"
+    "@aiou/eslint-config-ts" "^0.0.9"
 
 "@babel/code-frame@7.12.11":
   version "7.12.11"

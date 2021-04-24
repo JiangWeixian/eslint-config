@@ -6,20 +6,20 @@
     "lint": "eslint .",
     "changelog": "gitmoji-changelog"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "dependencies": {
+    "@aiou/eslint-config": "^0.0.10",
+    "eslint": "^7.25.0",
+    "typescript": "^4.2.4"
+  },
   "devDependencies": {
     "husky": "3.x",
     "lerna": "^4.0.0",
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0"
-  },
-  "dependencies": {
-    "@aiou/eslint-config": "^0.0.9",
-    "eslint": "^7.25.0",
-    "typescript": "^4.2.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
   }
 }

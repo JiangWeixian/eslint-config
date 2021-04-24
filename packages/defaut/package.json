@@ -15,11 +15,11 @@
   "peerDependencies": {
     "eslint": ">=7.4.0"
   },
-  "devDependencies": {
-    "eslint": "^7.22.0"
-  },
   "dependencies": {
     "@aiou/eslint-config-ts": "^0.0.9"
+  },
+  "devDependencies": {
+    "eslint": "^7.22.0"
   },
   "gitHead": "49436ccd156b84086192d6d9da72e8d0d642d7d3"
 }
