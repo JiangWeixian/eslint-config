@@ -3,7 +3,8 @@
   "description": "monorepo for aiou templates",
   "private": true,
   "scripts": {
-    "lint": "npx eslint --ext .js,.json,.vue,ts"
+    "lint": "npx eslint --ext .js,.json,.vue,ts",
+    "changelog": "gitmoji-changelog"
   },
   "devDependencies": {
     "husky": "3.x",
