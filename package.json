@@ -2,6 +2,9 @@
   "name": "@aiou/eslint-config-monorepo",
   "description": "monorepo for aiou templates",
   "private": true,
+  "scripts": {
+    "lint": "npx eslint --ext .js,.json,.vue,ts"
+  },
   "devDependencies": {
     "husky": "3.x",
     "lerna": "^4.0.0",
@@ -9,6 +12,7 @@
     "pretty-quick": "^3.1.0"
   },
   "dependencies": {
+    "@aiou/eslint-config": "^0.0.3",
     "eslint": "^7.25.0",
     "typescript": "^4.2.4"
   },
