@@ -17,5 +17,8 @@
   },
   "devDependencies": {
     "eslint": "^7.22.0"
+  },
+  "dependencies": {
+    "@aiou/eslint-config-ts": "^0.0.2"
   }
 }
