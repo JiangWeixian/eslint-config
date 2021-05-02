@@ -5,7 +5,8 @@
   "scripts": {
     "lint": "eslint .",
     "changelog": "gitmoji-changelog",
-    "bootstrap": "lerna bootstrap"
+    "bootstrap": "lerna bootstrap",
+    "release": "lerna publish"
   },
   "husky": {
     "hooks": {
