@@ -6,7 +6,7 @@
     "lint": "eslint .",
     "changelog": "gitmoji-changelog",
     "bootstrap": "lerna bootstrap",
-    "release": "lerna publish"
+    "release": "lerna publish --force-publish --yes"
   },
   "husky": {
     "hooks": {
