@@ -73,7 +73,7 @@ module.exports = {
   ],
   rules: {
     // import
-    "import/order": "error",
+    "import/order": "off",
     "import/first": "error",
     "import/no-mutable-exports": "error",
     "import/no-unresolved": "off",
