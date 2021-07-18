@@ -19,7 +19,7 @@ module.exports = {
     "@typescript-eslint/type-annotation-spacing": ["error", {}],
 
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
     "no-redeclare": "off",
     "@typescript-eslint/no-redeclare": "error",
 
@@ -36,5 +36,7 @@ module.exports = {
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/no-namespace": "off",
+    "@typescript-eslint/no-var-requires": "off",
   },
 };
