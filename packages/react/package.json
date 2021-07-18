@@ -1,6 +1,6 @@
 {
   "name": "@aiou/eslint-config-react",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "",
   "keywords": [],
   "license": "MIT",
@@ -19,7 +19,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@aiou/eslint-config-ts": "^0.0.18",
+    "@aiou/eslint-config-ts": "^0.0.19",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0"
   },
