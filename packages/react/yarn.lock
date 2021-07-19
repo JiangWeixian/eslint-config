@@ -21,10 +21,10 @@
     jsonc-eslint-parser "^1.0.1"
     yaml-eslint-parser "^0.3.2"
 
-"@aiou/eslint-config-ts@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.nlark.com/@aiou/eslint-config-ts/download/@aiou/eslint-config-ts-0.0.9.tgz#4dc7e592bba89248d15fedbf0cf66442d405e1ba"
-  integrity sha1-TcflkruokkjRX+2/DPZkQtQF4bo=
+"@aiou/eslint-config-ts@^0.0.22":
+  version "0.0.19"
+  resolved "https://registry.npmjs.org/@aiou/eslint-config-ts/-/eslint-config-ts-0.0.19.tgz#728ef7aa8afc85e3f98faa2e8be781ff6c8ba2de"
+  integrity sha512-aNEddfQbOvLdlcqyKxdytDPcTLb+Y6Oo27C3AVffOKgbQxTIpmtVAG4CAsOi0n7mXATP6qKzsxJexgBCtzCpfQ==
   dependencies:
     "@aiou/eslint-config-basic" latest
     "@typescript-eslint/eslint-plugin" "^4.17.0"
