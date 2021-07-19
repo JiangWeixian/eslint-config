@@ -38,6 +38,7 @@ module.exports = {
     "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/no-namespace": "off",
     "@typescript-eslint/no-var-requires": "off",
+    "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": [
       "error",
       { functions: false, classes: false, variables: true },
