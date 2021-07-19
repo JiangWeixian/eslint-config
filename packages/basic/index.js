@@ -72,7 +72,6 @@ module.exports = {
   ],
   rules: {
     // import
-    "import/order": "off",
     "import/first": "error",
     "import/no-mutable-exports": "error",
     "import/no-unresolved": "off",
@@ -186,7 +185,10 @@ module.exports = {
     // Use new when throwing error
     "unicorn/throw-new-error": "error",
 
-    "no-use-before-define": "off",
+    "no-use-before-define": [
+      "error",
+      { functions: false, classes: false, variables: true },
+    ],
     "eslint-comments/disable-enable-pair": "off",
   },
 };
