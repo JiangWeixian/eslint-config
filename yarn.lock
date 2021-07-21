@@ -21,30 +21,30 @@
     jsonc-eslint-parser "^1.0.1"
     yaml-eslint-parser "^0.3.2"
 
-"@aiou/eslint-config-react@^0.0.16":
-  version "0.0.16"
-  resolved "https://registry.npmjs.org/@aiou/eslint-config-react/-/eslint-config-react-0.0.16.tgz#7bd0ab5bf3377aa2a018e615dd20e337f050f3fe"
-  integrity sha512-dxdqwigR0k5uzYPO0GHXdZjatl+c4hmeui8ADOLDIVcZfDfhLzZNAs7ahoZhFbP/1xe6HHomjcptFFzqqI9V5A==
+"@aiou/eslint-config-react@^0.0.18":
+  version "0.0.18"
+  resolved "https://registry.npmjs.org/@aiou/eslint-config-react/-/eslint-config-react-0.0.18.tgz#48650ec8f2fbe9493cf06b1bdd91d197ad71baa0"
+  integrity sha512-givicvkiD1nE3e6DY3zWwDYBDjF56cPIcD3xgQ0sCP//g/C8mD5hCh0VKtqYgDAEvmkJXWi+IpYLbrI+bZt+Sg==
   dependencies:
-    "@aiou/eslint-config-ts" "^0.0.24"
+    "@aiou/eslint-config-ts" "^0.0.26"
     eslint-plugin-react "^7.22.0"
     eslint-plugin-react-hooks "^4.2.0"
 
-"@aiou/eslint-config-ts@^0.0.24":
-  version "0.0.24"
-  resolved "https://registry.npmjs.org/@aiou/eslint-config-ts/-/eslint-config-ts-0.0.24.tgz#fe66cd49f9c098109f671ccbac1da5fbe8cf4f72"
-  integrity sha512-MztS91LVSkNPY6TjKVbQgrsyFW++eZkeuOf+yTbjxGmBvz8EJGRhrH5r2FZvFzbTgoONKCdDlivIs3XOUn1rag==
+"@aiou/eslint-config-ts@^0.0.26":
+  version "0.0.26"
+  resolved "https://registry.npmjs.org/@aiou/eslint-config-ts/-/eslint-config-ts-0.0.26.tgz#eea7e5ad9fbd9a11333497aab008875601963625"
+  integrity sha512-KJ2T9azGJqe79DqHJYYa9ZilsoyVTVn9qIq29TnxvqcojWZtyf0b2x1H5pxhNGYD+wFoq4Pmrr6lCMwmVqp1tg==
   dependencies:
     "@aiou/eslint-config-basic" latest
     "@typescript-eslint/eslint-plugin" "^4.17.0"
     "@typescript-eslint/parser" "^4.17.0"
 
-"@aiou/eslint-config@^0.0.25":
-  version "0.0.25"
-  resolved "https://registry.npmjs.org/@aiou/eslint-config/-/eslint-config-0.0.25.tgz#2e043c1a7d2d7860f75c2b699c9dc1f3f622e1af"
-  integrity sha512-N9m2995A9bfLciOLtgTigl0JcJmV88VYuMvIBwj2Jq4VCcl149yUbHXHiiQe29vWm8nHDP8VdpQ7AKJox4ujGA==
+"@aiou/eslint-config@^0.0.27":
+  version "0.0.27"
+  resolved "https://registry.npmjs.org/@aiou/eslint-config/-/eslint-config-0.0.27.tgz#548b93dbac51d7934140e632db9709b7039a893b"
+  integrity sha512-n4sBmHQlRT7VcUIzvsJfaTeWPzam8LOfwN4qC438ZXImwLf28cAmPiCH585zrtmiWLgWlZHuD5b0NKJN0AzwEA==
   dependencies:
-    "@aiou/eslint-config-react" "^0.0.16"
+    "@aiou/eslint-config-react" "^0.0.18"
 
 "@babel/code-frame@7.12.11":
   version "7.12.11"
@@ -4997,6 +4997,11 @@ prettier@^1.18.2:
   version "1.19.1"
   resolved "https://registry.npmjs.org/prettier/-/prettier-1.19.1.tgz#f7d7f5ff8a9cd872a7be4ca142095956a60797cb"
   integrity sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
+
+prettier@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.npmjs.org/prettier/-/prettier-2.3.2.tgz#ef280a05ec253712e486233db5c6f23441e7342d"
+  integrity sha512-lnJzDfJ66zkMy58OL5/NY5zp70S7Nz6KqcKkXYzn2tMVrNxvbqaBpg7H3qHaLxCJ5lNMsGuM8+ohS7cZrthdLQ==
 
 process-nextick-args@~2.0.0:
   version "2.0.1"
