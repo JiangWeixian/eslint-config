@@ -1,9 +1,0 @@
-{
-  "npmClient": "yarn",
-  "packages": ["packages/*"],
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
-  "version": "independent"
-}
