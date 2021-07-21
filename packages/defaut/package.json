@@ -13,13 +13,16 @@
     "access": "public"
   },
   "peerDependencies": {
-    "eslint": ">=7.4.0"
+    "eslint": ">=7.4.0",
+    "prettier": ">=2.2.1",
+    "pretty-quick": ">=3.1.0"
   },
   "dependencies": {
     "@aiou/eslint-config-react": "^0.0.17"
   },
   "devDependencies": {
-    "eslint": "^7.22.0"
+    "eslint": "^7.22.0",
+    "eslint-plugin-prettier": "^3.4.0"
   },
   "gitHead": "dc8927e14f6826e237e5c267fc24e6adf2ad4497"
 }
