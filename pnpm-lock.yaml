@@ -59,11 +59,13 @@ importers:
       '@aiou/eslint-config-react': ^0.1.0
       '@aiou/eslint-plugin-progress': workspace:^0.1.2
       eslint: ^7.22.0
+      eslint-config-prettier: ^8.3.0
       eslint-plugin-prettier: ^3.4.0
     dependencies:
       '@aiou/eslint-config-react': link:../react
       '@aiou/eslint-plugin-progress': link:../progress
-      eslint-plugin-prettier: 3.4.0_eslint@7.31.0+prettier@2.3.2
+      eslint-config-prettier: 8.3.0_eslint@7.31.0
+      eslint-plugin-prettier: 3.4.0_405864ac9c8e470eb13117aebc858d69
     devDependencies:
       eslint: registry.nlark.com/eslint/7.31.0
 
@@ -1325,6 +1327,15 @@ packages:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
 
+  /eslint-config-prettier/8.3.0_eslint@7.31.0:
+    resolution: {integrity: sha512-BgZuLUSeKzvlL/VUjx/Yb787VQ26RU3gGjA3iiFvdsp/2bMfVIWUVP7tjxtjS0e+HP409cPlPvNkQloz8C91ew==}
+    hasBin: true
+    peerDependencies:
+      eslint: '>=7.0.0'
+    dependencies:
+      eslint: registry.nlark.com/eslint/7.31.0
+    dev: false
+
   /eslint-config-standard/16.0.3_36c1a7585866400c39837ed09850682b:
     resolution: {integrity: sha512-x4fmJL5hGqNJKGHSjnLdgA6U6h1YW/G2dW9fA+cyVur4SK6lyue8+UgNKWlZtUDTXvgKDD/Oa3GQjmB5kjtVvg==}
     peerDependencies:
@@ -1432,6 +1443,22 @@ packages:
       semver: 6.3.0
     dev: false
 
+  /eslint-plugin-prettier/3.4.0_405864ac9c8e470eb13117aebc858d69:
+    resolution: {integrity: sha1-zbrTvx29Kxd+mCVzf+Y7R2oI8Mc=, tarball: eslint-plugin-prettier/download/eslint-plugin-prettier-3.4.0.tgz}
+    engines: {node: '>=6.0.0'}
+    peerDependencies:
+      eslint: '>=5.0.0'
+      eslint-config-prettier: '*'
+      prettier: '>=1.13.0'
+    peerDependenciesMeta:
+      eslint-config-prettier:
+        optional: true
+    dependencies:
+      eslint: registry.nlark.com/eslint/7.31.0
+      eslint-config-prettier: 8.3.0_eslint@7.31.0
+      prettier-linter-helpers: 1.0.0
+    dev: false
+
   /eslint-plugin-prettier/3.4.0_eslint@7.31.0+prettier@2.3.2:
     resolution: {integrity: sha1-zbrTvx29Kxd+mCVzf+Y7R2oI8Mc=, tarball: eslint-plugin-prettier/download/eslint-plugin-prettier-3.4.0.tgz}
     engines: {node: '>=6.0.0'}
@@ -1446,6 +1473,7 @@ packages:
       eslint: 7.31.0
       prettier: 2.3.2
       prettier-linter-helpers: 1.0.0
+    dev: true
 
   /eslint-plugin-promise/4.3.1:
     resolution: {integrity: sha1-YUhd8qNZ4DFJ/a/AposOAwrSrEU=, tarball: eslint-plugin-promise/download/eslint-plugin-promise-4.3.1.tgz}
@@ -3708,8 +3736,6 @@ packages:
       js-yaml: 3.14.1
       minimatch: 3.0.4
       strip-json-comments: 3.1.1
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   registry.nlark.com/@humanwhocodes/config-array/0.5.0:
@@ -3721,8 +3747,6 @@ packages:
       '@humanwhocodes/object-schema': registry.nlark.com/@humanwhocodes/object-schema/1.2.0
       debug: registry.nlark.com/debug/4.3.2
       minimatch: 3.0.4
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   registry.nlark.com/@humanwhocodes/object-schema/1.2.0:
@@ -3835,6 +3859,11 @@ packages:
     name: debug
     version: 4.3.2
     engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
     dependencies:
       ms: 2.1.2
     dev: true
