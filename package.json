@@ -19,7 +19,7 @@
     "**/**/*.{js}": "eslint --fix"
   },
   "dependencies": {
-    "@aiou/eslint-config": "^0.0.27",
+    "@aiou/eslint-config": "^0.0.28",
     "eslint": "^7.25.0",
     "typescript": "^4.2.4"
   },
