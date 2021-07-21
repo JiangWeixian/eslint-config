@@ -1,3 +1,7 @@
 module.exports = {
-  extends: '@aiou',
+  extends: ['@aiou/eslint-config'],
+  plugins: ['@aiou/eslint-plugin-progress'],
+  rules: {
+    "progress/activate": 1
+  }
 }

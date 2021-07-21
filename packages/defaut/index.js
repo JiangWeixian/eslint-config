@@ -13,4 +13,5 @@ module.exports = {
       },
     ],
   },
+  ignorePatterns: ['**/pnpm-lock.yaml', '**/pnpm-workspace.yaml', '*.lock', 'dist', 'lib', 'jest'],
 }
