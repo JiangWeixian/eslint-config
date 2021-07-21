@@ -1,6 +1,6 @@
 {
   "name": "@aiou/eslint-config-ts",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "description": "eslint config typescript for aiou template",
   "keywords": [],
   "license": "MIT",
@@ -20,7 +20,7 @@
     "typescript": ">=3.9"
   },
   "dependencies": {
-    "@aiou/eslint-config-basic": "^0.0.28",
+    "@aiou/eslint-config-basic": "^0.0.29",
     "@typescript-eslint/eslint-plugin": "^4.17.0",
     "@typescript-eslint/parser": "^4.17.0"
   },
