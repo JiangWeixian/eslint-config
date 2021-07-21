@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "lint": "eslint .",
-    "test:ignore": "eslint . --config=./packages/defaut/index.js",
+    "test:ignore": "eslint . --config=./packages/default/index.js",
     "test:react": "eslint test --config=./packages/react/index.js",
     "changelog": "gitmoji-changelog",
     "bootstrap": "lerna bootstrap",
@@ -24,6 +24,7 @@
     "typescript": "^4.2.4"
   },
   "devDependencies": {
+    "@aiou/eslint-plugin-progress": "^0.1.1",
     "@changesets/cli": "^2.16.0",
     "cz-emoji": "^1.3.1",
     "eslint-plugin-prettier": "^3.4.0",

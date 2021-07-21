@@ -1,5 +1,6 @@
 module.exports = {
   extends: ['@aiou/eslint-config-react', 'plugin:prettier/recommended'],
+  plugins: ['@aiou/progress'],
   rules: {
     'prettier/prettier': [
       'error',
@@ -12,6 +13,7 @@ module.exports = {
         trailingComma: 'all',
       },
     ],
+    "@aiou/progress/activate": 1
   },
   ignorePatterns: ['**/pnpm-lock.yaml', '**/pnpm-workspace.yaml', '*.lock', 'dist', 'lib', 'jest'],
 }
