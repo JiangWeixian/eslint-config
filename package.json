@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "lint": "eslint .",
+    "test:react": "eslint test --config=./packages/react/index.js",
     "changelog": "gitmoji-changelog",
     "bootstrap": "lerna bootstrap",
     "release": "lerna publish --force-publish --yes"
