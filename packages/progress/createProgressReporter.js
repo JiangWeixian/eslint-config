@@ -37,9 +37,9 @@ module.exports = function createProgressReporter(options) {
   }
   function printStats() {
     const totalTime = stats.map((s) => s.duration).reduce((a, b) => a + b, 0)
-    const minutes = (totalTime / 60000).toFixed(1)
+    const minutes = (totalTime / 1000).toFixed(1)
     console.log()
-    console.log(`⏱️  ${stats.length} files processed in ${minutes} minutes.`)
+    console.log(`⏱️  ${stats.length} files processed in ${minutes} seconds.`)
     stats.sort((a, b) => b.duration - a.duration)
     const slow = stats.slice(0, 20)
     console.error(`🎯 Found ${stats.length} files changed.`)

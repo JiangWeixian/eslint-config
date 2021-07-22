@@ -13,7 +13,7 @@ module.exports = {
         trailingComma: 'all',
       },
     ],
-    "@aiou/progress/activate": 1
+    '@aiou/progress/activate': 1,
   },
   ignorePatterns: ['**/pnpm-lock.yaml', '**/pnpm-workspace.yaml', '*.lock', 'dist', 'lib', 'jest'],
 }
