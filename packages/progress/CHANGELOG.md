@@ -1,5 +1,13 @@
 # @aiou/eslint-plugin-progress
 
+## 0.1.4
+
+### Patch Changes
+
+- 419c5bc: - plugin prgress only working on fix mode
+  - ignore more files
+- update docs
+
 ## 0.1.3
 
 ### Patch Changes
