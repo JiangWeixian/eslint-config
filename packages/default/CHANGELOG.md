@@ -1,5 +1,13 @@
 # @aiou/eslint-config
 
+## 0.1.3
+
+### Patch Changes
+
+- upgrade progress
+- Updated dependencies [undefined]
+  - @aiou/eslint-plugin-progress@0.1.3
+
 ## 0.1.2
 
 ### Patch Changes
