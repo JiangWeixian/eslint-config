@@ -1,5 +1,11 @@
 # @aiou/eslint-config
 
+## 0.1.2
+
+### Patch Changes
+
+- add eslint plugin progress
+
 ## 0.1.1
 
 ### Patch Changes
