@@ -56,8 +56,8 @@ importers:
 
   packages/default:
     specifiers:
-      '@aiou/eslint-config-react': workspace:^0.1.0
-      '@aiou/eslint-plugin-progress': workspace:^0.1.3
+      '@aiou/eslint-config-react': ^0.1.0
+      '@aiou/eslint-plugin-progress': ^0.1.3
       eslint: ^7.22.0
       eslint-config-prettier: ^8.3.0
       eslint-plugin-prettier: ^3.4.0
