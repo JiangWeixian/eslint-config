@@ -16,7 +16,7 @@
     }
   },
   "lint-staged": {
-    "**/**/*.{js}": "eslint --fix"
+    "**/**/*.{js,json}": "eslint --fix"
   },
   "dependencies": {
     "eslint": "^7.25.0",

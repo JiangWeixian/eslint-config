@@ -9,6 +9,9 @@ module.exports = function createProgressReporter(options) {
     rules: {
       activate: {
         create(context) {
+          if (!process.argv.includes('--fix')) {
+            return {}
+          }
           if (shouldHookExit) {
             shouldHookExit = false
             process.on('exit', printStats)
