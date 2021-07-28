@@ -1,5 +1,11 @@
 # @aiou/eslint-plugin-progress
 
+## 0.1.5
+
+### Patch Changes
+
+- upgrade
+
 ## 0.1.4
 
 ### Patch Changes

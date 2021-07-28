@@ -1,5 +1,14 @@
 # @aiou/eslint-config
 
+## 0.1.4
+
+### Patch Changes
+
+- upgrade
+- Updated dependencies [undefined]
+  - @aiou/eslint-plugin-progress@0.1.5
+  - @aiou/eslint-config-react@0.1.1
+
 ## 0.1.3
 
 ### Patch Changes
