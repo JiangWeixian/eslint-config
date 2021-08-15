@@ -1,5 +1,11 @@
 # @aiou/eslint-config-basic
 
+## 0.1.4
+
+### Patch Changes
+
+- a8e98ff: upgrade deps
+
 ## 0.1.3
 
 ### Patch Changes

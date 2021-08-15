@@ -1,5 +1,11 @@
 # @aiou/eslint-plugin-progress
 
+## 0.1.6
+
+### Patch Changes
+
+- a8e98ff: upgrade deps
+
 ## 0.1.5
 
 ### Patch Changes

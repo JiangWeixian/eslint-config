@@ -1,5 +1,13 @@
 # @aiou/eslint-config-ts
 
+## 0.1.2
+
+### Patch Changes
+
+- a8e98ff: use typescript parser
+- Updated dependencies [a8e98ff]
+  - @aiou/eslint-config-basic@0.1.4
+
 ## 0.1.1
 
 ### Patch Changes

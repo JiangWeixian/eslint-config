@@ -1,5 +1,13 @@
 # @aiou/eslint-config-react
 
+## 0.1.2
+
+### Patch Changes
+
+- a8e98ff: upgrade deps
+- Updated dependencies [a8e98ff]
+  - @aiou/eslint-config-ts@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes
