@@ -15,5 +15,5 @@ module.exports = {
     ],
     '@aiou/progress/activate': 1,
   },
-  ignorePatterns: require.resolve('@aiou/eslint-ignore'),
+  ignorePatterns: require('@aiou/eslint-ignore'),
 }

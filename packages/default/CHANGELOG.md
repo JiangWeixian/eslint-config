@@ -1,5 +1,11 @@
 # @aiou/eslint-config
 
+## 0.2.1
+
+### Patch Changes
+
+- fix require ignore
+
 ## 0.2.0
 
 ### Minor Changes
