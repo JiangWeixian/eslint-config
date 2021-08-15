@@ -18,13 +18,13 @@
     "pretty-quick": ">=3.1.0"
   },
   "dependencies": {
-    "@aiou/eslint-config-react": "^0.1.1",
-    "@aiou/eslint-plugin-progress": "^0.1.5",
+    "@aiou/eslint-config-react": "workspace:^0.1.1",
+    "@aiou/eslint-plugin-progress": "workspace:^0.1.5",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0"
   },
   "devDependencies": {
-    "eslint": "^7.22.0"
+    "eslint": "^7.32.0"
   },
   "gitHead": "dc8927e14f6826e237e5c267fc24e6adf2ad4497"
 }
