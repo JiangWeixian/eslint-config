@@ -2,6 +2,7 @@
 const basic = require('@aiou/eslint-config-basic')
 
 module.exports = {
+  parser: '@typescript-eslint/parser',
   extends: ['@aiou/eslint-config-basic', 'plugin:@typescript-eslint/recommended'],
   overrides: basic.overrides,
   rules: {
