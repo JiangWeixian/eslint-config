@@ -59,15 +59,17 @@ importers:
   packages/default:
     specifiers:
       '@aiou/eslint-config-react': workspace:^0.1.2
+      '@aiou/eslint-ignore': workspace:^0.1.0
       '@aiou/eslint-plugin-progress': workspace:^0.1.6
       eslint: ^7.32.0
       eslint-config-prettier: ^8.3.0
       eslint-plugin-prettier: ^3.4.0
     dependencies:
       '@aiou/eslint-config-react': link:../react
+      '@aiou/eslint-ignore': link:../ignore
       '@aiou/eslint-plugin-progress': link:../progress
       eslint-config-prettier: 8.3.0_eslint@7.32.0
-      eslint-plugin-prettier: 3.4.0_5a48a349ffec60f5257b5f148f5199c3
+      eslint-plugin-prettier: 3.4.0_94254c01413ebaf1ad99cec97ec78f12
     devDependencies:
       eslint: 7.32.0
 
@@ -1911,7 +1913,7 @@ packages:
       semver: 6.3.0
     dev: false
 
-  /eslint-plugin-prettier/3.4.0_5a48a349ffec60f5257b5f148f5199c3:
+  /eslint-plugin-prettier/3.4.0_94254c01413ebaf1ad99cec97ec78f12:
     resolution: {integrity: sha512-UDK6rJT6INSfcOo545jiaOwB701uAIt2/dR7WnFQoGCVl1/EMqdANBmwUaqqQ45aXprsTGzSa39LI1PyuRBxxw==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
@@ -1924,7 +1926,6 @@ packages:
     dependencies:
       eslint: 7.32.0
       eslint-config-prettier: 8.3.0_eslint@7.32.0
-      prettier: 2.3.2
       prettier-linter-helpers: 1.0.0
     dev: false
 

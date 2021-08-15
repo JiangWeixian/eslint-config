@@ -15,14 +15,5 @@ module.exports = {
     ],
     '@aiou/progress/activate': 1,
   },
-  ignorePatterns: [
-    '**/pnpm-lock.yaml',
-    '**/pnpm-workspace.yaml',
-    '*.lock',
-    'dist',
-    'lib',
-    'jest',
-    '.next',
-    '.nuxt',
-  ],
+  ignorePatterns: require.resolve('@aiou/eslint-ignore'),
 }
