@@ -1,6 +1,6 @@
 {
   "name": "@aiou/eslint-ignore",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "collection of eslint ignore patterns",
   "keywords": [
     "eslint",
@@ -18,6 +18,10 @@
     "email": "jiangweixian1994@gmail.com"
   },
   "author": "JW <jiangweixian1994@gmail.com> (https://twitter.com/jiangweixian)",
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
   "main": "index.js",
   "typings": "index.d.ts",
   "scripts": {
