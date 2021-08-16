@@ -1,18 +1,22 @@
-# @aiou/ts-lib-template
-**build ts lib template**
-
-[![npm](https://img.shields.io/npm/v/@aiou/ts-lib-template)](https://github.com/JiangWeixian/templates/tree/master/packages/ts-lib-template) [![GitHub](https://img.shields.io/npm/l/@aiou/ts-lib-template)](https://github.com/JiangWeixian/templates/tree/master/packages/ts-lib-template) [![stackblitz](https://img.shields.io/badge/%E2%9A%A1%EF%B8%8Fstackblitz-online-blue)](https://stackblitz.com/github/JiangWeixian/templates/tree/master/packages/ts-lib-template)
-
-[Edit on StackBlitz ⚡️](https://stackblitz.com/github/JiangWeixian/templates/tree/master/packages/ts-lib-template)
+# @aiou/eslint-ignore
+*collection of eslint common ignore patterns with [gitignore](https://github.com/github/gitignore)*
 
 
-## features
+[![npm](https://img.shields.io/npm/v/@aiou/eslint-ignore)](https://github.com/JiangWeixian/templates/tree/master/packages/eslint-ignore) [![GitHub](https://img.shields.io/npm/l/@aiou/eslint-ignore)](https://github.com/JiangWeixian/templates/tree/master/packages/eslint-ignore) 
 
-- Simple build with `tsc`
-- Replace `alias` path to `real` path
-- Watch mode
+Transform [nodejs's gitignore](https://github.com/github/gitignore/blob/master/Node.gitignore) into eslint **ignorePatterns**, and with common eslint ignore patterns like `jest`, etc..
 
-## development
+## install
 
-- **Setup** - `yarn * yarn dev`
-- **Build** - `yarn build`
+```console
+npm install @aiou/eslint-ignore --save-dev
+```
+
+## usage
+
+```js
+module.exports = {
+  // others config
+  ignorePatterns: require('@aiou/eslint-ignore'),
+}
+```
