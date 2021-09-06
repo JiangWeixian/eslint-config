@@ -1,5 +1,14 @@
 # @aiou/eslint-config
 
+## 0.2.2
+
+### Patch Changes
+
+- e4376f5: off react/no-unescaped-entities
+- Updated dependencies [e4376f5]
+- Updated dependencies [f59e4d2]
+  - @aiou/eslint-config-react@0.1.3
+
 ## 0.2.1
 
 ### Patch Changes
