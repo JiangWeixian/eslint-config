@@ -31,7 +31,7 @@ jobs:
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
       - name: Install
         run: |
-          pnpm i
+          pnpm i --frozen-lockfile=false
       - name: create and publish versions
         uses: changesets/action@master
         with:
