@@ -7,9 +7,8 @@
     "lint:fix": "eslint . --fix",
     "test:ignore": "eslint . --config=./packages/default/index.js",
     "test:react": "eslint test --config=./packages/react/index.js",
-    "changelog": "gitmoji-changelog",
-    "bootstrap": "lerna bootstrap",
-    "release": "lerna publish --force-publish --yes"
+    "ci:version": "pnpm changeset version",
+    "ci:publish": "pnpm changeset publish"
   },
   "husky": {
     "hooks": {
