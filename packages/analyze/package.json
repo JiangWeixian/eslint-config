@@ -35,10 +35,10 @@
     "eslint": ">=7.30.0"
   },
   "dependencies": {
-    "@typescript-eslint/experimental-utils": "^4.31.0"
+    "@typescript-eslint/experimental-utils": "^4.31.0",
+    "@typescript-eslint/parser": "^4.30.0"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^4.30.0",
     "eslint": "^7.22.0",
     "jest": "27.0.6",
     "rimraf": "3.0.2",
