@@ -1,4 +1,7 @@
 ### Node.gitignore
+# jest
+jest
+
 # Logs
 logs
 *.log

@@ -1,21 +1,9 @@
 /**
- * @license
- * Copyright 2018 Palantir Technologies, Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * refs: https://github.com/TristanFAURE/tslint/blob/4126PR/src/rules/commentDensityRule.ts
  */
 
 import { ESLintUtils } from '@typescript-eslint/experimental-utils'
+import { store } from '../store'
 
 const rule = ESLintUtils.RuleCreator((name) => name)({
   name: 'comment-density',
@@ -35,13 +23,20 @@ const rule = ESLintUtils.RuleCreator((name) => name)({
         100% means that the file only contains comment lines
       `,
     },
-    schema: [],
+    schema: [
+      {
+        type: 'object',
+        properties: {
+          min: {
+            type: 'number',
+            default: 10,
+          },
+        },
+      },
+    ],
   },
-  defaultOptions: [
-    [true, 0],
-    [true, 20],
-  ],
-  create(context) {
+  defaultOptions: [{ min: 10 }],
+  create(context, [options]) {
     function FAILURE_STRING(lineCount: number, percentLimit: number, missingLines: number) {
       const lineString = missingLines > 1 ? 'lines' : 'line'
       return (
@@ -53,20 +48,20 @@ const rule = ESLintUtils.RuleCreator((name) => name)({
 
     function apply() {
       const sourceFile = context.getSourceCode()
-      const minPercent = this.ruleArguments[0] as number
+      const minPercent = options.min
       const lineCount = sourceFile.getLines().length
       let numberOfLinesOfComments = 0
       const len = sourceFile.text.length
       const comments = sourceFile.getAllComments()
       if (len > 0) {
         comments.forEach((comment) => {
-          numberOfLinesOfComments = comment.loc.end.line - comment.loc.start.line
+          numberOfLinesOfComments = comment.loc.end.line - comment.loc.start.line + 1
         })
       }
       const percentage =
         lineCount === 0 ? 0 : Math.round((numberOfLinesOfComments / lineCount) * 100)
-      if (len === 0 || percentage >= minPercent) {
-      } else {
+      store.commentDensity += percentage
+      if (len !== 0 && percentage < minPercent) {
         const missingLines = Math.ceil((minPercent * lineCount) / 100) - numberOfLinesOfComments
         context.report({
           messageId: 'density',
@@ -74,8 +69,8 @@ const rule = ESLintUtils.RuleCreator((name) => name)({
             density: FAILURE_STRING(percentage, minPercent, missingLines),
           },
           loc: {
-            line: lineCount - 1,
-            column: 0,
+            line: 1,
+            column: 1,
           },
         })
       }
