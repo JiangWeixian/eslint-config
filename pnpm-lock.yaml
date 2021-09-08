@@ -35,6 +35,7 @@ importers:
       jest: 27.0.6
       rimraf: 3.0.2
       ts-jest: 27.0.3
+      tslib: ^2.3.1
       typescript: ^4.3.5
     dependencies:
       '@typescript-eslint/experimental-utils': 4.31.0_eslint@7.32.0+typescript@4.4.2
@@ -44,6 +45,7 @@ importers:
       jest: 27.0.6
       rimraf: 3.0.2
       ts-jest: 27.0.3_jest@27.0.6+typescript@4.4.2
+      tslib: 2.3.1
       typescript: 4.4.2
 
   packages/basic:
