@@ -5,6 +5,8 @@
 import { ESLintUtils } from '@typescript-eslint/experimental-utils'
 import { store } from '../store'
 
+let totalCommentDensity = 0
+
 const rule = ESLintUtils.RuleCreator((name) => name)({
   name: 'comment-density',
   meta: {
@@ -16,12 +18,10 @@ const rule = ESLintUtils.RuleCreator((name) => name)({
       recommended: 'warn',
     },
     messages: {
-      density: `
-        Density of comment lines = Comment lines / (Lines of code + Comment lines) * 100
-        With such a formula:
-        50% means that the number of lines of code equals the number of comment lines
-        100% means that the file only contains comment lines
-      `,
+      density:
+        `This file has {{percentage}}% of comments, ` +
+        `which is lower than the minimum of {{minPercent}}% allowed, ` +
+        `{{missingLines}} {{lineString}} of comments missing`,
     },
     schema: [
       {
@@ -37,15 +37,6 @@ const rule = ESLintUtils.RuleCreator((name) => name)({
   },
   defaultOptions: [{ min: 10 }],
   create(context, [options]) {
-    function FAILURE_STRING(lineCount: number, percentLimit: number, missingLines: number) {
-      const lineString = missingLines > 1 ? 'lines' : 'line'
-      return (
-        `This file has ${lineCount}% of comments, ` +
-        `which is lower than the minimum of ${percentLimit}% allowed, ` +
-        `${missingLines} ${lineString} of comments missing`
-      )
-    }
-
     function apply() {
       const sourceFile = context.getSourceCode()
       const minPercent = options.min
@@ -60,13 +51,18 @@ const rule = ESLintUtils.RuleCreator((name) => name)({
       }
       const percentage =
         lineCount === 0 ? 0 : Math.round((numberOfLinesOfComments / lineCount) * 100)
-      store.commentDensity += percentage
+      totalCommentDensity += percentage
+      store.files += 1
+      store.commentDensity = totalCommentDensity / store.files
       if (len !== 0 && percentage < minPercent) {
         const missingLines = Math.ceil((minPercent * lineCount) / 100) - numberOfLinesOfComments
         context.report({
           messageId: 'density',
           data: {
-            density: FAILURE_STRING(percentage, minPercent, missingLines),
+            percentage,
+            minPercent,
+            missingLines,
+            lineString: missingLines > 1 ? 'lines' : 'line',
           },
           loc: {
             line: 1,

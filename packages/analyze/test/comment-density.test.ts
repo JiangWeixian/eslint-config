@@ -30,7 +30,10 @@ if (false) {
       errors: [
         {
           data: {
-            density: 0,
+            percentage: 17,
+            minPercent: 20,
+            missingLines: 1,
+            lineString: 'line',
           },
           messageId: 'density',
           line: 1,
