@@ -37,7 +37,7 @@ jobs:
           key: ${{ runner.os }}-node${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
       - name: Install 
         run: |
-          pnpm i --filter=./packages/analyze
+          pnpm i --filter=./packages/analyze --frozen-lockfile=false
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Test
