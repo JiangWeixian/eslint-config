@@ -1,0 +1,25 @@
+{
+    "name": "@types/strip-comments",
+    "version": "2.0.1",
+    "description": "TypeScript definitions for strip-comments",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/strip-comments",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Piotr Błażejewicz",
+            "url": "https://github.com/peterblazejewicz",
+            "githubUsername": "peterblazejewicz"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/strip-comments"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "4777ccc6009dab712b49a245bc884a6ae81c76ef3f9ad419945727e420da61c8",
+    "typeScriptVersion": "3.6"
+}
