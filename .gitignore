@@ -2,6 +2,9 @@
 # jest
 jest
 
+# pnpm
+.pnpm-store
+
 # build
 packages/analyze/lib
 
