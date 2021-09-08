@@ -32,7 +32,8 @@
     "access": "public"
   },
   "peerDependencies": {
-    "eslint": ">=7.30.0"
+    "eslint": ">=7.30.0",
+    "typescript": "*"
   },
   "dependencies": {
     "@typescript-eslint/experimental-utils": "^4.31.0",
