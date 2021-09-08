@@ -1,4 +1,10 @@
 ### Node.gitignore
+# jest
+jest
+
+# build
+packages/analyze/lib
+
 # Logs
 logs
 *.log

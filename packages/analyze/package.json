@@ -1,0 +1,48 @@
+{
+  "name": "@aiou/eslint-plugin-analyze",
+  "version": "0.0.0",
+  "description": "eslint plugin for analyze",
+  "keywords": [
+    "eslint",
+    "aiou",
+    "analyze"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/JiangWeixian/eslint-config#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JiangWeixian/templates",
+    "directory": "packages/analyze"
+  },
+  "bugs": {
+    "url": "https://github.com/JiangWeixian/eslint-config/issues",
+    "email": "jiangweixian1994@gmail.com"
+  },
+  "author": "JW <jiangweixian1994@gmail.com> (https://twitter.com/jiangweixian)",
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "eslint . --config=index.js",
+    "test": "jest",
+    "build": "rimraf lib && tsc"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "eslint": ">=7.30.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/experimental-utils": "^4.31.0",
+    "@typescript-eslint/parser": "^4.30.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.22.0",
+    "jest": "27.0.6",
+    "rimraf": "3.0.2",
+    "ts-jest": "27.0.3",
+    "typescript": "^4.3.5"
+  }
+}
