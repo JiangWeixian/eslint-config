@@ -1,5 +1,11 @@
 # @aiou/eslint-config
 
+## 0.2.3
+
+### Patch Changes
+
+- d757b20: upgrade eslint-ignore
+
 ## 0.2.2
 
 ### Patch Changes
