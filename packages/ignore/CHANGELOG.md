@@ -1,5 +1,11 @@
 # @aiou/eslint-ignore
 
+## 0.1.2
+
+### Patch Changes
+
+- efee7f6: fix export types
+
 ## 0.1.1
 
 ### Patch Changes
