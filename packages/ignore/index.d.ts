@@ -1,3 +1,2 @@
-type Patterns = string[]
-
+declare const Patterns: string[]
 export default Patterns
