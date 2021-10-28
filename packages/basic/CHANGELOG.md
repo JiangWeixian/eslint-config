@@ -1,5 +1,11 @@
 # @aiou/eslint-config-basic
 
+## 0.2.0
+
+### Minor Changes
+
+- b771401: enable no-extraneous-dependencies https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-extraneous-dependencies.md
+
 ## 0.1.5
 
 ### Patch Changes

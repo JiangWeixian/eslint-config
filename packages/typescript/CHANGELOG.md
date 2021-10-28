@@ -1,5 +1,16 @@
 # @aiou/eslint-config-ts
 
+## 0.2.0
+
+### Minor Changes
+
+- b771401: enable no-extraneous-dependenci
+
+### Patch Changes
+
+- Updated dependencies [b771401]
+  - @aiou/eslint-config-basic@0.2.0
+
 ## 0.1.3
 
 ### Patch Changes
