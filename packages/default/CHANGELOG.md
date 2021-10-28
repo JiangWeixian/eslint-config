@@ -1,5 +1,13 @@
 # @aiou/eslint-config
 
+## 0.2.4
+
+### Patch Changes
+
+- 2f02c7c: reduce progress pkg size
+- Updated dependencies [2f02c7c]
+  - @aiou/eslint-plugin-progress@0.1.7
+
 ## 0.2.3
 
 ### Patch Changes
