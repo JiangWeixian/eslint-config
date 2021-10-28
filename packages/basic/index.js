@@ -81,6 +81,16 @@ module.exports = {
     'import/no-mutable-exports': 'error',
     'import/no-unresolved': 'off',
     'import/no-absolute-path': 'off',
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          '**/scripts/**/*.test.{js,jsx,ts,tsx}',
+          '**/*.test.{js,jsx,ts,tsx}',
+          '**/*.spec.{js,jsx,ts,tsx}',
+        ],
+      },
+    ],
 
     // Common
     semi: ['error', 'never'],
