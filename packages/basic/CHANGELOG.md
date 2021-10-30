@@ -1,5 +1,11 @@
 # @aiou/eslint-config-basic
 
+## 0.2.1
+
+### Patch Changes
+
+- ef2d92f: update plugin-import ignore patterns
+
 ## 0.2.0
 
 ### Minor Changes
