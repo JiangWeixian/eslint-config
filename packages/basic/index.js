@@ -85,9 +85,10 @@ module.exports = {
       'error',
       {
         devDependencies: [
-          '**/scripts/**/*.test.{js,jsx,ts,tsx}',
+          '**/scripts/**/*.{js,jsx,ts,tsx}',
           '**/*.test.{js,jsx,ts,tsx}',
           '**/*.spec.{js,jsx,ts,tsx}',
+          '**/*.config.{js,jsx,ts,tsx}',
         ],
       },
     ],
