@@ -1,6 +1,6 @@
 {
   "name": "@aiou/eslint-config",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "eslint config for aiou template",
   "keywords": [],
   "license": "MIT",
@@ -18,7 +18,7 @@
     "pretty-quick": ">=3.1.0"
   },
   "dependencies": {
-    "@aiou/eslint-config-react": "workspace:^0.2.1",
+    "@aiou/eslint-config-react": "workspace:^0.2.2",
     "@aiou/eslint-ignore": "workspace:^0.1.2",
     "@aiou/eslint-plugin-progress": "workspace:^0.1.7",
     "eslint-config-prettier": "^8.3.0",
