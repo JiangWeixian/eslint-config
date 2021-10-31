@@ -92,6 +92,8 @@ module.exports = {
         ],
       },
     ],
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#eslint-plugin-import
+    'import/named': 'off',
 
     // Common
     semi: ['error', 'never'],
