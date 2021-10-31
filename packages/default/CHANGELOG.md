@@ -1,5 +1,13 @@
 # @aiou/eslint-config
 
+## 0.3.2
+
+### Patch Changes
+
+- bb70483: off import named
+- Updated dependencies [bb70483]
+  - @aiou/eslint-config-react@0.2.2
+
 ## 0.3.1
 
 ### Patch Changes

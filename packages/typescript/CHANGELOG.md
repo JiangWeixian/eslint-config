@@ -1,5 +1,13 @@
 # @aiou/eslint-config-ts
 
+## 0.2.2
+
+### Patch Changes
+
+- bb70483: off import named
+- Updated dependencies [bb70483]
+  - @aiou/eslint-config-basic@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes

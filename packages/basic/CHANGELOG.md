@@ -1,5 +1,11 @@
 # @aiou/eslint-config-basic
 
+## 0.2.2
+
+### Patch Changes
+
+- bb70483: off import named
+
 ## 0.2.1
 
 ### Patch Changes
