@@ -34,17 +34,17 @@
     ]
   },
   "devDependencies": {
-    "@types/jest": "26.0.23",
+    "@types/jest": "27.4.0",
     "@types/strip-comments": "^2.0.1",
-    "axios": "^0.21.1",
-    "jest": "27.0.6",
-    "lint-staged": "^11.0.1",
-    "npm-watch": "0.10.0",
+    "axios": "^0.24.0",
+    "jest": "27.4.7",
+    "lint-staged": "^12.1.5",
+    "npm-watch": "0.11.0",
     "rimraf": "3.0.2",
     "strip-comments": "^2.0.1",
-    "ts-jest": "27.0.3",
-    "ts-node": "10.0.0",
+    "ts-jest": "27.1.2",
+    "ts-node": "10.4.0",
     "tslib": "^2.3.1",
-    "typescript": "^4.3.5"
+    "typescript": "^4.5.4"
   }
 }
