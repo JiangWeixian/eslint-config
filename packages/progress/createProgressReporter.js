@@ -1,5 +1,5 @@
 /* eslint no-console: off */
-const chalk = require('chalk')
+const pc = require('picocolors')
 module.exports = function createProgressReporter(options) {
   let lastReported = 0
   let lastFile
@@ -47,7 +47,7 @@ module.exports = function createProgressReporter(options) {
       console.log(`🐢 Slowest ${slow.length} files`)
     }
     for (const file of stats.slice(0, 20)) {
-      console.log(`✍️  Fixing up ${chalk.bold(file.name)} (${file.duration} ms).`)
+      console.log(`✍️  Fixing up ${pc.bold(file.name)} (${file.duration} ms).`)
     }
     console.log('✅ Everything is awesome!')
   }
