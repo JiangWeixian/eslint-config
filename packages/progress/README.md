@@ -12,7 +12,7 @@ $ eslint . --fix
 
 <div align='center'>
 
-<img src="https://github.com/JiangWeixian/eslint-config/blob/master/packages/progress/snapshots/demo.png?raw=true" width="400px" />
+<img src="https://user-images.githubusercontent.com/6839576/148364688-6a9fa8ac-94a3-4897-89fc-a3b64606e93c.png" width="400px" />
 
 *▲ @aiou/eslint-plugin-progress*
 
