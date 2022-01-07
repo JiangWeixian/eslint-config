@@ -1,5 +1,11 @@
 # @aiou/eslint-plugin-analyze
 
+## 1.1.0
+
+### Minor Changes
+
+- aa13b9a: upgrade eslint and deps latest
+
 ## 1.0.1
 
 ### Patch Changes

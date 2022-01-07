@@ -1,5 +1,11 @@
 # @aiou/eslint-config-basic
 
+## 0.3.0
+
+### Minor Changes
+
+- aa13b9a: upgrade eslint and deps latest
+
 ## 0.2.2
 
 ### Patch Changes

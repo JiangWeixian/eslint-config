@@ -1,14 +1,14 @@
 {
   "name": "@aiou/eslint-config-ts",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "eslint config typescript for aiou template",
   "keywords": [],
   "license": "MIT",
   "author": "JW <jiangweixian1994@gmail.com> (https://github.com/jiangweixian/)",
+  "main": "index.js",
   "files": [
     "index.js"
   ],
-  "main": "index.js",
   "publishConfig": {
     "access": "public"
   },
@@ -20,7 +20,7 @@
     "typescript": ">=3.9"
   },
   "dependencies": {
-    "@aiou/eslint-config-basic": "workspace:^0.2.2",
+    "@aiou/eslint-config-basic": "workspace:^0.3.0",
     "@typescript-eslint/eslint-plugin": "^5.8.1",
     "@typescript-eslint/parser": "^5.9.0"
   },

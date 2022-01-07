@@ -1,5 +1,18 @@
 # @aiou/eslint-config
 
+## 0.4.0
+
+### Minor Changes
+
+- aa13b9a: upgrade eslint and deps latest
+
+### Patch Changes
+
+- Updated dependencies [aa13b9a]
+  - @aiou/eslint-ignore@0.2.0
+  - @aiou/eslint-plugin-progress@0.2.0
+  - @aiou/eslint-config-react@0.3.0
+
 ## 0.3.2
 
 ### Patch Changes
