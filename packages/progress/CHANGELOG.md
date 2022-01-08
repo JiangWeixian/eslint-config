@@ -1,5 +1,11 @@
 # @aiou/eslint-plugin-progress
 
+## 0.2.0
+
+### Minor Changes
+
+- aa13b9a: upgrade eslint and deps latest
+
 ## 0.1.7
 
 ### Patch Changes

@@ -1,14 +1,14 @@
 {
   "name": "@aiou/eslint-config-react",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "",
   "keywords": [],
   "license": "MIT",
   "author": "JW <jiangweixian1994@gmail.com> (https://github.com/jiangweixian/)",
+  "main": "index.js",
   "files": [
     "index.js"
   ],
-  "main": "index.js",
   "scripts": {
     "lint": "eslint . --config=index.js"
   },
@@ -19,7 +19,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@aiou/eslint-config-ts": "workspace:^0.2.2",
+    "@aiou/eslint-config-ts": "workspace:^0.3.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0"
   },

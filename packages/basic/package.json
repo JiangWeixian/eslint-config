@@ -1,14 +1,14 @@
 {
   "name": "@aiou/eslint-config-basic",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "eslint config basic for aiou template",
   "keywords": [],
   "license": "MIT",
   "author": "JW <jiangweixian1994@gmail.com> (https://github.com/jiangweixian/)",
+  "main": "index.js",
   "files": [
     "index.js"
   ],
-  "main": "index.js",
   "scripts": {
     "lint": "eslint . --config=index.js"
   },

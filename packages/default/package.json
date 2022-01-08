@@ -1,14 +1,14 @@
 {
   "name": "@aiou/eslint-config",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "eslint config for aiou template",
   "keywords": [],
   "license": "MIT",
   "author": "JW <jiangweixian1994@gmail.com> (https://github.com/jiangweixian/)",
+  "main": "index.js",
   "files": [
     "index.js"
   ],
-  "main": "index.js",
   "publishConfig": {
     "access": "public"
   },
@@ -17,9 +17,9 @@
     "prettier": ">=2.2.1"
   },
   "dependencies": {
-    "@aiou/eslint-config-react": "workspace:^0.2.2",
-    "@aiou/eslint-ignore": "workspace:^0.1.2",
-    "@aiou/eslint-plugin-progress": "workspace:^0.1.7",
+    "@aiou/eslint-config-react": "workspace:^0.3.0",
+    "@aiou/eslint-ignore": "workspace:^0.2.0",
+    "@aiou/eslint-plugin-progress": "workspace:^0.2.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0"
   },

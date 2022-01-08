@@ -1,6 +1,6 @@
 {
   "name": "@aiou/eslint-plugin-analyze",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "eslint plugin for analyze",
   "keywords": [
     "eslint",
@@ -19,10 +19,10 @@
     "email": "jiangweixian1994@gmail.com"
   },
   "author": "JW <jiangweixian1994@gmail.com> (https://twitter.com/jiangweixian)",
+  "main": "lib/index.js",
   "files": [
     "lib"
   ],
-  "main": "lib/index.js",
   "scripts": {
     "lint": "eslint . --config=index.js",
     "test": "jest",
