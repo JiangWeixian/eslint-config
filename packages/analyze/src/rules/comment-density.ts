@@ -13,7 +13,6 @@ const rule = ESLintUtils.RuleCreator((name) => name)({
     type: 'suggestion',
     docs: {
       description: 'Allows a minimum percentage of comment in the file',
-      category: 'Stylistic Issues',
       requiresTypeChecking: false,
       recommended: 'warn',
     },

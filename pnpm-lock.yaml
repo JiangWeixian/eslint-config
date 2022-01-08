@@ -79,9 +79,9 @@ importers:
 
   packages/default:
     specifiers:
-      '@aiou/eslint-config-react': workspace:^0.2.2
-      '@aiou/eslint-ignore': workspace:^0.1.2
-      '@aiou/eslint-plugin-progress': workspace:^0.1.7
+      '@aiou/eslint-config-react': workspace:^0.3.0
+      '@aiou/eslint-ignore': workspace:^0.2.0
+      '@aiou/eslint-plugin-progress': workspace:^0.2.0
       eslint: ^8.6.0
       eslint-config-prettier: ^8.3.0
       eslint-plugin-prettier: ^4.0.0
@@ -133,7 +133,7 @@ importers:
 
   packages/react:
     specifiers:
-      '@aiou/eslint-config-ts': workspace:^0.2.2
+      '@aiou/eslint-config-ts': workspace:^0.3.0
       eslint: ^8.6.0
       eslint-plugin-react: ^7.28.0
       eslint-plugin-react-hooks: ^4.3.0
@@ -150,7 +150,7 @@ importers:
 
   packages/typescript:
     specifiers:
-      '@aiou/eslint-config-basic': workspace:^0.2.2
+      '@aiou/eslint-config-basic': workspace:^0.3.0
       '@typescript-eslint/eslint-plugin': ^5.8.1
       '@typescript-eslint/parser': ^5.9.0
       eslint: ^8.6.0
@@ -2893,6 +2893,7 @@ packages:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
+    requiresBuild: true
     dev: true
     optional: true
 
