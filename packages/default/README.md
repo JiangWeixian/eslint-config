@@ -27,7 +27,7 @@ eslint-plugin-eslint-comments
 eslint-plugin-html
 eslint-plugin-import
 eslint-plugin-jsonc
-eslint-plugin-node
+eslint-plugin-n (forked eslint-plugin-node)
 eslint-plugin-promise
 eslint-plugin-unicorn
 eslint-plugin-yml
