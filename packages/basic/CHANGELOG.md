@@ -1,5 +1,12 @@
 # @aiou/eslint-config-basic
 
+## 0.4.0
+
+### Minor Changes
+
+- fcd2d0f: upgrade standard eslint config support eslint@8.x
+- 9dee4cf: upgrade standard
+
 ## 0.3.0
 
 ### Minor Changes

@@ -1,5 +1,16 @@
 # @aiou/eslint-config-react
 
+## 0.4.0
+
+### Minor Changes
+
+- 9dee4cf: upgrade standard
+
+### Patch Changes
+
+- Updated dependencies [9dee4cf]
+  - @aiou/eslint-config-ts@0.4.0
+
 ## 0.3.0
 
 ### Minor Changes
