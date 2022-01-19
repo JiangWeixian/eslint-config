@@ -1,5 +1,17 @@
 # @aiou/eslint-config-ts
 
+## 0.4.0
+
+### Minor Changes
+
+- 9dee4cf: upgrade standard
+
+### Patch Changes
+
+- Updated dependencies [fcd2d0f]
+- Updated dependencies [9dee4cf]
+  - @aiou/eslint-config-basic@0.4.0
+
 ## 0.3.0
 
 ### Minor Changes
