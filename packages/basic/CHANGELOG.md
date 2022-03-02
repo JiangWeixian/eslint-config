@@ -1,5 +1,11 @@
 # @aiou/eslint-config-basic
 
+## 0.4.1
+
+### Patch Changes
+
+- 3085c94: update import/no-extraneous-dependencies ignore cjs and mjs configs files
+
 ## 0.4.0
 
 ### Minor Changes

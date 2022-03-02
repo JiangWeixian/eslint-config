@@ -1,5 +1,13 @@
 # @aiou/eslint-config-react
 
+## 0.4.1
+
+### Patch Changes
+
+- 3085c94: update import/no-extraneous-dependencies ignore cjs and mjs configs files
+- Updated dependencies [3085c94]
+  - @aiou/eslint-config-ts@0.4.1
+
 ## 0.4.0
 
 ### Minor Changes
