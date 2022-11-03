@@ -1,5 +1,11 @@
 # @aiou/eslint-plugin-analyze
 
+## 1.2.0
+
+### Minor Changes
+
+- ddaeb01: upgrade deps
+
 ## 1.1.0
 
 ### Minor Changes

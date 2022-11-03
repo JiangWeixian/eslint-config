@@ -1,5 +1,12 @@
 # @aiou/eslint-ignore
 
+## 0.3.0
+
+### Minor Changes
+
+- da297bf: ignore \*.d.ts
+- ddaeb01: upgrade deps
+
 ## 0.2.0
 
 ### Minor Changes
