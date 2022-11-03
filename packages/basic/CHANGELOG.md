@@ -1,5 +1,11 @@
 # @aiou/eslint-config-basic
 
+## 0.5.0
+
+### Minor Changes
+
+- ddaeb01: upgrade deps
+
 ## 0.4.1
 
 ### Patch Changes
