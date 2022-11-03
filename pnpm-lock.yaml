@@ -97,6 +97,7 @@ importers:
   packages/ignore:
     specifiers:
       '@types/jest': 27.4.0
+      '@types/node': ^18.11.9
       '@types/strip-comments': ^2.0.1
       axios: ^0.24.0
       jest: 27.4.7
@@ -110,6 +111,7 @@ importers:
       typescript: ^4.8.4
     devDependencies:
       '@types/jest': 27.4.0
+      '@types/node': 18.11.9
       '@types/strip-comments': 2.0.1
       axios: 0.24.0
       jest: 27.4.7_ts-node@10.4.0
@@ -118,7 +120,7 @@ importers:
       rimraf: 3.0.2
       strip-comments: 2.0.1
       ts-jest: 27.1.2_gnc6q7h2ygsodiyfnlyvts7tki
-      ts-node: 10.4.0_typescript@4.8.4
+      ts-node: 10.4.0_cbe7ovvae6zqfnmtgctpgpys54
       tslib: 2.4.1
       typescript: 4.8.4
 
@@ -3604,7 +3606,7 @@ packages:
       pretty-format: 27.5.1
       slash: 3.0.0
       strip-json-comments: 3.1.1
-      ts-node: 10.4.0_typescript@4.8.4
+      ts-node: 10.4.0_cbe7ovvae6zqfnmtgctpgpys54
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -5515,7 +5517,7 @@ packages:
       yargs-parser: 20.2.9
     dev: true
 
-  /ts-node/10.4.0_typescript@4.8.4:
+  /ts-node/10.4.0_cbe7ovvae6zqfnmtgctpgpys54:
     resolution: {integrity: sha512-g0FlPvvCXSIO1JDF6S232P5jPYqBkRL9qly81ZgAOSU7rwI0stphCgd2kLiCrU9DjQCrJMWEqcNSjQL02s6d8A==}
     hasBin: true
     peerDependencies:
@@ -5534,6 +5536,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.3
+      '@types/node': 18.11.9
       acorn: 8.8.1
       acorn-walk: 8.2.0
       arg: 4.1.3
