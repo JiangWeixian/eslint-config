@@ -62,6 +62,7 @@ module.exports = [
   '.svelte-kit',
   '**/pnpm-lock.yaml',
   '**/pnpm-workspace.yaml',
+  'dts/*.d.ts',
   '*.lock',
   'dist',
   'lib',

@@ -1,7 +1,7 @@
 export default [
   '**/pnpm-lock.yaml',
   '**/pnpm-workspace.yaml',
-  '*.d.ts',
+  'dts/*.d.ts',
   '*.lock',
   'dist',
   'lib',
