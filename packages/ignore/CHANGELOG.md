@@ -1,5 +1,11 @@
 # @aiou/eslint-ignore
 
+## 0.3.1
+
+### Patch Changes
+
+- ff5fe73: ignore dts
+
 ## 0.3.0
 
 ### Minor Changes

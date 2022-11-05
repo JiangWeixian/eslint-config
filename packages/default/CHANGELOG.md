@@ -1,5 +1,12 @@
 # @aiou/eslint-config
 
+## 0.6.1
+
+### Patch Changes
+
+- Updated dependencies [ff5fe73]
+  - @aiou/eslint-ignore@0.3.1
+
 ## 0.6.0
 
 ### Minor Changes
