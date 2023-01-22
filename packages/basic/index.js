@@ -6,8 +6,7 @@ module.exports = {
   },
   extends: [
     'standard',
-    'plugin:import/errors',
-    'plugin:import/warnings',
+    'plugin:import/recommended',
     'plugin:eslint-comments/recommended',
     'plugin:jsonc/recommended-with-jsonc',
     'plugin:yml/standard',
@@ -182,6 +181,7 @@ module.exports = {
         avoidQuotes: true,
       },
     ],
+    'prefer-exponentiation-operator': 'error',
     'prefer-rest-params': 'error',
     'prefer-spread': 'error',
     'prefer-template': 'error',
