@@ -23,9 +23,29 @@ module.exports = {
       files: ['*.json', '*.json5'],
       parser: 'jsonc-eslint-parser',
       rules: {
-        quotes: ['error', 'double'],
-        'quote-props': ['error', 'always'],
-        'comma-dangle': ['error', 'never'],
+        // refs: https://ota-meshi.github.io/eslint-plugin-jsonc/rules/indent.html
+        'jsonc/array-bracket-newline': [
+          'error',
+          {
+            multiline: true,
+            minItems: null,
+          },
+        ],
+        'jsonc/array-bracket-spacing': ['error', 'never'],
+        'jsonc/comma-dangle': ['error', 'never'],
+        'jsonc/comma-style': ['error', 'last'],
+        'jsonc/indent': ['error', 2, {}],
+        'jsonc/key-spacing': [
+          'error',
+          {
+            beforeColon: false,
+            afterColon: true,
+            mode: 'strict',
+          },
+        ],
+        'jsonc/no-octal-escape': 'error',
+        'jsonc/object-curly-newline': ['error', { multiline: true, consistent: true }],
+        'jsonc/object-curly-spacing': ['error', 'always'],
       },
     },
     {
