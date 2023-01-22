@@ -14,7 +14,7 @@ module.exports = {
   plugins: ['html', 'unicorn'],
   settings: {
     'import/resolver': {
-      node: { extensions: ['.js', '.mjs', '.ts', '.d.ts'] },
+      node: { extensions: ['.js', '.mjs'] },
     },
   },
   overrides: [
@@ -101,6 +101,31 @@ module.exports = {
             order: ['types', 'require', 'import'],
           },
         ],
+      },
+    },
+    {
+      files: ['*.d.ts'],
+      rules: {
+        'import/no-duplicates': 'off',
+      },
+    },
+    {
+      files: ['*.js'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off',
+      },
+    },
+    {
+      files: ['*.ts', '*.tsx', '*.mts', '*.cts'],
+      rules: {
+        'no-void': ['error', { allowAsStatement: true }],
+      },
+    },
+    {
+      files: ['*.test.ts', '*.test.js', '*.spec.ts', '*.spec.js'],
+      rules: {
+        'no-unused-expressions': 'off',
+        'no-only-tests/no-only-tests': 'error',
       },
     },
   ],
