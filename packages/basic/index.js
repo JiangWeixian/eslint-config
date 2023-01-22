@@ -84,7 +84,11 @@ module.exports = {
               'peerDependencies',
               'peerDependenciesMeta',
               'dependencies',
+              'optionalDependencies',
               'devDependencies',
+              'pnpm',
+              'overrides',
+              'resolutions',
               'eslintConfig',
               'config',
             ],
@@ -92,6 +96,10 @@ module.exports = {
           {
             pathPattern: '^(?:dev|peer|optional|bundled)?[Dd]ependencies$',
             order: { type: 'asc' },
+          },
+          {
+            pathPattern: '^exports.*$',
+            order: ['types', 'require', 'import'],
           },
         ],
       },
