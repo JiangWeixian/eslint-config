@@ -16,9 +16,7 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "**/**/*.{js,ts,tsx,vue,json}": [
-      "eslint --fix"
-    ]
+    "**/**/*.{js,ts,tsx,vue,json}": ["eslint --fix"]
   },
   "dependencies": {
     "typescript": "^4.8.4"

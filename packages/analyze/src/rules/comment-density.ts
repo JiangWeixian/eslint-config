@@ -7,7 +7,7 @@ import { store } from '../store'
 
 let totalCommentDensity = 0
 
-const rule = ESLintUtils.RuleCreator((name) => name)({
+const rule = ESLintUtils.RuleCreator(name => name)({
   name: 'comment-density',
   meta: {
     type: 'suggestion',
@@ -18,9 +18,9 @@ const rule = ESLintUtils.RuleCreator((name) => name)({
     },
     messages: {
       density:
-        `This file has {{percentage}}% of comments, ` +
-        `which is lower than the minimum of {{minPercent}}% allowed, ` +
-        `{{missingLines}} {{lineString}} of comments missing`,
+        'This file has {{percentage}}% of comments, '
+        + 'which is lower than the minimum of {{minPercent}}% allowed, '
+        + '{{missingLines}} {{lineString}} of comments missing',
     },
     schema: [
       {
@@ -48,8 +48,8 @@ const rule = ESLintUtils.RuleCreator((name) => name)({
           numberOfLinesOfComments = comment.loc.end.line - comment.loc.start.line + 1
         })
       }
-      const percentage =
-        lineCount === 0 ? 0 : Math.round((numberOfLinesOfComments / lineCount) * 100)
+      const percentage
+        = lineCount === 0 ? 0 : Math.round((numberOfLinesOfComments / lineCount) * 100)
       totalCommentDensity += percentage
       store.files += 1
       store.commentDensity = totalCommentDensity / store.files

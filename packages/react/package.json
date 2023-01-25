@@ -6,9 +6,7 @@
   "license": "MIT",
   "author": "JW <jiangweixian1994@gmail.com> (https://github.com/jiangweixian/)",
   "main": "index.js",
-  "files": [
-    "index.js"
-  ],
+  "files": ["index.js"],
   "scripts": {
     "lint": "eslint . --config=index.js"
   },
@@ -20,8 +18,11 @@
   },
   "dependencies": {
     "@aiou/eslint-config-ts": "workspace:*",
+    "@next/eslint-plugin-next": "^13.1.4",
     "eslint-plugin-react": "^7.31.10",
-    "eslint-plugin-react-hooks": "^4.6.0"
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "local-pkg": "^0.4.3",
+    "lodash.compact": "^3.0.1"
   },
   "devDependencies": {
     "eslint": "^8.26.0",
