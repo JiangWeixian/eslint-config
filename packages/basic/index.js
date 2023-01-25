@@ -128,6 +128,10 @@ module.exports = {
         '@typescript-eslint/no-unused-vars': 'off',
       },
     },
+    {
+      files: ['*.yaml', '*.yml'],
+      parser: 'yaml-eslint-parser',
+    },
   ],
   rules: {
     // import
@@ -257,6 +261,10 @@ module.exports = {
     'unicorn/prefer-type-error': 'error',
     // Use new when throwing error
     'unicorn/throw-new-error': 'error',
+
+    // yml
+    'yml/quotes': ['error', { prefer: 'double', avoidEscape: false }],
+    'yml/no-empty-document': 'off',
 
     'no-use-before-define': ['error', { functions: false, classes: false, variables: true }],
     'eslint-comments/disable-enable-pair': 'off',
