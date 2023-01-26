@@ -21,7 +21,6 @@
 extends from 
 
 ```tsx
-eslint-plugin-prettier
 eslint-config-standard
 eslint-plugin-eslint-comments
 eslint-plugin-html
