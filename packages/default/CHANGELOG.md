@@ -1,5 +1,20 @@
 # @aiou/eslint-config
 
+## 0.7.0
+
+### Minor Changes
+
+- fdf5c62: deprecated prettier
+
+### Patch Changes
+
+- fdf5c62: lint fix
+- Updated dependencies [fdf5c62]
+- Updated dependencies [fdf5c62]
+  - @aiou/eslint-ignore@0.3.2
+  - @aiou/eslint-plugin-progress@0.3.1
+  - @aiou/eslint-config-react@0.6.0
+
 ## 0.6.1
 
 ### Patch Changes

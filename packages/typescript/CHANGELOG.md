@@ -1,5 +1,15 @@
 # @aiou/eslint-config-ts
 
+## 0.5.1
+
+### Patch Changes
+
+- fdf5c62: lint fix
+- Updated dependencies [2248be9]
+- Updated dependencies [fdf5c62]
+- Updated dependencies [fdf5c62]
+  - @aiou/eslint-config-basic@0.6.0
+
 ## 0.5.0
 
 ### Minor Changes

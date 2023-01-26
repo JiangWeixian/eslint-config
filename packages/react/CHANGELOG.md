@@ -1,5 +1,17 @@
 # @aiou/eslint-config-react
 
+## 0.6.0
+
+### Minor Changes
+
+- fdf5c62: add next & auto detect react version
+
+### Patch Changes
+
+- fdf5c62: lint fix
+- Updated dependencies [fdf5c62]
+  - @aiou/eslint-config-ts@0.5.1
+
 ## 0.5.0
 
 ### Minor Changes

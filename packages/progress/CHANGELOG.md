@@ -1,5 +1,11 @@
 # @aiou/eslint-plugin-progress
 
+## 0.3.1
+
+### Patch Changes
+
+- fdf5c62: lint fix
+
 ## 0.3.0
 
 ### Minor Changes

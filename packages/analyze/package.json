@@ -1,6 +1,6 @@
 {
   "name": "@aiou/eslint-plugin-analyze",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "eslint plugin for analyze",
   "keywords": [
     "eslint",
