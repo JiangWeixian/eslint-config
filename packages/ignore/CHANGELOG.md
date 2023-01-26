@@ -1,5 +1,11 @@
 # @aiou/eslint-ignore
 
+## 0.3.2
+
+### Patch Changes
+
+- fdf5c62: lint fix
+
 ## 0.3.1
 
 ### Patch Changes

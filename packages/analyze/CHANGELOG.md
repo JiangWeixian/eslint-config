@@ -1,5 +1,11 @@
 # @aiou/eslint-plugin-analyze
 
+## 1.2.1
+
+### Patch Changes
+
+- fdf5c62: lint fix
+
 ## 1.2.0
 
 ### Minor Changes

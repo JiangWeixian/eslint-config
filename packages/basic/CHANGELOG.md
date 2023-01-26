@@ -1,5 +1,16 @@
 # @aiou/eslint-config-basic
 
+## 0.6.0
+
+### Minor Changes
+
+- 2248be9: plugin tailwindcss
+- fdf5c62: upgrade rules
+
+### Patch Changes
+
+- fdf5c62: lint fix
+
 ## 0.5.0
 
 ### Minor Changes
