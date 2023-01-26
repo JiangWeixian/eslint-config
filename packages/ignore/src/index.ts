@@ -8,11 +8,11 @@ import defaultIgnorePatterns from './default'
 const main = async () => {
   const result: string = await axios
     .get('https://www.toptal.com/developers/gitignore/api/node')
-    .then((res) => res.data)
+    .then(res => res.data)
   const nodePatterns = result.split('\n').filter((line) => {
     return !line.startsWith('#') && !!line
   })
-  const patterns = nodePatterns.concat(defaultIgnorePatterns).map((line) => `"${line}"`)
+  const patterns = nodePatterns.concat(defaultIgnorePatterns).map(line => `"${line}"`)
   const exportIgnorePatterns = `
     module.exports = [${patterns}]
   `

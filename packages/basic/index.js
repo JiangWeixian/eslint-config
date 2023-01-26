@@ -6,8 +6,7 @@ module.exports = {
   },
   extends: [
     'standard',
-    'plugin:import/errors',
-    'plugin:import/warnings',
+    'plugin:import/recommended',
     'plugin:eslint-comments/recommended',
     'plugin:jsonc/recommended-with-jsonc',
     'plugin:yml/standard',
@@ -15,7 +14,7 @@ module.exports = {
   plugins: ['html', 'unicorn'],
   settings: {
     'import/resolver': {
-      node: { extensions: ['.js', '.mjs', '.ts', '.d.ts'] },
+      node: { extensions: ['.js', '.mjs'] },
     },
   },
   overrides: [
@@ -23,9 +22,29 @@ module.exports = {
       files: ['*.json', '*.json5'],
       parser: 'jsonc-eslint-parser',
       rules: {
-        quotes: ['error', 'double'],
-        'quote-props': ['error', 'always'],
-        'comma-dangle': ['error', 'never'],
+        // refs: https://ota-meshi.github.io/eslint-plugin-jsonc/rules/indent.html
+        'jsonc/array-bracket-newline': [
+          'error',
+          {
+            multiline: true,
+            minItems: null,
+          },
+        ],
+        'jsonc/array-bracket-spacing': ['error', 'never'],
+        'jsonc/comma-dangle': ['error', 'never'],
+        'jsonc/comma-style': ['error', 'last'],
+        'jsonc/indent': ['error', 2, {}],
+        'jsonc/key-spacing': [
+          'error',
+          {
+            beforeColon: false,
+            afterColon: true,
+            mode: 'strict',
+          },
+        ],
+        'jsonc/no-octal-escape': 'error',
+        'jsonc/object-curly-newline': ['error', { multiline: true, consistent: true }],
+        'jsonc/object-curly-spacing': ['error', 'always'],
       },
     },
     {
@@ -64,7 +83,11 @@ module.exports = {
               'peerDependencies',
               'peerDependenciesMeta',
               'dependencies',
+              'optionalDependencies',
               'devDependencies',
+              'pnpm',
+              'overrides',
+              'resolutions',
               'eslintConfig',
               'config',
             ],
@@ -73,8 +96,41 @@ module.exports = {
             pathPattern: '^(?:dev|peer|optional|bundled)?[Dd]ependencies$',
             order: { type: 'asc' },
           },
+          {
+            pathPattern: '^exports.*$',
+            order: ['types', 'require', 'import'],
+          },
         ],
       },
+    },
+    {
+      files: ['*.d.ts'],
+      rules: {
+        'import/no-duplicates': 'off',
+      },
+    },
+    {
+      files: ['*.js'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off',
+      },
+    },
+    {
+      files: ['*.ts', '*.tsx', '*.mts', '*.cts'],
+      rules: {
+        'no-void': ['error', { allowAsStatement: true }],
+      },
+    },
+    {
+      files: ['*.test.ts', '*.test.js', '*.spec.ts', '*.spec.js', '**/test/**'],
+      rules: {
+        'no-unused-expressions': 'off',
+        '@typescript-eslint/no-unused-vars': 'off',
+      },
+    },
+    {
+      files: ['*.yaml', '*.yml'],
+      parser: 'yaml-eslint-parser',
     },
   ],
   rules: {
@@ -98,16 +154,16 @@ module.exports = {
     'import/named': 'off',
 
     // Common
-    semi: ['error', 'never'],
-    curly: ['error', 'multi-or-nest', 'consistent'],
-    quotes: ['error', 'single'],
+    'semi': ['error', 'never'],
+    'curly': ['error', 'multi-or-nest', 'consistent'],
+    'quotes': ['error', 'single'],
     'quote-props': ['error', 'consistent-as-needed'],
     'no-unused-vars': 'warn',
     'no-param-reassign': 'off',
     'array-bracket-spacing': ['error', 'never'],
     'brace-style': ['error', 'stroustrup', { allowSingleLine: true }],
     'block-spacing': ['error', 'always'],
-    camelcase: 'off',
+    'camelcase': 'off',
     'comma-spacing': ['error', { before: false, after: true }],
     'comma-style': ['error', 'last'],
     'comma-dangle': ['error', 'always-multiline'],
@@ -117,7 +173,7 @@ module.exports = {
     'no-cond-assign': ['error', 'always'],
     'func-call-spacing': ['off', 'never'],
     'key-spacing': ['error', { beforeColon: false, afterColon: true }],
-    indent: 'off',
+    'indent': 'off',
     'no-restricted-syntax': [
       'error',
       'DebuggerStatement',
@@ -154,6 +210,7 @@ module.exports = {
         avoidQuotes: true,
       },
     ],
+    'prefer-exponentiation-operator': 'error',
     'prefer-rest-params': 'error',
     'prefer-spread': 'error',
     'prefer-template': 'error',
@@ -165,8 +222,8 @@ module.exports = {
     'array-callback-return': 'error',
     'block-scoped-var': 'error',
     'consistent-return': 'off',
-    complexity: ['off', 11],
-    eqeqeq: ['error', 'allow-null'],
+    'complexity': ['off', 11],
+    'eqeqeq': ['error', 'allow-null'],
     'no-alert': 'warn',
     'no-case-declarations': 'error',
     'no-multi-spaces': 'error',
@@ -205,7 +262,21 @@ module.exports = {
     // Use new when throwing error
     'unicorn/throw-new-error': 'error',
 
+    // yml
+    'yml/quotes': ['error', { prefer: 'double', avoidEscape: false }],
+    'yml/no-empty-document': 'off',
+
     'no-use-before-define': ['error', { functions: false, classes: false, variables: true }],
     'eslint-comments/disable-enable-pair': 'off',
+    'sort-imports': [
+      'error',
+      {
+        ignoreCase: false,
+        ignoreDeclarationSort: true,
+        ignoreMemberSort: false,
+        memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
+        allowSeparatedGroups: false,
+      },
+    ],
   },
 }

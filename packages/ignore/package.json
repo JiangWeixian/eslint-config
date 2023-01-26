@@ -29,9 +29,7 @@
     "test": "jest"
   },
   "lint-staged": {
-    "**/**/*.{js,ts,vue,json}": [
-      "eslint --fix"
-    ]
+    "**/**/*.{js,ts,vue,json}": ["eslint --fix"]
   },
   "devDependencies": {
     "@types/jest": "27.4.0",

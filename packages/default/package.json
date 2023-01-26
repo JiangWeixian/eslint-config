@@ -6,9 +6,7 @@
   "license": "MIT",
   "author": "JW <jiangweixian1994@gmail.com> (https://github.com/jiangweixian/)",
   "main": "index.js",
-  "files": [
-    "index.js"
-  ],
+  "files": ["index.js"],
   "publishConfig": {
     "access": "public"
   },
@@ -19,9 +17,7 @@
   "dependencies": {
     "@aiou/eslint-config-react": "workspace:*",
     "@aiou/eslint-ignore": "workspace:*",
-    "@aiou/eslint-plugin-progress": "workspace:*",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.2.1"
+    "@aiou/eslint-plugin-progress": "workspace:*"
   },
   "devDependencies": {
     "eslint": "^8.26.0"
