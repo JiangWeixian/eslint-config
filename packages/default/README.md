@@ -32,6 +32,7 @@ eslint-plugin-unicorn
 eslint-plugin-yml
 eslint-plugin-react
 eslint-plugin-react-hooks
+eslint-plugin-tailwindcss
 @typescript-eslint/eslint-plugin
 ```
 

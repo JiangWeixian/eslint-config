@@ -1,16 +1,22 @@
+const { isPackageExists } = require('local-pkg')
+const compact = require('lodash.compact')
+
+const isTailwindcss = isPackageExists('tailwindcss')
+
 module.exports = {
   env: {
     es6: true,
     browser: true,
     node: true,
   },
-  extends: [
+  extends: compact([
     'standard',
     'plugin:import/recommended',
     'plugin:eslint-comments/recommended',
     'plugin:jsonc/recommended-with-jsonc',
     'plugin:yml/standard',
-  ],
+    isTailwindcss ? 'plugin:tailwindcss/recommended' : undefined,
+  ]),
   plugins: ['html', 'unicorn'],
   settings: {
     'import/resolver': {
