@@ -1,5 +1,11 @@
 # @aiou/eslint-config
 
+## 0.7.1
+
+### Patch Changes
+
+- bda7400: remove prettier in peerdepencies
+
 ## 0.7.0
 
 ### Minor Changes
