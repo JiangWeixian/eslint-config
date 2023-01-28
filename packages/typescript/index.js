@@ -21,7 +21,7 @@ module.exports = {
       'error',
       { prefer: 'type-imports', disallowTypeAnnotations: false },
     ],
-    '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
+    '@typescript-eslint/consistent-type-definitions': 'off',
     '@typescript-eslint/prefer-ts-expect-error': 'error',
 
     // Overrides JS
