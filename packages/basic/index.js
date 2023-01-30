@@ -139,7 +139,7 @@ module.exports = {
       parser: 'yaml-eslint-parser',
     },
   ],
-  rules: {
+  rules: Object.assign({
     // import
     'import/first': 'error',
     'import/no-mutable-exports': 'error',
@@ -286,5 +286,10 @@ module.exports = {
         allowSeparatedGroups: false,
       },
     ],
-  },
+  }, isTailwindcss
+? {
+    // Enable custom classname
+    'tailwindcss/no-custom-classname': 'off',
+  }
+: {}),
 }
