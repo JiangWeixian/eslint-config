@@ -13,7 +13,8 @@ module.exports = {
   ]),
   settings: {
     react: {
-      version: 'detect',
+      // 'detect' will throw warn on monorepo
+      version: '18.0',
     },
   },
   rules: {

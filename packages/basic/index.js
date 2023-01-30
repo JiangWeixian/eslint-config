@@ -128,7 +128,7 @@ module.exports = {
       },
     },
     {
-      files: ['*.test.ts', '*.test.js', '*.spec.ts', '*.spec.js', '**/test/**'],
+      files: ['*.test.ts', '*.test.js', '*.spec.ts', '*.spec.js', '**/test/**', '**/tests/**', '**/__tests__/**'],
       rules: {
         'no-unused-expressions': 'off',
         '@typescript-eslint/no-unused-vars': 'off',

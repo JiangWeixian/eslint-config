@@ -21,6 +21,7 @@ module.exports = {
       'error',
       { prefer: 'type-imports', disallowTypeAnnotations: false },
     ],
+    // Limit `interface` define object types, users could override with *.d.ts declare
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
     '@typescript-eslint/prefer-ts-expect-error': 'error',
 
