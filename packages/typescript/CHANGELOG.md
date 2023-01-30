@@ -1,5 +1,15 @@
 # @aiou/eslint-config-ts
 
+## 0.5.2
+
+### Patch Changes
+
+- 9593680: update test files patterns
+- 9593680: pin react 18 version
+- Updated dependencies [9593680]
+- Updated dependencies [9593680]
+  - @aiou/eslint-config-basic@0.6.1
+
 ## 0.5.1
 
 ### Patch Changes

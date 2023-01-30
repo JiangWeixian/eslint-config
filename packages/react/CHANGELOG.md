@@ -1,5 +1,14 @@
 # @aiou/eslint-config-react
 
+## 0.6.1
+
+### Patch Changes
+
+- 9593680: pin react 18 version
+- Updated dependencies [9593680]
+- Updated dependencies [9593680]
+  - @aiou/eslint-config-ts@0.5.2
+
 ## 0.6.0
 
 ### Minor Changes
