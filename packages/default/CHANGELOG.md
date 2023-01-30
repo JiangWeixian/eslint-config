@@ -1,5 +1,12 @@
 # @aiou/eslint-config
 
+## 0.7.2
+
+### Patch Changes
+
+- Updated dependencies [9593680]
+  - @aiou/eslint-config-react@0.6.1
+
 ## 0.7.1
 
 ### Patch Changes
