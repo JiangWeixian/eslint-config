@@ -1,5 +1,11 @@
 # @aiou/eslint-config-ts
 
+## 0.5.5
+
+### Patch Changes
+
+- 7116e19: sync with basic brace-styles
+
 ## 0.5.4
 
 ### Patch Changes
