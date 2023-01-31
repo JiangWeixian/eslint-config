@@ -1,5 +1,12 @@
 # @aiou/eslint-config-react
 
+## 0.6.2
+
+### Patch Changes
+
+- Updated dependencies [bfd51c5]
+  - @aiou/eslint-config-ts@0.5.3
+
 ## 0.6.1
 
 ### Patch Changes

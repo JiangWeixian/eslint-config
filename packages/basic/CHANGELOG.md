@@ -1,5 +1,11 @@
 # @aiou/eslint-config-basic
 
+## 0.6.2
+
+### Patch Changes
+
+- bfd51c5: always need `{}` & warn ts-ignore
+
 ## 0.6.1
 
 ### Patch Changes
