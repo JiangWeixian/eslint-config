@@ -1,5 +1,11 @@
 # @aiou/eslint-config-basic
 
+## 0.6.4
+
+### Patch Changes
+
+- 0145cb0: off tailwindcss custom names
+
 ## 0.6.3
 
 ### Patch Changes
