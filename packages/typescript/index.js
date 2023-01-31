@@ -23,7 +23,7 @@ module.exports = {
     ],
     // Limit `interface` define object types, users could override with *.d.ts declare
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
-    '@typescript-eslint/prefer-ts-expect-error': 'error',
+    '@typescript-eslint/prefer-ts-expect-error': 'warn',
 
     // Overrides JS
     'no-unused-vars': 'off',
