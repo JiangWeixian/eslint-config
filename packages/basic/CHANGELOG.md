@@ -1,5 +1,12 @@
 # @aiou/eslint-config-basic
 
+## 0.6.3
+
+### Patch Changes
+
+- 84c8ef0: quote-props as need
+- 84c8ef0: use 1tbs brace style
+
 ## 0.6.2
 
 ### Patch Changes
