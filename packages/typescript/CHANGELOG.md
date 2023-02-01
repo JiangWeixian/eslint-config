@@ -1,5 +1,13 @@
 # @aiou/eslint-config-ts
 
+## 0.5.7
+
+### Patch Changes
+
+- 3b6fcf2: fix indent with brace-style
+- Updated dependencies [3b6fcf2]
+  - @aiou/eslint-config-basic@0.6.5
+
 ## 0.5.6
 
 ### Patch Changes
