@@ -181,7 +181,8 @@ module.exports = {
     'no-cond-assign': ['error', 'always'],
     'func-call-spacing': ['off', 'never'],
     'key-spacing': ['error', { beforeColon: false, afterColon: true }],
-    indent: 'off',
+    // https://github.com/prettier/prettier-eslint/issues/226
+    indent: ['error', 2, { SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1 }],
     'no-restricted-syntax': [
       'error',
       'DebuggerStatement',
@@ -287,9 +288,9 @@ module.exports = {
       },
     ],
   }, isTailwindcss
-? {
-    // Enable custom classname
-    'tailwindcss/no-custom-classname': 'off',
-  }
-: {}),
+    ? {
+        // Enable custom classname
+        'tailwindcss/no-custom-classname': 'off',
+      }
+    : {}),
 }
