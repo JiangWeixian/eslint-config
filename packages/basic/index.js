@@ -149,10 +149,13 @@ module.exports = {
       'error',
       {
         devDependencies: [
+          // ignore dev scripts
           '**/scripts/**/*.{js,jsx,ts,tsx,cjs,mjs}',
           '**/*.test.{js,jsx,ts,tsx,cjs,mjs}',
           '**/*.spec.{js,jsx,ts,tsx,mjs,cjs}',
           '**/*.config.{js,jsx,ts,tsx,cjs,mjs}',
+          // ignore require third packages in .eslintrc.* e.g. eslint-define-config
+          '**/.eslintrc.{js,cjs,mjs}',
         ],
       },
     ],
