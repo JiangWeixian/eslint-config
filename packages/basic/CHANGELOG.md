@@ -1,5 +1,11 @@
 # @aiou/eslint-config-basic
 
+## 0.6.6
+
+### Patch Changes
+
+- 679062d: ignore third packages in eslintrc
+
 ## 0.6.5
 
 ### Patch Changes
