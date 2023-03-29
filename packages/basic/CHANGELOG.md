@@ -1,5 +1,11 @@
 # @aiou/eslint-config-basic
 
+## 0.7.0
+
+### Minor Changes
+
+- 49d5baf: perfer node:
+
 ## 0.6.6
 
 ### Patch Changes
