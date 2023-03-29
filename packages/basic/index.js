@@ -273,6 +273,8 @@ module.exports = {
     'unicorn/prefer-type-error': 'error',
     // Use new when throwing error
     'unicorn/throw-new-error': 'error',
+    // Use `node:` for built-in node modules
+    'unicorn/prefer-node-protocol': 'warn',
 
     // yml
     'yml/quotes': ['error', { prefer: 'double', avoidEscape: false }],
