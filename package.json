@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "monorepo for aiou templates",
   "private": true,
+  "packageManager": "pnpm@7.12.2",
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
