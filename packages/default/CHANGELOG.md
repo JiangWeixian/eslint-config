@@ -1,5 +1,15 @@
 # @aiou/eslint-config
 
+## 0.8.0
+
+### Minor Changes
+
+- 6c218f1: bump with breaking change version
+
+### Patch Changes
+
+- @aiou/eslint-config-react@0.6.8
+
 ## 0.7.8
 
 ### Patch Changes
