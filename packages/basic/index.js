@@ -138,6 +138,14 @@ module.exports = {
       files: ['*.yaml', '*.yml'],
       parser: 'yaml-eslint-parser',
     },
+    {
+      files: ['*.jsx', '*.tsx'],
+      rules: {
+        // related: https://github.com/pmmmwh/react-refresh-webpack-plugin/blob/main/docs/TROUBLESHOOTING.md#edits-always-lead-to-full-reload
+        // export anonymous function: ReactRefresh failed
+        'import/no-anonymous-default-export': 'warn',
+      },
+    },
   ],
   rules: Object.assign({
     // import
