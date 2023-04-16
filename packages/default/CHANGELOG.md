@@ -1,5 +1,15 @@
 # @aiou/eslint-config
 
+## 0.8.1
+
+### Patch Changes
+
+- 53da1bf: warn anonymous function exports which failed react refresh
+- Updated dependencies [53da1bf]
+- Updated dependencies [53da1bf]
+- Updated dependencies [53da1bf]
+  - @aiou/eslint-config-react@0.6.9
+
 ## 0.8.0
 
 ### Minor Changes
