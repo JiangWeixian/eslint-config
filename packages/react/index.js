@@ -32,14 +32,20 @@ module.exports = {
         return: 'parens-new-line',
         arrow: 'parens-new-line',
         condition: 'parens-new-line',
-        logical: 'ignore',
+        logical: 'parens-new-line',
         prop: 'parens-new-line',
       },
     ],
     'react/jsx-closing-tag-location': 'error',
     // Enforce disallow </ div>
     'react/jsx-space-before-closing': ['error', 'always'],
-    'react/jsx-max-props-per-line': ['warn', { maximum: 2 }],
-    'react/jsx-indent': ['warn', 2],
+    'react/jsx-max-props-per-line': ['warn', { maximum: 1, when: 'multiline' }],
+    // indentLogicalExpressions will fix && element
+    'react/jsx-indent': ['warn', 2, { indentLogicalExpressions: true }],
+    'react/jsx-indent-props': ['warn', 2],
+    // < and > should be on the same line(y-axis) if jsx is multiline
+    'react/jsx-closing-bracket-location': ['warn', 'tag-aligned'],
+    // Enforce new line when multiline props jsx
+    'react/jsx-first-prop-new-line': ['warn', 'multiline-multiprop'],
   },
 }
