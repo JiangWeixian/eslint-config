@@ -15,6 +15,7 @@ module.exports = {
     'no-useless-constructor': 'off',
     indent: 'off',
     // https://github.com/prettier/prettier-eslint/issues/226
+    // JSX indent config in react
     '@typescript-eslint/indent': ['error', 2, {
       SwitchCase: 1,
       VariableDeclarator: 1,
