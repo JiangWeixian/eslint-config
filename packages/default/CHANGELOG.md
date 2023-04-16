@@ -1,5 +1,13 @@
 # @aiou/eslint-config
 
+## 0.8.2
+
+### Patch Changes
+
+- ffea08d: update react jsx & props indent rules
+- Updated dependencies [ffea08d]
+  - @aiou/eslint-config-react@0.6.10
+
 ## 0.8.1
 
 ### Patch Changes
