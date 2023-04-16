@@ -167,7 +167,9 @@ module.exports = {
         ],
       },
     ],
-    // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#eslint-plugin-import
+    // Not allow import { default as named }
+    'import/no-named-default': 'warn',
+    // https://github.com/typescript-eslint/typescript-eslint/blob/main/docs/linting/troubleshooting/Performance.md#eslint-plugin-import
     'import/named': 'off',
 
     // Common
