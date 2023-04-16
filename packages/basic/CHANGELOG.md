@@ -1,5 +1,13 @@
 # @aiou/eslint-config-basic
 
+## 0.7.1
+
+### Patch Changes
+
+- 53da1bf: update jsx react style rules
+- 53da1bf: warn anonymous function exports which failed react refresh
+- 53da1bf: add import/no-named-default
+
 ## 0.7.0
 
 ### Minor Changes
