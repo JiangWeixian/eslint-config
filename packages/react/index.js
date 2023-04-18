@@ -38,7 +38,7 @@ module.exports = {
     ],
     'react/jsx-closing-tag-location': 'error',
     // Enforce disallow </ div>
-    'react/jsx-space-before-closing': ['error', 'always'],
+    'react/jsx-tag-spacing': ['error', { closingSlash: 'never', beforeSelfClosing: 'always', afterOpening: 'never', beforeClosing: 'allow' }],
     'react/jsx-max-props-per-line': ['warn', { maximum: 1, when: 'multiline' }],
     // indentLogicalExpressions will fix && element
     'react/jsx-indent': ['warn', 2, { indentLogicalExpressions: true }],
