@@ -17,7 +17,7 @@ module.exports = {
     'plugin:yml/standard',
     isTailwindcss ? 'plugin:tailwindcss/recommended' : undefined,
   ]),
-  plugins: ['html', 'unicorn'],
+  plugins: ['html', 'unicorn', 'unused-imports'],
   settings: {
     'import/resolver': {
       node: { extensions: ['.js', '.mjs'] },
@@ -149,6 +149,8 @@ module.exports = {
   ],
   rules: Object.assign({
     // import
+    // global style should be last; add newline between import(group)
+    'import/order': ['error', { warnOnUnassignedImports: true, 'newlines-between': 'always' }],
     'import/first': 'error',
     'import/no-mutable-exports': 'error',
     'import/no-unresolved': 'off',
@@ -169,8 +171,23 @@ module.exports = {
     ],
     // Not allow import { default as named }
     'import/no-named-default': 'warn',
-    // https://github.com/typescript-eslint/typescript-eslint/blob/main/docs/linting/troubleshooting/Performance.md#eslint-plugin-import
-    'import/named': 'off',
+    // import style from eslint-config/recommend
+    'sort-imports': [
+      'error',
+      {
+        ignoreCase: false,
+        ignoreDeclarationSort: true,
+        ignoreMemberSort: false,
+        memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
+        allowSeparatedGroups: false,
+      },
+    ],
+
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'warn',
+      { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
+    ],
 
     // Common
     semi: ['error', 'never'],
@@ -290,16 +307,6 @@ module.exports = {
 
     'no-use-before-define': ['error', { functions: false, classes: false, variables: true }],
     'eslint-comments/disable-enable-pair': 'off',
-    'sort-imports': [
-      'error',
-      {
-        ignoreCase: false,
-        ignoreDeclarationSort: true,
-        ignoreMemberSort: false,
-        memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
-        allowSeparatedGroups: false,
-      },
-    ],
   }, isTailwindcss
     ? {
         // Enable custom classname
