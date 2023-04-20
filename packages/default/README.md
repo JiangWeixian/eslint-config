@@ -25,6 +25,7 @@ eslint-config-standard
 eslint-plugin-eslint-comments
 eslint-plugin-html
 eslint-plugin-import
+eslint-plugin-unused-imports
 eslint-plugin-jsonc
 eslint-plugin-n (forked eslint-plugin-node)
 eslint-plugin-promise
