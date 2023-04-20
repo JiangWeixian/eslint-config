@@ -66,6 +66,9 @@ module.exports = {
     '@typescript-eslint/prefer-ts-expect-error': 'warn',
 
     // Overrides JS
+    // no-spaced-func alert -- https://eslint.org/docs/latest/rules/no-spaced-func
+    'func-call-spacing': 'off',
+    '@typescript-eslint/func-call-spacing': ['error', 'never'],
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     'no-redeclare': 'off',
