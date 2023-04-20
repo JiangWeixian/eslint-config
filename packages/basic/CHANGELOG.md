@@ -1,5 +1,11 @@
 # @aiou/eslint-config-basic
 
+## 0.8.1
+
+### Patch Changes
+
+- b0ed654: pkg json key order
+
 ## 0.8.0
 
 ### Minor Changes
