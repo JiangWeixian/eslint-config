@@ -1,5 +1,16 @@
 # @aiou/eslint-config-basic
 
+## 0.8.0
+
+### Minor Changes
+
+- e0409f7: add unused-import override default no-used-vars
+- e0409f7: add import/order
+
+### Patch Changes
+
+- e0409f7: off import related rules
+
 ## 0.7.3
 
 ### Patch Changes

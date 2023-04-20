@@ -1,5 +1,15 @@
 # @aiou/eslint-config
 
+## 0.9.0
+
+### Minor Changes
+
+- e0409f7: add unused-import override default no-used-vars
+
+### Patch Changes
+
+- @aiou/eslint-config-react@0.6.12
+
 ## 0.8.3
 
 ### Patch Changes

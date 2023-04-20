@@ -1,6 +1,6 @@
 {
   "name": "@aiou/eslint-config-ts",
-  "version": "0.5.12",
+  "version": "0.6.0",
   "description": "eslint config typescript for aiou template",
   "keywords": [],
   "license": "MIT",
