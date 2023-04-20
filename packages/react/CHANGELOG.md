@@ -1,5 +1,13 @@
 # @aiou/eslint-config-react
 
+## 0.6.13
+
+### Patch Changes
+
+- b0ed654: pkg json key order
+- Updated dependencies [b0ed654]
+  - @aiou/eslint-config-ts@0.6.1
+
 ## 0.6.12
 
 ### Patch Changes

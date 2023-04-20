@@ -1,12 +1,12 @@
 {
   "name": "@aiou/eslint-config-ts",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "eslint config typescript for aiou template",
   "keywords": [],
   "license": "MIT",
   "author": "JW <jiangweixian1994@gmail.com> (https://github.com/jiangweixian/)",
-  "main": "index.js",
   "files": ["index.js"],
+  "main": "index.js",
   "publishConfig": {
     "access": "public"
   },

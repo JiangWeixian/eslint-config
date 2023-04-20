@@ -1,5 +1,13 @@
 # @aiou/eslint-config-ts
 
+## 0.6.1
+
+### Patch Changes
+
+- b0ed654: pkg json key order
+- Updated dependencies [b0ed654]
+  - @aiou/eslint-config-basic@0.8.1
+
 ## 0.6.0
 
 ### Minor Changes

@@ -1,12 +1,12 @@
 {
   "name": "@aiou/eslint-config-react",
-  "version": "0.6.12",
+  "version": "0.6.13",
   "description": "",
   "keywords": [],
   "license": "MIT",
   "author": "JW <jiangweixian1994@gmail.com> (https://github.com/jiangweixian/)",
-  "main": "index.js",
   "files": ["index.js"],
+  "main": "index.js",
   "scripts": {
     "lint": "eslint . --config=index.js"
   },
