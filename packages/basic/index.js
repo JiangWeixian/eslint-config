@@ -171,8 +171,6 @@ module.exports = {
     ],
     // Not allow import { default as named }
     'import/no-named-default': 'warn',
-    // https://github.com/typescript-eslint/typescript-eslint/blob/main/docs/linting/troubleshooting/Performance.md#eslint-plugin-import
-    'import/named': 'off',
     // import style from eslint-config/recommend
     'sort-imports': [
       'error',

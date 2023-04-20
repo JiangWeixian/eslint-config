@@ -3,7 +3,7 @@ const basic = require('@aiou/eslint-config-basic')
 
 module.exports = {
   parser: '@typescript-eslint/parser',
-  extends: ['@aiou/eslint-config-basic', 'plugin:@typescript-eslint/recommended'],
+  extends: ['@aiou/eslint-config-basic', 'plugin:@typescript-eslint/recommended', 'plugin:import/typescript'],
   overrides: basic.overrides,
   settings: {
     'import/resolver': {
@@ -11,6 +11,13 @@ module.exports = {
     },
   },
   rules: {
+    // https://github.com/typescript-eslint/typescript-eslint/blob/main/docs/linting/troubleshooting/Performance.md#eslint-plugin-import
+    'import/named': 'off',
+    'import/namespace': 'off',
+    'import/default': 'off',
+    'import/no-named-as-default-member': 'off',
+    'import/no-named-as-default': 'off',
+
     // TS
     'no-useless-constructor': 'off',
     indent: 'off',
