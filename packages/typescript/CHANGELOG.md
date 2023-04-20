@@ -1,5 +1,13 @@
 # @aiou/eslint-config-ts
 
+## 0.5.12
+
+### Patch Changes
+
+- 948df24: use func-call-spacing related no-spaced-func deprecated
+- Updated dependencies [948df24]
+  - @aiou/eslint-config-basic@0.7.3
+
 ## 0.5.11
 
 ### Patch Changes

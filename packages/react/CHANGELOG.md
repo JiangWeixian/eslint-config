@@ -1,5 +1,14 @@
 # @aiou/eslint-config-react
 
+## 0.6.11
+
+### Patch Changes
+
+- 948df24: use func-call-spacing related no-spaced-func deprecated
+- 948df24: use jsx-tag-spacing
+- Updated dependencies [948df24]
+  - @aiou/eslint-config-ts@0.5.12
+
 ## 0.6.10
 
 ### Patch Changes
