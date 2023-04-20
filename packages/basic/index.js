@@ -17,7 +17,7 @@ module.exports = {
     'plugin:yml/standard',
     isTailwindcss ? 'plugin:tailwindcss/recommended' : undefined,
   ]),
-  plugins: ['html', 'unicorn'],
+  plugins: ['html', 'unicorn', 'unused-imports'],
   settings: {
     'import/resolver': {
       node: { extensions: ['.js', '.mjs'] },
@@ -181,6 +181,12 @@ module.exports = {
         memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
         allowSeparatedGroups: false,
       },
+    ],
+
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'warn',
+      { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
     ],
 
     // Common

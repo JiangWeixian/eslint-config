@@ -77,7 +77,6 @@ module.exports = {
     'func-call-spacing': 'off',
     '@typescript-eslint/func-call-spacing': ['error', 'never'],
     'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     'no-redeclare': 'off',
     '@typescript-eslint/no-redeclare': 'error',
     'no-dupe-class-members': 'off',
@@ -140,5 +139,7 @@ module.exports = {
     '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/no-namespace': 'off',
     '@typescript-eslint/no-var-requires': 'off',
+    // https://www.npmjs.com/package/eslint-plugin-unused-imports
+    '@typescript-eslint/no-unused-vars': 'off',
   },
 }
