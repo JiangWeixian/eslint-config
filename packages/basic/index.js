@@ -17,7 +17,7 @@ module.exports = {
     'plugin:yml/standard',
     isTailwindcss ? 'plugin:tailwindcss/recommended' : undefined,
   ]),
-  plugins: ['html', 'unicorn', 'unused-imports'],
+  plugins: ['html', 'unicorn', 'unused-imports', 'simple-import-sort', 'import-newlines'],
   settings: {
     'import/resolver': {
       node: { extensions: ['.js', '.mjs'] },
@@ -153,9 +153,35 @@ module.exports = {
   ],
   rules: Object.assign({
     // import
-    // global style should be last; add newline between import(group)
-    'import/order': ['error', { warnOnUnassignedImports: true, 'newlines-between': 'always' }],
+    // off: controlled by import/order
+    'import/order': 'off',
+    'sort-imports': 'off',
+    'simple-import-sort/imports': [
+      'warn',
+      {
+        groups: [
+          // Side effect imports.
+          ['^\\u0000'],
+          // Node.js builtins prefixed with `node:`.
+          ['^node:'],
+          // Packages.
+          // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
+          ['^@?\\w'],
+          // Relative imports.
+          // Absolute imports and other imports such as `@/foo` or `~/foo`.
+          // Anything not matched in another group.
+          ['^', '^\\.', '^@/\\w', '^~/\\w'],
+          // Virtual modules prefixed with `virtual:`, rollup & vite favor
+          ['^virtual:'],
+          // Types
+          ['^[^/\\.].*\u0000$', '^\\..*\u0000$'],
+        ],
+      },
+    ],
+    'simple-import-sort/exports': 'off',
     'import/first': 'error',
+    'import/newline-after-import': 'error',
+    'import/no-duplicates': 'error',
     'import/no-mutable-exports': 'error',
     'import/no-unresolved': 'off',
     'import/no-absolute-path': 'off',
@@ -175,22 +201,21 @@ module.exports = {
     ],
     // Not allow import { default as named }
     'import/no-named-default': 'warn',
-    // import style from eslint-config/recommend
-    'sort-imports': [
-      'error',
-      {
-        ignoreCase: false,
-        ignoreDeclarationSort: true,
-        ignoreMemberSort: false,
-        memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
-        allowSeparatedGroups: false,
-      },
-    ],
 
     'unused-imports/no-unused-imports': 'error',
     'unused-imports/no-unused-vars': [
       'warn',
       { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
+    ],
+
+    // Enforce newlines inside named import
+    'import-newlines/enforce': [
+      'error',
+      {
+        items: 2,
+        'max-len': 120,
+        semi: false,
+      },
     ],
 
     // Common
