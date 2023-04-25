@@ -25,6 +25,8 @@ eslint-config-standard
 eslint-plugin-eslint-comments
 eslint-plugin-html
 eslint-plugin-import
+eslint-plugin-simple-import-sort
+eslint-plugin-import-newlines
 eslint-plugin-unused-imports
 eslint-plugin-jsonc
 eslint-plugin-n (forked eslint-plugin-node)
