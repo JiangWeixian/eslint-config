@@ -1,5 +1,11 @@
 # @aiou/eslint-config-basic
 
+## 0.9.0
+
+### Minor Changes
+
+- 520a18d: add newlines inside named imports; group imports
+
 ## 0.8.1
 
 ### Patch Changes

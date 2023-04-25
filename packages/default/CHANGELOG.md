@@ -1,5 +1,15 @@
 # @aiou/eslint-config
 
+## 0.10.0
+
+### Minor Changes
+
+- 520a18d: add newlines inside named imports; group imports
+
+### Patch Changes
+
+- @aiou/eslint-config-react@0.6.14
+
 ## 0.9.1
 
 ### Patch Changes
