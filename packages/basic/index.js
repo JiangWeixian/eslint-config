@@ -170,6 +170,7 @@ module.exports = {
         '@typescript-eslint/no-namespace': 'off',
         '@typescript-eslint/no-require-imports': 'off',
         'import/no-unresolved': 'off',
+        'unused-imports/no-unused-imports': 'off',
         'unused-imports/no-unused-vars': 'off',
         'no-alert': 'off',
         'no-console': 'off',
