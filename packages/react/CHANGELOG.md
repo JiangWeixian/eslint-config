@@ -1,5 +1,11 @@
 # @aiou/eslint-config-react
 
+## 0.0.0-beta-20230621082928
+
+### Patch Changes
+
+- @aiou/eslint-config-ts@0.0.0-beta-20230621082928
+
 ## 0.0.0-beta-20230621080119
 
 ### Patch Changes
