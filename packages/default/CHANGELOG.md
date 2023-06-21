@@ -1,5 +1,15 @@
 # @aiou/eslint-config
 
+## 0.11.0
+
+### Minor Changes
+
+- f974a38: lint markdown
+
+### Patch Changes
+
+- @aiou/eslint-config-react@0.6.15
+
 ## 0.10.0
 
 ### Minor Changes
