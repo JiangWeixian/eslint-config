@@ -1,5 +1,15 @@
 # @aiou/eslint-config
 
+## 0.0.0-beta-20230621080119
+
+### Minor Changes
+
+- 5e287c3: lint markdown
+
+### Patch Changes
+
+- @aiou/eslint-config-react@0.0.0-beta-20230621080119
+
 ## 0.10.0
 
 ### Minor Changes
