@@ -1,5 +1,11 @@
 # @aiou/eslint-config-basic
 
+## 0.10.0
+
+### Minor Changes
+
+- f974a38: lint markdown
+
 ## 0.9.0
 
 ### Minor Changes

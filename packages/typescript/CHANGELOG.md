@@ -1,5 +1,12 @@
 # @aiou/eslint-config-ts
 
+## 0.6.3
+
+### Patch Changes
+
+- Updated dependencies [f974a38]
+  - @aiou/eslint-config-basic@0.10.0
+
 ## 0.6.2
 
 ### Patch Changes
