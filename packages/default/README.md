@@ -25,6 +25,7 @@ eslint-config-standard
 eslint-plugin-eslint-comments
 eslint-plugin-html
 eslint-plugin-import
+eslint-plugin-markdown
 eslint-plugin-simple-import-sort
 eslint-plugin-import-newlines
 eslint-plugin-unused-imports
