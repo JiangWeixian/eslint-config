@@ -1,5 +1,11 @@
 # @aiou/eslint-config-basic
 
+## 0.0.0-beta-20230621082928
+
+### Minor Changes
+
+- b1d01c0: lint markdown
+
 ## 0.0.0-beta-20230621080119
 
 ### Minor Changes
