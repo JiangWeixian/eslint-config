@@ -1,6 +1,6 @@
 {
   "name": "@aiou/eslint-ignore",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "collection of eslint ignore patterns",
   "keywords": [
     "eslint",
@@ -18,12 +18,12 @@
     "email": "jiangweixian1994@gmail.com"
   },
   "author": "JW <jiangweixian1994@gmail.com> (https://twitter.com/jiangweixian)",
-  "main": "index.js",
-  "typings": "index.d.ts",
   "files": [
     "index.js",
     "index.d.ts"
   ],
+  "main": "index.js",
+  "typings": "index.d.ts",
   "scripts": {
     "build": "esno ./src/index.ts",
     "test": "jest"
