@@ -1,5 +1,11 @@
 # @aiou/eslint-config-basic
 
+## 0.10.1
+
+### Patch Changes
+
+- 2a3ec88: update exports field order, default should be last one
+
 ## 0.10.0
 
 ### Minor Changes

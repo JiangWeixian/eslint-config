@@ -1,5 +1,11 @@
 # @aiou/eslint-ignore
 
+## 0.3.3
+
+### Patch Changes
+
+- 2a3ec88: update exports field order, default should be last one
+
 ## 0.3.2
 
 ### Patch Changes

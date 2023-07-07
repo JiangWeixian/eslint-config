@@ -1,5 +1,13 @@
 # @aiou/eslint-config
 
+## 0.11.1
+
+### Patch Changes
+
+- Updated dependencies [2a3ec88]
+  - @aiou/eslint-ignore@0.3.3
+  - @aiou/eslint-config-react@0.6.16
+
 ## 0.11.0
 
 ### Minor Changes
