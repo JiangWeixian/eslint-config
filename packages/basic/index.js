@@ -109,7 +109,8 @@ module.exports = {
           },
           {
             pathPattern: '^exports.*$',
-            order: ['types', 'require', 'import'],
+            // According to webpack, default condition should be last item
+            order: ['require', 'import', 'types', 'node', 'browser', 'default'],
           },
         ],
       },
