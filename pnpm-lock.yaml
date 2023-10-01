@@ -202,6 +202,9 @@ importers:
       eslint-plugin-react-hooks:
         specifier: ^4.6.0
         version: 4.6.0(eslint@8.26.0)
+      eslint-plugin-ssr-friendly:
+        specifier: ^1.2.0
+        version: 1.2.0(eslint@8.26.0)
       local-pkg:
         specifier: ^0.4.3
         version: 0.4.3
@@ -2766,6 +2769,15 @@ packages:
       eslint: '>=5.0.0'
     dependencies:
       eslint: 8.26.0
+    dev: false
+
+  /eslint-plugin-ssr-friendly@1.2.0(eslint@8.26.0):
+    resolution: {integrity: sha512-py+DI+upyWdcm2fS+gBHSXME4HiZ6GRlLz+4c8GMXiUi8huIP83RaQeOPccBsu9aKEIZiXAblaxYjIHUnrIpAQ==}
+    peerDependencies:
+      eslint: '>=0.8.0'
+    dependencies:
+      eslint: 8.26.0
+      globals: 13.17.0
     dev: false
 
   /eslint-plugin-tailwindcss@3.8.0:

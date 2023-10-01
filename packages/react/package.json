@@ -21,6 +21,7 @@
     "@next/eslint-plugin-next": "^13.1.4",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-ssr-friendly": "^1.2.0",
     "local-pkg": "^0.4.3",
     "lodash.compact": "^3.0.1"
   },

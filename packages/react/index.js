@@ -4,12 +4,14 @@ const compact = require('lodash.compact')
 const isNext = isPackageExists('next')
 
 module.exports = {
+  plugins: ['ssr-friendly'],
   extends: compact([
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
     isNext ? 'plugin:@next/next/recommended' : undefined,
     '@aiou/eslint-config-ts',
+    'plugin:ssr-friendly/recommended',
   ]),
   settings: {
     react: {
