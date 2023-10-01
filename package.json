@@ -1,9 +1,9 @@
 {
   "name": "@aiou/eslint-config-monorepo",
   "version": "1.0.0",
-  "description": "monorepo for aiou templates",
   "private": true,
-  "packageManager": "pnpm@7.12.2",
+  "packageManager": "pnpm@8.8.0",
+  "description": "monorepo for aiou templates",
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
