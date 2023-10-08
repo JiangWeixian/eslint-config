@@ -19,6 +19,15 @@ module.exports = {
       version: '18.0',
     },
   },
+  overrides: [
+    {
+      files: ['**/*.test.{js,jsx,ts,tsx,cjs,mjs}', '**/*.spec.{js,jsx,ts,tsx,mjs,cjs}'],
+      rules: {
+        'react-refresh/*': 'off',
+        'ssr-friendly/*': 'off',
+      },
+    },
+  ],
   rules: {
     'jsx-quotes': ['error', 'prefer-double'],
     'react/prop-types': 'off',
