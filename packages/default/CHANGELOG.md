@@ -1,5 +1,16 @@
 # @aiou/eslint-config
 
+## 0.11.2
+
+### Patch Changes
+
+- ab0f0fd: off ssr-friendly and react-refresh rules for test files
+- ab0f0fd: add react-refresh
+- Updated dependencies [5ec66b6]
+- Updated dependencies [ab0f0fd]
+- Updated dependencies [ab0f0fd]
+  - @aiou/eslint-config-react@0.6.17
+
 ## 0.11.1
 
 ### Patch Changes
