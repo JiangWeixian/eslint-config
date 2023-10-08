@@ -36,6 +36,7 @@ eslint-plugin-unicorn
 eslint-plugin-yml
 eslint-plugin-react
 eslint-plugin-ssr-friendly
+eslint-plugin-react-refresh
 @next/eslint-plugin-next (enabled when next found)
 eslint-plugin-react-hooks
 eslint-plugin-tailwindcss

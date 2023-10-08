@@ -4,7 +4,7 @@ const compact = require('lodash.compact')
 const isNext = isPackageExists('next')
 
 module.exports = {
-  plugins: ['ssr-friendly'],
+  plugins: ['ssr-friendly', 'react-refresh'],
   extends: compact([
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
@@ -19,6 +19,15 @@ module.exports = {
       version: '18.0',
     },
   },
+  overrides: [
+    {
+      files: ['**/*.test.{js,jsx,ts,tsx,cjs,mjs}', '**/*.spec.{js,jsx,ts,tsx,mjs,cjs}'],
+      rules: {
+        'react-refresh/*': 'off',
+        'ssr-friendly/*': 'off',
+      },
+    },
+  ],
   rules: {
     'jsx-quotes': ['error', 'prefer-double'],
     'react/prop-types': 'off',
@@ -49,5 +58,7 @@ module.exports = {
     'react/jsx-closing-bracket-location': ['warn', 'tag-aligned'],
     // Enforce new line when multiline props jsx
     'react/jsx-first-prop-new-line': ['warn', 'multiline-multiprop'],
+    // https://github.com/ArnaudBarre/eslint-plugin-react-refresh
+    'react-refresh/only-export-components': 'warn',
   },
 }
