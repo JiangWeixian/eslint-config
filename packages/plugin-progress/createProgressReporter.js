@@ -1,5 +1,6 @@
 /* eslint no-console: off */
 const pc = require('picocolors')
+
 module.exports = function createProgressReporter(options) {
   let lastReported = 0
   let lastFile
@@ -9,17 +10,19 @@ module.exports = function createProgressReporter(options) {
     rules: {
       activate: {
         create(context) {
-          if (!process.argv.includes('--fix'))
+          if (!process.argv.includes('--fix')) {
             return {}
+          }
 
           if (shouldHookExit) {
             shouldHookExit = false
             process.on('exit', printStats)
           }
           const now = Date.now()
-          if (now > lastReported + 15000)
+          if (now > lastReported + 15000) {
             lastReported = now
-            // console.error(`🎯 Found ${stats.length} files changed.`)
+          }
+          // console.error(`🎯 Found ${stats.length} files changed.`)
 
           if (lastFile) {
             lastFile.finish = now
@@ -43,11 +46,13 @@ module.exports = function createProgressReporter(options) {
     stats.sort((a, b) => b.duration - a.duration)
     const slow = stats.slice(0, 20)
     console.error(`🎯 Found ${stats.length} files changed.`)
-    if (stats.length >= 20)
+    if (stats.length >= 20) {
       console.log(`🐢 Slowest ${slow.length} files`)
+    }
 
-    for (const file of stats.slice(0, 20))
+    for (const file of stats.slice(0, 20)) {
       console.log(`✍️  Fixing up ${pc.bold(file.name)} (${file.duration} ms).`)
+    }
 
     console.log('✅ Everything is awesome!')
   }

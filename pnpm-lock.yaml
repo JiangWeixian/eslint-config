@@ -17,7 +17,7 @@ importers:
         version: link:packages/default
       '@aiou/eslint-plugin-progress':
         specifier: workspace:*
-        version: link:packages/progress
+        version: link:packages/plugin-progress
       '@changesets/cli':
         specifier: ^2.25.2
         version: 2.25.2
@@ -133,7 +133,7 @@ importers:
         version: link:../ignore
       '@aiou/eslint-plugin-progress':
         specifier: workspace:*
-        version: link:../progress
+        version: link:../plugin-progress
     devDependencies:
       eslint:
         specifier: ^8.26.0
@@ -178,7 +178,7 @@ importers:
         specifier: ^4.8.4
         version: 4.8.4
 
-  packages/progress:
+  packages/plugin-progress:
     dependencies:
       picocolors:
         specifier: ^1.0.0
