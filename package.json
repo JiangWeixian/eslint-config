@@ -13,7 +13,7 @@
     "ci:version": "pnpm changeset version",
     "ci:publish": "pnpm run build && pnpm changeset publish",
     "ci:snapshot": "pnpm changeset version --snapshot beta",
-    "ci:prerelease": "pnpm run build && pnpm changeset publish --tag beta",
+    "ci:prerelease": "pnpm changeset publish --no-git-tag --snapshot",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -30,6 +30,11 @@
     "eslint": "^8.26.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.5.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "eslint": "8.51.0"
+    }
   },
   "config": {
     "commitizen": {
