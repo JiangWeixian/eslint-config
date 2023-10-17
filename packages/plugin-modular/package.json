@@ -5,13 +5,14 @@
   "engines": {
     "node": ">=18"
   },
-  "homepage": "https://github.com/JW/plugin-modular#readme",
+  "homepage": "https://github.com/JiangWeixian/eslint-config/packages/plugin-modular#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JW/plugin-modular.git"
+    "url": "git+https://github.com/JW/eslint-config.git",
+    "directory": "packages/plugin-modular"
   },
   "bugs": {
-    "url": "https://github.com/JW/plugin-modular/issues",
+    "url": "https://github.com/JiangWeixian/eslint-config/packages/plugin-modular/issues",
     "email": "jiangweixian1994@gmail.com"
   },
   "author": {
@@ -23,13 +24,11 @@
     "./package.json": "./package.json",
     ".": {
       "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/index.mjs"
     }
   },
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
   "scripts": {
     "build:lib": "rollup -c --silent",
     "build": "rimraf dist && run-p build:*",
@@ -61,7 +60,6 @@
     "rollup-plugin-esbuild": "^5.0.0",
     "rollup-plugin-filesize": "9.1.2",
     "rollup-plugin-node-externals": "5.1.2",
-    "ts-node": "^10.7.0",
     "typescript": "5.2.2",
     "vitest": "0.10.0"
   }

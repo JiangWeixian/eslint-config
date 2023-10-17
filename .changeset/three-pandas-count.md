@@ -2,4 +2,4 @@
 "eslint-plugin-modular": patch
 ---
 
-mvp
+support `prefer-imports` & `modularize-imports` rules

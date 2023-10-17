@@ -32,7 +32,11 @@ const rule = RuleCreator(name => name)({
       modularize: 'Import path `{{imported}}` should rewrite into {{modularImport}}',
     },
   },
-  defaultOptions: [],
+  defaultOptions: [
+    {
+      packageEntries: [],
+    },
+  ],
   create(context) {
     /**
      * ```json
