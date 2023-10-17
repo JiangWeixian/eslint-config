@@ -37,13 +37,18 @@ jobs:
             ${{ runner.os }}-pnpm-store-
       - name: install dependencies
         run: pnpm install --frozen-lockfile=false
+      - name: Creating .npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: create and publish versions
-        uses: changesets/action@master
-        with:
-          version: pnpm ci:snapshot
-          commit: "chore: update versions"
-          title: "chore: update versions"
-          publish: pnpm ci:prerelease
+        run: |
+          pnpm ci:snapshot
+          pnpm changeset pre enter snapshot
+          pnpm ci:prerelease
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -1,0 +1,66 @@
+{
+  "name": "eslint-plugin-modular",
+  "version": "0.0.0",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "homepage": "https://github.com/JiangWeixian/eslint-config/packages/plugin-modular#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JW/eslint-config.git",
+    "directory": "packages/plugin-modular"
+  },
+  "bugs": {
+    "url": "https://github.com/JiangWeixian/eslint-config/packages/plugin-modular/issues",
+    "email": "jiangweixian1994@gmail.com"
+  },
+  "author": {
+    "name": "JW",
+    "email": "jiangweixian1994@gmail.com",
+    "url": "https://twitter.com/jiangweixian"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "scripts": {
+    "build:lib": "rollup -c --silent",
+    "build": "rimraf dist && run-p build:*",
+    "dev": "rollup -c -w --silent",
+    "test": "vitest",
+    "pretest": "pnpm run build",
+    "release": "pnpm run build && np --no-cleanup --yolo --no-publish --any-branch"
+  },
+  "dependencies": {
+    "@typescript-eslint/utils": "^6.7.4",
+    "mlly": "^1.4.2"
+  },
+  "devDependencies": {
+    "@aiou/eslint-config": "0.7.8",
+    "@changesets/cli": "2.21.1",
+    "@rollup/plugin-alias": "4.0.3",
+    "@rollup/plugin-commonjs": "24.0.1",
+    "@rollup/plugin-node-resolve": "15.0.1",
+    "@types/node": "17.0.22",
+    "@typescript-eslint/parser": "^6.7.5",
+    "esbuild": "^0.17.12",
+    "eslint": "8.26.0",
+    "esrua": "0.2.1",
+    "find-up": "^6.3.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "3.0.2",
+    "rollup": "3.19.1",
+    "rollup-plugin-condition-exports": "1.3.1",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "rollup-plugin-filesize": "9.1.2",
+    "rollup-plugin-node-externals": "5.1.2",
+    "typescript": "5.2.2",
+    "vitest": "0.10.0"
+  }
+}
