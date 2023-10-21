@@ -18,11 +18,15 @@ import type { FlatESLintConfigItem } from 'eslint-define-config'
 
 const presetJavascript = [
   ...ignores(),
-  ...progress(),
   ...javascript(),
   ...comments(),
   ...imports(),
   ...unicorn(),
+]
+
+const presetTypescript = [
+  ...presetJavascript,
+  ...typescript(),
 ]
 
 const presetLangsExtensions = [
@@ -32,10 +36,10 @@ const presetLangsExtensions = [
 ]
 
 const presetDefault = [
-  ...presetJavascript,
-  ...typescript(),
+  ...presetTypescript,
   ...react(),
   ...presetLangsExtensions,
+  ...progress(),
 ]
 
 export const aiou = (config: FlatESLintConfigItem | FlatESLintConfigItem[] = []) => {

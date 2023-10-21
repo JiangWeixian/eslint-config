@@ -5,8 +5,6 @@ import pluginUnsedImports from 'eslint-plugin-unused-imports'
 
 import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
 
-console.log(pluginImport)
-
 export const imports = () => {
   const config: FlatESLintConfigItem[] = [
     {
