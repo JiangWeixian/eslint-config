@@ -6,7 +6,7 @@
   "description": "monorepo for aiou templates",
   "scripts": {
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint:fix": "eslint . -c eslint.config.mjs --fix",
     "test:ignore": "eslint . --config=./packages/default/index.js",
     "test:react": "eslint test --config=./packages/react/index.js",
     "build": "pnpm --filter=./packages/analyze --filter=./packages/ignore build",
@@ -17,7 +17,7 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "**/**/*.{js,ts,tsx,vue,json}": ["eslint --fix"]
+    "**/**/*.{js,ts,tsx,vue,json,md}": ["eslint --fix"]
   },
   "dependencies": {
     "typescript": "^4.8.4"
