@@ -20,7 +20,7 @@
 
 extends from 
 
-```tsx
+```console
 eslint-config-standard
 eslint-plugin-eslint-comments
 eslint-plugin-html

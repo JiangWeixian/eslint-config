@@ -14,7 +14,7 @@ export const markdown = () => {
     },
     {
       // Code blocks in markdown file
-      files: ['**/*.md/*.*'],
+      files: ['**/*.md/*.?([cm])[jt]s?(x)'],
       languageOptions: {
         parserOptions: {
           ecmaFeatures: {
@@ -27,7 +27,7 @@ export const markdown = () => {
         },
       },
       rules: {
-        ...pluginMarkdown.configs.recommended.overrides.rules as Rules,
+        ...pluginMarkdown.configs.recommended.overrides[1].rules as Rules,
         'react/display-name': 'off',
         '@typescript-eslint/no-redeclare': 'off',
         '@typescript-eslint/no-unused-vars': 'off',
@@ -48,7 +48,7 @@ export const markdown = () => {
         'no-unused-vars': 'off',
         
         // Off imports
-        'import/*': 'off',
+        'import/no-extraneous-dependencies': 'off',
       },
     },
   ]
