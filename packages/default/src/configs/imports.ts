@@ -1,4 +1,4 @@
-import pluginImport from 'eslint-plugin-import'
+import pluginImport from 'eslint-plugin-i'
 import pluginImportNewlines from 'eslint-plugin-import-newlines'
 import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort'
 import pluginUnsedImports from 'eslint-plugin-unused-imports'
