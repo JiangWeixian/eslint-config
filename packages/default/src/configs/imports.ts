@@ -90,12 +90,25 @@ export const imports = () => {
       },
     },
     {
-      // TODO: disable on pages/configs
       files: ['*.jsx', '*.tsx'],
       rules: {
         // related: https://github.com/pmmmwh/react-refresh-webpack-plugin/blob/main/docs/TROUBLESHOOTING.md#edits-always-lead-to-full-reload
         // export anonymous function: ReactRefresh failed
         'import/no-anonymous-default-export': 'warn',
+      },
+    },
+    {
+      files: [
+        `**/*config*.?([cm])[jt]s?(x)`,
+        `**/pages/**/*.?([cm])[jt]s?(x)`,
+        `**/{index,vite,esbuild,rollup,webpack,rspack}.ts`,
+        '**/*.d.ts',
+      ],
+      rules: {
+        // related: https://github.com/pmmmwh/react-refresh-webpack-plugin/blob/main/docs/TROUBLESHOOTING.md#edits-always-lead-to-full-reload
+        // export anonymous function: ReactRefresh failed
+        'import/no-anonymous-default-export': 'off',
+        'import/no-default-export': 'off',
       },
     },
   ]
