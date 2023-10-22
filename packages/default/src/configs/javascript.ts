@@ -18,9 +18,21 @@ export const javascript = () => {
           ecmaFeatures: {
             jsx: true,
           },
+          // Eslint doesn't supply ecmaVersion in `parser.js` `context.parserOptions`
+          // This is required to avoid ecmaVersion < 2015 error or 'import' / 'export' error
+          ecmaVersion: "latest",
           sourceType: 'module',
         },
         sourceType: 'module',
+      },
+      settings: {
+        // This will do the trick
+        "import/parsers": {
+          espree: [".js", ".cjs", ".mjs", ".jsx"],
+        },
+        "import/resolver": {
+          node: true,
+        },
       },
       plugins: {
         n: pluginN,

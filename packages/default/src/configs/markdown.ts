@@ -1,10 +1,9 @@
 import pluginMarkdown from 'eslint-plugin-markdown'
 
-import type { FlatESLintConfigItem } from 'eslint-define-config'
+import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
 
 export const markdown = () => {
   const config: FlatESLintConfigItem[] = [
-    ...pluginMarkdown.configs.recommended.overrides as any,
     {
       // Enable the Markdown processor for all .md files.
       files: ['**/*.md'],
@@ -16,7 +15,19 @@ export const markdown = () => {
     {
       // Code blocks in markdown file
       files: ['**/*.md/*.*'],
+      languageOptions: {
+        parserOptions: {
+          ecmaFeatures: {
+            // Adding a "use strict" directive at the top of
+            // every code block is tedious and distracting, so
+            // opt into strict mode parsing without the
+            // directive.
+            impliedStrict: true
+          }
+        },
+      },
       rules: {
+        ...pluginMarkdown.configs.recommended.overrides.rules as Rules,
         'react/display-name': 'off',
         '@typescript-eslint/no-redeclare': 'off',
         '@typescript-eslint/no-unused-vars': 'off',
@@ -35,6 +46,9 @@ export const markdown = () => {
         'no-undef': 'off',
         'no-unused-expressions': 'off',
         'no-unused-vars': 'off',
+        
+        // Off imports
+        'import/*': 'off',
       },
     },
   ]

@@ -1,4 +1,5 @@
 import { ESLintUtils } from '@typescript-eslint/experimental-utils'
+
 import rule from '../src/rules/comment-density'
 
 const RuleTester = ESLintUtils.RuleTester

@@ -19,15 +19,15 @@ describe('prefer-imports', () => {
     tester.run('prefer-imports', rule, {
       valid: [
         {
-          code: `import { foo } from "./foo"`,
+          code: 'import { foo } from "./foo"',
         },
         {
-          code: `import path from "path"`,
+          code: 'import path from "path"',
         },
       ],
       invalid: [
         {
-          code: `import { foo } from "../"`,
+          code: 'import { foo } from "../"',
           options,
           errors: [
             {
@@ -41,7 +41,7 @@ describe('prefer-imports', () => {
           ],
         },
         {
-          code: `import { foo } from ".."`,
+          code: 'import { foo } from ".."',
           options,
           errors: [
             {
@@ -53,7 +53,7 @@ describe('prefer-imports', () => {
           ],
         },
         {
-          code: `import { foo } from "."`,
+          code: 'import { foo } from "."',
           options,
           errors: [
             {
@@ -65,7 +65,7 @@ describe('prefer-imports', () => {
           ],
         },
         {
-          code: `import { foo } from "src"`,
+          code: 'import { foo } from "src"',
           options: [{
             allRelativeImports: true,
             containSrc: false,
@@ -81,7 +81,7 @@ describe('prefer-imports', () => {
           ],
         },
         {
-          code: `import { foo } from "../src/foo"`,
+          code: 'import { foo } from "../src/foo"',
           options,
           errors: [
             {

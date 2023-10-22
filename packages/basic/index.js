@@ -369,8 +369,8 @@ module.exports = {
     'eslint-comments/disable-enable-pair': 'off',
   }, isTailwindcss
     ? {
-        // Enable custom classname
-        'tailwindcss/no-custom-classname': 'off',
-      }
+      // Enable custom classname
+      'tailwindcss/no-custom-classname': 'off',
+    }
     : {}),
 }
