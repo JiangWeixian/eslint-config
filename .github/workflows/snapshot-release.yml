@@ -1,9 +1,13 @@
 name: Release
 on:
   push:
+    paths:
+      - '.changeset'
     branches:
       - snapshot
   pull_request:
+    paths:
+      - '.changeset'
     branches:
       - master
 env:
