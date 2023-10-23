@@ -6,11 +6,9 @@
   "license": "MIT",
   "author": "JW <jiangweixian1994@gmail.com> (https://github.com/jiangweixian/)",
   "files": [
-    "dist"
+    "dist",
+    "dts"
   ],
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
-  "types": "dts/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
     ".": {
@@ -18,8 +16,17 @@
       "require": "./dist/index.cjs"
     }
   },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dts/index.d.ts",
   "publishConfig": {
     "access": "public"
+  },
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "pnpm run build:lib && pnpm run build:dts",
+    "build:lib": "rollup -c",
+    "build:dts": "tsc -p tsconfig.dts.json"
   },
   "peerDependencies": {
     "eslint": ">=7.4.0 || ^8"
@@ -67,11 +74,5 @@
     "rollup-plugin-esbuild": "^5.0.0",
     "rollup-plugin-filesize": "9.1.2",
     "rollup-plugin-node-externals": "5.1.2"
-  },
-  "scripts": {
-    "dev": "rollup -c -w",
-    "build": "pnpm run build:lib && pnpm run build:dts",
-    "build:lib": "rollup -c",
-    "build:dts": "tsc -p tsconfig.dts.json"
   }
 }
