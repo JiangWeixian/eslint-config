@@ -1,12 +1,13 @@
 import pluginJsonc from 'eslint-plugin-jsonc'
 import jsoncParser from 'jsonc-eslint-parser'
+import { GLOB_JSON, GLOB_JSON5, GLOB_JSONC } from '../globs'
 
 import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
 
 export const jsonc = () => {
   const config: FlatESLintConfigItem[] = [
     {
-      files: ['*.json', '*.json5'],
+      files: [GLOB_JSON, GLOB_JSON5, GLOB_JSONC],
       languageOptions: {
         parser: jsoncParser,
       },
@@ -15,7 +16,7 @@ export const jsonc = () => {
       },
     },
     {
-      files: ['*.json', '*.json5'],
+      files: [GLOB_JSON, GLOB_JSON5, GLOB_JSONC],
       rules: {
         ...(pluginJsonc.configs['recommended-with-jsonc'].rules as Rules),
         // refs: https://ota-meshi.github.io/eslint-plugin-jsonc/rules/indent.html
@@ -44,7 +45,7 @@ export const jsonc = () => {
       },
     },
     {
-      files: ['package.json'],
+      files: ['**/package.json'],
       rules: {
         'jsonc/sort-keys': [
           'error',

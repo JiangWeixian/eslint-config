@@ -1,12 +1,13 @@
 import pluginMarkdown from 'eslint-plugin-markdown'
 
+import { GLOB_MARKDOWN, GLOB_SCRIPT_EXT } from '../globs'
 import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
 
 export const markdown = () => {
   const config: FlatESLintConfigItem[] = [
     {
       // Enable the Markdown processor for all .md files.
-      files: ['**/*.md'],
+      files: [GLOB_MARKDOWN],
       processor: 'markdown/markdown',
       plugins: {
         markdown: pluginMarkdown,
@@ -14,7 +15,7 @@ export const markdown = () => {
     },
     {
       // Code blocks in markdown file
-      files: ['**/*.md/*.?([cm])[jt]s?(x)'],
+      files: [`${GLOB_MARKDOWN}/*.${GLOB_SCRIPT_EXT}`],
       languageOptions: {
         parserOptions: {
           ecmaFeatures: {

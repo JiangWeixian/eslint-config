@@ -2,11 +2,12 @@ import pluginTypeScript from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
 
 import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
+import { GLOB_TS, GLOB_TSX, GLOB_TEST_SCRIPT, GLOB_TEST_DIRS } from '../globs'
 
 export const typescript = () => {
   const config: FlatESLintConfigItem[] = [
     {
-      files: ['*.tsx', '*.ts'],
+      files: [GLOB_TSX, GLOB_TS, GLOB_TEST_SCRIPT],
       languageOptions: {
         parser: tsParser,
         parserOptions: {
@@ -153,16 +154,11 @@ export const typescript = () => {
         '@typescript-eslint/no-var-requires': 'off',
         // https://www.npmjs.com/package/eslint-plugin-unused-imports
         '@typescript-eslint/no-unused-vars': 'off',
-      },
-    },
-    {
-      files: ['*.ts', '*.tsx', '*.mts', '*.cts'],
-      rules: {
         'no-void': ['error', { allowAsStatement: true }],
       },
     },
     {
-      files: ['*.test.ts', '*.test.js', '*.spec.ts', '*.spec.js', '**/test/**', '**/tests/**', '**/__tests__/**'],
+      files: [GLOB_TEST_SCRIPT, GLOB_TEST_DIRS],
       rules: {
         'no-unused-expressions': 'off',
         '@typescript-eslint/no-unused-vars': 'off',

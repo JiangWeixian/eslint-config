@@ -3,6 +3,7 @@ import pluginImportNewlines from 'eslint-plugin-import-newlines'
 import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort'
 import pluginUnsedImports from 'eslint-plugin-unused-imports'
 
+import { GLOB_DTS, GLOB_TSX, GLOB_JSX, GLOB_SCRIPT_EXT } from '../globs'
 import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
 
 export const imports = () => {
@@ -84,25 +85,27 @@ export const imports = () => {
       },
     },
     {
-      files: ['*.d.ts'],
+      files: [GLOB_DTS],
       rules: {
         'import/no-duplicates': 'off',
       },
     },
     {
-      files: ['*.jsx', '*.tsx'],
+      files: [GLOB_TSX, GLOB_JSX],
       rules: {
         // related: https://github.com/pmmmwh/react-refresh-webpack-plugin/blob/main/docs/TROUBLESHOOTING.md#edits-always-lead-to-full-reload
         // export anonymous function: ReactRefresh failed
-        'import/no-anonymous-default-export': 'warn',
+        'import/no-anonymous-default-export': 'error',
+        // perfer named export
+        'import/no-default-export': 'error',
       },
     },
     {
       files: [
-        `**/*config*.?([cm])[jt]s?(x)`,
-        `**/pages/**/*.?([cm])[jt]s?(x)`,
+        `**/*config*.${GLOB_SCRIPT_EXT}`,
+        `**/pages/**/*.${GLOB_SCRIPT_EXT}`,
         `**/{index,vite,esbuild,rollup,webpack,rspack}.ts`,
-        '**/*.d.ts',
+        GLOB_DTS,
       ],
       rules: {
         // related: https://github.com/pmmmwh/react-refresh-webpack-plugin/blob/main/docs/TROUBLESHOOTING.md#edits-always-lead-to-full-reload

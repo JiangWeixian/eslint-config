@@ -2,13 +2,15 @@ import pluginReact from 'eslint-plugin-react'
 import pluginReactHooks from 'eslint-plugin-react-hooks'
 import pluginReactRefresh from 'eslint-plugin-react-refresh'
 import pluginSSRFriendly from 'eslint-plugin-ssr-friendly'
+import { mapValues } from 'lodash-es'
 
 import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
+import { GLOB_JSX, GLOB_TSX } from '../globs'
 
 export const react = () => {
   const config: FlatESLintConfigItem[] = [
     {
-      files: ['*.tsx', '*.jsx'],
+      files: [GLOB_JSX, GLOB_TSX],
       languageOptions: {
         parserOptions: {
           ...pluginReact.configs.recommended.parserOptions,
@@ -68,8 +70,8 @@ export const react = () => {
     {
       files: ['**/*.test.{js,jsx,ts,tsx,cjs,mjs}', '**/*.spec.{js,jsx,ts,tsx,mjs,cjs}'],
       rules: {
-        'react-refresh/*': 'off',
-        'ssr-friendly/*': 'off',
+        ...mapValues(pluginSSRFriendly.configs.recommended.rules as Rules, () => 'off'),
+        'ssr-friendly/only-export-components': 'off',
       },
     },
   ]
