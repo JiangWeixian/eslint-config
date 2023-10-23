@@ -12,7 +12,7 @@
     "build": "pnpm --filter=./packages/analyze --filter=./packages/ignore build",
     "ci:version": "pnpm changeset version",
     "ci:publish": "pnpm run build && pnpm changeset publish",
-    "ci:snapshot": "pnpm changeset version --snapshot beta",
+    "ci:snapshot": "pnpm changeset version --snapshot snapshot",
     "ci:prerelease": "pnpm changeset publish --no-git-tag --snapshot",
     "prepare": "husky install"
   },
