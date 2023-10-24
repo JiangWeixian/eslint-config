@@ -1,8 +1,9 @@
 import pluginTypeScript from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
 
+import { GLOB_TEST_DIRS, GLOB_TEST_SCRIPT, GLOB_TS, GLOB_TSX } from '../globs'
+
 import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
-import { GLOB_TS, GLOB_TSX, GLOB_TEST_SCRIPT, GLOB_TEST_DIRS } from '../globs'
 
 export const typescript = () => {
   const config: FlatESLintConfigItem[] = [

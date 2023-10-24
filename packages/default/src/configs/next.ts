@@ -1,7 +1,8 @@
 import pluginNext from '@next/eslint-plugin-next'
 
-import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
 import { GLOB_JSX, GLOB_TSX } from '../globs'
+
+import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
 
 export const next = () => {
   const config: FlatESLintConfigItem[] = [

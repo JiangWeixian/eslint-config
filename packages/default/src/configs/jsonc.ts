@@ -1,5 +1,6 @@
 import pluginJsonc from 'eslint-plugin-jsonc'
 import jsoncParser from 'jsonc-eslint-parser'
+
 import { GLOB_JSON, GLOB_JSON5, GLOB_JSONC } from '../globs'
 
 import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'

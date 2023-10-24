@@ -1,20 +1,20 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "experimentalDecorators": true,
+    "baseUrl": ".",
     "module": "esnext",
     "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "strict": false,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
     "importHelpers": false,
-    "esModuleInterop": true,
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "experimentalDecorators": true,
-    "strict": false,
-    "resolveJsonModule": true,
-    "noImplicitReturns": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true,
-    "baseUrl": "."
+    "suppressImplicitAnyIndexErrors": true
   },
   "include": ["src"],
   "exclude": ["dist"]

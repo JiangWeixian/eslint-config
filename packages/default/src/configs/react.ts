@@ -4,8 +4,9 @@ import pluginReactRefresh from 'eslint-plugin-react-refresh'
 import pluginSSRFriendly from 'eslint-plugin-ssr-friendly'
 import { mapValues } from 'lodash-es'
 
-import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
 import { GLOB_JSX, GLOB_TSX } from '../globs'
+
+import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
 
 export const react = () => {
   const config: FlatESLintConfigItem[] = [

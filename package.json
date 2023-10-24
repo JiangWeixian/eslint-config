@@ -6,7 +6,7 @@
   "description": "monorepo for aiou templates",
   "scripts": {
     "lint": "eslint -c eslint.config.js",
-    "lint:fix": "eslint . --fix",
+    "lint:fix": "eslint --fix",
     "test:ignore": "eslint . --config=./packages/default/index.js",
     "test:react": "eslint test --config=./packages/react/index.js",
     "build": "pnpm --filter=./packages/analyze --filter=./packages/ignore build",

@@ -1,6 +1,7 @@
 import pluginStandard from 'eslint-config-standard'
 import pluginN from 'eslint-plugin-n'
 import pluginPromise from 'eslint-plugin-promise'
+import pluginRegexp from 'eslint-plugin-regexp'
 import globals from 'globals'
 
 import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
@@ -20,26 +21,28 @@ export const javascript = () => {
           },
           // Eslint doesn't supply ecmaVersion in `parser.js` `context.parserOptions`
           // This is required to avoid ecmaVersion < 2015 error or 'import' / 'export' error
-          ecmaVersion: "latest",
+          ecmaVersion: 'latest',
           sourceType: 'module',
         },
         sourceType: 'module',
       },
       settings: {
         // This will do the trick
-        "import/parsers": {
-          espree: [".js", ".cjs", ".mjs", ".jsx"],
+        'import/parsers': {
+          espree: ['.js', '.cjs', '.mjs', '.jsx'],
         },
-        "import/resolver": {
+        'import/resolver': {
           node: true,
         },
       },
       plugins: {
         n: pluginN,
         promise: pluginPromise,
+        regexp: pluginRegexp,
       },
       rules: {
         ...(pluginStandard.rules as Rules),
+        ...(pluginRegexp.configs.recommended.rules as Rules),
         // Common
         semi: ['error', 'never'],
         // Always need {}

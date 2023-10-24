@@ -1,8 +1,9 @@
 import pluginYaml from 'eslint-plugin-yml'
 import yamlParser from 'yaml-eslint-parser'
 
-import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
 import { GLOB_YAML } from '../globs'
+
+import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
 
 export const yml = () => {
   const config: FlatESLintConfigItem[] = [

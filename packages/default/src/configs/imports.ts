@@ -3,7 +3,8 @@ import pluginImportNewlines from 'eslint-plugin-import-newlines'
 import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort'
 import pluginUnsedImports from 'eslint-plugin-unused-imports'
 
-import { GLOB_DTS, GLOB_TSX, GLOB_JSX, GLOB_SCRIPT_EXT } from '../globs'
+import { GLOB_DTS, GLOB_JSX, GLOB_SCRIPT_EXT, GLOB_TSX } from '../globs'
+
 import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
 
 export const imports = () => {
@@ -77,7 +78,7 @@ export const imports = () => {
         'import-newlines/enforce': [
           'error',
           {
-            items: 2,
+            items: 4,
             'max-len': 120,
             semi: false,
           },
@@ -104,7 +105,7 @@ export const imports = () => {
       files: [
         `**/*config*.${GLOB_SCRIPT_EXT}`,
         `**/pages/**/*.${GLOB_SCRIPT_EXT}`,
-        `**/{index,vite,esbuild,rollup,webpack,rspack}.ts`,
+        '**/{index,vite,esbuild,rollup,webpack,rspack}.ts',
         GLOB_DTS,
       ],
       rules: {

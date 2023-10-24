@@ -1,6 +1,7 @@
 import pluginMarkdown from 'eslint-plugin-markdown'
 
 import { GLOB_MARKDOWN, GLOB_SCRIPT_EXT } from '../globs'
+
 import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
 
 export const markdown = () => {
@@ -23,8 +24,8 @@ export const markdown = () => {
             // every code block is tedious and distracting, so
             // opt into strict mode parsing without the
             // directive.
-            impliedStrict: true
-          }
+            impliedStrict: true,
+          },
         },
       },
       rules: {
@@ -47,7 +48,7 @@ export const markdown = () => {
         'no-undef': 'off',
         'no-unused-expressions': 'off',
         'no-unused-vars': 'off',
-        
+
         // Off imports
         'import/no-extraneous-dependencies': 'off',
       },
