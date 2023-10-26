@@ -1,4 +1,5 @@
 import commonjs from '@rollup/plugin-commonjs'
+import json from '@rollup/plugin-json'
 import resolve from '@rollup/plugin-node-resolve'
 import { defineConfig } from 'rollup'
 import esbuild from 'rollup-plugin-esbuild'
@@ -25,6 +26,7 @@ export default defineConfig([
       esbuild({
         target: 'node16',
       }),
+      json(),
       resolve(),
       /**
        * Auto setup package.json
