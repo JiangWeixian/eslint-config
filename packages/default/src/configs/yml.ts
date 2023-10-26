@@ -18,6 +18,7 @@ export const yml = () => {
       rules: {
         ...(pluginYaml.configs.standard.rules as Rules),
         // yml
+        'spaced-comment': 'off',
         'yml/quotes': ['error', { prefer: 'double', avoidEscape: false }],
         'yml/no-empty-document': 'off',
       },
