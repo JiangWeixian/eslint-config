@@ -1,12 +1,14 @@
 # @aiou/eslint-config
-*my eslint config*
+*my flat eslint config*
 
 [![npm](https://img.shields.io/npm/v/@aiou/eslint-config)](https://www.npmjs.com/package/@aiou/eslint-config) [![GitHub](https://img.shields.io/npm/l/@aiou/eslint-config)](https://github.com/JiangWeixian/eslint-config/tree/master/packages/default) 
 
 ## features
 
-- 🙈 built in ignore patterns from [nodejs's gitignore](https://github.com/github/gitignore/blob/master/Node.gitignore) and with common eslint ignore patterns like `jest`, etc..
-- 💅 friendly fix reporter
+- Common ignore patterns from [nodejs's gitignore](https://github.com/github/gitignore/blob/master/Node.gitignore)
+- Support typescript, yaml, jsonc, markdown, etc..
+- Built-in best practices react rules, react-refresh and ssr-friendly rules...
+- Friendly fix reporter
 
     <div align='center'>
 
@@ -15,6 +17,22 @@
     *▲ @aiou/eslint-plugin-progress*
 
     </div>
+
+## install
+
+```console
+npm install @aiou/eslint-config --save-dev
+```
+
+## usage
+
+in `eslint.config.js`
+
+```js
+const { aiou } = require('@aiou/eslint-config')
+
+module.exports = aiou()
+```
     
 ## rules
 
@@ -24,7 +42,8 @@ extends from
 eslint-config-standard
 eslint-plugin-eslint-comments
 eslint-plugin-html
-eslint-plugin-import
+eslint-plugin-i
+eslint-plugin-regexp
 eslint-plugin-markdown
 eslint-plugin-simple-import-sort
 eslint-plugin-import-newlines
@@ -42,20 +61,3 @@ eslint-plugin-react-hooks
 eslint-plugin-tailwindcss
 @typescript-eslint/eslint-plugin
 ```
-
-## install
-
-```console
-npm install @aiou/eslint-config --save-dev
-```
-
-## usage
-
-in `.eslintrc.js`
-
-```
-module.exports = {
-  "extends": ["@aiou"]
-}
-```
-

@@ -4,6 +4,9 @@
   "description": "eslint config for aiou template",
   "keywords": [],
   "license": "MIT",
+  "engines": {
+    "node": ">=16"
+  },
   "author": "JW <jiangweixian1994@gmail.com> (https://github.com/jiangweixian/)",
   "files": [
     "dist",
