@@ -1,5 +1,11 @@
 # @aiou/eslint-config
 
+## 1.0.2
+
+### Patch Changes
+
+- 1f429a7: off etc/no-misused-generics
+
 ## 1.0.1
 
 ### Patch Changes
