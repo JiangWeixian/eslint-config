@@ -11,7 +11,7 @@
     "test:react": "eslint test --config=./packages/react/index.js",
     "build": "pnpm --filter=./packages/analyze --filter=./packages/ignore --filter=./packages/plugin-modular --filter=./packages/default build",
     "ci:version": "pnpm changeset version",
-    "ci:publish": "pnpm run build && pnpm changeset publish",
+    "ci:publish": "pnpm changeset publish",
     "ci:snapshot": "pnpm changeset version --snapshot snapshot",
     "ci:prerelease": "pnpm run build && pnpm changeset publish --no-git-tag --snapshot",
     "prepare": "husky install"

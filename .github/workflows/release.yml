@@ -39,6 +39,8 @@ jobs:
             ${{ runner.os }}-pnpm-store-
       - name: install dependencies
         run: pnpm install --frozen-lockfile=false
+      - name: build
+        run: pnpm run build
       - name: create and publish versions
         uses: changesets/action@v1
         with:
