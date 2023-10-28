@@ -101,7 +101,8 @@ export const typescript = () => {
          */
         'etc/no-const-enum': 'error',
         'etc/no-enum': 'error',
-        'etc/no-misused-generics': 'error',
+        // required tsconfig.json
+        // 'etc/no-misused-generics': 'error',
 
         // Overrides JS
         // no-spaced-func alert -- https://eslint.org/docs/latest/rules/no-spaced-func
