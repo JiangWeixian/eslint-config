@@ -32,7 +32,6 @@ module.exports = {
     '@aiou/progress/activate': 1,
   },
 }
-
 ```
 
 ## Known issues

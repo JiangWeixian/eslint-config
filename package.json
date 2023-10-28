@@ -5,19 +5,19 @@
   "packageManager": "pnpm@8.8.0",
   "description": "monorepo for aiou templates",
   "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint -c eslint.config.js",
+    "lint:fix": "eslint --fix",
     "test:ignore": "eslint . --config=./packages/default/index.js",
     "test:react": "eslint test --config=./packages/react/index.js",
-    "build": "pnpm --filter=./packages/analyze --filter=./packages/ignore build",
+    "build": "pnpm --filter=./packages/analyze --filter=./packages/ignore --filter=./packages/plugin-modular --filter=./packages/default build",
     "ci:version": "pnpm changeset version",
     "ci:publish": "pnpm run build && pnpm changeset publish",
     "ci:snapshot": "pnpm changeset version --snapshot snapshot",
-    "ci:prerelease": "pnpm changeset publish --no-git-tag --snapshot",
+    "ci:prerelease": "pnpm run build && pnpm changeset publish --no-git-tag --snapshot",
     "prepare": "husky install"
   },
   "lint-staged": {
-    "**/**/*.{js,ts,tsx,vue,json}": ["eslint --fix"]
+    "**/**/*.{js,ts,tsx,vue,json,md}": ["eslint --fix"]
   },
   "dependencies": {
     "typescript": "^4.8.4"

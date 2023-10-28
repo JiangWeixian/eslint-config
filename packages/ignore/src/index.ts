@@ -12,7 +12,7 @@ const main = async () => {
   const nodePatterns = result.split('\n').filter((line) => {
     return !line.startsWith('#') && !!line
   })
-  const patterns = nodePatterns.concat(defaultIgnorePatterns).map(line => `"${line}"`)
+  const patterns = nodePatterns.concat(defaultIgnorePatterns).map(line => line.startsWith('**') ? `"${line}"` : `"**/${line}"`)
   const exportIgnorePatterns = `
     module.exports = [${patterns}]
   `
