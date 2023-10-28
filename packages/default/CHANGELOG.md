@@ -1,5 +1,13 @@
 # @aiou/eslint-config
 
+## 1.0.1
+
+### Patch Changes
+
+- 41ab223: off reduce type-check
+- Updated dependencies [41ab223]
+  - @aiou/eslint-ignore@0.5.0
+
 ## 1.0.0
 
 ### Major Changes
