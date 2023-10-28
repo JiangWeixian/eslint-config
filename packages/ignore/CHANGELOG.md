@@ -1,5 +1,15 @@
 # @aiou/eslint-ignore
 
+## 0.4.0
+
+### Minor Changes
+
+- 68f03af: add root glob star
+
+### Patch Changes
+
+- 68f03af: add duplicate glob star
+
 ## 0.3.3
 
 ### Patch Changes

@@ -1,5 +1,29 @@
 # @aiou/eslint-config
 
+## 1.0.0
+
+### Major Changes
+
+- 68f03af: flat eslint config
+- 68f03af: upgrade deps major versions
+
+### Minor Changes
+
+- 68f03af: replace eslint-pluin-imports with eslint-plugin-i
+- 68f03af: add plugin-etc limit enum usage
+- 68f03af: off yml/no-empty-mapping-value on workflow yaml files
+- 68f03af: add eslint-plugin-regexp
+- 68f03af: update tsconfig.json sort rules
+
+### Patch Changes
+
+- 68f03af: off spaced-comment rules in yaml
+- 68f03af: update markdown codeblock ext
+- 68f03af: bundle eslint-plugin-standard
+- Updated dependencies [68f03af]
+- Updated dependencies [68f03af]
+  - @aiou/eslint-ignore@0.4.0
+
 ## 0.11.2
 
 ### Patch Changes
