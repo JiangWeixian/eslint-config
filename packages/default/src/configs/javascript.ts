@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import pluginStandard from 'eslint-config-standard'
 import pluginN from 'eslint-plugin-n'
 import pluginPromise from 'eslint-plugin-promise'

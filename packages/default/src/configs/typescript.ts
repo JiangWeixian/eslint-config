@@ -1,6 +1,6 @@
 import pluginTypeScript from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
-import pluginEtc from 'eslint-plugin-etc'
+import pluginETC from 'eslint-plugin-etc'
 
 import { GLOB_TEST_DIRS, GLOB_TEST_SCRIPT, GLOB_TS, GLOB_TSX } from '../globs'
 
@@ -23,7 +23,7 @@ export const typescript = () => {
       },
       plugins: {
         '@typescript-eslint': pluginTypeScript,
-        etc: pluginEtc,
+        etc: pluginETC,
       },
       rules: {
         ...(pluginTypeScript.configs.recommended.rules as Rules),
@@ -87,6 +87,13 @@ export const typescript = () => {
         // Limit `interface` define object types, users could override with *.d.ts declare
         '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
         '@typescript-eslint/prefer-ts-expect-error': 'warn',
+        '@typescript-eslint/default-param-last': 'error',
+        // Perfer reduce<T, S>
+        '@typescript-eslint/prefer-reduce-type-parameter': 'error',
+        // Sort type S = A | B
+        '@typescript-eslint/sort-type-constituents': 'error',
+        '@typescript-eslint/unbound-method': 'off',
+        '@typescript-eslint/prefer-for-of': 'error',
         // https://www.npmjs.com/package/eslint-plugin-etc
         'etc/no-t': 'error',
         /**
