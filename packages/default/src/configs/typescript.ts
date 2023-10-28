@@ -1,5 +1,6 @@
 import pluginTypeScript from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
+import pluginEtc from 'eslint-plugin-etc'
 
 import { GLOB_TEST_DIRS, GLOB_TEST_SCRIPT, GLOB_TS, GLOB_TSX } from '../globs'
 
@@ -22,6 +23,7 @@ export const typescript = () => {
       },
       plugins: {
         '@typescript-eslint': pluginTypeScript,
+        etc: pluginEtc,
       },
       rules: {
         ...(pluginTypeScript.configs.recommended.rules as Rules),
@@ -85,6 +87,16 @@ export const typescript = () => {
         // Limit `interface` define object types, users could override with *.d.ts declare
         '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
         '@typescript-eslint/prefer-ts-expect-error': 'warn',
+        // https://www.npmjs.com/package/eslint-plugin-etc
+        'etc/no-t': 'error',
+        /**
+         * refs:
+         * 1. https://ncjamieson.com/dont-export-const-enums/
+         * 2. https://www.huy.rocks/everyday/02-24-2022-typescript-enums-at-runtime-and-tree-shaking
+         */
+        'etc/no-const-enum': 'error',
+        'etc/no-enum': 'error',
+        'etc/no-misused-generics': 'error',
 
         // Overrides JS
         // no-spaced-func alert -- https://eslint.org/docs/latest/rules/no-spaced-func
