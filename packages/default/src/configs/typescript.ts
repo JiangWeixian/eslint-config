@@ -88,8 +88,6 @@ export const typescript = () => {
         '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
         '@typescript-eslint/prefer-ts-expect-error': 'warn',
         '@typescript-eslint/default-param-last': 'error',
-        // Perfer reduce<T, S>
-        '@typescript-eslint/prefer-reduce-type-parameter': 'error',
         // Sort type S = A | B
         '@typescript-eslint/sort-type-constituents': 'error',
         '@typescript-eslint/unbound-method': 'off',
