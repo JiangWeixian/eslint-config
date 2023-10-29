@@ -3,7 +3,14 @@ import pluginImportNewlines from 'eslint-plugin-import-newlines'
 import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort'
 import pluginUnsedImports from 'eslint-plugin-unused-imports'
 
-import { GLOB_DTS, GLOB_JSX, GLOB_SCRIPT_EXT, GLOB_TSX } from '../globs'
+import {
+  GLOB_DTS,
+  GLOB_JSX,
+  GLOB_SCRIPT_EXT,
+  GLOB_TEST_DIRS,
+  GLOB_TEST_SCRIPT,
+  GLOB_TSX,
+} from '../globs'
 
 import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
 
@@ -51,20 +58,8 @@ export const imports = () => {
         'import/no-mutable-exports': 'error',
         'import/no-unresolved': 'off',
         'import/no-absolute-path': 'off',
-        'import/no-extraneous-dependencies': [
-          'error',
-          {
-            devDependencies: [
-              // ignore dev scripts
-              '**/scripts/**/*.{js,jsx,ts,tsx,cjs,mjs}',
-              '**/*.test.{js,jsx,ts,tsx,cjs,mjs}',
-              '**/*.spec.{js,jsx,ts,tsx,mjs,cjs}',
-              '**/*.config.{js,jsx,ts,tsx,cjs,mjs}',
-              // ignore require third packages in .eslintrc.* e.g. eslint-define-config
-              '**/.eslintrc.{js,cjs,mjs}',
-            ],
-          },
-        ],
+        // Not allowed import devDependencies
+        'import/no-extraneous-dependencies': 'error',
         // Not allow import { default as named }
         'import/no-named-default': 'warn',
 
@@ -104,7 +99,7 @@ export const imports = () => {
     {
       files: [
         `**/*config*.${GLOB_SCRIPT_EXT}`,
-        `**/pages/**/*.${GLOB_SCRIPT_EXT}`,
+        `**/{pages,routes}/**/*.${GLOB_SCRIPT_EXT}`,
         '**/{index,vite,esbuild,rollup,webpack,rspack}.ts',
         GLOB_DTS,
       ],
@@ -113,6 +108,24 @@ export const imports = () => {
         // export anonymous function: ReactRefresh failed
         'import/no-anonymous-default-export': 'off',
         'import/no-default-export': 'off',
+      },
+    },
+    {
+      files: [
+        // ignore devDependencies on scripts files
+        `**/script?(s)/**/*.${GLOB_SCRIPT_EXT}`,
+        `**/**/script?(s).${GLOB_SCRIPT_EXT}`,
+        `**/*config*.${GLOB_SCRIPT_EXT}`,
+        // ignore devDependencies on test files
+        GLOB_TEST_SCRIPT,
+        GLOB_TEST_DIRS,
+        // ignore require third packages in .eslintrc.* e.g. eslint-define-config
+        `**/.eslintrc.${GLOB_SCRIPT_EXT}`,
+        `**/**/eslint.config.${GLOB_SCRIPT_EXT}`,
+        '**/{index,vite,esbuild,rollup,webpack,rspack}.ts',
+      ],
+      rules: {
+        'import/no-extraneous-dependencies': 'off',
       },
     },
   ]
