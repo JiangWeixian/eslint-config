@@ -99,7 +99,7 @@ export const imports = () => {
     {
       files: [
         `**/*config*.${GLOB_SCRIPT_EXT}`,
-        `**/pages/**/*.${GLOB_SCRIPT_EXT}`,
+        `**/{pages,routes}/**/*.${GLOB_SCRIPT_EXT}`,
         '**/{index,vite,esbuild,rollup,webpack,rspack}.ts',
         GLOB_DTS,
       ],
@@ -113,7 +113,7 @@ export const imports = () => {
     {
       files: [
         // ignore devDependencies on scripts files
-        `**/scripts/**/*.${GLOB_SCRIPT_EXT}`,
+        `**/script?(s)/**/*.${GLOB_SCRIPT_EXT}`,
         `**/**/script?(s).${GLOB_SCRIPT_EXT}`,
         `**/*config*.${GLOB_SCRIPT_EXT}`,
         // ignore devDependencies on test files
@@ -122,6 +122,7 @@ export const imports = () => {
         // ignore require third packages in .eslintrc.* e.g. eslint-define-config
         `**/.eslintrc.${GLOB_SCRIPT_EXT}`,
         `**/**/eslint.config.${GLOB_SCRIPT_EXT}`,
+        '**/{index,vite,esbuild,rollup,webpack,rspack}.ts',
       ],
       rules: {
         'import/no-extraneous-dependencies': 'off',
