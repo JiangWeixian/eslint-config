@@ -1,5 +1,11 @@
 # @aiou/eslint-config
 
+## 1.0.3
+
+### Patch Changes
+
+- 2d67269: ignore import devDeps on scripts files
+
 ## 1.0.2
 
 ### Patch Changes
