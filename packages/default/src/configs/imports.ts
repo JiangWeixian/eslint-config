@@ -59,7 +59,7 @@ export const imports = () => {
         'import/no-unresolved': 'off',
         'import/no-absolute-path': 'off',
         // Not allowed import devDependencies
-        'import/no-extraneous-dependencies': 'error',
+        'import/no-extraneous-dependencies': ['error', { devDependencies: false }],
         // Not allow import { default as named }
         'import/no-named-default': 'warn',
 
