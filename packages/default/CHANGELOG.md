@@ -1,5 +1,12 @@
 # @aiou/eslint-config
 
+## 1.0.5
+
+### Patch Changes
+
+- 8f4df0c: use no-restricted-syntax as etc/no-enum replacement
+- 8f4df0c: add devDeps to import/no-extra rule
+
 ## 1.0.4
 
 ### Patch Changes
