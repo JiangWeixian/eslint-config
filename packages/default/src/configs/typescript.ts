@@ -99,8 +99,13 @@ export const typescript = () => {
          * 1. https://ncjamieson.com/dont-export-const-enums/
          * 2. https://www.huy.rocks/everyday/02-24-2022-typescript-enums-at-runtime-and-tree-shaking
          */
-        'etc/no-const-enum': 'error',
-        'etc/no-enum': 'error',
+        'no-restricted-syntax': [
+          'error',
+          {
+            selector: 'TSEnumDeclaration',
+            message: 'Don\'t declare enums',
+          },
+        ],
         // required tsconfig.json
         // 'etc/no-misused-generics': 'error',
 
