@@ -1,5 +1,12 @@
 # @aiou/eslint-config
 
+## 1.0.4
+
+### Patch Changes
+
+- c74c0db: dynamic load eslint-plugin-tailwindcss
+- c74c0db: enable import/no-extra and import/default rule on index
+
 ## 1.0.3
 
 ### Patch Changes
