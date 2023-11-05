@@ -99,7 +99,9 @@ export const imports = () => {
     {
       files: [
         `**/*config*.${GLOB_SCRIPT_EXT}`,
-        `**/{pages,routes}/**/*.${GLOB_SCRIPT_EXT}`,
+        `**/{app,pages,routes}/**/*.${GLOB_SCRIPT_EXT}`,
+        `**/App*.${GLOB_SCRIPT_EXT}`,
+        `**/Document.${GLOB_SCRIPT_EXT}`,
         '**/{vite,esbuild,rollup,webpack,rspack}.ts',
         GLOB_DTS,
       ],

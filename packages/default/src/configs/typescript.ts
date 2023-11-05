@@ -110,6 +110,9 @@ export const typescript = () => {
         // 'etc/no-misused-generics': 'error',
 
         // Overrides JS
+        // original no-undef not compatiable with typescript
+        // refs: https://typescript-eslint.io/linting/troubleshooting/#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors
+        'no-undef': 'off',
         // no-spaced-func alert -- https://eslint.org/docs/latest/rules/no-spaced-func
         'func-call-spacing': 'off',
         '@typescript-eslint/func-call-spacing': ['error', 'never'],
