@@ -1,5 +1,14 @@
 # @aiou/eslint-config
 
+## 1.0.6
+
+### Patch Changes
+
+- 07c8e28: off no-def rule on ts files
+- 07c8e28: update import/no-export-default files pattern
+- Updated dependencies [07c8e28]
+  - @aiou/eslint-ignore@0.5.1
+
 ## 1.0.5
 
 ### Patch Changes

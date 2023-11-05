@@ -1,5 +1,11 @@
 # @aiou/eslint-ignore
 
+## 0.5.1
+
+### Patch Changes
+
+- 07c8e28: ignore all files under dts fold
+
 ## 0.5.0
 
 ### Minor Changes
