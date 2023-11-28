@@ -39,6 +39,7 @@
     "@aiou/eslint-ignore": "workspace:*",
     "@aiou/eslint-plugin-progress": "workspace:*",
     "@next/eslint-plugin-next": "^13.1.4",
+    "@stylistic/eslint-plugin": "^1.4.1",
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.9.0",
     "eslint-define-config": "^1.24.1",

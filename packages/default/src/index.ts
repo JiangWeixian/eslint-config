@@ -9,6 +9,7 @@ import { markdown } from './configs/markdown'
 import { next } from './configs/next'
 import { progress } from './configs/progress'
 import { react } from './configs/react'
+import { stylistic } from './configs/stylistic'
 import { tailwindcss } from './configs/tailwindcss'
 import { typescript } from './configs/typescript'
 import { unicorn } from './configs/unicorn'
@@ -38,6 +39,7 @@ const presetLangsExtensions = [
 const presetDefault = [
   ...presetTypescript,
   ...react(),
+  ...stylistic(),
   ...presetLangsExtensions,
   ...progress(),
 ]
