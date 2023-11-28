@@ -2,10 +2,10 @@ import pluginStylistic from '@stylistic/eslint-plugin'
 
 import { GLOB_SCRIPT_EXT } from '../globs'
 
-import type { FlatESLintConfigItem } from 'eslint-define-config'
+import type { FlatESLintConfig } from 'eslint-define-config'
 
 export const stylistic = () => {
-  const configs: FlatESLintConfigItem[] = [
+  const configs: FlatESLintConfig[] = [
     {
       files: [GLOB_SCRIPT_EXT],
       plugins: {

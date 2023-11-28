@@ -4,10 +4,10 @@ import pluginETC from 'eslint-plugin-etc'
 
 import { GLOB_TEST_DIRS, GLOB_TEST_SCRIPT, GLOB_TS, GLOB_TSX } from '../globs'
 
-import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
+import type { FlatESLintConfig, Rules } from 'eslint-define-config'
 
 export const typescript = () => {
-  const config: FlatESLintConfigItem[] = [
+  const config: FlatESLintConfig[] = [
     {
       files: [GLOB_TSX, GLOB_TS, GLOB_TEST_SCRIPT],
       languageOptions: {

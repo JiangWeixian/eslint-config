@@ -15,7 +15,7 @@ import { typescript } from './configs/typescript'
 import { unicorn } from './configs/unicorn'
 import { yml } from './configs/yml'
 
-import type { FlatESLintConfigItem } from 'eslint-define-config'
+import type { FlatESLintConfig } from 'eslint-define-config'
 
 const presetJavascript = [
   ...ignores(),
@@ -44,7 +44,7 @@ const presetDefault = [
   ...progress(),
 ]
 
-export const aiou = (config: FlatESLintConfigItem | FlatESLintConfigItem[] = []) => {
+export const aiou = (config: FlatESLintConfig | FlatESLintConfig[] = []) => {
   const configs = [...presetDefault]
   if (isPackageExists('tailwindcss')) {
     configs.push(...tailwindcss())

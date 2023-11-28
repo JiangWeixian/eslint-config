@@ -2,10 +2,10 @@ import pluginMarkdown from 'eslint-plugin-markdown'
 
 import { GLOB_MARKDOWN, GLOB_SCRIPT_EXT } from '../globs'
 
-import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
+import type { FlatESLintConfig, Rules } from 'eslint-define-config'
 
 export const markdown = () => {
-  const config: FlatESLintConfigItem[] = [
+  const config: FlatESLintConfig[] = [
     {
       // Enable the Markdown processor for all .md files.
       files: [GLOB_MARKDOWN],

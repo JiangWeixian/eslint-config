@@ -5,10 +5,10 @@ import pluginPromise from 'eslint-plugin-promise'
 import pluginRegexp from 'eslint-plugin-regexp'
 import globals from 'globals'
 
-import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
+import type { FlatESLintConfig, Rules } from 'eslint-define-config'
 
 export const javascript = () => {
-  const config: FlatESLintConfigItem[] = [
+  const config: FlatESLintConfig[] = [
     {
       languageOptions: {
         globals: {

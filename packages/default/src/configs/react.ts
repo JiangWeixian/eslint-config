@@ -6,10 +6,10 @@ import { mapValues } from 'lodash-es'
 
 import { GLOB_JSX, GLOB_TSX } from '../globs'
 
-import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
+import type { FlatESLintConfig, Rules } from 'eslint-define-config'
 
 export const react = () => {
-  const config: FlatESLintConfigItem[] = [
+  const config: FlatESLintConfig[] = [
     {
       files: [GLOB_JSX, GLOB_TSX],
       languageOptions: {
