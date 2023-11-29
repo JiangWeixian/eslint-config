@@ -10,11 +10,11 @@ export const jsonc = () => {
     {
       files: [GLOB_JSON, GLOB_JSON5, GLOB_JSONC],
       languageOptions: {
-        parser: jsoncParser
+        parser: jsoncParser,
       },
       plugins: {
-        jsonc: pluginJsonc
-      }
+        jsonc: pluginJsonc,
+      },
     },
     {
       files: [GLOB_JSON, GLOB_JSON5, GLOB_JSONC],
@@ -25,8 +25,8 @@ export const jsonc = () => {
           'error',
           {
             multiline: true,
-            minItems: null
-          }
+            minItems: null,
+          },
         ],
         'jsonc/array-bracket-spacing': ['error', 'never'],
         'jsonc/comma-dangle': ['error', 'never'],
@@ -37,13 +37,13 @@ export const jsonc = () => {
           {
             beforeColon: false,
             afterColon: true,
-            mode: 'strict'
-          }
+            mode: 'strict',
+          },
         ],
         'jsonc/no-octal-escape': 'error',
         'jsonc/object-curly-newline': ['error', { multiline: true, consistent: true }],
-        'jsonc/object-curly-spacing': ['error', 'always']
-      }
+        'jsonc/object-curly-spacing': ['error', 'always'],
+      },
     },
     {
       files: ['**/package.json'],
@@ -90,28 +90,28 @@ export const jsonc = () => {
               'overrides',
               'resolutions',
               'eslintConfig',
-              'config'
-            ]
+              'config',
+            ],
           },
           {
             pathPattern: '^(?:dev|peer|optional|bundled)?[Dd]ependencies$',
-            order: { type: 'asc' }
+            order: { type: 'asc' },
           },
           {
             pathPattern: '^exports.*$',
             // According to webpack, default condition should be last item
-            order: ['import', 'require', 'types', 'node', 'browser', 'default']
+            order: ['import', 'require', 'types', 'node', 'browser', 'default'],
           },
           {
             order: { type: 'asc' },
-            pathPattern: '^resolutions$'
+            pathPattern: '^resolutions$',
           },
           {
             order: { type: 'asc' },
-            pathPattern: '^pnpm.overrides$'
-          }
-        ]
-      }
+            pathPattern: '^pnpm.overrides$',
+          },
+        ],
+      },
     },
     // refs: https://github.com/sxzz/eslint-config/blob/main/src/configs/sort.ts
     {
@@ -126,9 +126,9 @@ export const jsonc = () => {
               'references',
               'files',
               'include',
-              'exclude'
+              'exclude',
             ],
-            pathPattern: '^$'
+            pathPattern: '^$',
           },
           {
             order: [
@@ -227,13 +227,13 @@ export const jsonc = () => {
               'verbatimModuleSyntax',
               /* Completeness */
               'skipDefaultLibCheck',
-              'skipLibCheck'
+              'skipLibCheck',
             ],
-            pathPattern: '^compilerOptions$'
-          }
-        ]
-      }
-    }
+            pathPattern: '^compilerOptions$',
+          },
+        ],
+      },
+    },
   ]
   return config
 }

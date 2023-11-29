@@ -1,24 +1,31 @@
 import pluginStylistic from '@stylistic/eslint-plugin'
 
-import { GLOB_SCRIPT_EXT } from '../globs'
+import { GLOB_JS, GLOB_JSX, GLOB_TS, GLOB_TSX } from '../globs'
 
 import type { FlatESLintConfig } from 'eslint-define-config'
 
 export const stylistic = () => {
+  const config = pluginStylistic.configs.customize({
+    flat: true,
+    indent: 2,
+    jsx: true,
+    quotes: 'single',
+    semi: false,
+  })
+  // Off original eslint stylistic rules
+  const off = {}
+  Object.keys(config.rules).forEach((key) => {
+    off[key.replace('@stylistic/', '')] = 'off'
+  })
   const configs: FlatESLintConfig[] = [
     {
-      files: [GLOB_SCRIPT_EXT],
+      files: [GLOB_JS, GLOB_JSX, GLOB_TS, GLOB_TSX],
       plugins: {
-        '@stylistic': pluginStylistic,
+        ...config.plugins,
       },
       rules: {
-        ...pluginStylistic.configs.customize({
-          flat: true,
-          indent: 2,
-          jsx: true,
-          quotes: 'single',
-          semi: false,
-        }),
+        ...off,
+        ...config.rules,
         '@stylistic/quotes': ['error', 'single'],
         '@stylistic/quote-props': ['error', 'as-needed'],
         '@stylistic/array-bracket-spacing': ['error', 'never'],
@@ -27,6 +34,7 @@ export const stylistic = () => {
         '@stylistic/block-spacing': ['error', 'always'],
         '@stylistic/comma-spacing': ['error', { before: false, after: true }],
         '@stylistic/comma-style': ['error', 'last'],
+        'comma-dangle': 'off',
         '@stylistic/comma-dangle': ['error', 'always-multiline'],
         '@stylistic/key-spacing': ['error', { beforeColon: false, afterColon: true }],
         '@stylistic/indent': ['error', 2, {

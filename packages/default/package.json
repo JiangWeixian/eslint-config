@@ -33,7 +33,7 @@
     "prepublishOnly": "publish-police"
   },
   "peerDependencies": {
-    "eslint": ">=7.4.0 || ^8"
+    "eslint": ">=7.4.0 || ^8.53.0"
   },
   "dependencies": {
     "@aiou/eslint-ignore": "workspace:*",
