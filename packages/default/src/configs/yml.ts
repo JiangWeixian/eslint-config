@@ -10,18 +10,18 @@ export const yml = () => {
     {
       files: [GLOB_YAML],
       languageOptions: {
-        parser: yamlParser,
+        parser: yamlParser
       },
       plugins: {
-        yml: pluginYaml,
+        yml: pluginYaml
       },
       rules: {
-        ...(pluginYaml.configs.standard.rules as Rules),
+        ...(pluginYaml.configs.standard.rules as unknown as Rules),
         // yml
         'spaced-comment': 'off',
         'yml/quotes': ['error', { prefer: 'double', avoidEscape: false }],
-        'yml/no-empty-document': 'off',
-      },
+        'yml/no-empty-document': 'off'
+      }
     },
     {
       files: [GLOB_WORKFLOW_YAML],
@@ -32,9 +32,9 @@ export const yml = () => {
          *  pull_request:
          *   branches: []
          */
-        'yml/no-empty-mapping-value': 'off',
-      },
-    },
+        'yml/no-empty-mapping-value': 'off'
+      }
+    }
   ]
   return config
 }
