@@ -33,6 +33,14 @@ const { aiou } = require('@aiou/eslint-config')
 
 module.exports = aiou()
 ```
+
+### options
+
+#### `options.ssr`
+
+- default: `false`
+
+enabled ssr-friendly rules
     
 ## rules
 
@@ -54,10 +62,11 @@ eslint-plugin-promise
 eslint-plugin-unicorn
 eslint-plugin-yml
 eslint-plugin-react
-eslint-plugin-ssr-friendly
+eslint-plugin-ssr-friendly (configured when ssr enabled)
 eslint-plugin-react-refresh
 @next/eslint-plugin-next (enabled when next found)
 eslint-plugin-react-hooks
 eslint-plugin-tailwindcss
 @typescript-eslint/eslint-plugin
+@stylistic/eslint-plugin
 ```
