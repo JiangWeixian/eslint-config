@@ -8,7 +8,7 @@ import { jsonc } from './configs/jsonc'
 import { markdown } from './configs/markdown'
 import { next } from './configs/next'
 import { progress } from './configs/progress'
-import { react } from './configs/react'
+import { react, ssrReact } from './configs/react'
 import { stylistic } from './configs/stylistic'
 import { tailwindcss } from './configs/tailwindcss'
 import { typescript } from './configs/typescript'
@@ -44,13 +44,20 @@ const presetDefault = [
   ...progress(),
 ]
 
-export const aiou = (config: FlatESLintConfig | FlatESLintConfig[] = []) => {
+interface Options {
+  ssr?: boolean
+}
+
+export const aiou = ({ ssr = true }: Options = { ssr: true }, config: FlatESLintConfig | FlatESLintConfig[] = []) => {
   const configs = [...presetDefault]
   if (isPackageExists('tailwindcss')) {
     configs.push(...tailwindcss())
   }
   if (isPackageExists('next')) {
     configs.push(...next())
+  }
+  if (ssr) {
+    configs.push(...ssrReact())
   }
   if (Object.keys(config).length > 0) {
     configs.push(...(Array.isArray(config) ? config : [config]))
