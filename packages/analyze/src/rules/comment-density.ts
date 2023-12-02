@@ -3,6 +3,7 @@
  */
 
 import { ESLintUtils } from '@typescript-eslint/experimental-utils'
+
 import { store } from '../store'
 
 let totalCommentDensity = 0

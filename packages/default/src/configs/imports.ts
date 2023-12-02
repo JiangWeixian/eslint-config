@@ -12,10 +12,10 @@ import {
   GLOB_TSX,
 } from '../globs'
 
-import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
+import type { FlatESLintConfig, Rules } from 'eslint-define-config'
 
 export const imports = () => {
-  const config: FlatESLintConfigItem[] = [
+  const config: FlatESLintConfig[] = [
     {
       plugins: {
         import: pluginImport,

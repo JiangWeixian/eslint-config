@@ -9,12 +9,13 @@ import { markdown } from './configs/markdown'
 import { next } from './configs/next'
 import { progress } from './configs/progress'
 import { react } from './configs/react'
+import { stylistic } from './configs/stylistic'
 import { tailwindcss } from './configs/tailwindcss'
 import { typescript } from './configs/typescript'
 import { unicorn } from './configs/unicorn'
 import { yml } from './configs/yml'
 
-import type { FlatESLintConfigItem } from 'eslint-define-config'
+import type { FlatESLintConfig } from 'eslint-define-config'
 
 const presetJavascript = [
   ...ignores(),
@@ -38,11 +39,12 @@ const presetLangsExtensions = [
 const presetDefault = [
   ...presetTypescript,
   ...react(),
+  ...stylistic(),
   ...presetLangsExtensions,
   ...progress(),
 ]
 
-export const aiou = (config: FlatESLintConfigItem | FlatESLintConfigItem[] = []) => {
+export const aiou = (config: FlatESLintConfig | FlatESLintConfig[] = []) => {
   const configs = [...presetDefault]
   if (isPackageExists('tailwindcss')) {
     configs.push(...tailwindcss())

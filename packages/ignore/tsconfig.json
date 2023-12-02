@@ -1,22 +1,22 @@
 {
   "compilerOptions": {
     "target": "ES5",
+    "experimentalDecorators": true,
+    "baseUrl": "./",
     "module": "CommonJS",
     "moduleResolution": "node",
-    "importHelpers": true,
-    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
     "declaration": true,
+    "importHelpers": true,
+    "outDir": "lib",
     "sourceMap": false,
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "experimentalDecorators": true,
-    "strict": true,
-    "resolveJsonModule": true,
-    "noImplicitReturns": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true,
-    "outDir": "lib",
-    "baseUrl": "./"
+    "suppressImplicitAnyIndexErrors": true
   },
   "include": ["src"]
 }

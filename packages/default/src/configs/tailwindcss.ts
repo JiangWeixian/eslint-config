@@ -1,12 +1,12 @@
 import { createRequire } from 'node:module'
 
-import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
+import type { FlatESLintConfig, Rules } from 'eslint-define-config'
 
 const require = createRequire(import.meta.url)
 
 export const tailwindcss = () => {
   const pluginTailwindcss = require('eslint-plugin-tailwindcss')
-  const config: FlatESLintConfigItem[] = [
+  const config: FlatESLintConfig[] = [
     {
       plugins: {
         tailwindcss: pluginTailwindcss,

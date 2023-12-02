@@ -1,11 +1,7 @@
 /* eslint-disable @typescript-eslint/quotes */
 import path from 'node:path'
 
-import {
-  describe,
-  expect,
-  it,
-} from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 import { resolvePackageJson, resolvePathSync } from '../src/utils/path'
 

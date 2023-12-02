@@ -2,10 +2,10 @@ import pluginMarkdown from 'eslint-plugin-markdown'
 
 import { GLOB_MARKDOWN, GLOB_SCRIPT_EXT } from '../globs'
 
-import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
+import type { FlatESLintConfig, Rules } from 'eslint-define-config'
 
 export const markdown = () => {
-  const config: FlatESLintConfigItem[] = [
+  const config: FlatESLintConfig[] = [
     {
       // Enable the Markdown processor for all .md files.
       files: [GLOB_MARKDOWN],
@@ -35,7 +35,6 @@ export const markdown = () => {
         '@typescript-eslint/no-unused-vars': 'off',
         '@typescript-eslint/no-use-before-define': 'off',
         '@typescript-eslint/no-var-requires': 'off',
-        '@typescript-eslint/comma-dangle': 'off',
         '@typescript-eslint/consistent-type-imports': 'off',
         '@typescript-eslint/no-namespace': 'off',
         '@typescript-eslint/no-require-imports': 'off',

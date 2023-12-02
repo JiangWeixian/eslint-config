@@ -3,10 +3,10 @@ import jsoncParser from 'jsonc-eslint-parser'
 
 import { GLOB_JSON, GLOB_JSON5, GLOB_JSONC } from '../globs'
 
-import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
+import type { FlatESLintConfig, Rules } from 'eslint-define-config'
 
 export const jsonc = () => {
-  const config: FlatESLintConfigItem[] = [
+  const config: FlatESLintConfig[] = [
     {
       files: [GLOB_JSON, GLOB_JSON5, GLOB_JSONC],
       languageOptions: {
@@ -19,7 +19,7 @@ export const jsonc = () => {
     {
       files: [GLOB_JSON, GLOB_JSON5, GLOB_JSONC],
       rules: {
-        ...(pluginJsonc.configs['recommended-with-jsonc'].rules as Rules),
+        ...(pluginJsonc.configs['recommended-with-jsonc'].rules as unknown as Rules),
         // refs: https://ota-meshi.github.io/eslint-plugin-jsonc/rules/indent.html
         'jsonc/array-bracket-newline': [
           'error',

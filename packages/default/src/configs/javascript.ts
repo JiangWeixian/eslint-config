@@ -5,10 +5,10 @@ import pluginPromise from 'eslint-plugin-promise'
 import pluginRegexp from 'eslint-plugin-regexp'
 import globals from 'globals'
 
-import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
+import type { FlatESLintConfig, Rules } from 'eslint-define-config'
 
 export const javascript = () => {
-  const config: FlatESLintConfigItem[] = [
+  const config: FlatESLintConfig[] = [
     {
       languageOptions: {
         globals: {
@@ -44,39 +44,21 @@ export const javascript = () => {
       rules: {
         ...(pluginStandard.rules as Rules),
         ...(pluginRegexp.configs.recommended.rules as Rules),
-        // Common
-        semi: ['error', 'never'],
-        // Always need {}
         curly: ['error', 'all'],
-        quotes: ['error', 'single'],
-        'quote-props': ['error', 'as-needed'],
         'no-unused-vars': 'warn',
         'no-param-reassign': 'off',
-        'array-bracket-spacing': ['error', 'never'],
-        // https://eslint.org/docs/latest/rules/brace-style#1tbs
-        'brace-style': ['error', '1tbs'],
-        'block-spacing': ['error', 'always'],
         camelcase: 'off',
-        'comma-spacing': ['error', { before: false, after: true }],
-        'comma-style': ['error', 'last'],
-        'comma-dangle': ['error', 'always-multiline'],
         'no-constant-condition': 'warn',
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
         'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
         'no-cond-assign': ['error', 'always'],
-        'func-call-spacing': ['off', 'never'],
-        'key-spacing': ['error', { beforeColon: false, afterColon: true }],
-        // https://github.com/prettier/prettier-eslint/issues/226
-        indent: ['error', 2, { SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1 }],
         'no-restricted-syntax': [
           'error',
           'DebuggerStatement',
           'LabeledStatement',
           'WithStatement',
         ],
-        'object-curly-spacing': ['error', 'always'],
         'no-return-await': 'off',
-        'space-before-function-paren': ['error', 'never'],
 
         // es6
         'no-var': 'error',
@@ -106,9 +88,7 @@ export const javascript = () => {
         'prefer-rest-params': 'error',
         'prefer-spread': 'error',
         'prefer-template': 'error',
-        'template-curly-spacing': 'error',
         'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
-        'generator-star-spacing': 'off',
 
         // best-practice
         'array-callback-return': 'error',
@@ -118,7 +98,6 @@ export const javascript = () => {
         eqeqeq: ['error', 'allow-null'],
         'no-alert': 'warn',
         'no-case-declarations': 'error',
-        'no-multi-spaces': 'error',
         'no-multi-str': 'error',
         'no-with': 'error',
         'no-void': 'error',
@@ -126,7 +105,6 @@ export const javascript = () => {
         'vars-on-top': 'error',
         'require-await': 'off',
         'no-return-assign': 'off',
-        'operator-linebreak': ['error', 'before'],
       },
     },
   ]
