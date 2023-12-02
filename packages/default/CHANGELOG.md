@@ -1,5 +1,16 @@
 # @aiou/eslint-config
 
+## 1.1.0
+
+### Minor Changes
+
+- 6034b7f: mirgate to @stylistic/eslint-plugin
+- 05ee4d0: support options.ssr config ssr related rules
+
+### Patch Changes
+
+- 6034b7f: upgrade eslint-define-config
+
 ## 1.0.6
 
 ### Patch Changes
