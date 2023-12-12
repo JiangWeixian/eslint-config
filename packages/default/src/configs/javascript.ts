@@ -2,7 +2,6 @@
 import pluginStandard from 'eslint-config-standard'
 import pluginN from 'eslint-plugin-n'
 import pluginPromise from 'eslint-plugin-promise'
-import pluginRegexp from 'eslint-plugin-regexp'
 import globals from 'globals'
 
 import type { FlatESLintConfig, Rules } from 'eslint-define-config'
@@ -39,11 +38,9 @@ export const javascript = () => {
       plugins: {
         n: pluginN,
         promise: pluginPromise,
-        regexp: pluginRegexp,
       },
       rules: {
         ...(pluginStandard.rules as Rules),
-        ...(pluginRegexp.configs.recommended.rules as Rules),
         curly: ['error', 'all'],
         'no-unused-vars': 'warn',
         'no-param-reassign': 'off',
