@@ -104,6 +104,8 @@ export const imports = () => {
         `**/Document.${GLOB_SCRIPT_EXT}`,
         '**/{vite,esbuild,rollup,webpack,rspack}.ts',
         GLOB_DTS,
+        GLOB_TEST_SCRIPT,
+        GLOB_TEST_DIRS,
       ],
       rules: {
         // related: https://github.com/pmmmwh/react-refresh-webpack-plugin/blob/main/docs/TROUBLESHOOTING.md#edits-always-lead-to-full-reload
