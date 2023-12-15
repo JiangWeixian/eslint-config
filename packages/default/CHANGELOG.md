@@ -1,5 +1,11 @@
 # @aiou/eslint-config
 
+## 1.2.1
+
+### Patch Changes
+
+- e43ebe0: ignore ssr rules on client entry files
+
 ## 1.2.0
 
 ### Minor Changes
