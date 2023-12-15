@@ -38,9 +38,15 @@ module.exports = aiou()
 
 #### `options.ssr`
 
-- default: `false`
+- default: `true`
 
 enabled ssr-friendly rules
+
+#### `options.regexp`
+
+- default: `true`
+
+enabled regexp rules
     
 ## rules
 
@@ -51,7 +57,7 @@ eslint-config-standard
 eslint-plugin-eslint-comments
 eslint-plugin-html
 eslint-plugin-i
-eslint-plugin-regexp
+eslint-plugin-regexp (configured when regexp enabled)
 eslint-plugin-markdown
 eslint-plugin-simple-import-sort
 eslint-plugin-import-newlines
