@@ -51,7 +51,7 @@ export const react = () => {
     {
       files: [
         `**/*config*.${GLOB_SCRIPT_EXT}`,
-        `**/*{-entry,.entry}*.${GLOB_SCRIPT_EXT}`,
+        `**/*{-entry,entry.}*.${GLOB_SCRIPT_EXT}`,
         GLOB_TEST_SCRIPT,
         GLOB_TEST_DIRS,
       ],
@@ -89,6 +89,8 @@ export const ssrReact = () => {
     {
       files: [
         `**/*config*.${GLOB_SCRIPT_EXT}`,
+        // Client entry files not need to be SSR friendly
+        `**/*{client-entry,entry.client}*.${GLOB_SCRIPT_EXT}`,
         GLOB_TEST_SCRIPT,
         GLOB_TEST_DIRS,
       ],
