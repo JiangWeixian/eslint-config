@@ -5,7 +5,13 @@ import pluginSSRFriendly from 'eslint-plugin-ssr-friendly'
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { mapValues } from 'lodash-es'
 
-import { GLOB_JSX, GLOB_TSX } from '../globs'
+import {
+  GLOB_JSX,
+  GLOB_SCRIPT_EXT,
+  GLOB_TEST_DIRS,
+  GLOB_TEST_SCRIPT,
+  GLOB_TSX,
+} from '../globs'
 
 import type { FlatESLintConfig, Rules } from 'eslint-define-config'
 
@@ -42,6 +48,17 @@ export const react = () => {
         'react-refresh/only-export-components': 'warn',
       },
     },
+    {
+      files: [
+        `**/*config*.${GLOB_SCRIPT_EXT}`,
+        `**/*{-entry,.entry}*.${GLOB_SCRIPT_EXT}`,
+        GLOB_TEST_SCRIPT,
+        GLOB_TEST_DIRS,
+      ],
+      rules: {
+        'react-refresh/only-export-components': 'off',
+      },
+    },
   ]
   return config
 }
@@ -70,10 +87,13 @@ export const ssrReact = () => {
       },
     },
     {
-      files: ['**/*.test.{js,jsx,ts,tsx,cjs,mjs}', '**/*.spec.{js,jsx,ts,tsx,mjs,cjs}'],
+      files: [
+        `**/*config*.${GLOB_SCRIPT_EXT}`,
+        GLOB_TEST_SCRIPT,
+        GLOB_TEST_DIRS,
+      ],
       rules: {
         ...mapValues(pluginSSRFriendly.configs.recommended.rules as Rules, () => 'off'),
-        'ssr-friendly/only-export-components': 'off',
       },
     },
   ]

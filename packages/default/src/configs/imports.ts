@@ -73,7 +73,7 @@ export const imports = () => {
         'import-newlines/enforce': [
           'error',
           {
-            items: 4,
+            items: 2,
             'max-len': 120,
             semi: false,
           },
