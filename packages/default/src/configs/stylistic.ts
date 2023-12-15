@@ -128,6 +128,7 @@ export const stylistic = () => {
         '@stylistic/jsx-closing-bracket-location': ['warn', 'tag-aligned'],
         // Enforce new line when multiline props jsx
         '@stylistic/jsx-first-prop-new-line': ['warn', 'multiline-multiprop'],
+        '@stylistic/jsx-one-expression-per-line': 'off',
       },
     },
   ]

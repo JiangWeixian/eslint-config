@@ -9,6 +9,7 @@ import { markdown } from './configs/markdown'
 import { next } from './configs/next'
 import { progress } from './configs/progress'
 import { react, ssrReact } from './configs/react'
+import { regexp as regexpConfig } from './configs/regexp'
 import { stylistic } from './configs/stylistic'
 import { tailwindcss } from './configs/tailwindcss'
 import { typescript } from './configs/typescript'
@@ -46,9 +47,10 @@ const presetDefault = [
 
 interface Options {
   ssr?: boolean
+  regexp?: boolean
 }
 
-export const aiou = ({ ssr = true }: Options = { ssr: true }, config: FlatESLintConfig | FlatESLintConfig[] = []) => {
+export const aiou = ({ ssr = true, regexp = true }: Options = { ssr: true, regexp: true }, config: FlatESLintConfig | FlatESLintConfig[] = []) => {
   const configs = [...presetDefault]
   if (isPackageExists('tailwindcss')) {
     configs.push(...tailwindcss())
@@ -58,6 +60,9 @@ export const aiou = ({ ssr = true }: Options = { ssr: true }, config: FlatESLint
   }
   if (ssr) {
     configs.push(...ssrReact())
+  }
+  if (regexp) {
+    configs.push(...regexpConfig())
   }
   if (Object.keys(config).length > 0) {
     configs.push(...(Array.isArray(config) ? config : [config]))

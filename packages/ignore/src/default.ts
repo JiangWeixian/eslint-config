@@ -8,4 +8,5 @@ export default [
   '**/jest',
   '**/.next',
   '**/.nuxt',
+  '**/.vitepress',
 ]

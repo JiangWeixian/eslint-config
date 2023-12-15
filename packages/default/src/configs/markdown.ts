@@ -50,6 +50,10 @@ export const markdown = () => {
 
         // Off imports
         'import/no-extraneous-dependencies': 'off',
+        'import/no-default-export': 'off',
+        'import/no-anonymous-default-export': 'off',
+        'react-refresh/only-export-components': 'off',
+        'react/jsx-no-undef': 'off',
       },
     },
   ]
