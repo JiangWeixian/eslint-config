@@ -1,5 +1,18 @@
 # @aiou/eslint-config
 
+## 1.2.0
+
+### Minor Changes
+
+- 20fd256: enable regexp option
+
+### Patch Changes
+
+- 20fd256: ignore export default on test dir
+- 20fd256: update react-refresh rules pattern
+- Updated dependencies [20fd256]
+  - @aiou/eslint-ignore@0.5.2
+
 ## 1.1.0
 
 ### Minor Changes
