@@ -1,6 +1,7 @@
 export const GLOB_SCRIPT_EXT = '?([cm])[jt]s?(x)'
 export const GLOB_TEST_SCRIPT = '**/*.{spec,test}.?([cm])[jt]s?(x)'
 export const GLOB_TEST_DIRS = '**/{test,tests,e2e,__test__,__tests__}/**'
+export const GLOB_PAGES_DIRS = '**/{pages,routes}/!(components)/**'
 
 export const GLOB_DTS = '**/*.d.ts'
 export const GLOB_TS = '**/*.?([cm])ts'

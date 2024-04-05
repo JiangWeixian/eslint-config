@@ -7,6 +7,7 @@ import { mapValues } from 'lodash-es'
 
 import {
   GLOB_JSX,
+  GLOB_PAGES_DIRS,
   GLOB_SCRIPT_EXT,
   GLOB_TEST_DIRS,
   GLOB_TEST_SCRIPT,
@@ -54,6 +55,10 @@ export const react = () => {
         `**/*{-entry,entry.}*.${GLOB_SCRIPT_EXT}`,
         GLOB_TEST_SCRIPT,
         GLOB_TEST_DIRS,
+        // With next.js pages will export getStaticProps funcs
+        // There are some bad cases for not all files are route files
+        // RECOMMEND: pages/routes should only contain page files
+        GLOB_PAGES_DIRS,
       ],
       rules: {
         'react-refresh/only-export-components': 'off',
