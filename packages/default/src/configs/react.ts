@@ -7,6 +7,7 @@ import { mapValues } from 'lodash-es'
 
 import {
   GLOB_JSX,
+  GLOB_PAGES_COMPONENTS_DIRS,
   GLOB_PAGES_DIRS,
   GLOB_SCRIPT_EXT,
   GLOB_TEST_DIRS,
@@ -59,6 +60,9 @@ export const react = () => {
         // There are some bad cases for not all files are route files
         // RECOMMEND: pages/routes should only contain page files
         GLOB_PAGES_DIRS,
+      ],
+      ignores: [
+        GLOB_PAGES_COMPONENTS_DIRS,
       ],
       rules: {
         'react-refresh/only-export-components': 'off',
