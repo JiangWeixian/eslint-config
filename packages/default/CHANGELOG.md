@@ -1,5 +1,11 @@
 # @aiou/eslint-config
 
+## 1.2.2
+
+### Patch Changes
+
+- 2157d52: allow ignore export static in page files
+
 ## 1.2.1
 
 ### Patch Changes
