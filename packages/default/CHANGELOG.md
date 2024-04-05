@@ -1,5 +1,11 @@
 # @aiou/eslint-config
 
+## 1.2.3
+
+### Patch Changes
+
+- 9f8a9ba: use ignore files instead of negative
+
 ## 1.2.2
 
 ### Patch Changes
