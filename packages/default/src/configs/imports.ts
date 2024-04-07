@@ -44,8 +44,8 @@ export const imports = () => {
               // Absolute imports and other imports such as `@/foo` or `~/foo`.
               // Anything not matched in another group.
               ['^', '^\\.', '^@/\\w', '^~/\\w'],
-              // Virtual modules prefixed with `virtual:`, rollup & vite favor
-              ['^virtual:'],
+              // Virtual modules prefixed with `virtual:` or `virtual-`, rollup & vite favor
+              ['^virtual:', '^virtual-'],
               // Types
               ['^[^/\\.].*\u0000$', '^\\..*\u0000$'],
             ],
