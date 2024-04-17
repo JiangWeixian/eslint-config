@@ -1,5 +1,12 @@
 # @aiou/eslint-config
 
+## 1.3.0
+
+### Minor Changes
+
+- 4d2d987: took virtual-\* as virtual module
+- 4d2d987: allow default export in route and page
+
 ## 1.2.3
 
 ### Patch Changes
