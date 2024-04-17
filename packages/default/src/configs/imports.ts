@@ -44,8 +44,8 @@ export const imports = () => {
               // Absolute imports and other imports such as `@/foo` or `~/foo`.
               // Anything not matched in another group.
               ['^', '^\\.', '^@/\\w', '^~/\\w'],
-              // Virtual modules prefixed with `virtual:`, rollup & vite favor
-              ['^virtual:'],
+              // Virtual modules prefixed with `virtual:` or `virtual-`, rollup & vite favor
+              ['^virtual:', '^virtual-'],
               // Types
               ['^[^/\\.].*\u0000$', '^\\..*\u0000$'],
             ],
@@ -103,6 +103,8 @@ export const imports = () => {
         `**/App*.${GLOB_SCRIPT_EXT}`,
         `**/Document.${GLOB_SCRIPT_EXT}`,
         '**/{vite,esbuild,rollup,webpack,rspack}.ts',
+        // Allow default export in page and route file
+        `**/{page,route}.${GLOB_SCRIPT_EXT}`,
         GLOB_DTS,
         GLOB_TEST_SCRIPT,
         GLOB_TEST_DIRS,
