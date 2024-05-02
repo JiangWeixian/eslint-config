@@ -58,6 +58,9 @@ export const imports = () => {
         'import/no-mutable-exports': 'error',
         'import/no-unresolved': 'off',
         'import/no-absolute-path': 'off',
+        'import/dynamic-import-chunkname': [2, {
+          allowEmpty: true,
+        }],
         // Not allowed import devDependencies
         'import/no-extraneous-dependencies': ['error', { devDependencies: false }],
         // Not allow import { default as named }
