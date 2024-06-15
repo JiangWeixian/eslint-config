@@ -1,6 +1,7 @@
 import pluginTypeScript from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
 import pluginETC from 'eslint-plugin-etc'
+import pluginTreeshaking from 'eslint-plugin-tree-shaking'
 
 import { GLOB_TEST_DIRS, GLOB_TEST_SCRIPT, GLOB_TS, GLOB_TSX } from '../globs'
 
@@ -24,6 +25,7 @@ export const typescript = () => {
       plugins: {
         '@typescript-eslint': pluginTypeScript,
         etc: pluginETC,
+        'tree-shaking': pluginTreeshaking,
       },
       rules: {
         ...(pluginTypeScript.configs.recommended.rules as Rules),
@@ -100,6 +102,22 @@ export const typescript = () => {
         // https://www.npmjs.com/package/eslint-plugin-unused-imports
         '@typescript-eslint/no-unused-vars': 'off',
         'no-void': ['error', { allowAsStatement: true }],
+
+        'tree-shaking/no-side-effects-in-initialization': [
+          2,
+          {
+            noSideEffectsWhenCalled: [
+              {
+                module: 'react',
+                functions: ['createContext', 'createRef'],
+              },
+              {
+                module: 'zod',
+                functions: ['array', 'string', 'nativeEnum', 'number', 'object', 'optional'],
+              },
+            ],
+          },
+        ],
       },
     },
     {
@@ -107,6 +125,7 @@ export const typescript = () => {
       rules: {
         'no-unused-expressions': 'off',
         '@typescript-eslint/no-unused-vars': 'off',
+        'tree-shaking/no-side-effects-in-initialization': 'off',
       },
     },
   ]
