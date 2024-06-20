@@ -49,6 +49,9 @@ export const typescript = () => {
         '@typescript-eslint/sort-type-constituents': 'error',
         '@typescript-eslint/unbound-method': 'off',
         '@typescript-eslint/prefer-for-of': 'error',
+        // When .ts files compiled to .mjs, will throw require is not found
+        // use createRequire instead
+        '@typescript-eslint/no-require-imports': 'error',
         // https://www.npmjs.com/package/eslint-plugin-etc
         'etc/no-t': 'error',
         /**
