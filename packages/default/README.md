@@ -56,7 +56,7 @@ extends from
 eslint-config-standard
 eslint-plugin-eslint-comments
 eslint-plugin-html
-eslint-plugin-i
+eslint-plugin-import-x
 eslint-plugin-regexp (configured when regexp enabled)
 eslint-plugin-markdown
 eslint-plugin-simple-import-sort
