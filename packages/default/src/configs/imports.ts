@@ -1,5 +1,5 @@
-import pluginImport from 'eslint-plugin-i'
 import pluginImportNewlines from 'eslint-plugin-import-newlines'
+import pluginImport from 'eslint-plugin-import-x'
 import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort'
 import pluginUnsedImports from 'eslint-plugin-unused-imports'
 
@@ -18,16 +18,17 @@ export const imports = () => {
   const config: FlatESLintConfig[] = [
     {
       plugins: {
-        import: pluginImport,
+        // @ts-expect-error -- ignore
+        'import-x': pluginImport,
         'simple-import-sort': pluginSimpleImportSort,
         'import-newlines': pluginImportNewlines,
         'unused-imports': pluginUnsedImports,
       },
       rules: {
-        ...(pluginImport.configs.recommended.rules as Rules),
+        ...(pluginImport.configs.recommended.rules as unknown as Rules),
         // import
         // off: controlled by import/order
-        'import/order': 'off',
+        'import-x/order': 'off',
         'sort-imports': 'off',
         'simple-import-sort/imports': [
           'warn',
@@ -52,19 +53,19 @@ export const imports = () => {
           },
         ],
         'simple-import-sort/exports': 'off',
-        'import/first': 'error',
-        'import/newline-after-import': 'error',
-        'import/no-duplicates': 'error',
-        'import/no-mutable-exports': 'error',
-        'import/no-unresolved': 'off',
-        'import/no-absolute-path': 'off',
-        'import/dynamic-import-chunkname': [2, {
+        'import-x/first': 'error',
+        'import-x/newline-after-import': 'error',
+        'import-x/no-duplicates': 'error',
+        'import-x/no-mutable-exports': 'error',
+        'import-x/no-unresolved': 'off',
+        'import-x/no-absolute-path': 'off',
+        'import-x/dynamic-import-chunkname': [2, {
           allowEmpty: true,
         }],
         // Not allowed import devDependencies
-        'import/no-extraneous-dependencies': ['error', { devDependencies: false }],
+        'import-x/no-extraneous-dependencies': ['error', { devDependencies: false }],
         // Not allow import { default as named }
-        'import/no-named-default': 'warn',
+        'import-x/no-named-default': 'warn',
 
         'unused-imports/no-unused-imports': 'error',
         'unused-imports/no-unused-vars': [
@@ -86,7 +87,7 @@ export const imports = () => {
     {
       files: [GLOB_DTS],
       rules: {
-        'import/no-duplicates': 'off',
+        'import-x/no-duplicates': 'off',
       },
     },
     {
@@ -94,9 +95,9 @@ export const imports = () => {
       rules: {
         // related: https://github.com/pmmmwh/react-refresh-webpack-plugin/blob/main/docs/TROUBLESHOOTING.md#edits-always-lead-to-full-reload
         // export anonymous function: ReactRefresh failed
-        'import/no-anonymous-default-export': 'error',
-        // perfer named export
-        'import/no-default-export': 'error',
+        'import-x/no-anonymous-default-export': 'error',
+        // prefer named export
+        'import-x/no-default-export': 'error',
       },
     },
     {
@@ -115,8 +116,8 @@ export const imports = () => {
       rules: {
         // related: https://github.com/pmmmwh/react-refresh-webpack-plugin/blob/main/docs/TROUBLESHOOTING.md#edits-always-lead-to-full-reload
         // export anonymous function: ReactRefresh failed
-        'import/no-anonymous-default-export': 'off',
-        'import/no-default-export': 'off',
+        'import-x/no-anonymous-default-export': 'off',
+        'import-x/no-default-export': 'off',
       },
     },
     {
@@ -134,7 +135,7 @@ export const imports = () => {
         '**/{vite,esbuild,rollup,webpack,rspack}.ts',
       ],
       rules: {
-        'import/no-extraneous-dependencies': 'off',
+        'import-x/no-extraneous-dependencies': 'off',
       },
     },
   ]

@@ -38,7 +38,7 @@ export const markdown = () => {
         '@typescript-eslint/consistent-type-imports': 'off',
         '@typescript-eslint/no-namespace': 'off',
         '@typescript-eslint/no-require-imports': 'off',
-        'import/no-unresolved': 'off',
+        'import-x/no-unresolved': 'off',
         'unused-imports/no-unused-imports': 'off',
         'unused-imports/no-unused-vars': 'off',
         'no-alert': 'off',
@@ -49,9 +49,9 @@ export const markdown = () => {
         'no-unused-vars': 'off',
 
         // Off imports
-        'import/no-extraneous-dependencies': 'off',
-        'import/no-default-export': 'off',
-        'import/no-anonymous-default-export': 'off',
+        'import-x/no-extraneous-dependencies': 'off',
+        'import-x/no-default-export': 'off',
+        'import-x/no-anonymous-default-export': 'off',
         'react-refresh/only-export-components': 'off',
         'react/jsx-no-undef': 'off',
       },
