@@ -1,7 +1,11 @@
 import pluginJsonc from 'eslint-plugin-jsonc'
 import jsoncParser from 'jsonc-eslint-parser'
 
-import { GLOB_JSON, GLOB_JSON5, GLOB_JSONC } from '../globs'
+import {
+  GLOB_JSON,
+  GLOB_JSON5,
+  GLOB_JSONC,
+} from '../globs'
 
 import type { FlatESLintConfig, Rules } from 'eslint-define-config'
 
@@ -100,7 +104,8 @@ export const jsonc = () => {
           {
             pathPattern: '^exports.*$',
             // According to webpack, default condition should be last item
-            order: ['import', 'require', 'types', 'node', 'browser', 'default'],
+            // Typescript bugs: types should be first one
+            order: ['types', 'import', 'require', 'node', 'browser', 'default'],
           },
           {
             order: { type: 'asc' },
