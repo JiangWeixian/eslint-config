@@ -1,5 +1,11 @@
 # @aiou/eslint-config
 
+## 1.5.1
+
+### Patch Changes
+
+- 5e92535: sort exports.types to first
+
 ## 1.5.0
 
 ### Minor Changes
