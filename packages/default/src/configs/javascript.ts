@@ -28,10 +28,10 @@ export const javascript = () => {
       },
       settings: {
         // This will do the trick
-        'import/parsers': {
+        'import-x/parsers': {
           espree: ['.js', '.cjs', '.mjs', '.jsx'],
         },
-        'import/resolver': {
+        'import-x/resolver': {
           node: true,
         },
       },

@@ -17,7 +17,7 @@ export const typescript = () => {
         },
       },
       settings: {
-        'import/resolver': {
+        'import-x/resolver': {
           node: { extensions: ['.js', '.jsx', '.mjs', '.ts', '.tsx', '.d.ts'] },
         },
       },
@@ -28,11 +28,11 @@ export const typescript = () => {
       rules: {
         ...(pluginTypeScript.configs.recommended.rules as Rules),
         // https://github.com/typescript-eslint/typescript-eslint/blob/main/docs/linting/troubleshooting/Performance.md#eslint-plugin-import
-        'import/named': 'off',
-        'import/namespace': 'off',
-        'import/default': 'off',
-        'import/no-named-as-default-member': 'off',
-        'import/no-named-as-default': 'off',
+        'import-x/named': 'off',
+        'import-x/namespace': 'off',
+        'import-x/default': 'off',
+        'import-x/no-named-as-default-member': 'off',
+        'import-x/no-named-as-default': 'off',
 
         // TS
         'no-useless-constructor': 'off',
