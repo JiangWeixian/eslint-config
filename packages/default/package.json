@@ -33,7 +33,7 @@
     "prepublishOnly": "publish-police"
   },
   "peerDependencies": {
-    "eslint": ">=7.4.0 || ^8.53.0"
+    "eslint": ">=9.0.0"
   },
   "dependencies": {
     "@aiou/eslint-ignore": "workspace:*",
@@ -73,7 +73,7 @@
     "@rollup/plugin-node-resolve": "15.0.1",
     "@types/lodash-es": "^4.17.10",
     "@types/node": "^20.8.7",
-    "eslint": "^8.26.0",
+    "eslint": "^9.0.0",
     "eslint-config-standard": "17.1.0",
     "lodash-es": "^4.17.21",
     "publish-police": "^0.2.1",
