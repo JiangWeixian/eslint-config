@@ -24,7 +24,7 @@ export default defineConfig([
       }),
       commonjs(),
       esbuild({
-        target: 'node16',
+        target: 'node20',
       }),
       json(),
       resolve(),
@@ -35,7 +35,7 @@ export default defineConfig([
       size(),
     ],
     output: [
-      { dir: 'dist', entryFileNames: '[name].cjs', format: 'cjs' },
+      { dir: 'dist', entryFileNames: '[name].cjs', format: 'cjs', interop: 'auto' },
       { dir: 'dist', entryFileNames: '[name].mjs', format: 'es' },
     ],
   },

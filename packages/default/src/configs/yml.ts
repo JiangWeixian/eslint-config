@@ -3,10 +3,10 @@ import yamlParser from 'yaml-eslint-parser'
 
 import { GLOB_WORKFLOW_YAML, GLOB_YAML } from '../globs'
 
-import type { FlatESLintConfig, Rules } from 'eslint-define-config'
+import type { Config } from '../type'
 
 export const yml = () => {
-  const config: FlatESLintConfig[] = [
+  const config: Config[] = [
     {
       files: [GLOB_YAML],
       languageOptions: {
@@ -16,7 +16,7 @@ export const yml = () => {
         yml: pluginYaml,
       },
       rules: {
-        ...(pluginYaml.configs.standard.rules as unknown as Rules),
+        ...(pluginYaml.configs.standard.rules as unknown as any),
         // yml
         'spaced-comment': 'off',
         'yml/quotes': ['error', { prefer: 'double', avoidEscape: false }],

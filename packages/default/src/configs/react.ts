@@ -1,4 +1,4 @@
-import pluginReact from 'eslint-plugin-react'
+import pluginReact from '@eslint-react/eslint-plugin'
 import pluginReactHooks from 'eslint-plugin-react-hooks'
 import pluginReactRefresh from 'eslint-plugin-react-refresh'
 import pluginSSRFriendly from 'eslint-plugin-ssr-friendly'
@@ -15,17 +15,20 @@ import {
   GLOB_TSX,
 } from '../globs'
 
-import type { FlatESLintConfig, Rules } from 'eslint-define-config'
+import type { Config } from '../type'
 
 export const react = () => {
-  const config: FlatESLintConfig[] = [
+  const plugins = pluginReact.configs.all.plugins
+  const config: Config[] = [
     {
       files: [GLOB_JSX, GLOB_TSX],
       languageOptions: {
         parserOptions: {
-          ...pluginReact.configs.recommended.parserOptions,
-          ...pluginReact.configs['jsx-runtime'].parserOptions,
+          ecmaFeatures: {
+            jsx: true,
+          },
         },
+        sourceType: 'module',
       },
       settings: {
         react: {
@@ -34,14 +37,15 @@ export const react = () => {
         },
       },
       plugins: {
-        react: pluginReact,
+        react: plugins['@eslint-react'],
+        'react-dom': plugins['@eslint-react/dom'],
         'react-hooks': pluginReactHooks,
+        'react-hooks-extra': plugins['@eslint-react/hooks-extra'],
+        'react-naming-convention': plugins['@eslint-react/naming-convention'],
         'react-refresh': pluginReactRefresh,
+        'react-web-api': plugins['@eslint-react/web-api'],
       },
       rules: {
-        ...(pluginReact.configs.recommended.rules as Rules),
-        ...(pluginReact.configs['jsx-runtime'].rules as Rules),
-        ...(pluginReactHooks.configs.recommended.rules as Rules),
         'react/prop-types': 'off',
         'react/no-unescaped-entities': 'off',
         'react/no-unknown-property': 'off',
@@ -73,14 +77,16 @@ export const react = () => {
 }
 
 export const ssrReact = () => {
-  const config: FlatESLintConfig[] = [
+  const config: Config[] = [
     {
       files: [GLOB_JSX, GLOB_TSX],
       languageOptions: {
         parserOptions: {
-          ...pluginReact.configs.recommended.parserOptions,
-          ...pluginReact.configs['jsx-runtime'].parserOptions,
+          ecmaFeatures: {
+            jsx: true,
+          },
         },
+        sourceType: 'module',
       },
       settings: {
         react: {
@@ -92,7 +98,7 @@ export const ssrReact = () => {
         'ssr-friendly': pluginSSRFriendly,
       },
       rules: {
-        ...(pluginSSRFriendly.configs.recommended.rules as Rules),
+        ...(pluginSSRFriendly.configs.recommended.rules as any),
       },
     },
     {
@@ -104,7 +110,7 @@ export const ssrReact = () => {
         GLOB_TEST_DIRS,
       ],
       rules: {
-        ...mapValues(pluginSSRFriendly.configs.recommended.rules as Rules, () => 'off'),
+        ...mapValues(pluginSSRFriendly.configs.recommended.rules as any, () => 'off'),
       },
     },
   ]

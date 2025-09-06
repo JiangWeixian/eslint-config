@@ -1,0 +1,6 @@
+declare module 'eslint-plugin-promise'
+declare module 'eslint-plugin-import-newlines'
+declare module '@aiou/eslint-plugin-progress'
+declare module 'eslint-plugin-ssr-friendly'
+declare module '@eslint-community/eslint-plugin-eslint-comments'
+declare module 'eslint-plugin-etc'

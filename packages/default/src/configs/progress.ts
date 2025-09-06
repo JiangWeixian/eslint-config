@@ -1,9 +1,9 @@
 import pluginProgress from '@aiou/eslint-plugin-progress'
 
-import type { FlatESLintConfig } from 'eslint-define-config'
+import type { Config } from '../type'
 
 export const progress = () => {
-  const config: FlatESLintConfig[] = [
+  const config: Config[] = [
     {
       plugins: {
         progress: pluginProgress,

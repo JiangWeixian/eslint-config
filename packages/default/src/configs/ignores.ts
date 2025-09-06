@@ -1,9 +1,9 @@
 import ignoreGlobs from '@aiou/eslint-ignore'
 
-import type { FlatESLintConfig } from 'eslint-define-config'
+import type { Config } from '../type'
 
 export const ignores = () => {
-  const config: FlatESLintConfig[] = [
+  const config: Config[] = [
     {
       ignores: ignoreGlobs,
     },

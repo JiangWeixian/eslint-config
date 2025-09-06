@@ -1,16 +1,15 @@
-import pluginComments from 'eslint-plugin-eslint-comments'
+import configComments from '@eslint-community/eslint-plugin-eslint-comments'
 
-import type { FlatESLintConfig, Rules } from 'eslint-define-config'
+import type { Config } from '../type'
 
 export const comments = () => {
-  const config: FlatESLintConfig[] = [
+  const config: Config[] = [
     {
-      plugins: {
-        'eslint-comments': pluginComments,
-      },
+      ...configComments.recommended,
+    },
+    {
       rules: {
-        ...(pluginComments.configs.recommended.rules as Rules),
-        'eslint-comments/disable-enable-pair': 'off',
+        '@eslint-community/eslint-comments/disable-enable-pair': 'off',
       },
     },
   ]

@@ -2,12 +2,17 @@ import pluginTypeScript from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
 import pluginETC from 'eslint-plugin-etc'
 
-import { GLOB_TEST_DIRS, GLOB_TEST_SCRIPT, GLOB_TS, GLOB_TSX } from '../globs'
+import {
+  GLOB_TEST_DIRS,
+  GLOB_TEST_SCRIPT,
+  GLOB_TS,
+  GLOB_TSX,
+} from '../globs'
 
-import type { FlatESLintConfig, Rules } from 'eslint-define-config'
+import type { Config } from '../type'
 
 export const typescript = () => {
-  const config: FlatESLintConfig[] = [
+  const config: Config[] = [
     {
       files: [GLOB_TSX, GLOB_TS, GLOB_TEST_SCRIPT],
       languageOptions: {
@@ -26,7 +31,7 @@ export const typescript = () => {
         etc: pluginETC,
       },
       rules: {
-        ...(pluginTypeScript.configs.recommended.rules as Rules),
+        ...(pluginTypeScript.configs.recommended.rules as any),
         // https://github.com/typescript-eslint/typescript-eslint/blob/main/docs/linting/troubleshooting/Performance.md#eslint-plugin-import
         'import/named': 'off',
         'import/namespace': 'off',

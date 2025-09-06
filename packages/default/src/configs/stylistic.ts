@@ -1,8 +1,13 @@
 import pluginStylistic from '@stylistic/eslint-plugin'
 
-import { GLOB_JS, GLOB_JSX, GLOB_TS, GLOB_TSX } from '../globs'
+import {
+  GLOB_JS,
+  GLOB_JSX,
+  GLOB_TS,
+  GLOB_TSX,
+} from '../globs'
 
-import type { FlatESLintConfig } from 'eslint-define-config'
+import type { Config } from '../type'
 
 export const stylistic = () => {
   const config = pluginStylistic.configs.customize({
@@ -13,11 +18,11 @@ export const stylistic = () => {
     semi: false,
   })
   // Off original eslint stylistic rules
-  const off = {}
-  Object.keys(config.rules).forEach((key) => {
+  const off: Record<string, 'off'> = {}
+  Object.keys(config.rules ?? {}).forEach((key) => {
     off[key.replace('@stylistic/', '')] = 'off'
   })
-  const configs: FlatESLintConfig[] = [
+  const configs: Config[] = [
     {
       files: [GLOB_JS, GLOB_JSX, GLOB_TS, GLOB_TSX],
       plugins: {

@@ -2,10 +2,10 @@ import pluginNext from '@next/eslint-plugin-next'
 
 import { GLOB_JSX, GLOB_TSX } from '../globs'
 
-import type { FlatESLintConfig, Rules } from 'eslint-define-config'
+import type { Config } from '../type'
 
 export const next = () => {
-  const config: FlatESLintConfig[] = [
+  const config: Config[] = [
     {
       files: [GLOB_JSX, GLOB_TSX],
       plugins: {
@@ -13,7 +13,7 @@ export const next = () => {
       },
       rules: {
         // Enable rules for next project
-        ...pluginNext.configs.recommended.rules as Rules,
+        ...pluginNext.configs.recommended.rules as any,
       },
     },
   ]

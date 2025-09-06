@@ -1,35 +1,18 @@
-import pluginMarkdown from 'eslint-plugin-markdown'
+import pluginMarkdown from '@eslint/markdown'
 
 import { GLOB_MARKDOWN, GLOB_SCRIPT_EXT } from '../globs'
 
-import type { FlatESLintConfig, Rules } from 'eslint-define-config'
+import type { Config } from '../type'
 
 export const markdown = () => {
-  const config: FlatESLintConfig[] = [
-    {
-      // Enable the Markdown processor for all .md files.
-      files: [GLOB_MARKDOWN],
-      processor: 'markdown/markdown',
-      plugins: {
-        markdown: pluginMarkdown,
-      },
-    },
+  const config: Config[] = [
+    ...pluginMarkdown.configs.processor.map((config: Config) => ({
+      ...config,
+    })),
     {
       // Code blocks in markdown file
       files: [`${GLOB_MARKDOWN}/*.${GLOB_SCRIPT_EXT}`],
-      languageOptions: {
-        parserOptions: {
-          ecmaFeatures: {
-            // Adding a "use strict" directive at the top of
-            // every code block is tedious and distracting, so
-            // opt into strict mode parsing without the
-            // directive.
-            impliedStrict: true,
-          },
-        },
-      },
       rules: {
-        ...pluginMarkdown.configs.recommended.overrides[1].rules as Rules,
         'react/display-name': 'off',
         '@typescript-eslint/no-redeclare': 'off',
         '@typescript-eslint/no-unused-vars': 'off',
