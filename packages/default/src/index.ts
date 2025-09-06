@@ -1,3 +1,8 @@
+import {
+  type Arrayable,
+  type Awaitable,
+  FlatConfigComposer,
+} from 'eslint-flat-config-utils'
 import { isPackageExists } from 'local-pkg'
 
 import { comments } from './configs/comments'
@@ -16,7 +21,9 @@ import { typescript } from './configs/typescript'
 import { unicorn } from './configs/unicorn'
 import { yml } from './configs/yml'
 
-import type { FlatESLintConfig } from 'eslint-define-config'
+import type { Linter } from 'eslint'
+import type { Config } from './type'
+import type { ConfigNames } from './typegen'
 
 const presetJavascript = [
   ...ignores(),
@@ -45,12 +52,22 @@ const presetDefault = [
   ...progress(),
 ]
 
+export const all = [
+  ...presetDefault,
+  ...tailwindcss(),
+  ...next(),
+  ...ssrReact(),
+  ...regexpConfig(),
+]
+
 interface Options {
   ssr?: boolean
   regexp?: boolean
 }
 
-export const aiou = ({ ssr = true, regexp = true }: Options = { ssr: true, regexp: true }, config: FlatESLintConfig | FlatESLintConfig[] = []) => {
+export const aiou = ({ ssr = true, regexp = true }: Options = { ssr: true, regexp: true }, ...userConfigs: Awaitable<
+  Arrayable<Config> | FlatConfigComposer<any, any> | Linter.Config[]
+>[]): FlatConfigComposer<Config, ConfigNames> => {
   const configs = [...presetDefault]
   if (isPackageExists('tailwindcss')) {
     configs.push(...tailwindcss())
@@ -64,8 +81,9 @@ export const aiou = ({ ssr = true, regexp = true }: Options = { ssr: true, regex
   if (regexp) {
     configs.push(...regexpConfig())
   }
-  if (Object.keys(config).length > 0) {
-    configs.push(...(Array.isArray(config) ? config : [config]))
-  }
-  return configs
+  const composer = new FlatConfigComposer<Config, ConfigNames>(
+    ...configs,
+    ...(userConfigs as any),
+  )
+  return composer
 }

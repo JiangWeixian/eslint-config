@@ -1,25 +1,16 @@
 import { createRequire } from 'node:module'
 
-import type { FlatESLintConfig, Rules } from 'eslint-define-config'
+import type { Config } from '../type'
 
 const require = createRequire(import.meta.url)
 
 export const tailwindcss = () => {
   const pluginTailwindcss = require('eslint-plugin-tailwindcss')
-  const config: FlatESLintConfig[] = [
+  const config: Config[] = [
+    ...pluginTailwindcss.configs['flat/recommended'],
     {
-      plugins: {
-        tailwindcss: pluginTailwindcss,
-      },
-      languageOptions: {
-        parserOptions: {
-          ecmaFeatures: {
-            jsx: true,
-          },
-        },
-      },
       rules: {
-        ...(pluginTailwindcss.configs.recommended.rules as Rules),
+        ...(pluginTailwindcss.configs.recommended.rules as any),
         'tailwindcss/no-custom-classname': 'off',
       },
     },

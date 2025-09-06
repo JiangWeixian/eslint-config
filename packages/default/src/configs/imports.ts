@@ -1,5 +1,5 @@
-import pluginImport from 'eslint-plugin-i'
 import pluginImportNewlines from 'eslint-plugin-import-newlines'
+import pluginImport from 'eslint-plugin-import-x'
 import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort'
 import pluginUnsedImports from 'eslint-plugin-unused-imports'
 
@@ -12,10 +12,10 @@ import {
   GLOB_TSX,
 } from '../globs'
 
-import type { FlatESLintConfig, Rules } from 'eslint-define-config'
+import type { Config } from '../type'
 
-export const imports = () => {
-  const config: FlatESLintConfig[] = [
+export const imports = (): Config[] => {
+  const config: Config[] = [
     {
       plugins: {
         import: pluginImport,
@@ -24,7 +24,6 @@ export const imports = () => {
         'unused-imports': pluginUnsedImports,
       },
       rules: {
-        ...(pluginImport.configs.recommended.rules as Rules),
         // import
         // off: controlled by import/order
         'import/order': 'off',

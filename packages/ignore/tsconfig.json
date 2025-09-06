@@ -15,8 +15,7 @@
     "sourceMap": false,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "suppressImplicitAnyIndexErrors": true
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src"]
 }
