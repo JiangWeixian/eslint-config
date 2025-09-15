@@ -1,5 +1,11 @@
 # @aiou/eslint-config
 
+## 2.0.0
+
+### Major Changes
+
+- 17df8f1: eslint@9
+
 ## 1.5.1
 
 ### Patch Changes
