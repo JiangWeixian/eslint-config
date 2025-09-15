@@ -46,10 +46,10 @@ export const react = () => {
         'react-web-api': plugins['@eslint-react/web-api'],
       },
       rules: {
-        'react/prop-types': 'off',
-        'react/no-unescaped-entities': 'off',
-        'react/no-unknown-property': 'off',
-        'react/jsx-boolean-value': ['error', 'always'],
+        ...(pluginReact.configs['recommended-typescript'].rules as any),
+        'react/no-prop-types': 'error',
+        'dom/no-unknown-property': 'off',
+        'react/avoid-shorthand-boolean': ['error', 'always'],
         // https://github.com/ArnaudBarre/eslint-plugin-react-refresh
         'react-refresh/only-export-components': 'warn',
       },
