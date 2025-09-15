@@ -1,5 +1,11 @@
 # @aiou/eslint-config
 
+## 2.0.1
+
+### Patch Changes
+
+- b81bdf6: recommend react rules
+
 ## 2.0.0
 
 ### Major Changes
