@@ -48,7 +48,7 @@ export const react = () => {
       rules: {
         ...(pluginReact.configs['recommended-typescript'].rules as any),
         'react/no-prop-types': 'error',
-        'dom/no-unknown-property': 'off',
+        'react-dom/no-unknown-property': 'off',
         'react/avoid-shorthand-boolean': ['error', 'always'],
         // https://github.com/ArnaudBarre/eslint-plugin-react-refresh
         'react-refresh/only-export-components': 'warn',
