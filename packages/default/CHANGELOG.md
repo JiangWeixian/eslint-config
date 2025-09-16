@@ -1,5 +1,14 @@
 # @aiou/eslint-config
 
+## 2.0.2
+
+### Patch Changes
+
+- 479e4fa: add react recommends
+- 479e4fa: recommend react rules
+- Updated dependencies [479e4fa]
+  - @aiou/eslint-ignore@0.6.0
+
 ## 2.0.1
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @aiou/eslint-ignore
 
+## 0.6.0
+
+### Minor Changes
+
+- 479e4fa: support esm
+
 ## 0.5.2
 
 ### Patch Changes
