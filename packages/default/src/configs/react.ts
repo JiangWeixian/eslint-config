@@ -14,6 +14,7 @@ import {
   GLOB_TEST_SCRIPT,
   GLOB_TSX,
 } from '../globs'
+import { renameRules } from '../utils'
 
 import type { Config } from '../type'
 
@@ -46,12 +47,29 @@ export const react = () => {
         'react-web-api': plugins['@eslint-react/web-api'],
       },
       rules: {
-        ...(pluginReact.configs['recommended-typescript'].rules as any),
+        ...(renameRules(plugins['@eslint-react'].configs['recommended-typescript'].rules as any, { '@eslint-react': 'react' })),
+        ...(renameRules(plugins['@eslint-react/dom'].configs.recommended.rules as any, { '@eslint-react': 'react-dom' })),
+        ...(renameRules(pluginReactHooks.configs.recommended.rules as any, { '@eslint-react': 'react-hooks' })),
+        ...(renameRules(plugins['@eslint-react/hooks-extra'].configs.recommended.rules as any, { '@eslint-react': 'react-hooks-extra' })),
+        ...(renameRules(plugins['@eslint-react/naming-convention'].configs.recommended.rules as any, { '@eslint-react': 'react-naming-convention' })),
+        ...(renameRules(plugins['@eslint-react/web-api'].configs.recommended.rules as any, { '@eslint-react': 'react-web-api' })),
         'react/no-prop-types': 'error',
         'react-dom/no-unknown-property': 'off',
-        'react/avoid-shorthand-boolean': ['error', 'always'],
+        'react/avoid-shorthand-boolean': ['error'],
         // https://github.com/ArnaudBarre/eslint-plugin-react-refresh
         'react-refresh/only-export-components': 'warn',
+      },
+    },
+    {
+      files: ['src/components/**/*.{ts,tsx}'],
+      rules: {
+        'react-naming-convention/filename': ['warn', { rule: 'PascalCase' }],
+      },
+    },
+    {
+      files: ['src/hooks/**/use*.{ts,tsx}'],
+      rules: {
+        'react-naming-convention/filename': ['warn', { rule: 'kebab-case' }],
       },
     },
     {

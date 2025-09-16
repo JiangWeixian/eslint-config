@@ -13,7 +13,8 @@ export const markdown = () => {
       // Code blocks in markdown file
       files: [`${GLOB_MARKDOWN}/*.${GLOB_SCRIPT_EXT}`],
       rules: {
-        'react/display-name': 'off',
+        // https://eslint-react.xyz/docs/migration
+        'react/no-missing-component-display-name': 'off',
         '@typescript-eslint/no-redeclare': 'off',
         '@typescript-eslint/no-unused-vars': 'off',
         '@typescript-eslint/no-use-before-define': 'off',
