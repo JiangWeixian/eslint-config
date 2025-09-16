@@ -20,9 +20,19 @@
   "author": "JW <jiangweixian1994@gmail.com> (https://twitter.com/jiangweixian)",
   "files": [
     "index.js",
+    "index.mjs",
     "index.d.ts"
   ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  },
   "main": "index.js",
+  "module": "index.mjs",
   "typings": "index.d.ts",
   "scripts": {
     "build": "tsx ./src/index.ts",

@@ -21,10 +21,14 @@ const main = async () => {
       return !line.startsWith('#') && !!line
     })
   const patterns = nodePatterns.concat(defaultIgnorePatterns).map(line => line.startsWith('**') ? `"${line}"` : `"**/${line}"`)
-  const exportIgnorePatterns = `
+  const cjsExportIgnorePatterns = `
     module.exports = [${patterns}]
   `
-  fs.writeFileSync(path.resolve(__dirname, '../index.js'), exportIgnorePatterns)
+  const mjsExportIgnorePatterns = `
+    export default [${patterns}]
+  `
+  fs.writeFileSync(path.resolve(__dirname, '../index.js'), cjsExportIgnorePatterns)
+  fs.writeFileSync(path.resolve(__dirname, '../index.mjs'), mjsExportIgnorePatterns)
 }
 
 main()
