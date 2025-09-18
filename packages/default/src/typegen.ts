@@ -3085,22 +3085,6 @@ export interface Rules {
    */
   'simple-import-sort/imports'?: Linter.RuleEntry<SimpleImportSortImports>
   /**
-   * disallow use of DOM globals in class constructors
-   */
-  'ssr-friendly/no-dom-globals-in-constructor'?: Linter.RuleEntry<[]>
-  /**
-   * disallow use of DOM globals in module scope
-   */
-  'ssr-friendly/no-dom-globals-in-module-scope'?: Linter.RuleEntry<[]>
-  /**
-   * disallow use of DOM globals in render() method of a React class-component
-   */
-  'ssr-friendly/no-dom-globals-in-react-cc-render'?: Linter.RuleEntry<[]>
-  /**
-   * disallow use of DOM globals in the render-cycle of a React FC
-   */
-  'ssr-friendly/no-dom-globals-in-react-fc'?: Linter.RuleEntry<[]>
-  /**
    * Enforce a consistent and logical order of the Tailwind CSS classnames
    * @see https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/classnames-order.md
    */

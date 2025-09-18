@@ -1,9 +1,6 @@
 import pluginReact from '@eslint-react/eslint-plugin'
 import pluginReactHooks from 'eslint-plugin-react-hooks'
 import pluginReactRefresh from 'eslint-plugin-react-refresh'
-import pluginSSRFriendly from 'eslint-plugin-ssr-friendly'
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { mapValues } from 'lodash-es'
 
 import {
   GLOB_JSX,
@@ -47,13 +44,14 @@ export const react = () => {
         'react-web-api': plugins['@eslint-react/web-api'],
       },
       rules: {
-        ...(renameRules(plugins['@eslint-react'].configs['recommended-typescript'].rules as any, { '@eslint-react': 'react' })),
+        ...(renameRules(plugins['@eslint-react'].configs['recommended-typescript'].rules as any, { 'react-x': 'react' })),
         ...(renameRules(plugins['@eslint-react/dom'].configs.recommended.rules as any, { '@eslint-react': 'react-dom' })),
         ...(renameRules(pluginReactHooks.configs.recommended.rules as any, { '@eslint-react': 'react-hooks' })),
         ...(renameRules(plugins['@eslint-react/hooks-extra'].configs.recommended.rules as any, { '@eslint-react': 'react-hooks-extra' })),
         ...(renameRules(plugins['@eslint-react/naming-convention'].configs.recommended.rules as any, { '@eslint-react': 'react-naming-convention' })),
         ...(renameRules(plugins['@eslint-react/web-api'].configs.recommended.rules as any, { '@eslint-react': 'react-web-api' })),
         'react/no-prop-types': 'error',
+        'react/no-nested-component-definitions': 'warn',
         'react-dom/no-unknown-property': 'off',
         'react/avoid-shorthand-boolean': ['error'],
         // https://github.com/ArnaudBarre/eslint-plugin-react-refresh
@@ -112,11 +110,64 @@ export const ssrReact = () => {
           version: '18.0',
         },
       },
-      plugins: {
-        'ssr-friendly': pluginSSRFriendly,
-      },
       rules: {
-        ...(pluginSSRFriendly.configs.recommended.rules as any),
+        'no-restricted-syntax': [
+          'error',
+          'DebuggerStatement',
+          'LabeledStatement',
+          'WithStatement',
+          {
+            selector: 'TSEnumDeclaration',
+            message: 'Don\'t declare enums',
+          },
+          {
+            selector: 'MemberExpression[object.name=\'window\']:not(LogicalExpression[right=MemberExpression] > MemberExpression[object.name=\'window\'])',
+            message: 'Use \'typeof window !== "undefined" && window.xxx\' for safe DOM access',
+          },
+          {
+            selector: 'Identifier[name=\'window\']:not(UnaryExpression[operator=\'typeof\'] > Identifier)',
+            message: 'Direct window access not allowed. Use \'typeof window !== "undefined"\' check first',
+          },
+
+          // Document 对象
+          {
+            selector: 'MemberExpression[object.name=\'document\']:not(LogicalExpression[right=MemberExpression] > MemberExpression[object.name=\'document\'])',
+            message: 'Use \'typeof document !== "undefined" && document.xxx\' for safe DOM access',
+          },
+          {
+            selector: 'Identifier[name=\'document\']:not(UnaryExpression[operator=\'typeof\'] > Identifier)',
+            message: 'Direct document access not allowed. Use \'typeof document !== "undefined"\' check first',
+          },
+
+          // Navigator 对象
+          {
+            selector: 'MemberExpression[object.name=\'navigator\']:not(LogicalExpression[right=MemberExpression] > MemberExpression[object.name=\'navigator\'])',
+            message: 'Use \'typeof navigator !== "undefined" && navigator.xxx\' for safe DOM access',
+          },
+
+          // Location 对象
+          {
+            selector: 'MemberExpression[object.name=\'location\']:not(LogicalExpression[right=MemberExpression] > MemberExpression[object.name=\'location\'])',
+            message: 'Use \'typeof location !== "undefined" && location.xxx\' for safe DOM access',
+          },
+
+          // History 对象
+          {
+            selector: 'MemberExpression[object.name=\'history\']:not(LogicalExpression[right=MemberExpression] > MemberExpression[object.name=\'history\'])',
+            message: 'Use \'typeof history !== "undefined" && history.xxx\' for safe DOM access',
+          },
+
+          // Storage 对象们
+          {
+            selector: 'MemberExpression[object.name=\'localStorage\']:not(LogicalExpression[right=MemberExpression] > MemberExpression[object.name=\'localStorage\'])',
+            message: 'Use \'typeof localStorage !== "undefined" && localStorage.xxx\' for safe DOM access',
+          },
+          // Fork from enum
+          {
+            selector: 'TSEnumDeclaration',
+            message: 'Don\'t declare enums',
+          },
+        ],
       },
     },
     {
@@ -128,7 +179,16 @@ export const ssrReact = () => {
         GLOB_TEST_DIRS,
       ],
       rules: {
-        ...mapValues(pluginSSRFriendly.configs.recommended.rules as any, () => 'off'),
+        'no-restricted-syntax': [
+          'error',
+          'DebuggerStatement',
+          'LabeledStatement',
+          'WithStatement',
+          {
+            selector: 'TSEnumDeclaration',
+            message: 'Don\'t declare enums',
+          },
+        ],
       },
     },
   ]

@@ -5,7 +5,7 @@
   "packageManager": "pnpm@10.15.0",
   "description": "monorepo for aiou templates",
   "scripts": {
-    "lint": "eslint -c eslint.config.js",
+    "lint": "eslint -c eslint.config.mjs",
     "lint:fix": "eslint . --fix",
     "test:ignore": "eslint . --config=./packages/default/index.js",
     "test:react": "eslint test --config=./packages/react/index.js",
