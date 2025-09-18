@@ -58,6 +58,7 @@ export const typescript = () => {
         // When .ts files compiled to .mjs, will throw require is not found
         // use createRequire instead
         '@typescript-eslint/no-require-imports': 'error',
+        '@typescript-eslint/no-empty-object-type': 'off',
         // https://www.npmjs.com/package/eslint-plugin-etc
         'etc/no-t': 'error',
         /**
