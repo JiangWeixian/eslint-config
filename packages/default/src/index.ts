@@ -61,10 +61,6 @@ export const all = [
 ]
 
 interface Options {
-  /**
-   * @warning ssr not working currently
-   * @link https://github.com/kopiro/eslint-plugin-ssr-friendly/issues/30
-   */
   ssr?: boolean
   regexp?: boolean
 }
