@@ -51,6 +51,7 @@ export const react = () => {
         ...(renameRules(plugins['@eslint-react/naming-convention'].configs.recommended.rules as any, { '@eslint-react': 'react-naming-convention' })),
         ...(renameRules(plugins['@eslint-react/web-api'].configs.recommended.rules as any, { '@eslint-react': 'react-web-api' })),
         'react/no-prop-types': 'error',
+        'react/no-nested-component-definitions': 'warn',
         'react-dom/no-unknown-property': 'off',
         'react/avoid-shorthand-boolean': ['error'],
         // https://github.com/ArnaudBarre/eslint-plugin-react-refresh
