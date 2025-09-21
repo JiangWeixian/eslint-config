@@ -1,5 +1,13 @@
 # @aiou/eslint-config
 
+## 2.0.3
+
+### Patch Changes
+
+- 72973e3: add more promise rules
+- 72973e3: fix comments rules namespace & remove ssr frienly due to unmaintained
+- 72973e3: adjust react/no-nested-component-definitions to warn
+
 ## 2.0.2
 
 ### Patch Changes
