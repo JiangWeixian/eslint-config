@@ -2,6 +2,7 @@ import pluginJsonc from 'eslint-plugin-jsonc'
 import jsoncParser from 'jsonc-eslint-parser'
 
 import {
+  GLOB_CLAUDE_JSON,
   GLOB_JSON,
   GLOB_JSON5,
   GLOB_JSONC,
@@ -13,6 +14,7 @@ export const jsonc = () => {
   const config: Config[] = [
     {
       files: [GLOB_JSON, GLOB_JSON5, GLOB_JSONC],
+      ignores: [GLOB_CLAUDE_JSON],
       languageOptions: {
         parser: jsoncParser,
       },

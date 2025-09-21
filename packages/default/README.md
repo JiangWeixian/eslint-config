@@ -50,13 +50,13 @@ enabled regexp rules
     
 ## rules
 
-extends from 
+extends from
 
 ```console
 eslint-config-standard
-eslint-plugin-eslint-comments
+@eslint-community/eslint-plugin-eslint-comments
 eslint-plugin-html
-eslint-plugin-i
+eslint-plugin-import-x
 eslint-plugin-regexp (configured when regexp enabled)
 eslint-plugin-markdown
 eslint-plugin-simple-import-sort
@@ -67,8 +67,7 @@ eslint-plugin-n (forked eslint-plugin-node)
 eslint-plugin-promise
 eslint-plugin-unicorn
 eslint-plugin-yml
-eslint-plugin-react
-eslint-plugin-ssr-friendly (configured when ssr enabled)
+@eslint-react/eslint-plugin
 eslint-plugin-react-refresh
 @next/eslint-plugin-next (enabled when next found)
 eslint-plugin-react-hooks

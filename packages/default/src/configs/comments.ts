@@ -1,15 +1,19 @@
-import configComments from '@eslint-community/eslint-plugin-eslint-comments'
+import pluginComments from '@eslint-community/eslint-plugin-eslint-comments'
 
 import type { Config } from '../type'
 
 export const comments = () => {
   const config: Config[] = [
     {
-      ...configComments.recommended,
-    },
-    {
+      plugins: {
+        'eslint-comments': pluginComments,
+      },
       rules: {
-        '@eslint-community/eslint-comments/disable-enable-pair': 'off',
+        'eslint-comments/disable-enable-pair': 'error',
+        'eslint-comments/no-aggregating-enable': 'error',
+        'eslint-comments/no-duplicate-disable': 'error',
+        'eslint-comments/no-unlimited-disable': 'error',
+        'eslint-comments/no-unused-enable': 'error',
       },
     },
   ]

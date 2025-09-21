@@ -40,6 +40,7 @@ export const typescript = () => {
         'import/no-named-as-default': 'off',
 
         // TS
+        'no-var': 'error',
         'no-useless-constructor': 'off',
         '@typescript-eslint/ban-ts-comment': ['error', { 'ts-ignore': 'allow-with-description' }],
         '@typescript-eslint/consistent-type-imports': [
@@ -57,6 +58,7 @@ export const typescript = () => {
         // When .ts files compiled to .mjs, will throw require is not found
         // use createRequire instead
         '@typescript-eslint/no-require-imports': 'error',
+        '@typescript-eslint/no-empty-object-type': 'off',
         // https://www.npmjs.com/package/eslint-plugin-etc
         'etc/no-t': 'error',
         /**
@@ -66,6 +68,9 @@ export const typescript = () => {
          */
         'no-restricted-syntax': [
           'error',
+          'DebuggerStatement',
+          'LabeledStatement',
+          'WithStatement',
           {
             selector: 'TSEnumDeclaration',
             message: 'Don\'t declare enums',

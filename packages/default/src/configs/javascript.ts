@@ -254,6 +254,9 @@ export const javascript = () => {
         'n/process-exit-as-throw': 'error',
 
         'promise/param-names': 'error',
+        'promise/no-new-statics': 'error',
+        'promise/no-multiple-resolved': 'error',
+        'promise/prefer-await-to-then': 'warn',
 
         // override
         curly: ['error', 'all'],
