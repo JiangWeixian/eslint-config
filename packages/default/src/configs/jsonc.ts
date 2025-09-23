@@ -15,6 +15,7 @@ export const jsonc = () => {
     {
       files: [GLOB_JSON, GLOB_JSON5, GLOB_JSONC],
       ignores: [GLOB_CLAUDE_JSON],
+      name: 'jsonc/setup',
       languageOptions: {
         parser: jsoncParser,
       },
@@ -24,6 +25,7 @@ export const jsonc = () => {
     },
     {
       files: [GLOB_JSON, GLOB_JSON5, GLOB_JSONC],
+      ignores: [GLOB_CLAUDE_JSON],
       rules: {
         ...(pluginJsonc.configs['recommended-with-jsonc'].rules as unknown as any),
         // refs: https://ota-meshi.github.io/eslint-plugin-jsonc/rules/indent.html

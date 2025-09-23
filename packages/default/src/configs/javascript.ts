@@ -256,7 +256,7 @@ export const javascript = () => {
         'promise/param-names': 'error',
         'promise/no-new-statics': 'error',
         'promise/no-multiple-resolved': 'error',
-        'promise/prefer-await-to-then': 'warn',
+        'promise/prefer-await-to-then': 'off',
 
         // override
         curly: ['error', 'all'],
