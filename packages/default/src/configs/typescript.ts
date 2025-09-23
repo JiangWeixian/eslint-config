@@ -79,13 +79,6 @@ export const typescript = () => {
         '@typescript-eslint/method-signature-style': ['error', 'property'], // https://www.totaltypescript.com/method-shorthand-syntax-considered-harmful,
         '@typescript-eslint/no-import-type-side-effects': 'error',
         '@typescript-eslint/no-wrapper-object-types': 'error',
-        '@typescript-eslint/await-thenable': 'warn',
-        '@typescript-eslint/no-array-delete': 'error',
-        '@typescript-eslint/no-confusing-non-null-assertion': 'error',
-        '@typescript-eslint/no-confusing-void-expression': 'error',
-        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await#improving_stack_trace
-        '@typescript-eslint/return-await': ['error', 'error-handling-correctness-only'],
-        '@typescript-eslint/switch-exhaustiveness-check': 'error',
         // https://www.npmjs.com/package/eslint-plugin-etc
         'etc/no-t': 'error',
         // required tsconfig.json
