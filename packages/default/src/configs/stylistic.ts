@@ -42,6 +42,7 @@ export const stylistic = () => {
         'comma-dangle': 'off',
         '@stylistic/comma-dangle': ['error', 'always-multiline'],
         '@stylistic/key-spacing': ['error', { beforeColon: false, afterColon: true }],
+        '@stylistic/multiline-ternary': ['error', 'always-multiline'],
         '@stylistic/indent': ['error', 2, {
           SwitchCase: 1,
           VariableDeclarator: 1,
@@ -53,7 +54,7 @@ export const stylistic = () => {
           ArrayExpression: 1,
           ObjectExpression: 1,
           ImportDeclaration: 1,
-          flatTernaryExpressions: false,
+          flatTernaryExpressions: true,
           ignoreComments: false,
           ignoredNodes: [
             'TemplateLiteral *',
