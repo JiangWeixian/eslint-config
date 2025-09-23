@@ -1,5 +1,17 @@
 # @aiou/eslint-config
 
+## 2.1.0
+
+### Minor Changes
+
+- b8f6534: add more ts rules
+
+### Patch Changes
+
+- b8f6534: fix \_ prefix not working for ignore catch errors
+- b8f6534: disable setstate in effect rules
+- b8f6534: mutiple line ternary
+
 ## 2.0.3
 
 ### Patch Changes
