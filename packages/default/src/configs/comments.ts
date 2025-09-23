@@ -9,7 +9,7 @@ export const comments = () => {
         'eslint-comments': pluginComments,
       },
       rules: {
-        'eslint-comments/disable-enable-pair': 'error',
+        'eslint-comments/disable-enable-pair': 'off',
         'eslint-comments/no-aggregating-enable': 'error',
         'eslint-comments/no-duplicate-disable': 'error',
         'eslint-comments/no-unlimited-disable': 'error',

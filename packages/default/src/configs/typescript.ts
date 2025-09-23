@@ -45,7 +45,7 @@ export const typescript = () => {
         '@typescript-eslint/ban-ts-comment': ['error', { 'ts-ignore': 'allow-with-description' }],
         '@typescript-eslint/consistent-type-imports': [
           'error',
-          { prefer: 'type-imports', disallowTypeAnnotations: false },
+          { prefer: 'type-imports', disallowTypeAnnotations: false, fixStyle: 'separate-type-imports' },
         ],
         // Limit `interface` define object types, users could override with *.d.ts declare
         '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
@@ -59,8 +59,6 @@ export const typescript = () => {
         // use createRequire instead
         '@typescript-eslint/no-require-imports': 'error',
         '@typescript-eslint/no-empty-object-type': 'off',
-        // https://www.npmjs.com/package/eslint-plugin-etc
-        'etc/no-t': 'error',
         /**
          * refs:
          * 1. https://ncjamieson.com/dont-export-const-enums/
@@ -76,8 +74,13 @@ export const typescript = () => {
             message: 'Don\'t declare enums',
           },
         ],
+        '@typescript-eslint/method-signature-style': ['error', 'property'], // https://www.totaltypescript.com/method-shorthand-syntax-considered-harmful,
+        '@typescript-eslint/no-import-type-side-effects': 'error',
+        '@typescript-eslint/no-wrapper-object-types': 'error',
+        // https://www.npmjs.com/package/eslint-plugin-etc
+        'etc/no-t': 'error',
         // required tsconfig.json
-        // 'etc/no-misused-generics': 'error',
+        // 'etc/no-misused-generics'f: 'error',
 
         // Overrides JS
         // original no-undef not compatiable with typescript
@@ -85,7 +88,7 @@ export const typescript = () => {
         'no-undef': 'off',
         'no-unused-vars': 'off',
         'no-redeclare': 'off',
-        '@typescript-eslint/no-redeclare': 'error',
+        '@typescript-eslint/no-redeclare': ['error', { builtinGlobals: false }],
         'no-dupe-class-members': 'off',
         '@typescript-eslint/no-dupe-class-members': 'error',
         'no-use-before-define': 'off',
@@ -95,6 +98,12 @@ export const typescript = () => {
         ],
         'no-loss-of-precision': 'off',
         '@typescript-eslint/no-loss-of-precision': 'error',
+        'no-unused-expressions': 'off',
+        '@typescript-eslint/no-unused-expressions': ['error', {
+          allowShortCircuit: true,
+          allowTernary: true,
+          allowTaggedTemplates: true,
+        }],
 
         // off
         '@typescript-eslint/camelcase': 'off',
@@ -113,6 +122,10 @@ export const typescript = () => {
         // https://www.npmjs.com/package/eslint-plugin-unused-imports
         '@typescript-eslint/no-unused-vars': 'off',
         'no-void': ['error', { allowAsStatement: true }],
+        '@typescript-eslint/no-dynamic-delete': 'off',
+        '@typescript-eslint/no-extraneous-class': 'off',
+        '@typescript-eslint/no-useless-constructor': 'off',
+        '@typescript-eslint/triple-slash-reference': 'off',
       },
     },
     {

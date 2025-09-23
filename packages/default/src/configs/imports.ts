@@ -68,7 +68,15 @@ export const imports = (): Config[] => {
         'unused-imports/no-unused-imports': 'error',
         'unused-imports/no-unused-vars': [
           'warn',
-          { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
+          {
+            // https://github.com/sweepline/eslint-plugin-unused-imports/issues/105
+            caughtErrors: 'all',
+            caughtErrorsIgnorePattern: '^_',
+            vars: 'all',
+            varsIgnorePattern: '^_',
+            args: 'after-used',
+            argsIgnorePattern: '^_',
+          },
         ],
 
         // Enforce newlines inside named import

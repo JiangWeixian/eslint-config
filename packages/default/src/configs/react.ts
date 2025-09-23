@@ -56,6 +56,7 @@ export const react = () => {
         'react/avoid-shorthand-boolean': ['error'],
         // https://github.com/ArnaudBarre/eslint-plugin-react-refresh
         'react-refresh/only-export-components': 'warn',
+        'react-hooks-extra/no-direct-set-state-in-use-effect': 'off',
       },
     },
     {

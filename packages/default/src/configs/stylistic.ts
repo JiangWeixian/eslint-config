@@ -31,7 +31,7 @@ export const stylistic = () => {
       rules: {
         ...off,
         ...config.rules,
-        '@stylistic/quotes': ['error', 'single'],
+        '@stylistic/quotes': ['error', 'single', { avoidEscape: true }],
         '@stylistic/quote-props': ['error', 'as-needed'],
         '@stylistic/array-bracket-spacing': ['error', 'never'],
         // https://eslint.org/docs/latest/rules/brace-style#1tbs
@@ -42,6 +42,7 @@ export const stylistic = () => {
         'comma-dangle': 'off',
         '@stylistic/comma-dangle': ['error', 'always-multiline'],
         '@stylistic/key-spacing': ['error', { beforeColon: false, afterColon: true }],
+        '@stylistic/multiline-ternary': ['error', 'always-multiline'],
         '@stylistic/indent': ['error', 2, {
           SwitchCase: 1,
           VariableDeclarator: 1,
@@ -53,7 +54,7 @@ export const stylistic = () => {
           ArrayExpression: 1,
           ObjectExpression: 1,
           ImportDeclaration: 1,
-          flatTernaryExpressions: false,
+          flatTernaryExpressions: true,
           ignoreComments: false,
           ignoredNodes: [
             'TemplateLiteral *',
