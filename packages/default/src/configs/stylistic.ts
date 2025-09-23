@@ -31,7 +31,7 @@ export const stylistic = () => {
       rules: {
         ...off,
         ...config.rules,
-        '@stylistic/quotes': ['error', 'single'],
+        '@stylistic/quotes': ['error', 'single', { avoidEscape: true }],
         '@stylistic/quote-props': ['error', 'as-needed'],
         '@stylistic/array-bracket-spacing': ['error', 'never'],
         // https://eslint.org/docs/latest/rules/brace-style#1tbs
