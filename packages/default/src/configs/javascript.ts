@@ -250,7 +250,7 @@ export const javascript = () => {
         camelcase: 'off',
         'no-constant-condition': 'warn',
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-        'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+        'no-console': process.env.NODE_ENV === 'production' ? ['error', { allow: ['debug', 'error', 'warn'] }] : 'off',
         'no-cond-assign': ['error', 'always'],
         'no-restricted-syntax': [
           'error',
