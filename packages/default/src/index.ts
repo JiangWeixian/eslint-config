@@ -1,8 +1,4 @@
-import {
-  type Arrayable,
-  type Awaitable,
-  FlatConfigComposer,
-} from 'eslint-flat-config-utils'
+import { FlatConfigComposer } from 'eslint-flat-config-utils'
 import { isPackageExists } from 'local-pkg'
 
 import { comments } from './configs/comments'
@@ -17,11 +13,13 @@ import { react, ssrReact } from './configs/react'
 import { regexp as regexpConfig } from './configs/regexp'
 import { stylistic } from './configs/stylistic'
 import { tailwindcss } from './configs/tailwindcss'
+import { toml } from './configs/toml'
 import { typescript } from './configs/typescript'
 import { unicorn } from './configs/unicorn'
 import { yml } from './configs/yml'
 
 import type { Linter } from 'eslint'
+import type { Arrayable, Awaitable } from 'eslint-flat-config-utils'
 import type { Config } from './type'
 import type { ConfigNames } from './typegen'
 
@@ -42,6 +40,7 @@ const presetLangsExtensions = [
   ...yml(),
   ...markdown(),
   ...jsonc(),
+  ...toml(),
 ]
 
 const presetDefault = [
