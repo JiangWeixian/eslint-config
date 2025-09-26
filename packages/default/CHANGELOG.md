@@ -1,5 +1,11 @@
 # @aiou/eslint-config
 
+## 2.3.0
+
+### Minor Changes
+
+- e7963af: format toml
+
 ## 2.2.0
 
 ### Minor Changes
