@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/quotes */
 import { RuleTester } from '@typescript-eslint/utils/ts-eslint'
 import { describe, it } from 'vitest'
 
