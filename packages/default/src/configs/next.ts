@@ -12,7 +12,6 @@ export const next = () => {
         '@next/next': pluginNext,
       },
       rules: {
-        // Enable rules for next project
         ...pluginNext.configs.recommended.rules as any,
       },
     },

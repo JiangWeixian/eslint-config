@@ -5,10 +5,9 @@ import type { Config } from '../type'
 export const unicorn = () => {
   const config: Config[] = [
     {
-      plugins: {
-        unicorn: pluginUnicorn,
-      },
+      ...pluginUnicorn.configs.recommended,
       rules: {
+        ...pluginUnicorn.configs.recommended.rules,
         'unicorn/consistent-empty-array-spread': 'error',
         'unicorn/error-message': 'error',
         'unicorn/escape-case': 'error',

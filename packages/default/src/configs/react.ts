@@ -16,7 +16,6 @@ import { renameRules } from '../utils'
 import type { Config } from '../type'
 
 export const react = () => {
-  const plugins = pluginReact.configs.all.plugins
   const config: Config[] = [
     {
       files: [GLOB_JSX, GLOB_TSX],
@@ -29,32 +28,34 @@ export const react = () => {
         sourceType: 'module',
       },
       settings: {
-        react: {
-          // 'detect' will throw warn on monorepo
+        'react-x': {
           version: '18.0',
         },
       },
       plugins: {
-        react: plugins['@eslint-react'],
-        'react-dom': plugins['@eslint-react/dom'],
+        react: pluginReact,
+        'react-dom': pluginReact,
         'react-hooks': pluginReactHooks,
-        'react-hooks-extra': plugins['@eslint-react/hooks-extra'],
-        'react-naming-convention': plugins['@eslint-react/naming-convention'],
+        'react-hooks-extra': pluginReact,
+        'react-naming-convention': pluginReact,
         'react-refresh': pluginReactRefresh,
-        'react-web-api': plugins['@eslint-react/web-api'],
+        'react-web-api': pluginReact,
       },
       rules: {
-        ...(renameRules(plugins['@eslint-react'].configs['recommended-typescript'].rules as any, { 'react-x': 'react' })),
-        ...(renameRules(plugins['@eslint-react/dom'].configs.recommended.rules as any, { '@eslint-react': 'react-dom' })),
-        ...(renameRules(pluginReactHooks.configs.recommended.rules as any, { '@eslint-react': 'react-hooks' })),
-        ...(renameRules(plugins['@eslint-react/hooks-extra'].configs.recommended.rules as any, { '@eslint-react': 'react-hooks-extra' })),
-        ...(renameRules(plugins['@eslint-react/naming-convention'].configs.recommended.rules as any, { '@eslint-react': 'react-naming-convention' })),
-        ...(renameRules(plugins['@eslint-react/web-api'].configs.recommended.rules as any, { '@eslint-react': 'react-web-api' })),
+        ...(renameRules(pluginReact.configs['recommended-typescript'].rules as any, { '@eslint-react': 'react' })),
+        ...(renameRules(pluginReact.configs['dom'].rules as any, { '@eslint-react/dom': 'react-dom' })),
+        ...(renameRules(pluginReactHooks.configs.flat.recommended.rules as any, { '@eslint-react': 'react-hooks' })),
+        ...(renameRules(pluginReact.configs['x'].rules as any, {
+          '@eslint-react': 'react-hooks-extra',
+        })),
+        ...(renameRules(pluginReact.configs['x'].rules as any, {
+          '@eslint-react': 'react-naming-convention',
+        })),
+        ...(renameRules(pluginReact.configs['web-api'].rules as any, { '@eslint-react': 'react-web-api' })),
         'react/no-prop-types': 'error',
         'react/no-nested-component-definitions': 'warn',
         'react-dom/no-unknown-property': 'off',
         'react/avoid-shorthand-boolean': ['error'],
-        // https://github.com/ArnaudBarre/eslint-plugin-react-refresh
         'react-refresh/only-export-components': 'warn',
         'react-hooks-extra/no-direct-set-state-in-use-effect': 'off',
       },
@@ -77,9 +78,6 @@ export const react = () => {
         `**/*{-entry,entry.}*.${GLOB_SCRIPT_EXT}`,
         GLOB_TEST_SCRIPT,
         GLOB_TEST_DIRS,
-        // With next.js pages will export getStaticProps funcs
-        // There are some bad cases for not all files are route files
-        // RECOMMEND: pages/routes should only contain page files
         GLOB_PAGES_DIRS,
       ],
       ignores: [
@@ -106,8 +104,7 @@ export const ssrReact = () => {
         sourceType: 'module',
       },
       settings: {
-        react: {
-          // 'detect' will throw warn on monorepo
+        'react-x': {
           version: '18.0',
         },
       },
@@ -130,7 +127,7 @@ export const ssrReact = () => {
             message: 'Direct window access not allowed. Use \'typeof window !== "undefined"\' check first',
           },
 
-          // Document 对象
+          // Document
           {
             selector: 'MemberExpression[object.name=\'document\']:not(LogicalExpression[right=MemberExpression] > MemberExpression[object.name=\'document\'])',
             message: 'Use \'typeof document !== "undefined" && document.xxx\' for safe DOM access',
@@ -140,30 +137,29 @@ export const ssrReact = () => {
             message: 'Direct document access not allowed. Use \'typeof document !== "undefined"\' check first',
           },
 
-          // Navigator 对象
+          // Navigator
           {
             selector: 'MemberExpression[object.name=\'navigator\']:not(LogicalExpression[right=MemberExpression] > MemberExpression[object.name=\'navigator\'])',
             message: 'Use \'typeof navigator !== "undefined" && navigator.xxx\' for safe DOM access',
           },
 
-          // Location 对象
+          // Location
           {
             selector: 'MemberExpression[object.name=\'location\']:not(LogicalExpression[right=MemberExpression] > MemberExpression[object.name=\'location\'])',
             message: 'Use \'typeof location !== "undefined" && location.xxx\' for safe DOM access',
           },
 
-          // History 对象
+          // History
           {
             selector: 'MemberExpression[object.name=\'history\']:not(LogicalExpression[right=MemberExpression] > MemberExpression[object.name=\'history\'])',
             message: 'Use \'typeof history !== "undefined" && history.xxx\' for safe DOM access',
           },
 
-          // Storage 对象们
+          // Storage
           {
             selector: 'MemberExpression[object.name=\'localStorage\']:not(LogicalExpression[right=MemberExpression] > MemberExpression[object.name=\'localStorage\'])',
             message: 'Use \'typeof localStorage !== "undefined" && localStorage.xxx\' for safe DOM access',
           },
-          // Fork from enum
           {
             selector: 'TSEnumDeclaration',
             message: 'Don\'t declare enums',
@@ -174,7 +170,6 @@ export const ssrReact = () => {
     {
       files: [
         `**/*config*.${GLOB_SCRIPT_EXT}`,
-        // Client entry files not need to be SSR friendly
         `**/*{client-entry,entry.client}*.${GLOB_SCRIPT_EXT}`,
         GLOB_TEST_SCRIPT,
         GLOB_TEST_DIRS,

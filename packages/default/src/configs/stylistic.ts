@@ -11,13 +11,11 @@ import type { Config } from '../type'
 
 export const stylistic = () => {
   const config = pluginStylistic.configs.customize({
-    flat: true,
     indent: 2,
     jsx: true,
     quotes: 'single',
     semi: false,
   })
-  // Off original eslint stylistic rules
   const off: Record<string, 'off'> = {}
   Object.keys(config.rules ?? {}).forEach((key) => {
     off[key.replace('@stylistic/', '')] = 'off'
@@ -34,7 +32,6 @@ export const stylistic = () => {
         '@stylistic/quotes': ['error', 'single', { avoidEscape: true }],
         '@stylistic/quote-props': ['error', 'as-needed'],
         '@stylistic/array-bracket-spacing': ['error', 'never'],
-        // https://eslint.org/docs/latest/rules/brace-style#1tbs
         '@stylistic/brace-style': ['error', '1tbs'],
         '@stylistic/block-spacing': ['error', 'always'],
         '@stylistic/comma-spacing': ['error', { before: false, after: true }],
@@ -88,7 +85,6 @@ export const stylistic = () => {
         '@stylistic/operator-linebreak': ['error', 'before'],
         '@stylistic/member-delimiter-style': ['error', { multiline: { delimiter: 'none' } }],
         '@stylistic/type-annotation-spacing': ['error', {}],
-        // no-spaced-func alert -- https://eslint.org/docs/latest/rules/no-spaced-func
         '@stylistic/func-call-spacing': ['error', 'never'],
         '@stylistic/semi': ['error', 'never'],
         '@stylistic/space-before-blocks': ['error', 'always'],
@@ -109,8 +105,6 @@ export const stylistic = () => {
           { exceptAfterSingleLine: true },
         ],
         '@stylistic/jsx-quotes': ['error', 'prefer-double'],
-        // React
-        // Enforce new line when declare jsx element e.g. const element = (\newline<div
         '@stylistic/jsx-wrap-multilines': [
           'warn',
           {
@@ -124,15 +118,11 @@ export const stylistic = () => {
           },
         ],
         '@stylistic/jsx-closing-tag-location': 'error',
-        // Enforce disallow </ div>
         '@stylistic/jsx-tag-spacing': ['error', { closingSlash: 'never', beforeSelfClosing: 'always', afterOpening: 'never', beforeClosing: 'allow' }],
         '@stylistic/jsx-max-props-per-line': ['warn', { maximum: 1, when: 'multiline' }],
-        // indentLogicalExpressions will fix && element
         '@stylistic/jsx-indent': ['warn', 2, { indentLogicalExpressions: true }],
         '@stylistic/jsx-indent-props': ['warn', 2],
-        // < and > should be on the same line(y-axis) if jsx is multiline
         '@stylistic/jsx-closing-bracket-location': ['warn', 'tag-aligned'],
-        // Enforce new line when multiline props jsx
         '@stylistic/jsx-first-prop-new-line': ['warn', 'multiline-multiprop'],
         '@stylistic/jsx-one-expression-per-line': 'off',
       },

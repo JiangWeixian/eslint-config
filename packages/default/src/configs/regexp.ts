@@ -5,7 +5,7 @@ import type { Config } from '../type'
 export const regexp = () => {
   const config: Config[] = [
     {
-      ...(configs['flat/recommended'] as Config),
+      ...(configs.recommended as Config),
     },
   ]
   return config
