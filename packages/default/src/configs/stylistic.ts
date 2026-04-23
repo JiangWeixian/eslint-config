@@ -17,9 +17,13 @@ export const stylistic = () => {
     semi: false,
   })
   const off: Record<string, 'off'> = {}
-  Object.keys(config.rules ?? {}).forEach((key) => {
-    off[key.replace('@stylistic/', '')] = 'off'
-  })
+  for (const key of Object.keys(config.rules ?? {})) {
+    const bare = key.replace('@stylistic/', '')
+    if (bare === 'function-call-spacing') {
+      continue
+    }
+    off[bare] = 'off'
+  }
   const configs: Config[] = [
     {
       files: [GLOB_JS, GLOB_JSX, GLOB_TS, GLOB_TSX],
@@ -85,7 +89,7 @@ export const stylistic = () => {
         '@stylistic/operator-linebreak': ['error', 'before'],
         '@stylistic/member-delimiter-style': ['error', { multiline: { delimiter: 'none' } }],
         '@stylistic/type-annotation-spacing': ['error', {}],
-        '@stylistic/func-call-spacing': ['error', 'never'],
+        '@stylistic/function-call-spacing': ['error', 'never'],
         '@stylistic/semi': ['error', 'never'],
         '@stylistic/space-before-blocks': ['error', 'always'],
         '@stylistic/space-before-function-paren': [
@@ -120,7 +124,6 @@ export const stylistic = () => {
         '@stylistic/jsx-closing-tag-location': 'error',
         '@stylistic/jsx-tag-spacing': ['error', { closingSlash: 'never', beforeSelfClosing: 'always', afterOpening: 'never', beforeClosing: 'allow' }],
         '@stylistic/jsx-max-props-per-line': ['warn', { maximum: 1, when: 'multiline' }],
-        '@stylistic/jsx-indent': ['warn', 2, { indentLogicalExpressions: true }],
         '@stylistic/jsx-indent-props': ['warn', 2],
         '@stylistic/jsx-closing-bracket-location': ['warn', 'tag-aligned'],
         '@stylistic/jsx-first-prop-new-line': ['warn', 'multiline-multiprop'],

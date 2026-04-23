@@ -30,7 +30,7 @@ module.exports = function createProgressReporter(options) {
             stats.push(lastFile)
           }
           lastFile = {
-            name: context.getFilename(),
+            name: context.filename ?? context.getFilename?.() ?? '',
             start: now,
           }
           return {}
