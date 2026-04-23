@@ -43,21 +43,14 @@ export const react = () => {
       },
       rules: {
         ...(renameRules(pluginReact.configs['recommended-typescript'].rules as any, { '@eslint-react': 'react' })),
-        ...(renameRules(pluginReact.configs['dom'].rules as any, { '@eslint-react/dom': 'react-dom' })),
-        ...(renameRules(pluginReactHooks.configs.flat.recommended.rules as any, { '@eslint-react': 'react-hooks' })),
-        ...(renameRules(pluginReact.configs['x'].rules as any, {
-          '@eslint-react': 'react-hooks-extra',
-        })),
-        ...(renameRules(pluginReact.configs['x'].rules as any, {
-          '@eslint-react': 'react-naming-convention',
-        })),
+        ...(renameRules(pluginReact.configs['dom'].rules as any, { '@eslint-react': 'react-dom' })),
+        ...(renameRules(pluginReact.configs['x'].rules as any, { '@eslint-react': 'react-hooks-extra' })),
+        ...(renameRules(pluginReact.configs['x'].rules as any, { '@eslint-react': 'react-naming-convention' })),
         ...(renameRules(pluginReact.configs['web-api'].rules as any, { '@eslint-react': 'react-web-api' })),
-        'react/no-prop-types': 'error',
+        ...(pluginReactHooks.configs.flat.recommended.rules as any),
         'react/no-nested-component-definitions': 'warn',
         'react-dom/no-unknown-property': 'off',
-        'react/avoid-shorthand-boolean': ['error'],
         'react-refresh/only-export-components': 'warn',
-        'react-hooks-extra/no-direct-set-state-in-use-effect': 'off',
       },
     },
     {

@@ -12366,5 +12366,5 @@ type YmlSpacedComment = []|[("always" | "never")]|[("always" | "never"), {
   markers?: string[]
 }]
     // Names of all the configs
-    export type ConfigNames = 'unicorn/recommended' | 'markdown/recommended/plugin' | 'markdown/recommended/processor' | 'markdown/recommended/code-blocks' | 'tailwindcss:base' | 'tailwindcss:rules'
+    export type ConfigNames = 'markdown/recommended/plugin' | 'markdown/recommended/processor' | 'markdown/recommended/code-blocks' | 'tailwindcss:base' | 'tailwindcss:rules'
     
