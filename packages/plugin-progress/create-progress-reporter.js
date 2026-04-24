@@ -1,7 +1,7 @@
 /* eslint no-console: off */
-const pc = require('picocolors')
+import pc from 'picocolors'
 
-module.exports = function createProgressReporter(options) {
+export function createProgressReporter(options) {
   let lastReported = 0
   let lastFile
   let shouldHookExit = options && options.hookExit
@@ -19,10 +19,9 @@ module.exports = function createProgressReporter(options) {
             process.on('exit', printStats)
           }
           const now = Date.now()
-          if (now > lastReported + 15000) {
+          if (now > lastReported + 15_000) {
             lastReported = now
           }
-          // console.error(`🎯 Found ${stats.length} files changed.`)
 
           if (lastFile) {
             lastFile.finish = now
