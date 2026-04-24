@@ -5,6 +5,6 @@ export default aiou({
   regexp: true,
 }, [
   {
-    ignores: ['**/typegen.ts'],
+    ignores: ['**/typegen.ts', 'packages/ignore/**'],
   },
 ])
