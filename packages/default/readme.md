@@ -26,12 +26,12 @@ npm install @aiou/eslint-config --save-dev
 
 ## usage
 
-in `eslint.config.js`
+in `eslint.config.mjs`
 
 ```js
-const { aiou } = require('@aiou/eslint-config')
+import { aiou } from '@aiou/eslint-config'
 
-module.exports = aiou()
+export default await aiou()
 ```
 
 ### options

@@ -1,4 +1,4 @@
-const createProgressReporter = require('./createProgressReporter')
+import { createProgressReporter } from './create-progress-reporter.js'
 
 const progress = createProgressReporter({ hookExit: true })
-module.exports = progress.eslintPlugin
+export default progress.eslintPlugin

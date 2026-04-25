@@ -1,5 +1,4 @@
 import pluginJsonc from 'eslint-plugin-jsonc'
-import jsoncParser from 'jsonc-eslint-parser'
 
 import {
   GLOB_CLAUDE_JSON,
@@ -12,23 +11,11 @@ import type { Config } from '../type'
 
 export const jsonc = () => {
   const config: Config[] = [
-    {
-      files: [GLOB_JSON, GLOB_JSON5, GLOB_JSONC],
-      ignores: [GLOB_CLAUDE_JSON],
-      name: 'jsonc/setup',
-      languageOptions: {
-        parser: jsoncParser,
-      },
-      plugins: {
-        jsonc: pluginJsonc,
-      },
-    },
+    ...pluginJsonc.configs['recommended-with-jsonc'] as Config[],
     {
       files: [GLOB_JSON, GLOB_JSON5, GLOB_JSONC],
       ignores: [GLOB_CLAUDE_JSON],
       rules: {
-        ...(pluginJsonc.configs['recommended-with-jsonc'].rules as unknown as any),
-        // refs: https://ota-meshi.github.io/eslint-plugin-jsonc/rules/indent.html
         'jsonc/array-bracket-newline': [
           'error',
           {
@@ -107,8 +94,6 @@ export const jsonc = () => {
           },
           {
             pathPattern: '^exports.*$',
-            // According to webpack, default condition should be last item
-            // Typescript bugs: types should be first one
             order: ['types', 'import', 'require', 'node', 'browser', 'default'],
           },
           {
@@ -122,7 +107,6 @@ export const jsonc = () => {
         ],
       },
     },
-    // refs: https://github.com/sxzz/eslint-config/blob/main/src/configs/sort.ts
     {
       files: ['**/tsconfig.json', '**/tsconfig.*.json'],
       rules: {

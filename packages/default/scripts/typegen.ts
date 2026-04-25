@@ -23,7 +23,29 @@ const main = async () => {
     export type ConfigNames = ${configNames.map(i => `'${i}'`).join(' | ')}
     `
 
-  await writeFile('src/typegen.ts', dts)
+  const lines = dts.split('\n')
+  const seen = new Map<string, number>()
+  const deduped: string[] = []
+  for (let i = 0; i < lines.length; i++) {
+    const match = lines[i].match(/^interface\s+(\w+)\s*\{/)
+    if (match) {
+      if (seen.has(match[1])) {
+        let depth = 1
+        i++
+        while (i < lines.length && depth > 0) {
+          if (lines[i].includes('{')) depth++
+          if (lines[i].includes('}')) depth--
+          i++
+        }
+        i--
+        continue
+      }
+      seen.set(match[1], i)
+    }
+    deduped.push(lines[i])
+  }
+
+  await writeFile('src/typegen.ts', deduped.join('\n'))
 }
 
 main()

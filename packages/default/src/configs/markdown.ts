@@ -6,14 +6,10 @@ import type { Config } from '../type'
 
 export const markdown = () => {
   const config: Config[] = [
-    ...pluginMarkdown.configs.processor.map((config: Config) => ({
-      ...config,
-    })),
+    ...pluginMarkdown.configs.processor as Config[],
     {
-      // Code blocks in markdown file
       files: [`${GLOB_MARKDOWN}/*.${GLOB_SCRIPT_EXT}`],
       rules: {
-        // https://eslint-react.xyz/docs/migration
         'react/no-missing-component-display-name': 'off',
         '@typescript-eslint/no-redeclare': 'off',
         '@typescript-eslint/no-unused-vars': 'off',
@@ -32,7 +28,6 @@ export const markdown = () => {
         'no-unused-expressions': 'off',
         'no-unused-vars': 'off',
 
-        // Off imports
         'import/no-extraneous-dependencies': 'off',
         'import/no-default-export': 'off',
         'import/no-anonymous-default-export': 'off',

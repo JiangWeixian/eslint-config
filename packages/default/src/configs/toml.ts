@@ -4,7 +4,7 @@ import type { Config } from '../type'
 
 export const toml = () => {
   const config: Config[] = [
-    ...pluginToml.configs['flat/recommended'],
+    ...pluginToml.configs.recommended as Config[],
     {
       rules: {
         'toml/comma-style': 'error',
@@ -15,7 +15,6 @@ export const toml = () => {
         'toml/precision-of-integer': 'error',
         'toml/tables-order': 'error',
         'toml/array-bracket-newline': 'error',
-        // stylistic
         'toml/array-bracket-spacing': 'error',
         'toml/array-element-newline': 'error',
         'toml/indent': ['error', 4],

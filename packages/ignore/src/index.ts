@@ -9,10 +9,10 @@ import defaultIgnorePatterns from './default'
 const main = async () => {
   const [node, rust] = await Promise.all<string>([
     await axios
-      .get('https://www.toptal.com/developers/gitignore/api/node')
+      .get('https://raw.githubusercontent.com/github/gitignore/main/Node.gitignore')
       .then(res => res.data),
     await axios
-      .get('https://www.toptal.com/developers/gitignore/api/rust')
+      .get('https://raw.githubusercontent.com/github/gitignore/main/Rust.gitignore')
       .then(res => res.data),
   ])
   const nodePatterns = node.split('\n')

@@ -1,10 +1,10 @@
 import { aiou } from '@aiou/eslint-config'
 
-export default aiou({
+export default await aiou({
   ssr: false,
   regexp: true,
 }, [
   {
-    ignores: ['**/typegen.ts'],
+    ignores: ['**/typegen.ts', 'packages/ignore/**'],
   },
 ])

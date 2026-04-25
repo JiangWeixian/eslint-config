@@ -9,6 +9,7 @@ export const unicorn = () => {
         unicorn: pluginUnicorn,
       },
       rules: {
+        ...pluginUnicorn.configs.recommended.rules,
         'unicorn/consistent-empty-array-spread': 'error',
         'unicorn/error-message': 'error',
         'unicorn/escape-case': 'error',

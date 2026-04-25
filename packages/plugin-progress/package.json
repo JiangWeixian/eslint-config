@@ -1,6 +1,7 @@
 {
   "name": "@aiou/eslint-plugin-progress",
   "version": "0.3.1",
+  "type": "module",
   "description": "Report progress when running ESLint. Useful for large projects!",
   "keywords": ["eslint-plugin"],
   "license": "MIT",
@@ -19,13 +20,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {
-    "eslint": ">=7.4.0"
+    "eslint": ">=7.4.0 || >=10.0.0"
   },
   "dependencies": {
     "picocolors": "^1.0.0"
   },
   "devDependencies": {
-    "eslint": "^8.26.0"
+    "eslint": "^10.2.1"
   },
   "publishConfig": {
     "access": "public"
