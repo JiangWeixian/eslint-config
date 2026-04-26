@@ -1,6 +1,6 @@
 {
   "name": "@aiou/eslint-plugin-progress",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "type": "module",
   "description": "Report progress when running ESLint. Useful for large projects!",
   "keywords": ["eslint-plugin"],
