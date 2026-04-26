@@ -7,12 +7,7 @@ import size from 'rollup-plugin-filesize'
 import { externals } from 'rollup-plugin-node-externals'
 
 export default defineConfig([
-  // CommonJS (for Node) and ES module (for bundlers) build.
-  // (We could have three entries in the configuration array
-  // instead of two, but it's quicker to generate multiple
-  // builds from a single configuration where possible, using
-  // an array for the `output` option, where we can specify
-  // `file` and `format` for each target)
+  // ES module build only (ESM-only due to ESM-only dependencies like @eslint-react/eslint-plugin)
   {
     input: 'src/index.ts',
     plugins: [
@@ -35,7 +30,6 @@ export default defineConfig([
       size(),
     ],
     output: [
-      { dir: 'dist', entryFileNames: '[name].cjs', format: 'cjs', interop: 'auto' },
       { dir: 'dist', entryFileNames: '[name].mjs', format: 'es' },
     ],
   },
