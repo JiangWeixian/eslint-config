@@ -45,9 +45,6 @@
     "prepublishOnly": "publish-police"
   },
   "peerDependencies": {
-    "eslint": ">=9"
-  },
-  "peerDependencies": {
     "eslint": ">=10"
   },
   "dependencies": {
