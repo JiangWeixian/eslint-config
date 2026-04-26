@@ -9,4 +9,10 @@ export default [
   '**/.next',
   '**/.nuxt',
   '**/.vitepress',
+  '**/.claude',
+  '**/.agents',
+  '**/.cursor',
+  '**/.openclaw',
+  '**/.gbrain',
+  '**/.factory',
 ]
