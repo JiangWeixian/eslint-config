@@ -1,3 +1,0 @@
-{
-  "**/**/*.{js,ts,tsx,json,yml,yaml,md}": ["eslint --fix"]
-}
