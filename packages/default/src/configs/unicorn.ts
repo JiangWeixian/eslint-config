@@ -26,7 +26,7 @@ export const unicorn = () => {
         'unicorn/prefer-type-error': 'error',
         'unicorn/throw-new-error': 'error',
         'unicorn/filename-case': ['error', {
-          cases: { kebab: true },
+          case: 'kebabCase',
           ignore: [/^[A-Z]+\.md$/, /^[A-Z]+\.yml$/, /^\.?[A-Z]/, /^Dockerfile$/],
         }],
       },
