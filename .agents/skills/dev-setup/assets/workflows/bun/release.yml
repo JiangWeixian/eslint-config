@@ -1,0 +1,51 @@
+name: Release
+on:
+  push:
+    branches:
+      - main
+      - master
+      - 'releases/*'
+env:
+  CI: true
+jobs:
+  release:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+      pull-requests: write
+    steps:
+      - name: Checkout code repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: oven-sh/setup-bun@v1
+        name: Install bun
+        id: bun-install
+        with:
+          bun-version: latest
+      - uses: actions/cache@v3
+        name: Setup bun cache
+        with:
+          path: ~/.bun/install/cache
+          key: ${{ runner.os }}-bun-store-${{ hashFiles('**/bun.lockb') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-store-
+      - name: Install
+        run: |
+          bun install
+      - name: create and publish versions
+        uses: changesets/action@v1
+        with:
+          version: bun ci:version
+          commit: "chore: update versions"
+          title: "chore: update versions"
+          publish: bun ci:publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

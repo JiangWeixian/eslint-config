@@ -1,0 +1,67 @@
+name: Snapshot Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Enter the branch name for snapshot release'
+        required: true
+        default: 'main'
+        type: string
+
+env:
+  CI: true
+
+jobs:
+  version:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+      pull-requests: write
+    steps:
+      - name: checkout code repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch }}
+          fetch-depth: 0
+
+      - name: setup node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - uses: oven-sh/setup-bun@v1
+        name: Install bun
+        id: bun-install
+        with:
+          bun-version: latest
+
+      - uses: actions/cache@v3
+        name: setup bun cache
+        with:
+          path: ~/.bun/install/cache
+          key: ${{ runner.os }}-bun-store-${{ hashFiles('**/bun.lockb') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-store-
+
+      - name: install dependencies
+        run: bun install
+
+      - name: Creating .npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: create and publish versions
+        run: |
+          bun ci:snapshot
+          bun changeset pre enter snapshot
+          bun ci:prerelease
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
