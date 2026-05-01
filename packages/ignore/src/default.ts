@@ -15,4 +15,5 @@ export default [
   '**/.openclaw',
   '**/.gbrain',
   '**/.factory',
+  '**/superpowers',
 ]
