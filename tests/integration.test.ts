@@ -1,5 +1,9 @@
-import { describe, it, expect } from 'vitest'
 import { Linter } from 'eslint'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
 
 const aiouModule = await import('../packages/default/dist/index.mjs')
 const aiou = aiouModule.aiou

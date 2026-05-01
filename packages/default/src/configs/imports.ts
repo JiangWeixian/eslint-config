@@ -33,16 +33,16 @@ export const imports = (): Config[] => {
           {
             groups: [
               // Side effect imports.
-              ['^\\u0000'],
+              [String.raw`^\u0000`],
               // Node.js builtins prefixed with `node:`.
               ['^node:'],
               // Packages.
               // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
-              ['^@?\\w'],
+              [String.raw`^@?\w`],
               // Relative imports.
               // Absolute imports and other imports such as `@/foo` or `~/foo`.
               // Anything not matched in another group.
-              ['^', '^\\.', '^@/\\w', '^~/\\w'],
+              ['^', String.raw`^\.`, String.raw`^@/\w`, String.raw`^~/\w`],
               // Virtual modules prefixed with `virtual:` or `virtual-`, rollup & vite favor
               ['^virtual:', '^virtual-'],
               // Types

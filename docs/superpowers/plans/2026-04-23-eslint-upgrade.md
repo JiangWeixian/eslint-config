@@ -310,9 +310,9 @@ The returned object has `plugins` and `rules` directly. The `off` object generat
 
 ```ts
 const off: Record<string, 'off'> = {}
-Object.keys(config.rules ?? {}).forEach((key) => {
+for (const key of Object.keys(config.rules ?? {})) {
   off[key.replace('@stylistic/', '')] = 'off'
-})
+}
 ```
 
 No other changes expected.
@@ -844,7 +844,7 @@ export function expectRuleError(
   filename?: string,
 ): { pass: boolean; errors: Linter.LintMessage[] } {
   const messages = lintCode(configs, code, filename)
-  const matches = messages.filter((m) => m.ruleId === ruleId)
+  const matches = messages.filter(m => m.ruleId === ruleId)
   return {
     pass: matches.length > 0,
     errors: matches,
@@ -858,7 +858,7 @@ export function expectRulePass(
   filename?: string,
 ): { pass: boolean; errors: Linter.LintMessage[] } {
   const messages = lintCode(configs, code, filename)
-  const matches = messages.filter((m) => m.ruleId === ruleId)
+  const matches = messages.filter(m => m.ruleId === ruleId)
   return {
     pass: matches.length === 0,
     errors: matches,
@@ -894,7 +894,12 @@ git commit -m "feat: add Vitest test infrastructure"
 - [ ] **Step 1: Write `tests/configs/javascript.test.ts`**
 
 ```ts
-import { describe, it, expect } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
+
 import { javascript } from '../../packages/default/src/configs/javascript'
 import { lintCode } from '../helpers'
 
@@ -911,17 +916,17 @@ describe('javascript config', () => {
     expect(rules).toBeDefined()
     expect(rules['no-var']).toBe('error')
     expect(rules['prefer-const']).toBeDefined()
-    expect(rules['semi']).toStrictEqual(['error', 'never'])
+    expect(rules.semi).toStrictEqual(['error', 'never'])
   })
 
   it('should catch no-undef errors', () => {
     const result = lintCode(configs, 'const x = unknownVar;', 'test.js')
-    expect(result.some((m) => m.ruleId === 'no-undef')).toBe(true)
+    expect(result.some(m => m.ruleId === 'no-undef')).toBe(true)
   })
 
   it('should allow valid JS', () => {
     const result = lintCode(configs, 'const x = 1;', 'test.js')
-    const errors = result.filter((m) => m.severity === 2)
+    const errors = result.filter(m => m.severity === 2)
     expect(errors).toHaveLength(0)
   })
 })
@@ -930,7 +935,12 @@ describe('javascript config', () => {
 - [ ] **Step 2: Write `tests/configs/typescript.test.ts`**
 
 ```ts
-import { describe, it, expect } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
+
 import { typescript } from '../../packages/default/src/configs/typescript'
 import { lintCode } from '../helpers'
 
@@ -951,7 +961,7 @@ describe('typescript config', () => {
 
   it('should catch no-require-imports', () => {
     const result = lintCode(configs, 'const x = require("foo");', 'test.ts')
-    expect(result.some((m) => m.ruleId === '@typescript-eslint/no-require-imports')).toBe(true)
+    expect(result.some(m => m.ruleId === '@typescript-eslint/no-require-imports')).toBe(true)
   })
 })
 ```
@@ -959,7 +969,12 @@ describe('typescript config', () => {
 - [ ] **Step 3: Write `tests/configs/react.test.ts`**
 
 ```ts
-import { describe, it, expect } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
+
 import { react } from '../../packages/default/src/configs/react'
 import { lintCode } from '../helpers'
 
@@ -987,7 +1002,12 @@ describe('react config', () => {
 - [ ] **Step 4: Write `tests/configs/imports.test.ts`**
 
 ```ts
-import { describe, it, expect } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
+
 import { imports } from '../../packages/default/src/configs/imports'
 import { lintCode } from '../helpers'
 
@@ -1007,7 +1027,7 @@ describe('imports config', () => {
 
   it('should catch unused imports', () => {
     const result = lintCode(configs, 'import { unused } from "foo";\nconst x = 1;', 'test.ts')
-    expect(result.some((m) => m.ruleId === 'unused-imports/no-unused-imports')).toBe(true)
+    expect(result.some(m => m.ruleId === 'unused-imports/no-unused-imports')).toBe(true)
   })
 })
 ```
@@ -1046,9 +1066,14 @@ git commit -m "feat: add config test files for all ESLint config modules"
 - [ ] **Step 1: Write `tests/integration.test.ts`**
 
 ```ts
-import { describe, it, expect } from 'vitest'
-import { aiou, all } from '../../packages/default/src/index'
 import { Linter } from 'eslint'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
+
+import { aiou, all } from '../../packages/default/src/index'
 
 describe('aiou() integration', () => {
   it('should return a FlatConfigComposer without errors', () => {

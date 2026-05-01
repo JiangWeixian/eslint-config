@@ -1,4 +1,9 @@
-import { describe, it, expect } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
+
 import { markdown } from '../../packages/default/src/configs/markdown'
 
 const configs = markdown()

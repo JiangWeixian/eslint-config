@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       branch:
-        description: 'Enter the branch name for snapshot release'
+        description: Enter the branch name for snapshot release
         required: true
-        default: 'main'
+        default: main
         type: string
 
 env:

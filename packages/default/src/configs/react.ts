@@ -43,9 +43,9 @@ export const react = () => {
       },
       rules: {
         ...(renameRules(pluginReact.configs['recommended-typescript'].rules as any, { '@eslint-react': 'react' })),
-        ...(renameRules(pluginReact.configs['dom'].rules as any, { '@eslint-react': 'react-dom' })),
-        ...(renameRules(pluginReact.configs['x'].rules as any, { '@eslint-react': 'react-hooks-extra' })),
-        ...(renameRules(pluginReact.configs['x'].rules as any, { '@eslint-react': 'react-naming-convention' })),
+        ...(renameRules(pluginReact.configs.dom.rules as any, { '@eslint-react': 'react-dom' })),
+        ...(renameRules(pluginReact.configs.x.rules as any, { '@eslint-react': 'react-hooks-extra' })),
+        ...(renameRules(pluginReact.configs.x.rules as any, { '@eslint-react': 'react-naming-convention' })),
         ...(renameRules(pluginReact.configs['web-api'].rules as any, { '@eslint-react': 'react-web-api' })),
         ...(pluginReactHooks.configs.flat.recommended.rules as any),
         'react/no-nested-component-definitions': 'warn',

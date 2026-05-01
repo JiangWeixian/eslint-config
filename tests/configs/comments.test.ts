@@ -1,4 +1,9 @@
-import { describe, it, expect } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
+
 import { comments } from '../../packages/default/src/configs/comments'
 
 const configs = comments()

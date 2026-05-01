@@ -1,6 +1,10 @@
-import { describe, it, expect } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
+
 import { imports } from '../../packages/default/src/configs/imports'
-import { lintCode } from '../helpers'
 
 const configs = imports()
 

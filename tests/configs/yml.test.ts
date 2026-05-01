@@ -1,4 +1,9 @@
-import { describe, it, expect } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
+
 import { yml } from '../../packages/default/src/configs/yml'
 
 const configs = yml()
