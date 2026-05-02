@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "esbuild": "^0.17.19",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
     "@aiou/eslint-config": "workspace:*",
