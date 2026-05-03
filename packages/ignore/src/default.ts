@@ -13,6 +13,7 @@ export default [
   '**/.agents',
   '**/.cursor',
   '**/.openclaw',
+  "**/.opencode",
   '**/.gbrain',
   '**/.factory',
   '**/superpowers',
