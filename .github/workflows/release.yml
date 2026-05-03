@@ -44,6 +44,8 @@ jobs:
       - name: Install
         run: |
           pnpm install --frozen-lockfile=false
+      - name: Build
+        run: pnpm build
       - name: create and publish versions
         uses: changesets/action@v1
         with:
