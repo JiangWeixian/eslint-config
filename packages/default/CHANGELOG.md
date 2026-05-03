@@ -1,5 +1,23 @@
 # @aiou/eslint-config
 
+## 3.1.1
+
+### Patch Changes
+
+- 7660e4b: upgrade `@eslint-react/eslint-plugin` to `v5.7.1`
+
+  Upgrade `@eslint-react/eslint-plugin` from `4.2.3` to `5.7.1`, which includes updates to all related plugins:
+
+  - `eslint-plugin-react-x`: 4.2.3 → 5.7.1
+  - `eslint-plugin-react-dom`: 4.2.3 → 5.7.1
+  - `eslint-plugin-react-jsx`: 4.2.3 → 5.7.1
+  - `eslint-plugin-react-naming-convention`: 4.2.3 → 5.7.1
+  - `eslint-plugin-react-rsc`: 4.2.3 → 5.7.1
+  - `eslint-plugin-react-web-api`: 4.2.3 → 5.7.1
+
+- Updated dependencies [1f2e12b]
+  - @aiou/eslint-ignore@0.6.1
+
 ## 3.1.0
 
 ### Minor Changes
