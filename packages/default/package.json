@@ -49,7 +49,7 @@
     "@aiou/eslint-ignore": "workspace:*",
     "@aiou/eslint-plugin-progress": "workspace:*",
     "@eslint-community/eslint-plugin-eslint-comments": "^4.7.1",
-    "@eslint-react/eslint-plugin": "^4.2.3",
+    "@eslint-react/eslint-plugin": "^5.7.1",
     "@eslint/markdown": "^8.0.1",
     "@next/eslint-plugin-next": "^16.2.4",
     "@stylistic/eslint-plugin": "^5.10.0",
