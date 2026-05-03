@@ -1,4 +1,9 @@
-import { describe, it, expect } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
+
 import { jsonc } from '../../packages/default/src/configs/jsonc'
 
 const configs = jsonc()

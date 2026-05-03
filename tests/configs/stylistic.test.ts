@@ -1,6 +1,10 @@
-import { describe, it, expect } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
+
 import { stylistic } from '../../packages/default/src/configs/stylistic'
-import { lintCode } from '../helpers'
 
 const configs = stylistic()
 

@@ -16,7 +16,7 @@ export function expectRuleError(
   filename?: string,
 ): { pass: boolean; errors: Linter.LintMessage[] } {
   const messages = lintCode(configs, code, filename)
-  const matches = messages.filter((m) => m.ruleId === ruleId)
+  const matches = messages.filter(m => m.ruleId === ruleId)
   return {
     pass: matches.length > 0,
     errors: matches,
@@ -30,7 +30,7 @@ export function expectRulePass(
   filename?: string,
 ): { pass: boolean; errors: Linter.LintMessage[] } {
   const messages = lintCode(configs, code, filename)
-  const matches = messages.filter((m) => m.ruleId === ruleId)
+  const matches = messages.filter(m => m.ruleId === ruleId)
   return {
     pass: matches.length === 0,
     errors: matches,

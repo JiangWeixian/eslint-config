@@ -168,12 +168,13 @@ tests/
 
 ```ts
 import { Linter } from 'eslint'
+
 import type { Config } from '../packages/default/src/type'
 
 export function lintCode(
   configs: Config[],
   code: string,
-  filename?: string
+  filename?: string,
 ): Linter.LintMessage[] {
   const linter = new Linter({ configType: 'flat' })
   return linter.verify(code, configs as any, filename)
@@ -183,7 +184,7 @@ export function expectRuleError(
   configs: Config[],
   code: string,
   ruleId: string,
-  filename?: string
+  filename?: string,
 ): void {
   const messages = lintCode(configs, code, filename)
   const matches = messages.filter(m => m.ruleId === ruleId)
@@ -194,7 +195,7 @@ export function expectRulePass(
   configs: Config[],
   code: string,
   ruleId: string,
-  filename?: string
+  filename?: string,
 ): void {
   const messages = lintCode(configs, code, filename)
   const matches = messages.filter(m => m.ruleId === ruleId)

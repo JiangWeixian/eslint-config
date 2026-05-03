@@ -1,6 +1,10 @@
-import { describe, it, expect } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
+
 import { typescript } from '../../packages/default/src/configs/typescript'
-import { lintCode } from '../helpers'
 
 const configs = typescript()
 

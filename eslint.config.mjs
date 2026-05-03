@@ -5,6 +5,6 @@ export default await aiou({
   regexp: true,
 }, [
   {
-    ignores: ['**/typegen.ts', 'packages/ignore/**'],
+    ignores: ['**/typegen.ts', 'packages/ignore/**', 'docs/superpowers/**'],
   },
 ])

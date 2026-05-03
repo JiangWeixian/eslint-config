@@ -1,4 +1,9 @@
-import { describe, it, expect } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
+
 import { unicorn } from '../../packages/default/src/configs/unicorn'
 
 const configs = unicorn()
@@ -12,6 +17,6 @@ describe('unicorn config', () => {
   it('should contain unicorn plugin', () => {
     const plugins = configs[0].plugins
     expect(plugins).toBeDefined()
-    expect(plugins['unicorn']).toBeDefined()
+    expect(plugins.unicorn).toBeDefined()
   })
 })
