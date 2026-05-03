@@ -1,5 +1,11 @@
 # @aiou/eslint-ignore
 
+## 0.6.1
+
+### Patch Changes
+
+- 1f2e12b: ignore .opencode
+
 ## 0.6.0
 
 ### Minor Changes
