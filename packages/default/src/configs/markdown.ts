@@ -33,6 +33,7 @@ export const markdown = () => {
         'import/no-anonymous-default-export': 'off',
         'react-refresh/only-export-components': 'off',
         'react/jsx-no-undef': 'off',
+        'unicorn/filename-case': 'off',
       },
     },
   ]
