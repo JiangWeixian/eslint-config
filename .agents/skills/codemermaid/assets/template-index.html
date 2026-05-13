@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{PROJECT_NAME}} — Codebase Course</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"></script>
+<style>
+{{COMMON_STYLES}}
+{{PAGE_STYLES}}
+</style>
+</head>
+<body>
+<main class="container">
+  <div class="project-header">
+    <h1>{{PROJECT_NAME}}</h1>
+    <p>{{PROJECT_DESCRIPTION}}</p>
+    <div class="badges">
+      <span class="badge">{{LANGUAGE}}</span>
+      {{FRAMEWORK}}
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Perspectives</div>
+    <div class="card-grid" id="perspectives-grid"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Module Deep Dives</div>
+    <div class="card-grid" id="modules-grid"></div>
+  </div>
+</main>
+
+<script>
+{{COMMON_SCRIPTS}}
+{{PAGE_SCRIPTS}}
+
+const INDEX = {{INDEX_DATA}};
+renderIndex(INDEX);
+</script>
+</body>
+</html>
