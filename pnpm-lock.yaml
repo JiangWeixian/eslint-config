@@ -78,9 +78,6 @@ importers:
       eslint-plugin-etc:
         specifier: ^2.0.3
         version: 2.0.3(eslint@10.2.1(jiti@2.5.1))(typescript@5.9.3)
-      eslint-plugin-import-newlines:
-        specifier: ^2.0.0
-        version: 2.0.0(eslint@10.2.1(jiti@2.5.1))
       eslint-plugin-import-x:
         specifier: ^4.16.2
         version: 4.16.2(@typescript-eslint/utils@8.59.1(eslint@10.2.1(jiti@2.5.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@10.2.1(jiti@2.5.1))
@@ -105,9 +102,6 @@ importers:
       eslint-plugin-regexp:
         specifier: ^3.1.0
         version: 3.1.0(eslint@10.2.1(jiti@2.5.1))
-      eslint-plugin-simple-import-sort:
-        specifier: ^13.0.0
-        version: 13.0.0(eslint@10.2.1(jiti@2.5.1))
       eslint-plugin-tailwindcss:
         specifier: ^3.18.3
         version: 3.18.3(tailwindcss@3.4.17)
@@ -2566,13 +2560,6 @@ packages:
       eslint: 10.2.1
       typescript: '>=4.0.0'
 
-  eslint-plugin-import-newlines@2.0.0:
-    resolution: {integrity: sha512-xKcuSkpQvkAHWCvAysqCk8GAD+rabLokiK4rmeJjCB+CQtGn6Ptgs909miphvN51JyZxOJWz4reGMsoHSbjbIg==}
-    engines: {node: ^20.19.0 || ^22.13.0 || >=24}
-    hasBin: true
-    peerDependencies:
-      eslint: 10.2.1
-
   eslint-plugin-import-x@4.16.2:
     resolution: {integrity: sha512-rM9K8UBHcWKpzQzStn1YRN2T5NvdeIfSVoKu/lKF41znQXHAUcBbYXe5wd6GNjZjTrP7viQ49n1D83x/2gYgIw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -2666,11 +2653,6 @@ packages:
   eslint-plugin-regexp@3.1.0:
     resolution: {integrity: sha512-qGXIC3DIKZHcK1H9A9+Byz9gmndY6TTSRkSMTZpNXdyCw2ObSehRgccJv35n9AdUakEjQp5VFNLas6BMXizCZg==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
-    peerDependencies:
-      eslint: 10.2.1
-
-  eslint-plugin-simple-import-sort@13.0.0:
-    resolution: {integrity: sha512-McAc+/Nlvcg4byY/CABGH8kqnefWBj8s3JA2okEtz8ixbECQgU46p0HkTUKa4YS7wvgGceimlc34p1nXqbWqtA==}
     peerDependencies:
       eslint: 10.2.1
 
@@ -7699,10 +7681,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import-newlines@2.0.0(eslint@10.2.1(jiti@2.5.1)):
-    dependencies:
-      eslint: 10.2.1(jiti@2.5.1)
-
   eslint-plugin-import-x@4.16.2(@typescript-eslint/utils@8.59.1(eslint@10.2.1(jiti@2.5.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@10.2.1(jiti@2.5.1)):
     dependencies:
       '@package-json/types': 0.0.12
@@ -7885,10 +7863,6 @@ snapshots:
       refa: 0.12.1
       regexp-ast-analysis: 0.7.1
       scslre: 0.3.0
-
-  eslint-plugin-simple-import-sort@13.0.0(eslint@10.2.1(jiti@2.5.1)):
-    dependencies:
-      eslint: 10.2.1(jiti@2.5.1)
 
   eslint-plugin-tailwindcss@3.18.3(tailwindcss@3.4.17):
     dependencies:
