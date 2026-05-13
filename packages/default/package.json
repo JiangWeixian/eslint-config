@@ -59,6 +59,7 @@
     "eslint-plugin-etc": "^2.0.3",
     "eslint-plugin-import-newlines": "^2.0.0",
     "eslint-plugin-import-x": "^4.16.2",
+    "eslint-plugin-perfectionist": "^5.9.0",
     "eslint-plugin-jsonc": "^3.1.2",
     "eslint-plugin-n": "^17.24.0",
     "eslint-plugin-promise": "^7.2.1",

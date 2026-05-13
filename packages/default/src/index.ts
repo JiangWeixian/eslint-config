@@ -15,6 +15,7 @@ import { stylistic } from './configs/stylistic'
 import { tailwindcss } from './configs/tailwindcss'
 import { toml } from './configs/toml'
 import { typescript } from './configs/typescript'
+import { perfectionist } from './configs/perfectionist'
 import { unicorn } from './configs/unicorn'
 import { yml } from './configs/yml'
 
@@ -29,6 +30,7 @@ const presetJavascript = [
   ...comments(),
   ...imports(),
   ...unicorn(),
+  ...perfectionist(),
 ]
 
 const presetTypescript = [

@@ -90,6 +90,9 @@ importers:
       eslint-plugin-n:
         specifier: ^17.24.0
         version: 17.24.0(eslint@10.2.1(jiti@2.5.1))(typescript@5.9.3)
+      eslint-plugin-perfectionist:
+        specifier: ^5.9.0
+        version: 5.9.0(eslint@10.2.1(jiti@2.5.1))(typescript@5.9.3)
       eslint-plugin-promise:
         specifier: ^7.2.1
         version: 7.2.1(eslint@10.2.1(jiti@2.5.1))
@@ -2595,6 +2598,12 @@ packages:
     peerDependencies:
       eslint: 10.2.1
 
+  eslint-plugin-perfectionist@5.9.0:
+    resolution: {integrity: sha512-8TWzg02zmnBdZwCkWLi8jhzqXI+fE7Z/RwV8SL6xD45tJ8Bp3wGuYL2XtQgfe/Wd0eBqOUX+s6ey73IyszvKTA==}
+    engines: {node: ^20.0.0 || >=22.0.0}
+    peerDependencies:
+      eslint: 10.2.1
+
   eslint-plugin-promise@7.2.1:
     resolution: {integrity: sha512-SWKjd+EuvWkYaS+uN2csvj0KoP43YTu7+phKQ5v+xw6+A0gutVX2yqCeCkC3uLCJFiPfR2dD8Es5L7yUsmvEaA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -3936,6 +3945,10 @@ packages:
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
+  natural-orderby@5.0.0:
+    resolution: {integrity: sha512-kKHJhxwpR/Okycz4HhQKKlhWe4ASEfPgkSWNmKFHd7+ezuQlxkA5cM3+XkBPvm1gmHen3w53qsYAv+8GwRrBlg==}
+    engines: {node: '>=18'}
+
   negotiator@0.6.4:
     resolution: {integrity: sha512-myRT3DiWPHqho5PrJaIRyaMv2kgYf0mUVgBNOYMuCH5Ki1yEiQaf/ZJuQ62nvpc44wL5WDbTX7yGJi1Neevw8w==}
     engines: {node: '>= 0.6'}
@@ -4775,6 +4788,7 @@ packages:
   tar@6.2.1:
     resolution: {integrity: sha512-DZ4yORTwrbTj/7MZYq2w+/ZFdI6OZ/f9SFHR+71gIVUZhOQPHzVCLpvRnPgyaMpfWxxk/4ONva3GQSyNIKRv6A==}
     engines: {node: '>=10'}
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   term-size@2.2.1:
     resolution: {integrity: sha512-wK0Ri4fOGjv/XPy8SBHZChl8CM7uMc5VML7SqiQ0zG7+J5Vr+RMQDoHa2CNT6KHUnTGIXH34UDMkPzAUyapBZg==}
@@ -5016,7 +5030,7 @@ packages:
 
   uuid@3.4.0:
     resolution: {integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==}
-    deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+    deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
     hasBin: true
 
   v8-to-istanbul@8.1.1:
@@ -5130,6 +5144,7 @@ packages:
 
   whatwg-encoding@1.0.5:
     resolution: {integrity: sha512-b5lim54JOPN9HtzvK9HFXvBma/rnfFeqsic0hSpjtDbVxR3dJKLc+KB4V6GgiGOvl7CY/KNh8rxSo9DKQrnUEw==}
+    deprecated: Use @exodus/bytes instead for a more spec-conformant and faster implementation
 
   whatwg-mimetype@2.3.0:
     resolution: {integrity: sha512-M4yMwr6mAnQz76TbJm914+gPpB/nCwvZbJU28cUD6dR004SAxDLOOSUaB1JDRqLtaOV/vi0IC5lEAGFgrjGv/g==}
@@ -7737,6 +7752,15 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
+  eslint-plugin-perfectionist@5.9.0(eslint@10.2.1(jiti@2.5.1))(typescript@5.9.3):
+    dependencies:
+      '@typescript-eslint/utils': 8.59.1(eslint@10.2.1(jiti@2.5.1))(typescript@5.9.3)
+      eslint: 10.2.1(jiti@2.5.1)
+      natural-orderby: 5.0.0
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+
   eslint-plugin-promise@7.2.1(eslint@10.2.1(jiti@2.5.1)):
     dependencies:
       '@eslint-community/eslint-utils': 4.8.0(eslint@10.2.1(jiti@2.5.1))
@@ -9678,6 +9702,8 @@ snapshots:
   napi-postinstall@0.3.3: {}
 
   natural-compare@1.4.0: {}
+
+  natural-orderby@5.0.0: {}
 
   negotiator@0.6.4: {}
 
