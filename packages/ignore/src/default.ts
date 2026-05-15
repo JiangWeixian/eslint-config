@@ -14,7 +14,10 @@ export default [
   '**/.cursor',
   '**/.openclaw',
   "**/.opencode",
+  "**/.ai",
+  "**/.codex",
   '**/.gbrain',
   '**/.factory',
   '**/superpowers',
+  '**/supermario',
 ]
