@@ -36,35 +36,32 @@ export const react = () => {
         react: pluginReact,
         'react-dom': pluginReact,
         'react-hooks': pluginReactHooks,
-        'react-hooks-extra': pluginReact,
         'react-naming-convention': pluginReact,
         'react-refresh': pluginReactRefresh,
         'react-web-api': pluginReact,
       },
       rules: {
         ...(renameRules(pluginReact.configs['recommended-typescript'].rules as any, { '@eslint-react': 'react' })),
-        ...(renameRules(pluginReact.configs.dom.rules as any, { '@eslint-react': 'react-dom' })),
-        ...(renameRules(pluginReact.configs.x.rules as any, { '@eslint-react': 'react-hooks-extra' })),
-        ...(renameRules(pluginReact.configs.x.rules as any, { '@eslint-react': 'react-naming-convention' })),
-        ...(renameRules(pluginReact.configs['web-api'].rules as any, { '@eslint-react': 'react-web-api' })),
         ...(pluginReactHooks.configs.flat.recommended.rules as any),
         'react/no-nested-component-definitions': 'warn',
-        'react-dom/no-unknown-property': 'off',
+        'react-dom/dom-no-unknown-property': 'off',
         'react-refresh/only-export-components': 'warn',
       },
     },
+
     {
       files: ['src/components/**/*.{ts,tsx}'],
       rules: {
-        'react-naming-convention/filename': ['warn', { rule: 'PascalCase' }],
+        'unicorn/filename-case': ['warn', { case: 'pascalCase' }],
       },
     },
     {
       files: ['src/hooks/**/use*.{ts,tsx}'],
       rules: {
-        'react-naming-convention/filename': ['warn', { rule: 'kebab-case' }],
+        'unicorn/filename-case': ['warn', { case: 'kebabCase' }],
       },
     },
+
     {
       files: [
         `**/*config*.${GLOB_SCRIPT_EXT}`,

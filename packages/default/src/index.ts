@@ -1,6 +1,10 @@
+import type { Linter } from 'eslint'
+import type { Arrayable, Awaitable } from 'eslint-flat-config-utils'
+
 import { FlatConfigComposer } from 'eslint-flat-config-utils'
 import { isPackageExists } from 'local-pkg'
-
+import type { Config } from './type'
+import type { ConfigNames } from './typegen'
 import { comments } from './configs/comments'
 import { ignores } from './configs/ignores'
 import { imports } from './configs/imports'
@@ -8,6 +12,7 @@ import { javascript } from './configs/javascript'
 import { jsonc } from './configs/jsonc'
 import { markdown } from './configs/markdown'
 import { next } from './configs/next'
+import { perfectionist } from './configs/perfectionist'
 import { progress } from './configs/progress'
 import { react, ssrReact } from './configs/react'
 import { regexp as regexpConfig } from './configs/regexp'
@@ -18,17 +23,13 @@ import { typescript } from './configs/typescript'
 import { unicorn } from './configs/unicorn'
 import { yml } from './configs/yml'
 
-import type { Linter } from 'eslint'
-import type { Arrayable, Awaitable } from 'eslint-flat-config-utils'
-import type { Config } from './type'
-import type { ConfigNames } from './typegen'
-
 const presetJavascript = [
   ...ignores(),
   ...javascript(),
   ...comments(),
   ...imports(),
   ...unicorn(),
+  ...perfectionist(),
 ]
 
 const presetTypescript = [
@@ -62,13 +63,14 @@ export const all = [
 interface Options {
   ssr?: boolean
   regexp?: boolean
+  tailwindcss?: boolean
 }
 
-export const aiou = ({ ssr = true, regexp = true }: Options = { ssr: true, regexp: true }, ...userConfigs: Awaitable<
+export const aiou = ({ ssr = true, regexp = true, tailwindcss: enableTailwindcss = true }: Options = {}, ...userConfigs: Awaitable<
   Arrayable<Config> | FlatConfigComposer<any, any> | Linter.Config[]
 >[]): FlatConfigComposer<Config, ConfigNames> => {
   const configs = [...presetDefault]
-  if (isPackageExists('tailwindcss')) {
+  if (enableTailwindcss && isPackageExists('tailwindcss')) {
     configs.push(...tailwindcss())
   }
   if (isPackageExists('next')) {

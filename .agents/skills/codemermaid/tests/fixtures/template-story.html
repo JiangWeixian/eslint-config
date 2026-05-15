@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Component Stories — {{PROJECT_NAME}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"></script>
+<style>
+{{COMMON_STYLES}}
+{{PAGE_STYLES}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="back-link" href="{{BACK_LINK}}">← {{BACK_LABEL}}</a>
+</header>
+
+<main class="container story-container">
+  <section class="hero" data-story-id="story-hero">
+    <div class="eyebrow">{{PROJECT_NAME}}</div>
+    <h1>Component Stories</h1>
+    <p class="learning-promise">A self-contained component catalog for the Mermaid course renderer. Use it for visual review, interaction checks, and future e2e tests.</p>
+    <ul class="prereqs">
+      <li>Renderer fixture</li>
+      <li>Stable selectors</li>
+      <li>Zero build</li>
+    </ul>
+  </section>
+
+  <section class="anchor" data-story-id="anchor-diagram">
+    <div class="anchor-label">Anchor diagram</div>
+    <div class="mermaid"></div>
+  </section>
+
+  <section class="units"></section>
+</main>
+
+<div class="zoom-overlay" hidden>
+  <div class="zoom-stage"></div>
+  <div class="zoom-controls">
+    <button data-zoom-out aria-label="Zoom out" title="Zoom out">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
+    </button>
+    <span class="zoom-level" data-zoom-level>100%</span>
+    <button data-zoom-reset aria-label="Reset zoom" title="Reset zoom">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v6h6"/></svg>
+    </button>
+    <button data-zoom-in aria-label="Zoom in" title="Zoom in">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+    </button>
+    <button data-zoom-close aria-label="Close zoom" title="Close zoom">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+{{COMMON_SCRIPTS}}
+{{PAGE_SCRIPTS}}
+
+const PAGE = {{PAGE_DATA}};
+bootEssay(PAGE);
+</script>
+</body>
+</html>

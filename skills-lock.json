@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "skills": {
+    "changeset": {
+      "source": "git@github.com:neo-hack/supermario.git",
+      "sourceType": "git",
+      "skillPath": "skills/changeset/SKILL.md",
+      "computedHash": "f406c9a32c27ff337e3e68f65871f49e81e8847bbe87d2f193a96a9ec3b02c9d"
+    },
+    "codemermaid": {
+      "source": "git@github.com:neo-hack/supermario.git",
+      "sourceType": "git",
+      "skillPath": "skills/codemermaid/SKILL.md",
+      "computedHash": "951a78399794935552eb624a073691e9c08ca607efecb3ee4397d1393760a513"
+    },
+    "create-mr": {
+      "source": "git@github.com:neo-hack/supermario.git",
+      "sourceType": "git",
+      "skillPath": "skills/create-mr/SKILL.md",
+      "computedHash": "f08083f0714efe7db7d51f05721d203d68be020943def21869e8c0bd7864c840"
+    },
+    "docs-code": {
+      "source": "git@github.com:neo-hack/supermario.git",
+      "sourceType": "git",
+      "skillPath": "skills/docs-code/SKILL.md",
+      "computedHash": "26c3a507bffaeceebbd90c436e141f0ed99c405b34d767bcd8197d6e8a61cb10"
+    },
+    "fast-commit": {
+      "source": "git@github.com:neo-hack/supermario.git",
+      "sourceType": "git",
+      "skillPath": "skills/fast-commit/SKILL.md",
+      "computedHash": "ab7c67c3d17e89032760184f0a1da2992aece9db97815388455ba2ed54908596"
+    },
+    "write-docs": {
+      "source": "git@github.com:neo-hack/supermario.git",
+      "sourceType": "git",
+      "skillPath": "skills/write-docs/SKILL.md",
+      "computedHash": "25cb87414c4f542d7f838c11b9dc235be903d15baa879aeed99fee603ea42c8a"
+    }
+  }
+}

@@ -34,6 +34,7 @@ export const markdown = () => {
         'react-refresh/only-export-components': 'off',
         'react/jsx-no-undef': 'off',
         'unicorn/filename-case': 'off',
+        'perfectionist/sort-imports': 'off',
       },
     },
   ]

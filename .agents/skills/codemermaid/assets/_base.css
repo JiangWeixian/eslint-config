@@ -1,0 +1,199 @@
+/* _base.css — shared across essay and index pages.
+   Design tokens, resets, typography, hero, prereq chips, container, footer, badges. */
+
+:root {
+  --bg: #07080a;
+  --surface: #101111;
+  --surface-2: #161718;
+  --border: hsl(195, 5%, 15%);
+  --border-soft: hsl(195, 5%, 12%);
+  --text: #f9f9f9;
+  --text-dim: #9c9c9d;
+  --text-faint: #6b6b6c;
+  --accent: #FF6363;
+  --accent-soft: rgba(255, 99, 99, 0.12);
+  --code-bg: #0c0d0f;
+  --highlight: rgba(255, 99, 99, 0.10);
+  --scrollbar-size: 10px;
+  --scrollbar-track: rgba(255, 255, 255, 0.035);
+  --scrollbar-thumb: rgba(156, 156, 157, 0.42);
+  --scrollbar-thumb-hover: rgba(249, 249, 249, 0.58);
+  --shadow-card:
+    0 1px 0 rgba(255,255,255,0.04) inset,
+    0 0 0 1px rgba(255,255,255,0.02),
+    0 8px 24px rgba(0,0,0,0.35),
+    0 2px 6px rgba(0,0,0,0.25);
+  --shadow-pill:
+    0 1px 0 rgba(255,255,255,0.10) inset,
+    0 4px 12px rgba(255, 99, 99, 0.25),
+    0 2px 4px rgba(0,0,0,0.4);
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; }
+* {
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  scrollbar-width: thin;
+}
+*::-webkit-scrollbar {
+  width: var(--scrollbar-size);
+  height: var(--scrollbar-size);
+}
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border: 2px solid var(--bg);
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-thumb-hover); }
+*::-webkit-scrollbar-corner { background: transparent; }
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-primary);
+  font-feature-settings: 'calt', 'kern', 'liga', 'ss03';
+  letter-spacing: 0.2px;
+  font-weight: 400;
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+code, pre { font-family: var(--font-mono); }
+
+/* Page width */
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 80px 32px 160px;
+}
+
+/* Topbar (back link) */
+.topbar {
+  position: absolute;
+  top: 24px;
+  left: 32px;
+}
+.back-link {
+  font-size: 13px;
+  color: var(--text-faint);
+  border-bottom: 1px solid transparent;
+}
+.back-link:hover { color: var(--text-dim); }
+
+/* HERO */
+.hero { margin-bottom: 56px; }
+.eyebrow {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  margin-bottom: 16px;
+}
+h1 {
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.2px;
+  margin-bottom: 16px;
+}
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+.learning-promise,
+.promise {
+  font-size: 19px;
+  color: var(--text-dim);
+  line-height: 1.55;
+  margin-bottom: 28px;
+  max-width: 640px;
+}
+.prereqs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+}
+.prereqs li,
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 86px;
+  font-size: 12px;
+  color: var(--text-dim);
+  font-weight: 500;
+}
+.prereqs li::before,
+.chip::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background: var(--text-faint);
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* Badges */
+.badges { display: flex; gap: 8px; }
+.badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface-2);
+  padding: 3px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border-soft);
+}
+
+/* Footer / next */
+.page-footer,
+.footer {
+  margin-top: 72px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-soft);
+  color: var(--text-faint);
+  font-size: 13px;
+}
+.page-footer { text-align: left; }
+.footer { text-align: center; }
+.next-link {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.recap {
+  color: var(--text-faint);
+  font-size: 13.5px;
+  line-height: 1.55;
+  max-width: 540px;
+}

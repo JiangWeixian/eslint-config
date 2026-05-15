@@ -10,7 +10,7 @@ Flat ESLint config with TypeScript, React, SSR, and more.
 - TypeScript, YAML, JSONC, Markdown, TOML support
 - Built-in React rules via `@eslint-react`, react-refresh, and SSR-safe linting
 - Auto-detected framework support (Next.js, Tailwind CSS)
-- Import sorting, unused import removal, and multi-line import enforcement
+- Import sorting and unused import removal via `eslint-plugin-perfectionist`
 - Sorted keys for `package.json` and `tsconfig.json`
 - Visual linting progress reporter
 
@@ -96,7 +96,7 @@ The following plugins are enabled automatically when their packages are found in
 | Arrow parens | `as-needed` |
 | Curly | `all` |
 | File naming | `kebab-case` (via unicorn) |
-| Import sorting | side-effects → `node:` builtins → packages → relative/alias → virtual → types |
+| Import sorting | type-imports → builtins/externals → internal → relative → side-effects (via `perfectionist`) |
 
 ## Included Plugins
 
@@ -108,8 +108,7 @@ The following plugins are enabled automatically when their packages are found in
 | `eslint-plugin-react-refresh` | React Refresh compatibility |
 | `@stylistic/eslint-plugin` | Formatting rules |
 | `eslint-plugin-import-x` | Import rules |
-| `eslint-plugin-simple-import-sort` | Import sorting |
-| `eslint-plugin-import-newlines` | Multi-line import enforcement |
+| `eslint-plugin-perfectionist` | Import sorting, type sorting (union/intersection/named imports) |
 | `eslint-plugin-unused-imports` | Unused import/variable removal |
 | `eslint-plugin-unicorn` | Best practice rules |
 | `eslint-plugin-n` | Node.js rules |

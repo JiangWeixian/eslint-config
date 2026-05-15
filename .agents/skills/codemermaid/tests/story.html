@@ -1,0 +1,2103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Component Stories — Mermaid Course</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"></script>
+<style>
+/* _base.css — shared across essay and index pages.
+   Design tokens, resets, typography, hero, prereq chips, container, footer, badges. */
+
+:root {
+  --bg: #07080a;
+  --surface: #101111;
+  --surface-2: #161718;
+  --border: hsl(195, 5%, 15%);
+  --border-soft: hsl(195, 5%, 12%);
+  --text: #f9f9f9;
+  --text-dim: #9c9c9d;
+  --text-faint: #6b6b6c;
+  --accent: #FF6363;
+  --accent-soft: rgba(255, 99, 99, 0.12);
+  --code-bg: #0c0d0f;
+  --highlight: rgba(255, 99, 99, 0.10);
+  --scrollbar-size: 10px;
+  --scrollbar-track: rgba(255, 255, 255, 0.035);
+  --scrollbar-thumb: rgba(156, 156, 157, 0.42);
+  --scrollbar-thumb-hover: rgba(249, 249, 249, 0.58);
+  --shadow-card:
+    0 1px 0 rgba(255,255,255,0.04) inset,
+    0 0 0 1px rgba(255,255,255,0.02),
+    0 8px 24px rgba(0,0,0,0.35),
+    0 2px 6px rgba(0,0,0,0.25);
+  --shadow-pill:
+    0 1px 0 rgba(255,255,255,0.10) inset,
+    0 4px 12px rgba(255, 99, 99, 0.25),
+    0 2px 4px rgba(0,0,0,0.4);
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; }
+* {
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  scrollbar-width: thin;
+}
+*::-webkit-scrollbar {
+  width: var(--scrollbar-size);
+  height: var(--scrollbar-size);
+}
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border: 2px solid var(--bg);
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-thumb-hover); }
+*::-webkit-scrollbar-corner { background: transparent; }
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-primary);
+  font-feature-settings: 'calt', 'kern', 'liga', 'ss03';
+  letter-spacing: 0.2px;
+  font-weight: 400;
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+code, pre { font-family: var(--font-mono); }
+
+/* Page width */
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 80px 32px 160px;
+}
+
+/* Topbar (back link) */
+.topbar {
+  position: absolute;
+  top: 24px;
+  left: 32px;
+}
+.back-link {
+  font-size: 13px;
+  color: var(--text-faint);
+  border-bottom: 1px solid transparent;
+}
+.back-link:hover { color: var(--text-dim); }
+
+/* HERO */
+.hero { margin-bottom: 56px; }
+.eyebrow {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  margin-bottom: 16px;
+}
+h1 {
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.2px;
+  margin-bottom: 16px;
+}
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+.learning-promise,
+.promise {
+  font-size: 19px;
+  color: var(--text-dim);
+  line-height: 1.55;
+  margin-bottom: 28px;
+  max-width: 640px;
+}
+.prereqs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+}
+.prereqs li,
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 86px;
+  font-size: 12px;
+  color: var(--text-dim);
+  font-weight: 500;
+}
+.prereqs li::before,
+.chip::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background: var(--text-faint);
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* Badges */
+.badges { display: flex; gap: 8px; }
+.badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface-2);
+  padding: 3px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border-soft);
+}
+
+/* Footer / next */
+.page-footer,
+.footer {
+  margin-top: 72px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-soft);
+  color: var(--text-faint);
+  font-size: 13px;
+}
+.page-footer { text-align: left; }
+.footer { text-align: center; }
+.next-link {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.recap {
+  color: var(--text-faint);
+  font-size: 13.5px;
+  line-height: 1.55;
+  max-width: 540px;
+}
+
+/* _essay.css — essay-page-only styles.
+   Anchor diagram, unit renderers, code-walk layouts, zoom overlay, responsive collapse. */
+
+.wide {
+  width: min(1100px, calc(100vw - 64px));
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ANCHOR DIAGRAM (page-level Mermaid map) */
+.anchor {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 64px;
+  box-shadow: var(--shadow-card);
+}
+.anchor-label {
+  font-size: 11px;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.mermaid { display: flex; justify-content: center; }
+.mermaid svg { max-width: 100%; height: auto; }
+
+/* Mermaid active-node accent (applied by _essay.js) */
+.mermaid g.node.active rect,
+.mermaid g.node.active polygon,
+.mermaid g.node.active circle {
+  fill: #FF6363 !important;
+  stroke: #FF6363 !important;
+  transition: fill 0.25s ease, stroke 0.25s ease;
+}
+.mermaid g.node.active text,
+.mermaid g.node.active text tspan {
+  fill: #ffffff !important;
+  font-weight: 600;
+}
+.mermaid g.node.active foreignObject,
+.mermaid g.node.active .nodeLabel,
+.mermaid g.node.active .nodeLabel *,
+.mermaid g.node.active span {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  font-weight: 700;
+}
+.mermaid g.node { cursor: pointer; transition: opacity 0.2s ease; }
+.mermaid g.node:hover { opacity: 0.85; }
+
+/* UNIT BLOCKS */
+.unit { margin-bottom: 56px; }
+.unit + .unit { margin-top: 0; }
+.unit-kind {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-faint);
+  margin-bottom: 12px;
+  padding: 3px 8px;
+  background: var(--surface);
+  border-radius: 4px;
+  border: 1px solid var(--border-soft);
+}
+.unit p {
+  color: var(--text-dim);
+  margin-bottom: 14px;
+  font-size: 16px;
+}
+.unit p strong { color: var(--text); font-weight: 600; }
+.unit a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-soft);
+}
+
+/* CODE-WALK shared shell */
+.codewalk {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 20px 0 16px;
+  box-shadow: var(--shadow-card);
+}
+.codewalk-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-faint);
+}
+.codewalk pre,
+pre.code-block {
+  margin: 0;
+  padding: 18px 0;
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  line-height: 1.7;
+  overflow-x: auto;
+  scrollbar-gutter: stable;
+}
+.codewalk .line,
+pre.code-block .line {
+  display: grid;
+  grid-template-columns: 32px max-content;
+  gap: 14px;
+  padding: 0 20px;
+  color: var(--text);
+  min-width: max-content;
+  white-space: normal;
+}
+.codewalk .line.hl,
+.codewalk .line.line-hl,
+pre.code-block .line.line-hl {
+  background: var(--highlight);
+  border-left: 2px solid var(--accent);
+  padding-left: 18px;
+}
+.codewalk .line.storyboard-range-hl,
+pre.code-block .line.storyboard-range-hl {
+  background: rgba(85, 179, 255, 0.07);
+  border-left: 2px solid var(--info, #55b3ff);
+  padding-left: 18px;
+}
+.codewalk .ln,
+pre.code-block .ln {
+  display: inline-block;
+  width: 32px;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  user-select: none;
+}
+.codewalk .code-text,
+pre.code-block .code-text {
+  white-space: pre;
+}
+.explain {
+  color: var(--text-dim);
+  font-size: 15px;
+  line-height: 1.6;
+  padding-left: 16px;
+  border-left: 2px solid var(--border);
+}
+
+/* code-walk LAYOUTS */
+.layout-stacked { /* default flow, no extra rules */ }
+
+.layout-split,
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  margin: 20px 0 16px;
+}
+.layout-split .codewalk,
+.split .codewalk { margin: 0; position: sticky; top: 24px; }
+.layout-split .side,
+.split .side {
+  color: var(--text-dim);
+  font-size: 15.5px;
+  line-height: 1.65;
+  padding-top: 6px;
+}
+.layout-split .split-notes,
+.split .split-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: clamp(280px, 48vh, 520px);
+  overflow-y: auto;
+  padding: 6px 4px 6px 0;
+  scrollbar-gutter: stable;
+}
+.split-note-card {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 16px 18px;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1.55;
+  position: relative;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+.split-note-card:hover { border-color: var(--text-faint); }
+.split-note-card.active {
+  border-color: var(--accent);
+  background: linear-gradient(180deg, rgba(255,99,99,0.08), rgba(255,99,99,0.02));
+  color: var(--text);
+  box-shadow: 0 4px 16px rgba(255, 99, 99, 0.12);
+}
+.split-note-card p { display: inline; }
+.split-note-card p + p { margin-top: 10px; }
+.split-note-card strong { color: var(--text); }
+.split-note-card.active .step-num { color: var(--accent); }
+.split-note-card .lines {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-faint);
+  background: var(--code-bg);
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-top: 8px;
+  border: 1px solid var(--border-soft);
+}
+.layout-split .side h3,
+.split .side h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 18px 0 6px;
+  letter-spacing: 0.1px;
+}
+.layout-split .side h3:first-child,
+.split .side h3:first-child { margin-top: 0; }
+.layout-split .side .ref,
+.split .side .ref {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+}
+
+.layout-stepped,
+.stepped {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  margin: 24px 0;
+}
+.layout-stepped .codewalk,
+.stepped .codewalk { margin: 0; position: sticky; top: 32px; }
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 6px;
+}
+.step {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 16px 18px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  color: var(--text-dim);
+  font-size: 15px;
+  line-height: 1.55;
+  position: relative;
+}
+.step:hover { border-color: var(--text-faint); }
+.step.active {
+  border-color: var(--accent);
+  background: linear-gradient(180deg, rgba(255,99,99,0.08), rgba(255,99,99,0.02));
+  color: var(--text);
+  box-shadow: 0 4px 16px rgba(255, 99, 99, 0.12);
+}
+.step-num {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-faint);
+  margin-right: 8px;
+  font-weight: 600;
+}
+.step.active .step-num { color: var(--accent); }
+.step .lines {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-faint);
+  background: var(--code-bg);
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 6px;
+  border: 1px solid var(--border-soft);
+}
+.step + .step { margin-top: 0; }
+.layout-stepped .steps::after,
+.stepped .steps::after {
+  content: '';
+  height: 40vh;
+  display: block;
+}
+.layout-stepped .steps::before,
+.stepped .steps::before {
+  content: '';
+  height: 10vh;
+  display: block;
+}
+
+/* GUESS-FIRST */
+.guess {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0;
+  margin: 20px 0 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.guess summary {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--text);
+  padding: 18px 20px;
+  background: var(--surface-2);
+  border-bottom: 1px solid transparent;
+}
+.guess summary::-webkit-details-marker { display: none; }
+.guess-icon {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+}
+.guess[open] summary {
+  color: var(--text);
+  border-bottom-color: var(--border);
+}
+.guess[open] .guess-icon {
+  color: var(--text);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.guess-reveal {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+}
+.guess-reveal .codewalk { margin: 0; }
+.guess-reveal .explain { margin: 0; }
+
+/* COMPARE */
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 20px 0 16px;
+}
+.compare .col {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.compare .col-label {
+  padding: 10px 16px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+}
+.compare .col.bad .col-label { color: #ff8a8a; }
+.compare .col.good .col-label { color: #8aff9c; }
+.compare pre {
+  margin: 0;
+  padding: 16px 0;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.65;
+  overflow-x: auto;
+  color: var(--text);
+}
+.lesson {
+  color: var(--text);
+  font-size: 16px;
+  padding: 14px 18px;
+  background: var(--accent-soft);
+  border-left: 2px solid var(--accent);
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+/* SURPRISE */
+.surprise,
+.unit-surprise {
+  border: 1px solid var(--accent);
+  background: linear-gradient(180deg, rgba(255,99,99,0.06), rgba(255,99,99,0.02));
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin: 16px 0;
+  box-shadow: 0 8px 32px rgba(255, 99, 99, 0.08);
+}
+.surprise .unit-kind,
+.unit-surprise .unit-kind {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+}
+.surprise h2,
+.unit-surprise h2 { color: var(--text); }
+.surprise p,
+.unit-surprise p { color: var(--text); font-size: 17px; }
+
+/* TAKEAWAY */
+.takeaway,
+.unit-takeaway {
+  margin-top: 80px;
+  padding: 32px 36px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+}
+.takeaway .unit-kind,
+.unit-takeaway .unit-kind {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: none;
+}
+.takeaway p,
+.unit-takeaway p {
+  font-size: 18px;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+/* DIAGRAM unit (Role 2 — inline architecture/sequence figure) */
+.figure,
+.unit-diagram .figure {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 32px 22px;
+  margin: 24px 0 14px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+.figure .figure-mermaid {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.figure .figure-mermaid svg { max-width: 100%; height: auto; }
+.figure figcaption {
+  color: var(--text-dim);
+  font-size: 13.5px;
+  line-height: 1.55;
+  text-align: center;
+  border-top: 1px solid var(--border-soft);
+  padding-top: 14px;
+  font-style: italic;
+}
+.figure figcaption strong { color: var(--text); font-style: normal; font-weight: 600; }
+
+/* STORYBOARD unit — Variant B Cinema Strip with P3 aside annotations */
+.storyboard {
+  margin: 24px 0 18px;
+}
+.storyboard-mobile-guard {
+  display: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  color: var(--text-dim);
+  line-height: 1.55;
+}
+.storyboard-shell {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+.storyboard-caption {
+  color: var(--text-dim);
+  font-size: 15px;
+  margin: -4px 0 18px;
+}
+.storyboard-stage {
+  position: relative;
+  min-height: 430px;
+  padding: 28px 32px 22px;
+  border-bottom: 1px solid var(--border);
+  background: radial-gradient(circle at 50% 40%, rgba(255,255,255,0.025), transparent 70%);
+}
+.storyboard-scene-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.storyboard-zoom {
+  position: static;
+}
+.storyboard-mermaid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+.storyboard-mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+.storyboard-explanation {
+  margin-top: 18px;
+  padding: 10px 14px;
+  color: var(--text);
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.5;
+  background: rgba(7, 8, 10, 0.78);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.storyboard-explanation p {
+  margin-bottom: 0;
+  color: var(--text);
+  font-size: 13px;
+}
+.storyboard-strip {
+  display: flex;
+  gap: 10px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  background: var(--code-bg);
+  overflow-x: auto;
+}
+.storyboard-tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 140px;
+  min-height: 64px;
+  color: var(--text-dim);
+  background: rgba(255,255,255,0.015);
+  border: 1.5px dashed rgba(255,255,255,0.16);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-family: var(--font-primary);
+  font-size: 12px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s, box-shadow 0.15s;
+}
+.storyboard-tab:hover {
+  color: var(--text);
+  border-color: var(--text-faint);
+}
+.storyboard-tab.active {
+  color: var(--text);
+  border-style: solid;
+  border-color: var(--accent);
+  background: rgba(255, 99, 99, 0.05);
+  box-shadow: 0 0 0 3px rgba(255, 99, 99, 0.08);
+}
+.storyboard-tab-num {
+  display: inline-grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-faint);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 4px;
+}
+.storyboard-tab.active .storyboard-tab-num {
+  color: var(--text);
+  border-color: var(--accent);
+}
+.storyboard-code-slot {
+  background: var(--code-bg);
+}
+.storyboard-code-drawer {
+  border: 0;
+  background: var(--code-bg);
+}
+.storyboard-code-drawer summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  list-style: none;
+  padding: 10px 14px;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+.storyboard-code-drawer summary::-webkit-details-marker {
+  display: none;
+}
+.storyboard-code-drawer summary::after {
+  content: '▸ expand';
+  color: var(--text-dim);
+}
+.storyboard-code-drawer[open] summary::after {
+  content: '∨ collapse';
+}
+.storyboard-code-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  align-items: stretch;
+  height: clamp(360px, 52vh, 560px);
+  min-height: 0;
+}
+.storyboard-code-grid .codewalk {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.storyboard-code-grid .codewalk-head {
+  border-top: 0;
+  flex: 0 0 auto;
+}
+.storyboard-code-grid pre.code-block {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+}
+.storyboard-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-left: 1px solid var(--border);
+  padding: 14px;
+  background: var(--surface-2);
+  min-height: 0;
+  overflow: auto;
+  scrollbar-gutter: stable;
+}
+.storyboard-notes.empty {
+  justify-content: center;
+  color: var(--text-faint);
+  font-size: 13px;
+  font-style: italic;
+}
+.storyboard-note {
+  position: relative;
+  border: 1px dashed var(--accent);
+  border-radius: 6px;
+  padding: 10px 12px;
+  background: rgba(255, 99, 99, 0.04);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.storyboard-note.active {
+  background: rgba(255, 99, 99, 0.11);
+  box-shadow: 0 0 0 1px rgba(255, 99, 99, 0.22);
+}
+.storyboard-note.range {
+  border-color: var(--info, #55b3ff);
+  background: rgba(85, 179, 255, 0.05);
+}
+.storyboard-note.range.active {
+  background: rgba(85, 179, 255, 0.12);
+  box-shadow: 0 0 0 1px rgba(85, 179, 255, 0.24);
+}
+.storyboard-note::before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  top: 18px;
+  width: 13px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.55;
+}
+.storyboard-note.range::before {
+  background: var(--info, #55b3ff);
+}
+.storyboard-note::after {
+  content: '';
+  position: absolute;
+  left: -18px;
+  top: 14px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid var(--accent);
+  opacity: 0.7;
+}
+.storyboard-note.range::after {
+  border-color: var(--info, #55b3ff);
+}
+.storyboard-note-line {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.storyboard-note.range .storyboard-note-line {
+  color: var(--info, #55b3ff);
+}
+.storyboard-note p {
+  margin: 0;
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.code-block .line.line-hl,
+.code-block .line.storyboard-range-hl {
+  cursor: pointer;
+}
+.code-block .line.active-note-line {
+  outline: 1px solid rgba(255, 255, 255, 0.18);
+  outline-offset: -1px;
+}
+
+.zoom-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-family: var(--font-primary);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  z-index: 2;
+}
+.zoom-btn:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* ZOOM OVERLAY */
+.zoom-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 8, 10, 0.92);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: none;
+  cursor: grab;
+  overflow: hidden;
+}
+.zoom-overlay.open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.zoom-overlay.dragging { cursor: grabbing; }
+.zoom-stage {
+  transform-origin: center center;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.zoom-overlay.dragging .zoom-stage { transition: none; }
+.zoom-stage svg,
+.zoom-svg-fix {
+  display: block;
+  max-width: none !important;
+  max-height: none !important;
+  width: auto;
+  height: auto;
+  shape-rendering: geometricPrecision;
+  text-rendering: geometricPrecision;
+}
+.zoom-controls {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 86px;
+  padding: 6px;
+  box-shadow: var(--shadow-card);
+  z-index: 1001;
+}
+.zoom-controls button {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.zoom-controls button svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin: auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.zoom-controls button:hover { background: var(--surface-2); }
+.zoom-controls .zoom-level {
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  align-self: center;
+  padding: 0 10px;
+  min-width: 56px;
+  text-align: center;
+}
+
+/* Responsive: collapse split/stepped to stacked */
+@media (max-width: 880px) {
+  .wide { width: 100%; left: 0; transform: none; }
+  .layout-split,
+  .split,
+  .layout-stepped,
+  .stepped { grid-template-columns: 1fr; }
+  .layout-split .codewalk,
+  .split .codewalk,
+  .layout-stepped .codewalk,
+  .stepped .codewalk { position: static; }
+  .layout-stepped .steps::before,
+  .layout-stepped .steps::after,
+  .stepped .steps::before,
+  .stepped .steps::after { display: none; }
+}
+
+@media (max-width: 760px) {
+  .storyboard {
+    width: 100%;
+    left: 0;
+    transform: none;
+  }
+  .storyboard-mobile-guard {
+    display: block;
+  }
+  .storyboard-shell {
+    display: none;
+  }
+}
+
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="back-link" href="index.html">← Index</a>
+</header>
+
+<main class="container story-container">
+  <section class="hero" data-story-id="story-hero">
+    <div class="eyebrow">Mermaid Course</div>
+    <h1>Component Stories</h1>
+    <p class="learning-promise">A self-contained component catalog for the Mermaid course renderer. Use it for visual review, interaction checks, and future e2e tests.</p>
+    <ul class="prereqs">
+      <li>Renderer fixture</li>
+      <li>Stable selectors</li>
+      <li>Zero build</li>
+    </ul>
+  </section>
+
+  <section class="anchor" data-story-id="anchor-diagram">
+    <div class="anchor-label">Anchor diagram</div>
+    <div class="mermaid"></div>
+  </section>
+
+  <section class="units"></section>
+</main>
+
+<div class="zoom-overlay" hidden>
+  <div class="zoom-stage"></div>
+  <div class="zoom-controls">
+    <button data-zoom-out aria-label="Zoom out" title="Zoom out">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
+    </button>
+    <span class="zoom-level" data-zoom-level>100%</span>
+    <button data-zoom-reset aria-label="Reset zoom" title="Reset zoom">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v6h6"/></svg>
+    </button>
+    <button data-zoom-in aria-label="Zoom in" title="Zoom in">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+    </button>
+    <button data-zoom-close aria-label="Close zoom" title="Close zoom">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+/* _runtime.js — shared runtime helpers for essay AND index pages.
+   Mermaid init, render helper, markdown link parser, escape, line-highlighted code renderer. */
+
+if (typeof mermaid !== 'undefined') {
+  mermaid.initialize({
+    startOnLoad: false,
+    theme: 'base',
+    themeVariables: {
+      background: '#101111',
+      primaryColor: '#161718',
+      primaryTextColor: '#f9f9f9',
+      primaryBorderColor: '#252829',
+      lineColor: '#9c9c9d',
+      secondaryColor: '#FF6363',
+      tertiaryColor: '#0c0d0f',
+      fontFamily: 'Inter, sans-serif',
+    },
+    flowchart: { curve: 'basis', padding: 20 },
+  });
+}
+
+async function renderMermaid(selector) {
+  if (typeof mermaid === 'undefined') return;
+  const nodes = document.querySelectorAll(selector);
+  for (const node of nodes) {
+    const src = node.textContent.trim();
+    if (!src) continue;
+    const id = 'm' + Math.random().toString(36).slice(2);
+    const { svg } = await mermaid.render(id, src);
+    node.innerHTML = svg;
+  }
+}
+
+function escapeHtml(s) {
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function renderMarkdownLinks(text) {
+  // Minimal markdown: [label](href) -> <a href="href">label</a>.
+  // Caller is responsible for escaping non-link content if needed.
+  return String(text).replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) =>
+    `<a href="${escapeHtml(href)}">${escapeHtml(label)}</a>`);
+}
+
+function normalizeCodeSnippet(code) {
+  return String(code)
+    .replace(/\r\n?/g, '\n')
+    .split('\n')
+    .reduce((acc, line) => {
+      const blank = line.trim() === '';
+      if (blank && (acc.length === 0 || acc[acc.length - 1].trim() === '')) return acc;
+      acc.push(line);
+      return acc;
+    }, [])
+    .filter((line, index, lines) => {
+      const blank = line.trim() === '';
+      return !blank || (index > 0 && index < lines.length - 1);
+    })
+    .join('\n');
+}
+
+function renderCodeLine(line, number, className) {
+  const safe = escapeHtml(line);
+  return `<span class="${className}" data-line="${number}"><span class="ln">${number}</span><span class="code-text">${safe || ' '}</span></span>`;
+}
+
+function renderCode(code, highlightLines = []) {
+  const lines = normalizeCodeSnippet(code).split('\n');
+  const set = new Set(highlightLines);
+  const body = lines.map((line, i) => {
+    const n = i + 1;
+    const cls = set.has(n) && line.trim() !== '' ? 'line line-hl' : 'line';
+    return renderCodeLine(line, n, cls);
+  }).join('');
+  return `<pre class="code-block">${body}</pre>`;
+}
+
+/* _essay.js — essay page runtime.
+   renderUnit dispatcher, bootEssay, anchor-diagram scroll-link, stepped-walk highlight migration,
+   zoomable diagram overlay. Depends on helpers from _runtime.js. */
+
+function renderUnit(unit) {
+  switch (unit.kind) {
+    case 'concept':     return renderConcept(unit);
+    case 'code-walk':   return renderCodeWalk(unit);
+    case 'guess-first': return renderGuessFirst(unit);
+    case 'compare':     return renderCompare(unit);
+    case 'surprise':    return renderSurprise(unit);
+    case 'takeaway':    return renderTakeaway(unit);
+    case 'diagram':     return renderDiagram(unit);
+    case 'storyboard':  return renderStoryboard(unit);
+    default:
+      return `<p style="color:#ff8a8a">Unknown unit kind: ${escapeHtml(unit.kind)}</p>`;
+  }
+}
+
+function renderConcept(u) {
+  const title = u.title ? `<h2>${escapeHtml(u.title)}</h2>` : '';
+  const body = renderMarkdownLinks(escapeBodyParagraphs(u.body || ''));
+  return `<span class="unit-kind">concept</span>${title}${body}`;
+}
+
+function renderSurprise(u) {
+  const title = u.title ? `<h2>${escapeHtml(u.title)}</h2>` : '';
+  const body = renderMarkdownLinks(escapeBodyParagraphs(u.body || ''));
+  return `<span class="unit-kind">surprise</span>${title}${body}`;
+}
+
+function renderTakeaway(u) {
+  const title = u.title ? `<h2>${escapeHtml(u.title)}</h2>` : '';
+  const body = renderMarkdownLinks(escapeBodyParagraphs(u.body || ''));
+  return `<span class="unit-kind">takeaway</span>${title}${body}`;
+}
+
+function escapeBodyParagraphs(text) {
+  // Split body on blank lines into <p>; preserve markdown link tokens for renderMarkdownLinks.
+  return String(text)
+    .split(/\n{2,}/)
+    .map((p) => `<p>${escapeHtml(p).replace(/\n/g, '<br>')}</p>`)
+    .join('')
+    // Restore [label](href) tokens that escapeHtml has not damaged (brackets/parens are not escaped).
+    ;
+}
+
+function renderSplitExplanationCards(text) {
+  const blocks = String(text || '')
+    .trim()
+    .split(/\n{2,}/)
+    .flatMap((block) => {
+      const trimmed = block.trim();
+      if (!trimmed) return [];
+      const lineParts = trimmed
+        .split(/(?=\bLines? \d+(?:[-–]\d+)?(?:, \d+(?:[-–]\d+)?)*:)/g)
+        .map((part) => part.trim())
+        .filter(Boolean);
+      return lineParts.length > 1 ? lineParts : [trimmed];
+    });
+
+  if (blocks.length === 0) return '';
+  return blocks.map((block, index) => `
+    <article class="split-note-card${index === 0 ? ' active' : ''}" data-note-index="${index + 1}" data-lines="${escapeHtml(extractLineRefs(block).join(','))}">
+      <span class="step-num">${String(index + 1).padStart(2, '0')}</span>
+      ${renderMarkdownLinks(`<p>${escapeHtml(block)}</p>`)}
+      ${extractLineRefs(block).length ? `<span class="lines">L${escapeHtml(formatLineRefs(block))}</span>` : ''}
+    </article>
+  `).join('');
+}
+
+function extractLineRefs(text) {
+  const refs = [];
+  const match = String(text || '').match(/\bLines? ([0-9,\s\-–]+)/);
+  if (!match) return refs;
+  match[1].split(',').forEach((part) => {
+    const range = part.trim().match(/^(\d+)(?:[-–](\d+))?$/);
+    if (!range) return;
+    const start = Number(range[1]);
+    const end = Number(range[2] || range[1]);
+    for (let n = start; n <= end; n += 1) refs.push(n);
+  });
+  return refs;
+}
+
+function formatLineRefs(text) {
+  const match = String(text || '').match(/\bLines? ([0-9,\s\-–]+)/);
+  return match ? match[1].trim() : '';
+}
+
+function renderCodeWalk(u) {
+  const layout = u.layout || 'stacked';
+  const headLabel = u.file ? escapeHtml(u.file) : '';
+  const titleHtml = u.title ? `<h2>${escapeHtml(u.title)}</h2>` : '';
+
+  if (layout === 'stepped') {
+    const steps = (u.steps || []);
+    const allLines = steps[0] ? steps[0].highlightLines : [];
+    return `
+      <span class="unit-kind">code-walk · stepped</span>${titleHtml}
+      <div class="layout-stepped wide" data-stepped>
+        <div class="codewalk">
+          <div class="codewalk-head"><span>${headLabel}</span><span>stepped</span></div>
+          ${renderCode(u.code || '', allLines)}
+        </div>
+        <div class="steps">
+          ${steps.map((s, i) => `
+            <div class="step${i === 0 ? ' active' : ''}" data-lines="${(s.highlightLines || []).join(',')}">
+              <span class="step-num">${String(i + 1).padStart(2, '0')}</span>
+              ${renderMarkdownLinks(escapeHtml(s.beat || ''))}
+              <span class="lines">L${(s.highlightLines || []).join(', ')}</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>`;
+  }
+
+  if (layout === 'split') {
+    return `
+      <span class="unit-kind">code-walk · split</span>${titleHtml}
+      <div class="layout-split wide" data-split-walk data-default-lines="${escapeHtml((u.highlightLines || []).join(','))}">
+        <div class="codewalk">
+          <div class="codewalk-head"><span>${headLabel}</span><span>split</span></div>
+          ${renderCode(u.code || '', u.highlightLines || [])}
+        </div>
+        <div class="side split-notes">${renderSplitExplanationCards(u.explanation || '')}</div>
+      </div>`;
+  }
+
+  // stacked
+  return `
+    <span class="unit-kind">code-walk</span>${titleHtml}
+    <div class="codewalk">
+      <div class="codewalk-head"><span>${headLabel}</span><span>stacked</span></div>
+      ${renderCode(u.code || '', u.highlightLines || [])}
+    </div>
+    <div class="explain">${renderMarkdownLinks(escapeBodyParagraphs(u.explanation || ''))}</div>`;
+}
+
+function renderGuessFirst(u) {
+  const reveal = u.reveal || {};
+  const code = reveal.code
+    ? `<div class="codewalk">${renderCode(reveal.code, reveal.highlightLines || [])}</div>`
+    : '';
+  const expl = reveal.explanation
+    ? `<div class="explain">${renderMarkdownLinks(escapeBodyParagraphs(reveal.explanation))}</div>`
+    : '';
+  return `
+    <details class="guess">
+      <summary><span class="guess-icon" aria-hidden="true">?</span><span>${escapeHtml(u.question || '')}</span></summary>
+      <div class="guess-reveal">${code}${expl}</div>
+    </details>`;
+}
+
+function renderCompare(u) {
+  const left = u.left || {};
+  const right = u.right || {};
+  const titleHtml = u.title ? `<h2>${escapeHtml(u.title)}</h2>` : '';
+  return `
+    <span class="unit-kind">compare</span>${titleHtml}
+    <div class="compare">
+      <div class="col bad">
+        <div class="col-label">${escapeHtml(left.label || 'before')}</div>
+        ${renderCode(left.code || '')}
+      </div>
+      <div class="col good">
+        <div class="col-label">${escapeHtml(right.label || 'after')}</div>
+        ${renderCode(right.code || '')}
+      </div>
+    </div>
+    ${u.lesson ? `<div class="lesson">${renderMarkdownLinks(escapeHtml(u.lesson))}</div>` : ''}`;
+}
+
+function renderDiagram(u) {
+  const zoomable = u.zoomable !== false;
+  const titleHtml = u.title ? `<h2>${escapeHtml(u.title)}</h2>` : '';
+  return `
+    <span class="unit-kind">diagram</span>${titleHtml}
+    <figure class="figure" ${zoomable ? 'data-zoomable="true"' : ''}>
+      ${zoomable ? '<button class="zoom-btn" data-zoom-trigger>Zoom</button>' : ''}
+      <div class="figure-mermaid"><div class="mermaid">${escapeHtml(u.mermaid || '')}</div></div>
+      ${u.caption ? `<figcaption>${renderMarkdownLinks(escapeHtml(u.caption))}</figcaption>` : ''}
+    </figure>`;
+}
+
+function renderStoryboard(u) {
+  const scenes = u.scenes || [];
+  const titleHtml = u.title ? `<h2>${escapeHtml(u.title)}</h2>` : '';
+  const captionHtml = u.caption ? `<p class="storyboard-caption">${renderMarkdownLinks(escapeHtml(u.caption))}</p>` : '';
+  return `
+    <span class="unit-kind">storyboard</span>${titleHtml}${captionHtml}
+    <div class="storyboard wide" data-storyboard>
+      <div class="storyboard-mobile-guard">
+        Storyboard units are designed for desktop-width reading. Open this page on a wider screen to step through the diagrams and code.
+      </div>
+      <div class="storyboard-shell">
+        <div class="storyboard-stage">
+          <div class="storyboard-scene-label">
+            <span data-storyboard-scene-count>Scene 1 of ${scenes.length}</span>
+            <button class="zoom-btn storyboard-zoom" data-zoom-trigger>Zoom</button>
+          </div>
+          <div class="storyboard-mermaid"><div class="mermaid"></div></div>
+          <div class="storyboard-explanation" data-storyboard-explanation></div>
+        </div>
+        <div class="storyboard-strip" role="tablist" aria-label="${escapeHtml(u.title || 'Storyboard scenes')}">
+          ${scenes.map((scene, i) => `
+            <button
+              class="storyboard-tab${i === 0 ? ' active' : ''}"
+              type="button"
+              role="tab"
+              aria-selected="${i === 0 ? 'true' : 'false'}"
+              data-storyboard-tab="${i}">
+              <span class="storyboard-tab-num">${String(i + 1).padStart(2, '0')}</span>
+              <span>${escapeHtml(scene.name || `Scene ${i + 1}`)}</span>
+            </button>
+          `).join('')}
+        </div>
+        <div class="storyboard-code-slot" data-storyboard-code-slot></div>
+      </div>
+      <template data-storyboard-scenes>${escapeHtml(JSON.stringify(scenes))}</template>
+    </div>`;
+}
+
+function renderStoryboardCode(scene) {
+  if (!scene.code) return '';
+  const code = scene.code;
+  const highlights = code.highlights || [];
+  const lineNumbers = new Set();
+  highlights.forEach((h) => {
+    if (Number.isInteger(h.line)) lineNumbers.add(h.line);
+    if (Array.isArray(h.lines)) h.lines.forEach((n) => lineNumbers.add(n));
+  });
+  const sortedLines = Array.from(lineNumbers).sort((a, b) => a - b);
+  const noteCount = highlights.length;
+  const lineCount = normalizeCodeSnippet(code.source || '').split('\n').length;
+  const defaultOpen = noteCount > 0 ? ' open' : '';
+  return `
+    <details class="storyboard-code-drawer"${defaultOpen}>
+      <summary>
+        <span>${escapeHtml(code.file || 'source')}</span>
+        <span>${lineCount} lines · ${noteCount} notes</span>
+      </summary>
+      <div class="storyboard-code-grid">
+        <div class="codewalk">
+          <div class="codewalk-head">
+            <span>${escapeHtml(code.file || '')}</span>
+            <span>${escapeHtml(code.lang || 'text')}</span>
+          </div>
+          ${renderStoryboardCodeBlock(code.source || '', sortedLines, highlights)}
+        </div>
+        ${renderStoryboardAnnotationList(highlights)}
+      </div>
+    </details>`;
+}
+
+function renderStoryboardCodeBlock(source, highlightedLines, highlights) {
+  const rangeLines = new Set();
+  highlights.forEach((h) => {
+    if (Array.isArray(h.lines)) h.lines.forEach((n) => rangeLines.add(n));
+  });
+  const highlighted = new Set(highlightedLines);
+  const lines = normalizeCodeSnippet(source).split('\n');
+  const body = lines.map((line, i) => {
+    const n = i + 1;
+    const classes = ['line'];
+    if (highlighted.has(n) && line.trim() !== '') classes.push(rangeLines.has(n) ? 'storyboard-range-hl' : 'line-hl');
+    return renderCodeLine(line, n, classes.join(' '));
+  }).join('');
+  return `<pre class="code-block">${body}</pre>`;
+}
+
+function renderStoryboardAnnotationList(highlights) {
+  if (!highlights || highlights.length === 0) return '<aside class="storyboard-notes empty">No annotations for this scene.</aside>';
+  return `
+    <aside class="storyboard-notes">
+      ${highlights.map((h) => {
+        const lines = Array.isArray(h.lines) ? h.lines : [h.line];
+        const rangeClass = lines.length > 1 ? ' range' : '';
+        const label = lines.length > 1 ? `L${lines[0]}-${lines[lines.length - 1]}` : `L${lines[0]}`;
+        return `
+          <div class="storyboard-note${rangeClass}" data-note-lines="${lines.join(',')}">
+            <span class="storyboard-note-line">${escapeHtml(label)}</span>
+            <p>${renderMarkdownLinks(escapeHtml(h.note || ''))}</p>
+          </div>`;
+      }).join('')}
+    </aside>`;
+}
+
+async function renderMermaidElement(node) {
+  const src = node.textContent.trim();
+  if (!src) return;
+  const id = 'm' + Math.random().toString(36).slice(2);
+  const { svg } = await mermaid.render(id, src);
+  node.innerHTML = svg;
+}
+
+async function bootEssay(page) {
+  const unitsRoot = document.querySelector('.units');
+  if (unitsRoot) {
+    unitsRoot.innerHTML = (page.units || []).map((u, i) => {
+      const anchorAttr = u.anchorNode ? ` data-anchor="${escapeHtml(u.anchorNode)}"` : '';
+      const storyAttr = u.storyId ? ` data-story-id="${escapeHtml(u.storyId)}"` : '';
+      return `<section class="unit unit-${u.kind}" data-unit-index="${i}"${anchorAttr}${storyAttr}>${renderUnit(u)}</section>`;
+    }).join('');
+  }
+
+  if (page.diagram) {
+    const anchorMermaid = document.querySelector('.anchor .mermaid');
+    if (anchorMermaid) {
+      anchorMermaid.textContent = page.diagram;
+      await renderMermaid('.anchor .mermaid');
+      initAnchorScrollLink();
+    }
+  }
+
+  await renderMermaid('.unit-diagram .mermaid, .figure .mermaid');
+  initSteppedWalks();
+  initSplitWalks();
+  await initStoryboards();
+  initZoomOverlay();
+  startScrollLoop();
+}
+
+/* ------- Anchor diagram scroll-link ------- */
+const _anchorState = {
+  nodeIndex: new Map(), // anchor key -> mermaid <g.node>
+  units: [],
+  active: null,
+};
+
+function initAnchorScrollLink() {
+  const anchorEl = document.querySelector('.anchor .mermaid');
+  if (!anchorEl) return;
+  _anchorState.units = Array.from(document.querySelectorAll('.unit[data-anchor]'));
+  _anchorState.nodeIndex.clear();
+  anchorEl.querySelectorAll('g.node').forEach((g) => {
+    const m = g.id.match(/-([A-Za-z0-9_]+)-\d+$/);
+    if (m) _anchorState.nodeIndex.set(m[1], g);
+  });
+  _anchorState.nodeIndex.forEach((g, key) => {
+    g.addEventListener('click', () => {
+      const u = _anchorState.units.find((x) => x.dataset.anchor === key);
+      if (u) u.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+}
+
+function pickActiveUnit() {
+  if (_anchorState.units.length === 0) return;
+  const center = window.innerHeight / 2;
+  let best = null, bestDist = Infinity;
+  for (const u of _anchorState.units) {
+    const r = u.getBoundingClientRect();
+    const mid = (r.top + r.bottom) / 2;
+    const d = Math.abs(mid - center);
+    if (d < bestDist) { bestDist = d; best = u; }
+  }
+  if (best && best !== _anchorState.active) {
+    _anchorState.active = best;
+    const key = best.dataset.anchor;
+    _anchorState.nodeIndex.forEach((g, k) => g.classList.toggle('active', k === key));
+  }
+}
+
+/* ------- Split code-walk note sync ------- */
+function initSplitWalks() {
+  document.querySelectorAll('[data-split-walk]').forEach((root) => {
+    const codeEl = root.querySelector('.code-block');
+    const notes = Array.from(root.querySelectorAll('.split-note-card'));
+    if (!codeEl || notes.length === 0) return;
+
+    const lineEls = new Map();
+    codeEl.querySelectorAll('.line').forEach((el) => {
+      lineEls.set(el.dataset.line, el);
+    });
+
+    function highlight(linesAttr) {
+      const raw = String(linesAttr || '').trim() || root.dataset.defaultLines || '';
+      const wanted = new Set(raw.split(',').map((s) => s.trim()).filter(Boolean));
+      lineEls.forEach((el, k) => {
+        const hasCode = (el.querySelector('.code-text')?.textContent || '').trim() !== '';
+        el.classList.toggle('line-hl', wanted.has(k) && hasCode);
+      });
+    }
+
+    function activate(note) {
+      if (!note) return;
+      notes.forEach((entry) => entry.classList.toggle('active', entry === note));
+      highlight(note.dataset.lines);
+    }
+
+    notes.forEach((note) => {
+      note.addEventListener('click', () => {
+        note.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        activate(note);
+      });
+    });
+
+    activate(notes[0]);
+
+    let activeNote = null;
+    root._pickActiveSplitNote = function pickActiveSplitNote() {
+      const viewport = root.querySelector('.split-notes') || root;
+      const vr = viewport.getBoundingClientRect();
+      const center = (Math.max(vr.top, 0) + Math.min(vr.bottom, window.innerHeight)) / 2;
+      let best = null, bestDist = Infinity;
+      for (const note of notes) {
+        const r = note.getBoundingClientRect();
+        if (r.bottom < vr.top || r.top > vr.bottom) continue;
+        const mid = (r.top + r.bottom) / 2;
+        const d = Math.abs(mid - center);
+        if (d < bestDist) { bestDist = d; best = note; }
+      }
+      if (best && best !== activeNote) {
+        activeNote = best;
+        activate(best);
+      }
+    };
+
+    const scroller = root.querySelector('.split-notes');
+    if (scroller) scroller.addEventListener('scroll', () => root._pickActiveSplitNote(), { passive: true });
+  });
+}
+
+/* ------- Stepped code-walk highlight migration ------- */
+function initSteppedWalks() {
+  document.querySelectorAll('[data-stepped]').forEach((root) => {
+    const codeEl = root.querySelector('.code-block');
+    if (!codeEl) return;
+    const lineEls = new Map();
+    codeEl.querySelectorAll('.line').forEach((el) => {
+      lineEls.set(el.dataset.line, el);
+    });
+    const steps = Array.from(root.querySelectorAll('.step'));
+
+    function highlight(linesAttr) {
+      const wanted = new Set(String(linesAttr || '').split(',').map((s) => s.trim()).filter(Boolean));
+      lineEls.forEach((el, k) => el.classList.toggle('line-hl', wanted.has(k)));
+    }
+
+    function activateStep(s) {
+      if (!s) return;
+      steps.forEach((x) => x.classList.toggle('active', x === s));
+      highlight(s.dataset.lines);
+    }
+
+    steps.forEach((s) => {
+      s.addEventListener('click', () => {
+        s.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        activateStep(s);
+      });
+    });
+
+    activateStep(steps[0]);
+
+    let activeStep = null;
+    root._pickActiveStep = function pickActiveStep() {
+      const center = window.innerHeight / 2;
+      let best = null, bestDist = Infinity;
+      for (const s of steps) {
+        const r = s.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > window.innerHeight) continue;
+        const mid = (r.top + r.bottom) / 2;
+        const d = Math.abs(mid - center);
+        if (d < bestDist) { bestDist = d; best = s; }
+      }
+      if (best && best !== activeStep) {
+        activeStep = best;
+        activateStep(best);
+      }
+    };
+  });
+}
+
+/* ------- Storyboard scene player ------- */
+async function setStoryboardScene(root, index) {
+  const scenesEl = root.querySelector('[data-storyboard-scenes]');
+  if (!scenesEl) return;
+  const scenesText = scenesEl.content ? scenesEl.content.textContent : scenesEl.textContent;
+  const scenes = JSON.parse(scenesText || '[]');
+  const scene = scenes[index];
+  if (!scene) return;
+
+  root.querySelectorAll('[data-storyboard-tab]').forEach((tab) => {
+    const active = Number(tab.dataset.storyboardTab) === index;
+    tab.classList.toggle('active', active);
+    tab.setAttribute('aria-selected', active ? 'true' : 'false');
+  });
+
+  const countEl = root.querySelector('[data-storyboard-scene-count]');
+  if (countEl) countEl.textContent = `Scene ${index + 1} of ${scenes.length}`;
+
+  const mermaidEl = root.querySelector('.storyboard-mermaid .mermaid');
+  if (mermaidEl) {
+    mermaidEl.textContent = scene.mermaid || '';
+    await renderMermaidElement(mermaidEl);
+    applyStoryboardFocus(mermaidEl, scene.focus);
+  }
+
+  const explanationEl = root.querySelector('[data-storyboard-explanation]');
+  if (explanationEl) {
+    explanationEl.innerHTML = scene.explanation
+      ? renderMarkdownLinks(escapeBodyParagraphs(scene.explanation))
+      : '';
+  }
+
+  const codeSlot = root.querySelector('[data-storyboard-code-slot]');
+  if (codeSlot) {
+    codeSlot.innerHTML = renderStoryboardCode(scene);
+    bindStoryboardCodeNotes(codeSlot);
+  }
+}
+
+function bindStoryboardCodeNotes(scope) {
+  const notes = Array.from(scope.querySelectorAll('[data-note-lines]')).map((note) => ({
+    note,
+    lines: new Set(String(note.dataset.noteLines || '').split(',').filter(Boolean)),
+  }));
+  const codeLines = Array.from(scope.querySelectorAll('.code-block .line'));
+  if (notes.length === 0 || codeLines.length === 0) return;
+
+  function activate(note, lineNumber) {
+    notes.forEach((entry) => entry.note.classList.toggle('active', entry.note === note));
+    codeLines.forEach((line) => line.classList.toggle('active-note-line', line.dataset.line === lineNumber));
+  }
+
+  codeLines.forEach((line) => {
+    line.addEventListener('click', () => {
+      const target = notes.find((entry) => entry.lines.has(line.dataset.line));
+      if (!target) return;
+      activate(target.note, line.dataset.line);
+      target.note.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+
+  notes.forEach(({ note, lines }) => {
+    note.addEventListener('click', () => {
+      const firstLine = Array.from(lines)[0];
+      const target = codeLines.find((line) => line.dataset.line === firstLine);
+      if (!target) return;
+      activate(note, firstLine);
+      target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+    });
+  });
+}
+
+function applyStoryboardFocus(root, focus) {
+  if (!focus) return;
+  root.querySelectorAll('g.node').forEach((g) => {
+    const matched = g.id.includes(`-${focus}-`) || g.id.endsWith(`-${focus}`);
+    g.classList.toggle('active', matched);
+  });
+}
+
+async function initStoryboards() {
+  const roots = Array.from(document.querySelectorAll('[data-storyboard]'));
+  await Promise.all(roots.map(async (root) => {
+    root.querySelectorAll('[data-storyboard-tab]').forEach((tab) => {
+      tab.addEventListener('click', () => {
+        setStoryboardScene(root, Number(tab.dataset.storyboardTab));
+      });
+    });
+    await setStoryboardScene(root, 0);
+  }));
+}
+
+/* ------- Zoomable diagram overlay ------- */
+function initZoomOverlay() {
+  const overlay = document.querySelector('.zoom-overlay');
+  if (!overlay) return;
+  const stage = overlay.querySelector('.zoom-stage');
+  const levelEl = overlay.querySelector('[data-zoom-level]');
+  let scale = 1, tx = 0, ty = 0;
+  const MIN = 0.3, MAX = 6;
+
+  function applyTransform() {
+    stage.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+    if (levelEl) levelEl.textContent = Math.round(scale * 100) + '%';
+  }
+
+  function openZoom(svg) {
+    const clone = svg.cloneNode(true);
+    const r = svg.getBoundingClientRect();
+    clone.removeAttribute('style');
+    clone.setAttribute('width', r.width);
+    clone.setAttribute('height', r.height);
+    clone.classList.add('zoom-svg-fix');
+    stage.innerHTML = '';
+    stage.appendChild(clone);
+    scale = 1; tx = 0; ty = 0;
+    applyTransform();
+    overlay.classList.add('open');
+    overlay.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeZoom() {
+    overlay.classList.remove('open');
+    overlay.setAttribute('hidden', '');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-zoom-trigger]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const fig = btn.closest('.figure, .unit-diagram, .storyboard-stage');
+      const svg = fig && fig.querySelector('svg');
+      if (svg) openZoom(svg);
+    });
+  });
+
+  overlay.querySelector('[data-zoom-close]')?.addEventListener('click', closeZoom);
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) closeZoom(); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) closeZoom();
+  });
+
+  overlay.querySelector('[data-zoom-in]')?.addEventListener('click', () => {
+    scale = Math.min(MAX, scale * 1.25); applyTransform();
+  });
+  overlay.querySelector('[data-zoom-out]')?.addEventListener('click', () => {
+    scale = Math.max(MIN, scale / 1.25); applyTransform();
+  });
+  overlay.querySelector('[data-zoom-reset]')?.addEventListener('click', () => {
+    scale = 1; tx = 0; ty = 0; applyTransform();
+  });
+
+  overlay.addEventListener('wheel', (e) => {
+    if (!overlay.classList.contains('open')) return;
+    e.preventDefault();
+    const rect = stage.getBoundingClientRect();
+    const cxFromCenter = e.clientX - (rect.left + rect.width / 2);
+    const cyFromCenter = e.clientY - (rect.top + rect.height / 2);
+    const factor = e.deltaY < 0 ? 1.12 : 1 / 1.12;
+    const newScale = Math.min(MAX, Math.max(MIN, scale * factor));
+    const ratio = newScale / scale;
+    tx -= cxFromCenter * (ratio - 1);
+    ty -= cyFromCenter * (ratio - 1);
+    scale = newScale;
+    applyTransform();
+  }, { passive: false });
+
+  let dragging = false, lastX = 0, lastY = 0;
+  overlay.addEventListener('mousedown', (e) => {
+    if (e.target.closest('.zoom-controls')) return;
+    dragging = true; lastX = e.clientX; lastY = e.clientY;
+    overlay.classList.add('dragging');
+  });
+  window.addEventListener('mousemove', (e) => {
+    if (!dragging) return;
+    tx += e.clientX - lastX; ty += e.clientY - lastY;
+    lastX = e.clientX; lastY = e.clientY;
+    applyTransform();
+  });
+  window.addEventListener('mouseup', () => {
+    dragging = false; overlay.classList.remove('dragging');
+  });
+}
+
+/* ------- Single rAF scroll loop ------- */
+function startScrollLoop() {
+  let ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      pickActiveUnit();
+      document.querySelectorAll('[data-stepped]').forEach((r) => r._pickActiveStep && r._pickActiveStep());
+      document.querySelectorAll('[data-split-walk]').forEach((r) => r._pickActiveSplitNote && r._pickActiveSplitNote());
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+}
+
+
+const PAGE = {
+  "module": "component-stories",
+  "learningPromise": "A self-contained component catalog for the Mermaid course renderer.",
+  "prereqs": [
+    "Renderer fixture",
+    "Stable selectors",
+    "Zero build"
+  ],
+  "diagram": "graph LR\n  C[Concept] --> S[Stacked code]\n  S --> P[Split code]\n  P --> T[Stepped code]\n  T --> B[Storyboard]\n  B --> Z[Zoomable diagram]",
+  "units": [
+    {
+      "kind": "concept",
+      "storyId": "unit-concept",
+      "title": "Concept Unit",
+      "body": "Concept units are quiet prose blocks for setting context before a visual or code-heavy interaction. This fixture keeps the paragraph long enough to exercise typography, line height, and width without turning into a real lesson."
+    },
+    {
+      "kind": "code-walk",
+      "storyId": "codewalk-stacked",
+      "title": "Stacked Code Walk",
+      "file": "stories/example.ts",
+      "layout": "stacked",
+      "code": "export function createStory(id) {\n  const status = registry.get(id)\n  if (!status) return 'missing'\n  return status.active ? 'active' : 'idle'\n}",
+      "highlightLines": [
+        2,
+        4
+      ],
+      "explanation": "A stacked code-walk keeps the code and explanation in the normal page flow. Use it when one compact explanation is enough and there is no need for synchronized scrolling."
+    },
+    {
+      "kind": "code-walk",
+      "storyId": "codewalk-split-active",
+      "title": "Split Code Walk",
+      "file": "stories/commands.ts",
+      "layout": "split",
+      "code": "const commands = profiles\n  .filter((profile) => profile.name !== active)\n  .map((profile, index) => ({\n    id: `activate-${profile.name}`,\n    label: `Activate ${profile.name}`,\n    shortcut: index \u003c 3 ? `⌘${index + 1}` : undefined,\n    category: 'Profile',\n    action: () => activate(profile.name),\n  }))\n\nconst navigation = [\n  { id: 'timeline', label: 'Timeline', shortcut: 'g t' },\n  { id: 'settings', label: 'Settings', shortcut: 'g s' }\n]",
+      "highlightLines": [
+        1,
+        2,
+        6,
+        11,
+        12,
+        13
+      ],
+      "explanation": "Split code-walks put the code on the left and scrollable explanation cards on the right. Lines 1-2: live profile data determines which commands exist. Line 6: only the first three commands receive keyboard shortcuts. Lines 11-13: navigation commands live beside generated commands, so the palette can show one merged list."
+    },
+    {
+      "kind": "code-walk",
+      "storyId": "codewalk-stepped",
+      "title": "Stepped Code Walk",
+      "file": "stories/render-unit.ts",
+      "layout": "stepped",
+      "code": "function renderUnit(unit) {\n  switch (unit.kind) {\n    case 'concept':\n      return renderConcept(unit)\n    case 'code-walk':\n      return renderCodeWalk(unit)\n    case 'storyboard':\n      return renderStoryboard(unit)\n  }\n}",
+      "steps": [
+        {
+          "highlightLines": [
+            1,
+            2
+          ],
+          "beat": "Start with the dispatcher. It owns the decision about which renderer handles the unit."
+        },
+        {
+          "highlightLines": [
+            3,
+            4
+          ],
+          "beat": "Concepts become prose-first sections with no interactive state."
+        },
+        {
+          "highlightLines": [
+            5,
+            6
+          ],
+          "beat": "Code-walks are where line highlighting and scroll sync start to matter."
+        },
+        {
+          "highlightLines": [
+            7,
+            8
+          ],
+          "beat": "Storyboards hand off to the Cinema Strip player."
+        }
+      ]
+    },
+    {
+      "kind": "guess-first",
+      "storyId": "unit-guess-first",
+      "question": "If the right column scrolls, which code lines should stay highlighted?",
+      "reveal": {
+        "code": "const active = nearestCard(notes)\nhighlight(active.dataset.lines)",
+        "highlightLines": [
+          1,
+          2
+        ],
+        "explanation": "The active card is the source of truth. The code panel simply mirrors its line list."
+      }
+    },
+    {
+      "kind": "compare",
+      "storyId": "unit-compare",
+      "title": "Compare Unit",
+      "left": {
+        "label": "before",
+        "code": "render(text)\nsetHtml(text)"
+      },
+      "right": {
+        "label": "after",
+        "code": "const safe = escapeHtml(text)\nsetHtml(safe)"
+      },
+      "lesson": "Compare units make a contrast visible. The code blocks share the same numbered renderer as code-walks, so line treatment stays consistent."
+    },
+    {
+      "kind": "diagram",
+      "storyId": "unit-diagram",
+      "title": "Zoomable Diagram",
+      "mermaid": "flowchart LR\n  A[Source data] --> B[Renderer]\n  B --> C[Component]\n  C --> D[Interaction]\n  D --> E[E2E selector]",
+      "caption": "A diagram story exercises Mermaid rendering, active-node contrast, and the zoom overlay controls."
+    },
+    {
+      "kind": "storyboard",
+      "storyId": "unit-storyboard",
+      "title": "Storyboard Unit",
+      "caption": "Cinema Strip with scene tabs, Mermaid focus, explanation text, and optional code notes.",
+      "scenes": [
+        {
+          "name": "Collect",
+          "mermaid": "flowchart LR\n  A[Fixture data] --> B[PAGE object]\n  B --> C[Unit list]",
+          "focus": [
+            "B"
+          ],
+          "explanation": "The story page starts with fixed fixture data so every run exercises the same states.",
+          "code": {
+            "file": "stories/story-data.json",
+            "language": "json",
+            "source": "\"units\": [\n  { \"kind\": \"concept\" },\n  { \"kind\": \"code-walk\" }\n]",
+            "highlights": [
+              {
+                "lines": [
+                  1,
+                  2
+                ],
+                "note": "The fixture names each unit kind explicitly."
+              },
+              {
+                "line": 3,
+                "note": "Code-walks cover the interactive renderer path."
+              }
+            ]
+          }
+        },
+        {
+          "name": "Render",
+          "mermaid": "flowchart LR\n  A[Unit list] --> B[renderUnit]\n  B --> C[DOM stories]\n  C --> D[data-story-id]",
+          "focus": [
+            "C",
+            "D"
+          ],
+          "explanation": "The renderer emits stable story ids that e2e tests can locate without depending on text.",
+          "code": {
+            "file": "assets/_essay.js",
+            "language": "js",
+            "source": "const storyAttr = unit.storyId\n  ? ` data-story-id=\"${unit.storyId}\"`\n  : ''\nreturn `\u003csection${storyAttr}>...\u003c/section>`",
+            "highlights": [
+              {
+                "lines": [
+                  1,
+                  2
+                ],
+                "note": "Story ids are optional but stable when provided."
+              },
+              {
+                "line": 4,
+                "note": "The section becomes the e2e anchor."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "kind": "surprise",
+      "storyId": "unit-surprise",
+      "title": "Surprise Unit",
+      "body": "The story page is also a contract. When a component changes, the fixture should make that change obvious before it leaks into generated course pages."
+    },
+    {
+      "kind": "takeaway",
+      "storyId": "unit-takeaway",
+      "body": "Use this page as the renderer's living component inventory. It is intentionally small, self-contained, and selector-friendly, so manual review and e2e coverage can share the same target."
+    }
+  ]
+};
+bootEssay(PAGE);
+</script>
+</body>
+</html>

@@ -1,6 +1,4 @@
-import pluginImportNewlines from 'eslint-plugin-import-newlines'
 import pluginImport from 'eslint-plugin-import-x'
-import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort'
 import pluginUnsedImports from 'eslint-plugin-unused-imports'
 
 import {
@@ -19,8 +17,6 @@ export const imports = (): Config[] => {
     {
       plugins: {
         import: pluginImport,
-        'simple-import-sort': pluginSimpleImportSort,
-        'import-newlines': pluginImportNewlines,
         'unused-imports': pluginUnsedImports,
       },
       rules: {
@@ -28,29 +24,6 @@ export const imports = (): Config[] => {
         // off: controlled by import/order
         'import/order': 'off',
         'sort-imports': 'off',
-        'simple-import-sort/imports': [
-          'warn',
-          {
-            groups: [
-              // Side effect imports.
-              [String.raw`^\u0000`],
-              // Node.js builtins prefixed with `node:`.
-              ['^node:'],
-              // Packages.
-              // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
-              [String.raw`^@?\w`],
-              // Relative imports.
-              // Absolute imports and other imports such as `@/foo` or `~/foo`.
-              // Anything not matched in another group.
-              ['^', String.raw`^\.`, String.raw`^@/\w`, String.raw`^~/\w`],
-              // Virtual modules prefixed with `virtual:` or `virtual-`, rollup & vite favor
-              ['^virtual:', '^virtual-'],
-              // Types
-              ['^[^/\\.].*\u0000$', '^\\..*\u0000$'],
-            ],
-          },
-        ],
-        'simple-import-sort/exports': 'off',
         'import/first': 'error',
         'import/newline-after-import': 'error',
         'import/no-duplicates': 'error',
@@ -79,15 +52,6 @@ export const imports = (): Config[] => {
           },
         ],
 
-        // Enforce newlines inside named import
-        'import-newlines/enforce': [
-          'error',
-          {
-            items: 2,
-            'max-len': 120,
-            semi: false,
-          },
-        ],
       },
     },
     {
