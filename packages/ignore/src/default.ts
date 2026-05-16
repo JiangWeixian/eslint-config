@@ -20,4 +20,5 @@ export default [
   '**/.factory',
   '**/superpowers',
   '**/supermario',
+  '**/.planning',
 ]

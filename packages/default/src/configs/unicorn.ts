@@ -25,6 +25,8 @@ export const unicorn = () => {
         'unicorn/prefer-string-starts-ends-with': 'error',
         'unicorn/prefer-type-error': 'error',
         'unicorn/throw-new-error': 'error',
+        'unicorn/prevent-abbreviations': 'off',
+        'unicorn/no-null': 'off',
         'unicorn/filename-case': ['error', {
           case: 'kebabCase',
           ignore: [/^[A-Z]+\.md$/, /^[A-Z]+\.yml$/, /^\.?[A-Z]/, /^Dockerfile$/],
