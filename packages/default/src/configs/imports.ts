@@ -1,6 +1,8 @@
 import pluginImport from 'eslint-plugin-import-x'
 import pluginUnsedImports from 'eslint-plugin-unused-imports'
 
+import type { Config } from '../type'
+
 import {
   GLOB_DTS,
   GLOB_JSX,
@@ -9,8 +11,6 @@ import {
   GLOB_TEST_SCRIPT,
   GLOB_TSX,
 } from '../globs'
-
-import type { Config } from '../type'
 
 export const imports = (): Config[] => {
   const config: Config[] = [
@@ -103,6 +103,7 @@ export const imports = (): Config[] => {
         `**/.eslintrc.${GLOB_SCRIPT_EXT}`,
         `**/**/eslint.config.${GLOB_SCRIPT_EXT}`,
         '**/{vite,esbuild,rollup,webpack,rspack}.ts',
+        '**/vitest.setup.*',
       ],
       rules: {
         'import/no-extraneous-dependencies': 'off',
