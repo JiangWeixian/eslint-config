@@ -16,6 +16,7 @@ import { perfectionist } from './configs/perfectionist'
 import { progress } from './configs/progress'
 import { react, ssrReact } from './configs/react'
 import { regexp as regexpConfig } from './configs/regexp'
+import { storybook } from './configs/storybook'
 import { stylistic } from './configs/stylistic'
 import { tailwindcss } from './configs/tailwindcss'
 import { toml } from './configs/toml'
@@ -50,6 +51,7 @@ const presetDefault = [
   ...stylistic(),
   ...presetLangsExtensions,
   ...progress(),
+  ...storybook(),
 ]
 
 export const all = [
@@ -58,6 +60,7 @@ export const all = [
   ...next(),
   ...ssrReact(),
   ...regexpConfig(),
+  ...storybook(),
 ]
 
 interface Options {

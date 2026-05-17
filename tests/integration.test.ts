@@ -32,6 +32,13 @@ describe('aiou() integration', () => {
     const result = linter.verify(code, configs, 'test.tsx')
     expect(Array.isArray(result)).toBe(true)
   })
+
+  it('should include storybook plugin in configs', async () => {
+    const composer = aiou({ ssr: false, regexp: true })
+    const configs = await composer.toConfigs()
+    const hasStorybookPlugin = configs.some(c => c.plugins?.storybook)
+    expect(hasStorybookPlugin).toBe(true)
+  })
 })
 
 describe('all preset', () => {
