@@ -5704,6 +5704,86 @@ export interface Rules {
    */
   'regexp/use-ignore-case'?: Linter.RuleEntry<[]>
   /**
+   * Interactions should be awaited
+   * @see https://github.com/storybookjs/storybook/blob/next/code/lib/eslint-plugin/docs/rules/await-interactions.md
+   */
+  'storybook/await-interactions'?: Linter.RuleEntry<[]>
+  /**
+   * Pass a context when invoking play function of another story
+   * @see https://github.com/storybookjs/storybook/blob/next/code/lib/eslint-plugin/docs/rules/context-in-play-function.md
+   */
+  'storybook/context-in-play-function'?: Linter.RuleEntry<[]>
+  /**
+   * The component property should be set
+   * @see https://github.com/storybookjs/storybook/blob/next/code/lib/eslint-plugin/docs/rules/csf-component.md
+   */
+  'storybook/csf-component'?: Linter.RuleEntry<[]>
+  /**
+   * Story files should have a default export
+   * @see https://github.com/storybookjs/storybook/blob/next/code/lib/eslint-plugin/docs/rules/default-exports.md
+   */
+  'storybook/default-exports'?: Linter.RuleEntry<[]>
+  /**
+   * Deprecated hierarchy separator in title property
+   * @see https://github.com/storybookjs/storybook/blob/next/code/lib/eslint-plugin/docs/rules/hierarchy-separator.md
+   */
+  'storybook/hierarchy-separator'?: Linter.RuleEntry<[]>
+  /**
+   * Meta should only have inline properties
+   * @see https://github.com/storybookjs/storybook/blob/next/code/lib/eslint-plugin/docs/rules/meta-inline-properties.md
+   */
+  'storybook/meta-inline-properties'?: Linter.RuleEntry<StorybookMetaInlineProperties>
+  /**
+   * Meta should use `satisfies Meta`
+   * @see https://github.com/storybookjs/storybook/blob/next/code/lib/eslint-plugin/docs/rules/meta-satisfies-type.md
+   */
+  'storybook/meta-satisfies-type'?: Linter.RuleEntry<[]>
+  /**
+   * A story should not have a redundant name property
+   * @see https://github.com/storybookjs/storybook/blob/next/code/lib/eslint-plugin/docs/rules/no-redundant-story-name.md
+   */
+  'storybook/no-redundant-story-name'?: Linter.RuleEntry<[]>
+  /**
+   * Do not import renderer packages directly in stories
+   * @see https://github.com/storybookjs/storybook/blob/next/code/lib/eslint-plugin/docs/rules/no-renderer-packages.md
+   */
+  'storybook/no-renderer-packages'?: Linter.RuleEntry<[]>
+  /**
+   * storiesOf is deprecated and should not be used
+   * @see https://github.com/storybookjs/storybook/blob/next/code/lib/eslint-plugin/docs/rules/no-stories-of.md
+   */
+  'storybook/no-stories-of'?: Linter.RuleEntry<[]>
+  /**
+   * Do not define a title in meta
+   * @see https://github.com/storybookjs/storybook/blob/next/code/lib/eslint-plugin/docs/rules/no-title-property-in-meta.md
+   */
+  'storybook/no-title-property-in-meta'?: Linter.RuleEntry<[]>
+  /**
+   * This rule identifies storybook addons that are invalid because they are either not installed or contain a typo in their name.
+   * @see https://github.com/storybookjs/storybook/blob/next/code/lib/eslint-plugin/docs/rules/no-uninstalled-addons.md
+   */
+  'storybook/no-uninstalled-addons'?: Linter.RuleEntry<StorybookNoUninstalledAddons>
+  /**
+   * Stories should use PascalCase
+   * @see https://github.com/storybookjs/storybook/blob/next/code/lib/eslint-plugin/docs/rules/prefer-pascal-case.md
+   */
+  'storybook/prefer-pascal-case'?: Linter.RuleEntry<[]>
+  /**
+   * A story file must contain at least one story export
+   * @see https://github.com/storybookjs/storybook/blob/next/code/lib/eslint-plugin/docs/rules/story-exports.md
+   */
+  'storybook/story-exports'?: Linter.RuleEntry<[]>
+  /**
+   * Use expect from `@storybook/test`, `storybook/test` or `@storybook/jest`
+   * @see https://github.com/storybookjs/storybook/blob/next/code/lib/eslint-plugin/docs/rules/use-storybook-expect.md
+   */
+  'storybook/use-storybook-expect'?: Linter.RuleEntry<[]>
+  /**
+   * Do not use testing-library directly on stories
+   * @see https://github.com/storybookjs/storybook/blob/next/code/lib/eslint-plugin/docs/rules/use-storybook-testing-library.md
+   */
+  'storybook/use-storybook-testing-library'?: Linter.RuleEntry<[]>
+  /**
    * Enforce a consistent and logical order of the Tailwind CSS classnames
    * @see https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/classnames-order.md
    */
@@ -15068,6 +15148,15 @@ type RegexpUnicodeProperty = []|[{
     script?: ("short" | "long" | "ignore")
   })
 }]
+// ----- storybook/meta-inline-properties -----
+type StorybookMetaInlineProperties = []|[{
+  csfVersion?: number
+}]
+// ----- storybook/no-uninstalled-addons -----
+type StorybookNoUninstalledAddons = []|[{
+  packageJsonLocation?: string
+  ignore?: string[]
+}]
 // ----- tailwindcss/classnames-order -----
 type TailwindcssClassnamesOrder = []|[{
   callees?: string[]
@@ -15869,5 +15958,5 @@ type YmlSpacedComment = []|[("always" | "never")]|[("always" | "never"), {
   markers?: string[]
 }]
     // Names of all the configs
-    export type ConfigNames = 'markdown/recommended/plugin' | 'markdown/recommended/processor' | 'markdown/recommended/code-blocks' | 'tailwindcss:base' | 'tailwindcss:rules'
+    export type ConfigNames = 'markdown/recommended/plugin' | 'markdown/recommended/processor' | 'markdown/recommended/code-blocks' | 'storybook:recommended:setup' | 'storybook:recommended:stories-rules' | 'storybook:recommended:main-rules' | 'tailwindcss:base' | 'tailwindcss:rules' | 'storybook:recommended:setup' | 'storybook:recommended:stories-rules' | 'storybook:recommended:main-rules'
     

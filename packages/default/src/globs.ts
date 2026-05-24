@@ -21,3 +21,6 @@ export const GLOB_MARKDOWN = '**/*.md'
 export const GLOB_VUE = '**/*.vue'
 export const GLOB_YAML = '**/*.y?(a)ml'
 export const GLOB_WORKFLOW_YAML = '**/.github/**/*.y?(a)ml'
+
+export const GLOB_STORYBOOK_STORIES = '**/*.stories.@(ts|tsx|js|jsx|mjs|cjs)'
+export const GLOB_STORYBOOK_MAIN = '.storybook/main.@(js|cjs|mjs|ts)'
