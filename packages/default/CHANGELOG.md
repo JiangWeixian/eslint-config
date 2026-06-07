@@ -1,5 +1,18 @@
 # @aiou/eslint-config
 
+## 3.2.0
+
+### Minor Changes
+
+- fcd446b: Upgrade `eslint-plugin-tailwindcss` from v3 to v4.0.0-alpha.5 (beta channel).
+
+### Patch Changes
+
+- 4897a44: Allow `vitest.setup.*` files to import dev dependencies without lint errors.
+- 4897a44: Disable `unicorn/prevent-abbreviations` and `unicorn/no-null` rules to reduce noisy lint warnings.
+- Updated dependencies [4897a44]
+  - @aiou/eslint-ignore@0.6.2
+
 ## 3.1.2
 
 ### Patch Changes
