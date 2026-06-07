@@ -1,5 +1,11 @@
 # @aiou/eslint-ignore
 
+## 0.6.2
+
+### Patch Changes
+
+- 4897a44: Add `.planning` directory to default ignore patterns.
+
 ## 0.6.1
 
 ### Patch Changes
