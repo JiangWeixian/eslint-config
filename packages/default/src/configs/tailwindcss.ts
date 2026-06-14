@@ -8,13 +8,15 @@ export const tailwindcss = (): Config[] => {
   const pluginTailwindcss = require('eslint-plugin-tailwindcss')
   const recommended = pluginTailwindcss.configs.recommended
   const configs = Array.isArray(recommended) ? recommended : [recommended]
+  const rules = {
+    ...(configs.find((c: any) => c.rules)?.rules as any),
+    'tailwindcss/no-custom-classname': 'off',
+  }
   const config: Config[] = [
     ...configs,
     {
-      rules: {
-        ...(configs.find((c: any) => c.rules)?.rules as any),
-        'tailwindcss/no-custom-classname': 'off',
-      },
+      plugins: { tailwindcss: pluginTailwindcss.default ?? pluginTailwindcss },
+      rules,
     },
   ]
   return config
