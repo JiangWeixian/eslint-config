@@ -43,7 +43,13 @@
     "prepublishOnly": "publish-police"
   },
   "peerDependencies": {
-    "eslint": ">=10"
+    "eslint": ">=10",
+    "tailwindcss": "^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "tailwindcss": {
+      "optional": true
+    }
   },
   "dependencies": {
     "@aiou/eslint-ignore": "workspace:*",
@@ -66,7 +72,7 @@
     "eslint-plugin-react-refresh": "^0.5.2",
     "eslint-plugin-regexp": "^3.1.0",
     "eslint-plugin-storybook": "^10.4.0",
-    "eslint-plugin-tailwindcss": "^4.0.0-alpha.5",
+    "eslint-plugin-tailwindcss": "4.0.0-alpha.6",
     "eslint-plugin-toml": "^1.3.1",
     "eslint-plugin-unicorn": "^64.0.0",
     "eslint-plugin-unused-imports": "^4.4.1",
@@ -92,6 +98,7 @@
     "rollup-plugin-esbuild": "^5.0.0",
     "rollup-plugin-filesize": "9.1.2",
     "rollup-plugin-node-externals": "5.1.2",
+    "tailwindcss": "^4.3.1",
     "tsx": "^4.20.0"
   }
 }
