@@ -21,4 +21,10 @@ export default [
   '**/superpowers',
   '**/supermario',
   '**/.planning',
+  '**/vendor',
+  '**/coverage',
+  '**/storybook-static',
+  '**/test-results',
+  '**/docs',
+  '**/samples',
 ]
