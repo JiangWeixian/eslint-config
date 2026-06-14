@@ -1,6 +1,6 @@
 {
   "name": "@aiou/eslint-ignore",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "collection of eslint ignore patterns",
   "keywords": [
     "eslint",
